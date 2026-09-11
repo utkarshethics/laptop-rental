@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" fill="none" class="hero-banner-placeholder">
+  <rect width="1200" height="500" fill="#f8f9fa"></rect>
+  <rect x="50" y="50" width="1100" height="400" rx="8" stroke="#dee2e6" stroke-width="2" stroke-dasharray="10,10"></rect>
+  <text x="600" y="220" text-anchor="middle" font-size="32" font-weight="600" fill="#6c757d">Hero Banner 2</text>
+  <text x="600" y="260" text-anchor="middle" font-size="18" fill="#adb5bd">"Doorstep Delivery Across India"</text>
+  <text x="600" y="300" text-anchor="middle" font-size="14" fill="#adb5bd">CTA: Check Availability →</text>
+  <text x="600" y="340" text-anchor="middle" font-size="12" fill="#ced4da">Replace with: Delivery truck + city map background</text>
+</svg>

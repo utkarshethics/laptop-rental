@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#e74c3c" stroke-width="1.5" class="illustration">
+  <rect x="10" y="10" width="180" height="180" rx="10" stroke-dasharray="5,5"></rect>
+  <text x="100" y="95" text-anchor="middle" font-size="60" font-weight="bold" fill="#e74c3c">404</text>
+  <path d="M60 130h80"></path>
+  <path d="M70 145h60"></path>
+  <text x="100" y="175" text-anchor="middle" font-size="14" fill="#999">Page not found</text>
+</svg>

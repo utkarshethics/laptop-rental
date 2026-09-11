@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#ccc" stroke-width="1.5" class="illustration">
+  <rect x="10" y="10" width="180" height="180" rx="10" stroke-dasharray="5,5"></rect>
+  <circle cx="100" cy="80" r="35"></circle>
+  <path d="M70 140h60"></path>
+  <path d="M85 155h30"></path>
+  <path d="M100 80l0 0"></path>
+  <circle cx="90" cy="70" r="4"></circle>
+  <circle cx="110" cy="70" r="4"></circle>
+  <path d="M85 90Q100 105 115 90"></path>
+  <text x="100" y="185" text-anchor="middle" font-size="14" fill="#999">Welcome</text>
+</svg>

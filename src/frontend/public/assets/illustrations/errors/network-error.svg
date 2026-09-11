@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#e74c3c" stroke-width="1.5" class="illustration">
+  <rect x="10" y="10" width="180" height="180" rx="10" stroke-dasharray="5,5"></rect>
+  <path d="M50 80h100"></path>
+  <path d="M50 100h70"></path>
+  <path d="M50 120h40"></path>
+  <circle cx="100" cy="50" r="25" stroke-width="2"></circle>
+  <path d="M100 35v10" stroke-width="2"></path>
+  <path d="M100 55v10" stroke-width="2"></path>
+  <text x="100" y="165" text-anchor="middle" font-size="14" fill="#e74c3c">No Internet Connection</text>
+  <text x="100" y="185" text-anchor="middle" font-size="12" fill="#999">Check your connection</text>
+</svg>

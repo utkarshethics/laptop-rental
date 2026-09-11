@@ -1,0 +1,83 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Environment — never commit real secrets
+.env
+.env.local
+.env.*.local
+graph_token_cache.json
+emails_output.json
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Python (unrelated local tooling)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Large binaries & archives in this workspace
+*.pkg
+*.zip
+*.tar.gz
+
+# Local tooling dirs (unrelated projects / automation)
+Masterji/
+Project/
+antigravity/
+aws/
+design-system/
+epfo-client/
+fde-landing/
+graph-stack/
+kuzu/
+local-astra/
+nvidia-polar-integration/
+offsec-models/
+offsec-models-fixed/
+pii-privacy-map/
+stage-x-space-site/
+stagex-site/
+tmp/
+.codeopen/
+.opencode/
+.transformers-cache/
+
+# Personal automation scripts & artifacts (not part of the app)
+*.cjs
+*.png
+*.log
+browserctl.js
+bucket-policy.json
+create_sf_event.js
+daily-email-digest-to-teams.json
+embed-sync.js
+find_dubai.js
+get_luma_cookies.js
+graph-api-setup-guide.md
+list_pages.js
+opencode-proxy.js
+outlook-inbox-to-teams-flow.json
+outlook_email_reader.py
+screenshot_*.js
+search_dashboards.js
+send_recruitment_emails.sh
+stage-x-context.log
+test_*.js
+upload_eb*.js
+visualization_methods.md
+ADK-DESIGN-SYSTEM.md
+AGNO-DESIGN-SYSTEM.md
+AGNO-FRAMEWORK-ANALYSIS.md
+architecture_decisions.md
+
+# Verification artifacts (local only)
+verification/

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#ccc" stroke-width="1.5" class="illustration">
+  <rect x="10" y="10" width="180" height="180" rx="10" stroke-dasharray="5,5"></rect>
+  <circle cx="100" cy="85" r="25"></circle>
+  <line x1="100" y1="110" x2="100" y2="135"></line>
+  <line x1="85" y1="122" x2="115" y2="122"></line>
+  <path d="M75 60h50"></path>
+  <path d="M85 45h30"></path>
+  <text x="100" y="185" text-anchor="middle" font-size="14" fill="#999">No Results Found</text>
+</svg>

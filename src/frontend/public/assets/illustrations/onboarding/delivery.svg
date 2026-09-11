@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#ccc" stroke-width="1.5" class="illustration">
+  <rect x="10" y="10" width="180" height="180" rx="10" stroke-dasharray="5,5"></rect>
+  <path d="M40 130l15-50h70l15 50"></path>
+  <circle cx="70" cy="130" r="12"></circle>
+  <circle cx="140" cy="130" r="12"></circle>
+  <circle cx="70" cy="130" r="4"></circle>
+  <circle cx="140" cy="130" r="4"></circle>
+  <rect x="50" y="90" width="60" height="40" rx="3"></rect>
+  <path d="M60 100h40"></path>
+  <circle cx="150" cy="30" r="12"></circle>
+  <path d="M145 30h10"></path>
+  <path d="M150 25v10"></path>
+  <text x="100" y="185" text-anchor="middle" font-size="14" fill="#999">Doorstep Delivery</text>
+</svg>
