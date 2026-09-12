@@ -12,12 +12,12 @@ const CATEGORIES = ['laptop', 'desktop', 'monitor', 'tablet', 'accessories'];
 const STATUS_OPTIONS = ['active', 'inactive', 'out_of_stock', 'discontinued'];
 
 const MOCK_PRODUCTS = [
-  { id: '1', name: 'HP EliteBook 840 G9', brand: 'HP', category: 'laptop', price: 4499, stock: 15, status: 'active', featured: true, createdAt: '2024-01-15' },
-  { id: '2', name: 'Dell Latitude 5430', brand: 'Dell', category: 'laptop', price: 2999, stock: 22, status: 'active', featured: false, createdAt: '2024-01-10' },
+  { id: '1', name: 'HP EliteBook 840 G9', brand: 'HP', category: 'laptop', price: 3499, stock: 15, status: 'active', featured: true, createdAt: '2024-01-15' },
+  { id: '2', name: 'Dell Latitude 5430', brand: 'Dell', category: 'laptop', price: 2799, stock: 22, status: 'active', featured: false, createdAt: '2024-01-10' },
   { id: '3', name: 'MacBook Air M2', brand: 'Apple', category: 'laptop', price: 4999, stock: 8, status: 'active', featured: true, createdAt: '2024-01-20' },
-  { id: '4', name: 'Lenovo ThinkPad X1 Carbon', brand: 'Lenovo', category: 'laptop', price: 4999, stock: 12, status: 'active', featured: true, createdAt: '2024-01-18' },
+  { id: '4', name: 'Lenovo ThinkPad X1 Carbon', brand: 'Lenovo', category: 'laptop', price: 3999, stock: 12, status: 'active', featured: true, createdAt: '2024-01-18' },
   { id: '5', name: 'ASUS ROG Zephyrus G14', brand: 'ASUS', category: 'laptop', price: 4999, stock: 6, status: 'active', featured: false, createdAt: '2024-01-22' },
-  { id: '6', name: 'Acer Swift Go 14', brand: 'Acer', category: 'laptop', price: 2999, stock: 18, status: 'active', featured: false, createdAt: '2024-01-25' },
+  { id: '6', name: 'Acer Swift Go 14', brand: 'Acer', category: 'laptop', price: 1999, stock: 18, status: 'active', featured: false, createdAt: '2024-01-25' },
 ];
 
 export function AdminProducts() {
