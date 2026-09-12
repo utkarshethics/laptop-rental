@@ -404,7 +404,7 @@ export function Products() {
       : undefined,
     sortBy: (searchParams.get('sort') as ProductFilters['sortBy']) || 'newest',
     page: Number(searchParams.get('page')) || 1,
-    limit: 12,
+    limit: 24,
   });
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
