@@ -47,7 +47,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '1', name: 'HP EliteBook 840 G9', brand: 'HP', category: 'laptop',
     description: 'Business laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Premium business laptop for professionals',
-    images: [{ url: '/assets/products/hp/elitebook-840-g9/hero.svg', alt: 'HP EliteBook 840 G9', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/hp/elitebook-840-g9/hero.jpg', alt: 'HP EliteBook 840 G9', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/elitebook-840-g9/angle-1.jpg', alt: 'HP EliteBook 840 G9 — screen open', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1255U', category: 'processor' },
       { key: 'RAM', value: '16GB DDR5', category: 'memory' },
@@ -63,7 +66,7 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '2', name: 'Dell Latitude 5430', brand: 'Dell', category: 'laptop',
     description: 'Reliable business laptop with Intel i5, 8GB RAM, 256GB SSD',
     shortDescription: 'Affordable business laptop for everyday work',
-    images: [{ url: '/assets/products/dell/latitude-5430/hero.svg', alt: 'Dell Latitude 5430', isPrimary: true, order: 0 }],
+    images: [{ url: '/assets/products/dell/latitude-5430/hero.jpg', alt: 'Dell Latitude 5430', isPrimary: true, order: 0 }],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1235U', category: 'processor' },
       { key: 'RAM', value: '8GB DDR4', category: 'memory' },
@@ -79,7 +82,12 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '3', name: 'MacBook Air M2', brand: 'Apple', category: 'laptop',
     description: 'Ultra-portable with M2 chip, 8GB RAM, 256GB SSD',
     shortDescription: 'Apple\'s most portable laptop with incredible performance',
-    images: [{ url: '/assets/products/apple/macbook-air-m2/hero.svg', alt: 'MacBook Air M2', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/apple/macbook-air-m2/hero.jpg', alt: 'MacBook Air M2 (Midnight)', isPrimary: true, order: 0 },
+      { url: '/assets/products/apple/macbook-air-m2/angle-1.jpg', alt: 'MacBook Air M2 — front', isPrimary: false, order: 1 },
+      { url: '/assets/products/apple/macbook-air-m2/angle-2.jpg', alt: 'MacBook Air M2 (Starlight)', isPrimary: false, order: 2 },
+      { url: '/assets/products/apple/macbook-air-m2/angle-3.jpg', alt: 'MacBook Air M2 — rear ports', isPrimary: false, order: 3 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Apple M2', category: 'processor' },
       { key: 'RAM', value: '8GB Unified', category: 'memory' },
@@ -95,7 +103,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '4', name: 'Lenovo ThinkPad X1 Carbon Gen 11', brand: 'Lenovo', category: 'laptop',
     description: 'Ultra-light business laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'The ultimate business ultrabook',
-    images: [{ url: '/assets/products/lenovo/thinkpad-x1-carbon/hero.svg', alt: 'ThinkPad X1 Carbon', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/lenovo/thinkpad-x1-carbon/hero.jpg', alt: 'ThinkPad X1 Carbon Gen 11', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/thinkpad-x1-carbon/angle-1.jpg', alt: 'ThinkPad X1 Carbon Gen 11 — 180° view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -111,7 +122,7 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '5', name: 'ASUS ROG Zephyrus G14', brand: 'ASUS', category: 'laptop',
     description: 'Gaming laptop with AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 4060',
     shortDescription: 'Compact gaming powerhouse',
-    images: [{ url: '/assets/products/asus/rog-zephyrus-g14/hero.svg', alt: 'ROG Zephyrus G14', isPrimary: true, order: 0 }],
+    images: [{ url: '/assets/products/asus/rog-zephyrus-g14/hero.jpg', alt: 'ROG Zephyrus G14', isPrimary: true, order: 0 }],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 9 7940HS', category: 'processor' },
       { key: 'RAM', value: '16GB DDR5', category: 'memory' },
@@ -128,7 +139,7 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '6', name: 'Acer Swift Go 14', brand: 'Acer', category: 'laptop',
     description: 'Lightweight laptop with Intel i5, 16GB RAM, 512GB SSD, OLED display',
     shortDescription: 'Affordable OLED laptop for students',
-    images: [{ url: '/assets/products/acer/swift-go-14/hero.svg', alt: 'Acer Swift Go 14', isPrimary: true, order: 0 }],
+    images: [{ url: '/assets/products/acer/swift-go-14/hero.jpg', alt: 'Acer Swift Go 14', isPrimary: true, order: 0 }],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-13500H', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },

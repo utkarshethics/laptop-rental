@@ -9,7 +9,7 @@ const MOCK_ORDER_DETAIL: Record<string, Order> = {
   'ORD-2024-001': {
     id: 'ORD-2024-001', userId: '1', status: 'active',
     items: [
-      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.svg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 8999, totalPrice: 8999 },
+      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.jpg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 8999, totalPrice: 8999 },
     ],
     subtotal: 8999, discount: 0, tax: 0, deposit: 5000, total: 13999, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St, Koramangala', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },

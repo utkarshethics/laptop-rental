@@ -14,7 +14,7 @@ const MOCK_ORDERS: Order[] = [
   {
     id: 'ORD-2024-001', userId: '1', status: 'active',
     items: [
-      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.svg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 8999, totalPrice: 8999 },
+      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.jpg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 8999, totalPrice: 8999 },
     ],
     subtotal: 8999, discount: 0, tax: 0, deposit: 5000, total: 13999, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
@@ -25,7 +25,7 @@ const MOCK_ORDERS: Order[] = [
   {
     id: 'ORD-2024-002', userId: '1', status: 'completed',
     items: [
-      { id: '2', productId: '3', productName: 'MacBook Air M2', productImage: '/assets/products/apple/macbook-air-m2/hero.svg', brand: 'Apple', quantity: 1, rentalPeriod: 'monthly', unitPrice: 14999, totalPrice: 14999 },
+      { id: '2', productId: '3', productName: 'MacBook Air M2', productImage: '/assets/products/apple/macbook-air-m2/hero.jpg', brand: 'Apple', quantity: 1, rentalPeriod: 'monthly', unitPrice: 14999, totalPrice: 14999 },
     ],
     subtotal: 14999, discount: 1500, tax: 0, deposit: 10000, total: 23499, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
@@ -36,7 +36,7 @@ const MOCK_ORDERS: Order[] = [
   {
     id: 'ORD-2024-003', userId: '1', status: 'cancelled',
     items: [
-      { id: '3', productId: '2', productName: 'Dell Latitude 5430', productImage: '/assets/products/dell/latitude-5430/hero.svg', brand: 'Dell', quantity: 1, rentalPeriod: 'monthly', unitPrice: 7999, totalPrice: 7999 },
+      { id: '3', productId: '2', productName: 'Dell Latitude 5430', productImage: '/assets/products/dell/latitude-5430/hero.jpg', brand: 'Dell', quantity: 1, rentalPeriod: 'monthly', unitPrice: 7999, totalPrice: 7999 },
     ],
     subtotal: 7999, discount: 0, tax: 0, deposit: 5000, total: 12999, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
