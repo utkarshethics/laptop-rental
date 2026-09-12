@@ -14,34 +14,34 @@ const MOCK_ORDERS: Order[] = [
   {
     id: 'ORD-2024-001', userId: '1', status: 'active',
     items: [
-      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.jpg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 3499, totalPrice: 3499 },
+      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.jpg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 1199, totalPrice: 1199 },
     ],
-    subtotal: 3499, discount: 0, tax: 0, deposit: 4000, total: 7499, currency: 'INR',
+    subtotal: 1199, discount: 0, tax: 0, deposit: 4000, total: 5199, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
     billingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
-    payment: { method: 'card', status: 'completed', transactionId: 'txn_123', paidAt: '2024-01-15T10:30:00Z', amount: 7499 },
+    payment: { method: 'card', status: 'completed', transactionId: 'txn_123', paidAt: '2024-01-15T10:30:00Z', amount: 5199 },
     rentalStartDate: '2024-01-16', rentalEndDate: '2024-02-15', createdAt: '2024-01-15T10:30:00Z', updatedAt: '2024-01-15T10:30:00Z',
   },
   {
     id: 'ORD-2024-002', userId: '1', status: 'completed',
     items: [
-      { id: '2', productId: '3', productName: 'MacBook Air M2', productImage: '/assets/products/apple/macbook-air-m2/hero.jpg', brand: 'Apple', quantity: 1, rentalPeriod: 'monthly', unitPrice: 4999, totalPrice: 4999 },
+      { id: '2', productId: '3', productName: 'MacBook Air M2', productImage: '/assets/products/apple/macbook-air-m2/hero.jpg', brand: 'Apple', quantity: 1, rentalPeriod: 'monthly', unitPrice: 1299, totalPrice: 1299 },
     ],
-    subtotal: 4999, discount: 1500, tax: 0, deposit: 8000, total: 11499, currency: 'INR',
+    subtotal: 1299, discount: 600, tax: 0, deposit: 8000, total: 8699, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
     billingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
-    payment: { method: 'upi', status: 'completed', transactionId: 'txn_456', paidAt: '2023-12-01T14:20:00Z', amount: 11499 },
+    payment: { method: 'upi', status: 'completed', transactionId: 'txn_456', paidAt: '2023-12-01T14:20:00Z', amount: 8699 },
     rentalStartDate: '2023-12-02', rentalEndDate: '2024-01-01', createdAt: '2023-12-01T14:20:00Z', updatedAt: '2024-01-01T10:00:00Z',
   },
   {
     id: 'ORD-2024-003', userId: '1', status: 'cancelled',
     items: [
-      { id: '3', productId: '2', productName: 'Dell Latitude 5430', productImage: '/assets/products/dell/latitude-5430/hero.jpg', brand: 'Dell', quantity: 1, rentalPeriod: 'monthly', unitPrice: 2799, totalPrice: 2799 },
+      { id: '3', productId: '2', productName: 'Dell Latitude 5430', productImage: '/assets/products/dell/latitude-5430/hero.jpg', brand: 'Dell', quantity: 1, rentalPeriod: 'monthly', unitPrice: 1099, totalPrice: 1099 },
     ],
-    subtotal: 2799, discount: 0, tax: 0, deposit: 3000, total: 5799, currency: 'INR',
+    subtotal: 1099, discount: 0, tax: 0, deposit: 3000, total: 4099, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
     billingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
-    payment: { method: 'card', status: 'refunded', transactionId: 'txn_789', paidAt: '2023-11-15T09:15:00Z', amount: 5799 },
+    payment: { method: 'card', status: 'refunded', transactionId: 'txn_789', paidAt: '2023-11-15T09:15:00Z', amount: 4099 },
     rentalStartDate: '2023-11-16', rentalEndDate: '2023-12-15', createdAt: '2023-11-15T09:15:00Z', updatedAt: '2023-11-16T08:00:00Z',
   },
 ];

@@ -9,12 +9,12 @@ const MOCK_ORDER_DETAIL: Record<string, Order> = {
   'ORD-2024-001': {
     id: 'ORD-2024-001', userId: '1', status: 'active',
     items: [
-      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.jpg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 3499, totalPrice: 3499 },
+      { id: '1', productId: '1', productName: 'HP EliteBook 840 G9', productImage: '/assets/products/hp/elitebook-840-g9/hero.jpg', brand: 'HP', quantity: 1, rentalPeriod: 'monthly', unitPrice: 1199, totalPrice: 1199 },
     ],
-    subtotal: 8999, discount: 0, tax: 0, deposit: 5000, total: 13999, currency: 'INR',
+    subtotal: 1199, discount: 0, tax: 0, deposit: 4000, total: 5199, currency: 'INR',
     shippingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St, Koramangala', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
     billingAddress: { name: 'John Doe', phone: '9876543210', email: 'john@example.com', line1: '123 Main St, Koramangala', city: 'Bangalore', state: 'Karnataka', pincode: '560001', country: 'India' },
-    payment: { method: 'card', status: 'completed', transactionId: 'txn_123456789', paidAt: '2024-01-15T10:30:00Z', amount: 13999 },
+    payment: { method: 'card', status: 'completed', transactionId: 'txn_123456789', paidAt: '2024-01-15T10:30:00Z', amount: 5199 },
     rentalStartDate: '2024-01-16', rentalEndDate: '2024-02-15', createdAt: '2024-01-15T10:30:00Z', updatedAt: '2024-01-20T14:20:00Z',
   },
 };
