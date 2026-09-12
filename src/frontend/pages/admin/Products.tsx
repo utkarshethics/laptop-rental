@@ -27,6 +27,11 @@ const MOCK_PRODUCTS = [
   { id: '13', name: 'Samsung Galaxy Book3 Pro', brand: 'Samsung', category: 'laptop', price: 1099, stock: 7, status: 'active', featured: false, createdAt: '2026-01-12' },
   { id: '14', name: 'MSI GF63 Thin', brand: 'MSI', category: 'laptop', price: 1099, stock: 11, status: 'active', featured: true, createdAt: '2026-01-10' },
   { id: '15', name: 'Acer Nitro V 15', brand: 'Acer', category: 'laptop', price: 949, stock: 16, status: 'active', featured: false, createdAt: '2026-01-08' },
+  { id: '16', name: 'MacBook Air 15 M3', brand: 'Apple', category: 'laptop', price: 1299, stock: 10, status: 'active', featured: true, createdAt: '2026-01-07' },
+  { id: '17', name: 'Dell XPS 13 Plus', brand: 'Dell', category: 'laptop', price: 1249, stock: 8, status: 'active', featured: true, createdAt: '2026-01-05' },
+  { id: '18', name: 'Lenovo ThinkPad T14 Gen 4', brand: 'Lenovo', category: 'laptop', price: 1199, stock: 13, status: 'active', featured: false, createdAt: '2026-01-03' },
+  { id: '19', name: 'HP Victus 15', brand: 'HP', category: 'laptop', price: 949, stock: 17, status: 'active', featured: false, createdAt: '2026-01-01' },
+  { id: '20', name: 'ASUS ROG Strix G16', brand: 'ASUS', category: 'laptop', price: 1299, stock: 5, status: 'active', featured: true, createdAt: '2025-12-28' },
 ];
 
 export function AdminProducts() {
