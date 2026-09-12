@@ -45,9 +45,10 @@ function App() {
           <main className="flex-1">
             <Suspense fallback={<PageLoader />}>
               <Routes>
-                <Route path="/" element={<MainLayout />}>
-                  <Route index element={<Home />} />
-                  <Route path="products" element={<Products />} />
+<Route path="/" element={<MainLayout />}>
+  <Route index element={<Navigate to="/products?category=laptop&sort=newest" replace />} />
+  <Route path="home" element={<Home />} />
+  <Route path="products" element={<Products />} />
                   <Route path="products/:id" element={<ProductDetail />} />
                   <Route path="cart" element={<Cart />} />
                   <Route path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
