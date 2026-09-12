@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LaptopRent</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA fallback: any unknown path is answered with this file.
+      // Load the real app shell (index.html) so client-side routes like
+      // /products or /products/:id work on refresh / direct visit / share.
+      (function () {
+        var path = window.location.pathname;
+        // Never shadow real 404s for static assets.
+        if (path.indexOf('/assets/') === 0) {
+          return;
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/index.html', true);
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            document.open('text/html', 'replace');
+            document.write(xhr.responseText);
+            document.close();
+          }
+        };
+        xhr.send();
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
