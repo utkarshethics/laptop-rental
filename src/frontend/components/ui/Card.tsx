@@ -174,10 +174,10 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
         <div className="flex items-center justify-between">
           <div>
             <p className="text-heading-md font-bold text-primary-600">
-              ₹{product.pricing.daily.toLocaleString()}<span className="text-body-sm font-normal text-secondary-500">/day</span>
+              ₹{product.pricing.monthly.toLocaleString()}<span className="text-body-sm font-normal text-secondary-500">/month</span>
             </p>
             <p className="text-caption text-secondary-500">
-              ₹{product.pricing.monthly.toLocaleString()}/month <span className="text-primary-600 font-medium">(Save 15%)</span>
+              from ₹{product.pricing.daily.toLocaleString()}/day <span className="text-success-600 font-medium">(Save {Math.round((1 - product.pricing.monthly / (product.pricing.daily * 30)) * 100)}% vs daily)</span>
             </p>
           </div>
           <button

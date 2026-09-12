@@ -125,9 +125,9 @@ export interface RentalPeriodOption {
 }
 
 export const RENTAL_PERIODS: RentalPeriodOption[] = [
-  { value: 'daily', label: 'Daily', days: 1, discount: 0 },
-  { value: 'weekly', label: 'Weekly', days: 7, discount: 5 },
   { value: 'monthly', label: 'Monthly', days: 30, discount: 15 },
+  { value: 'weekly', label: 'Weekly', days: 7, discount: 5 },
+  { value: 'daily', label: 'Daily', days: 1, discount: 0 },
   { value: 'quarterly', label: 'Quarterly', days: 90, discount: 25 },
   { value: 'yearly', label: 'Yearly', days: 365, discount: 35 },
 ];
