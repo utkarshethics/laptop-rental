@@ -32,6 +32,11 @@ const MOCK_PRODUCTS = [
   { id: '18', name: 'Lenovo ThinkPad T14 Gen 4', brand: 'Lenovo', category: 'laptop', price: 1199, stock: 13, status: 'active', featured: false, createdAt: '2026-01-03' },
   { id: '19', name: 'HP Victus 15', brand: 'HP', category: 'laptop', price: 949, stock: 17, status: 'active', featured: false, createdAt: '2026-01-01' },
   { id: '20', name: 'ASUS ROG Strix G16', brand: 'ASUS', category: 'laptop', price: 1299, stock: 5, status: 'active', featured: true, createdAt: '2025-12-28' },
+  { id: '21', name: 'MacBook Pro 16 M4', brand: 'Apple', category: 'laptop', price: 1299, stock: 4, status: 'active', featured: true, createdAt: '2025-12-25' },
+  { id: '22', name: 'Dell Latitude 7450', brand: 'Dell', category: 'laptop', price: 1199, stock: 12, status: 'active', featured: false, createdAt: '2025-12-23' },
+  { id: '23', name: 'Lenovo Yoga 9i', brand: 'Lenovo', category: 'laptop', price: 1249, stock: 7, status: 'active', featured: true, createdAt: '2025-12-22' },
+  { id: '24', name: 'HP EliteBook 860 G9', brand: 'HP', category: 'laptop', price: 1199, stock: 11, status: 'active', featured: false, createdAt: '2025-12-21' },
+  { id: '25', name: 'Acer Aspire 7', brand: 'Acer', category: 'laptop', price: 849, stock: 19, status: 'active', featured: false, createdAt: '2025-12-20' },
 ];
 
 export function AdminProducts() {

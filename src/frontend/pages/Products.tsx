@@ -392,6 +392,88 @@ export const MOCK_PRODUCTS: Product[] = [
     rating: 4.7, reviewCount: 95, featured: true, tags: ['gaming', 'premium'], createdAt: '2025-12-28', updatedAt: '2025-12-28',
   },
 
+  {
+    id: '21', name: 'MacBook Pro 16 M4', brand: 'Apple', category: 'laptop',
+    description: 'Pro workstation with M4 chip, 36GB unified memory, 1TB SSD',
+    shortDescription: 'The ultimate laptop for video editors and developers',
+    images: [{ url: '/assets/products/apple/macbook-pro-16/hero.jpg', alt: 'MacBook Pro 16 M4', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Apple M4', category: 'processor' },
+      { key: 'RAM', value: '36GB Unified', category: 'memory' },
+      { key: 'Storage', value: '1TB SSD', category: 'storage' },
+      { key: 'Display', value: '16.2" Liquid Retina XDR', category: 'display' },
+      { key: 'OS', value: 'macOS Sonoma', category: 'os' },
+    ],
+    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 10000, currency: 'INR' },
+    availability: { inStock: 4, totalStock: 8, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
+    rating: 4.9, reviewCount: 157, featured: true, tags: ['premium', 'creative', 'developer'], createdAt: '2025-12-25', updatedAt: '2025-12-25',
+  },
+  {
+    id: '22', name: 'Dell Latitude 7450', brand: 'Dell', category: 'laptop',
+    description: 'Premium business ultrabook with Intel i7, 16GB RAM, 512GB SSD',
+    shortDescription: 'Enterprise-grade security and battery life',
+    images: [{ url: '/assets/products/dell/latitude-7450/hero.jpg', alt: 'Dell Latitude 7450', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i7-1365U', category: 'processor' },
+      { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
+      { key: 'Storage', value: '512GB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '14" FHD+ IPS', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
+    ],
+    pricing: { monthly: 1199, quarterly: 3299, yearly: 11999, deposit: 5000, currency: 'INR' },
+    availability: { inStock: 12, totalStock: 18, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune'] },
+    rating: 4.7, reviewCount: 102, featured: false, tags: ['business', 'premium'], createdAt: '2025-12-23', updatedAt: '2025-12-23',
+  },
+  {
+    id: '23', name: 'Lenovo Yoga 9i', brand: 'Lenovo', category: 'laptop',
+    description: 'Premium 2-in-1 convertible with Intel i7, 16GB RAM, 1TB SSD',
+    shortDescription: 'Rotating soundbar OLED convertible for creators',
+    images: [{ url: '/assets/products/lenovo/yoga-9i/hero.jpg', alt: 'Lenovo Yoga 9i', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
+      { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
+      { key: 'Storage', value: '1TB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '14" 2.8K OLED Touch', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Home', category: 'os' },
+    ],
+    pricing: { monthly: 1249, quarterly: 3399, yearly: 12499, deposit: 6000, currency: 'INR' },
+    availability: { inStock: 7, totalStock: 12, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai'] },
+    rating: 4.7, reviewCount: 71, featured: true, tags: ['premium', 'creative', 'student'], createdAt: '2025-12-22', updatedAt: '2025-12-22',
+  },
+  {
+    id: '24', name: 'HP EliteBook 860 G9', brand: 'HP', category: 'laptop',
+    description: '15.6-inch business laptop with Intel i7, 16GB RAM, 512GB SSD',
+    shortDescription: 'Big-screen business laptop for professionals',
+    images: [{ url: '/assets/products/hp/elitebook-860-g9/hero.jpg', alt: 'HP EliteBook 860 G9', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i7-1265U', category: 'processor' },
+      { key: 'RAM', value: '16GB DDR5', category: 'memory' },
+      { key: 'Storage', value: '512GB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '15.6" FHD IPS', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
+    ],
+    pricing: { monthly: 1199, quarterly: 3299, yearly: 11999, deposit: 5000, currency: 'INR' },
+    availability: { inStock: 11, totalStock: 16, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 'Pune'] },
+    rating: 4.8, reviewCount: 96, featured: false, tags: ['business', 'premium'], createdAt: '2025-12-21', updatedAt: '2025-12-21',
+  },
+  {
+    id: '25', name: 'Acer Aspire 7', brand: 'Acer', category: 'laptop',
+    description: 'Value gaming laptop with RTX 3050, 16GB RAM, 512GB SSD',
+    shortDescription: 'Great entry gaming plus work laptop',
+    images: [{ url: '/assets/products/acer/aspire-7/hero.jpg', alt: 'Acer Aspire 7', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'AMD Ryzen 7 5825HS', category: 'processor' },
+      { key: 'Graphics', value: 'NVIDIA RTX 3050 4GB', category: 'graphics' },
+      { key: 'RAM', value: '16GB DDR4', category: 'memory' },
+      { key: 'Storage', value: '512GB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '15.6" FHD 144Hz', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Home', category: 'os' },
+    ],
+    pricing: { monthly: 849, quarterly: 2349, yearly: 8499, deposit: 3000, currency: 'INR' },
+    availability: { inStock: 19, totalStock: 28, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Pune'] },
+    rating: 4.4, reviewCount: 83, featured: false, tags: ['gaming', 'budget'], createdAt: '2025-12-20', updatedAt: '2025-12-20',
+  },
+
 ];
 
 export function Products() {
@@ -404,7 +486,7 @@ export function Products() {
       : undefined,
     sortBy: (searchParams.get('sort') as ProductFilters['sortBy']) || 'newest',
     page: Number(searchParams.get('page')) || 1,
-    limit: 24,
+    limit: 36,
   });
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
