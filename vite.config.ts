@@ -7,8 +7,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
-  // GitHub Pages hosts under /laptop-rental/; dev stays at root
-  base: process.env.NODE_ENV === 'production' ? '/laptop-rental/' : '/',
+  // Custom domain (laptoponrent.online) serves at root; dev stays at root
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src/frontend'),
