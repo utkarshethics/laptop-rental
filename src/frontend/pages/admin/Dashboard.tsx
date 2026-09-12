@@ -12,7 +12,7 @@ const STATS = [
 ];
 
 const RECENT_ORDERS = [
-  { id: 'ORD-2024-001', customer: 'Rahul Sharma', email: 'rahul@example.com', items: 1, total: 8499, status: 'active', date: '2024-01-20T10:30:00Z' },
+  { id: 'ORD-2024-001', customer: 'Rahul Sharma', email: 'rahul@example.com', items: 1, total: 7499, status: 'active', date: '2024-01-20T10:30:00Z' },
   { id: 'ORD-2024-002', customer: 'Priya Patel', email: 'priya@example.com', items: 2, total: 28999, status: 'delivered', date: '2024-01-20T09:15:00Z' },
   { id: 'ORD-2024-003', customer: 'Amit Kumar', email: 'amit@example.com', items: 1, total: 8999, status: 'processing', date: '2024-01-20T08:45:00Z' },
   { id: 'ORD-2024-004', customer: 'Sneha Singh', email: 'sneha@example.com', items: 3, total: 45999, status: 'confirmed', date: '2024-01-19T16:20:00Z' },
