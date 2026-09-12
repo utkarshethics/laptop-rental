@@ -63,8 +63,6 @@ export interface Specification {
 }
 
 export interface Pricing {
-  daily: number;
-  weekly: number;
   monthly: number;
   quarterly: number;
   yearly: number;
@@ -115,7 +113,7 @@ export interface CartItem {
   price: number;
 }
 
-export type RentalPeriod = 'daily' | 'weekly' | 'monthly' | 'quarterly' | 'yearly';
+export type RentalPeriod = 'monthly' | 'quarterly' | 'yearly';
 
 export interface RentalPeriodOption {
   value: RentalPeriod;
@@ -125,9 +123,7 @@ export interface RentalPeriodOption {
 }
 
 export const RENTAL_PERIODS: RentalPeriodOption[] = [
-  { value: 'monthly', label: 'Monthly', days: 30, discount: 15 },
-  { value: 'weekly', label: 'Weekly', days: 7, discount: 5 },
-  { value: 'daily', label: 'Daily', days: 1, discount: 0 },
+  { value: 'monthly', label: 'Monthly', days: 30, discount: 0 },
   { value: 'quarterly', label: 'Quarterly', days: 90, discount: 25 },
   { value: 'yearly', label: 'Yearly', days: 365, discount: 35 },
 ];

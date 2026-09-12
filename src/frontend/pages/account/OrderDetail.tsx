@@ -130,7 +130,7 @@ export function OrderDetail() {
                     <div className="flex-1">
                       <p className="font-medium text-secondary-900">{item.productName}</p>
                       <p className="text-body-sm text-secondary-500">{item.brand} • {item.rentalPeriod} rental</p>
-                      <p className="text-body-sm text-secondary-500">Qty: {item.quantity} • {formatCurrency(item.unitPrice)}/{item.rentalPeriod === 'daily' ? 'day' : 'month'}</p>
+                      <p className="text-body-sm text-secondary-500">Qty: {item.quantity} • {formatCurrency(item.unitPrice)}/{item.rentalPeriod === 'quarterly' ? 'quarter' : item.rentalPeriod === 'yearly' ? 'year' : 'month'}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-semibold text-secondary-900">{formatCurrency(item.totalPrice)}</p>

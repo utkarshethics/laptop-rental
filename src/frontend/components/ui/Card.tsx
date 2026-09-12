@@ -176,9 +176,6 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
             <p className="text-heading-md font-bold text-primary-600">
               ₹{product.pricing.monthly.toLocaleString()}<span className="text-body-sm font-normal text-secondary-500">/month</span>
             </p>
-            <p className="text-caption text-secondary-500">
-              from ₹{product.pricing.daily.toLocaleString()}/day <span className="text-success-600 font-medium">(Save {Math.round((1 - product.pricing.monthly / (product.pricing.daily * 30)) * 100)}% vs daily)</span>
-            </p>
           </div>
           <button
             onClick={e => { e.stopPropagation(); onAddToCart?.(); }}

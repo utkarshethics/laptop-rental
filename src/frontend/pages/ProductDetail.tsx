@@ -108,6 +108,11 @@ export function ProductDetail() {
   const discount = RENTAL_PERIODS.find(p => p.value === selectedRentalPeriod)?.discount || 0;
   const originalPrice = currentPrice / (1 - discount / 100);
   const savings = originalPrice - currentPrice;
+  const selectedPeriod = RENTAL_PERIODS.find(p => p.value === selectedRentalPeriod);
+  const monthlyBaseline = selectedPeriod && selectedRentalPeriod !== 'monthly'
+    ? product.pricing.monthly * (selectedPeriod.days / 30)
+    : 0;
+  const vsMonthly = monthlyBaseline > currentPrice ? monthlyBaseline - currentPrice : 0;
 
   return (
     <div className="min-h-screen bg-white">
@@ -233,7 +238,7 @@ export function ProductDetail() {
           <div className="bg-secondary-50 rounded-2xl p-6">
             <div className="flex items-baseline gap-4 mb-4">
               <span className="text-display-md font-bold text-primary-600">
-                {formatCurrency(currentPrice)}<span className="text-body font-normal text-secondary-500">/{selectedRentalPeriod === 'daily' ? 'day' : selectedRentalPeriod === 'weekly' ? 'week' : 'month'}</span>
+                {formatCurrency(currentPrice)}<span className="text-body font-normal text-secondary-500">/{selectedRentalPeriod === 'quarterly' ? 'quarter' : selectedRentalPeriod === 'yearly' ? 'year' : 'month'}</span>
               </span>
               {discount > 0 && (
                 <>
@@ -257,7 +262,7 @@ export function ProductDetail() {
                 >
                   <div className="font-semibold">{period.label}</div>
                   <div className="text-xs opacity-80">
-                    {formatCurrency(product.pricing[period.value])}/{period.value === 'daily' ? 'day' : 'mo'}
+                    {formatCurrency(product.pricing[period.value])}/{period.value === 'quarterly' ? 'quarter' : period.value === 'yearly' ? 'year' : 'mo'}
                   </div>
                   {period.discount > 0 && <span className="text-xs text-green-600">Save {period.discount}%</span>}
                 </button>
@@ -268,8 +273,8 @@ export function ProductDetail() {
               <p className="text-body-sm text-secondary-600">
                 <span className="font-medium">Deposit:</span> {formatCurrency(product.pricing.deposit)} (refundable)
               </p>
-              {savings > 0 && (
-                <p className="text-body-sm text-success-600 mt-1">You save {formatCurrency(Math.round(savings))} vs daily rate!</p>
+              {vsMonthly > 0 && (
+                <p className="text-body-sm text-success-600 mt-1">You save {formatCurrency(Math.round(vsMonthly))} vs monthly rate!</p>
               )}
             </div>
           </div>
