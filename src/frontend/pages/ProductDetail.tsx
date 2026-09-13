@@ -7,6 +7,7 @@ import { Dropdown } from '@/components/ui/Dropdown';
 import { Modal } from '@/components/ui/Modal';
 import { Card } from '@/components/ui/Card';
 import { formatCurrency, cn } from '@/lib/utils';
+import { buildWhatsAppUrl, buildRentalMessage } from '@/lib/whatsapp';
 import { Product, RentalPeriod, RENTAL_PERIODS } from '@/types';
 import { MOCK_PRODUCTS } from './Products';
 import { useCart } from '@/context/CartContext';
@@ -72,16 +73,13 @@ export function ProductDetail() {
 
   const handleBuyNow = () => {
     if (!product) return;
-    if (!isAuthenticated) {
-      setShowLoginModal(true);
-      return;
-    }
-    if (product.availability.inStock < quantity) {
-      toast.error('Not enough stock available');
-      return;
-    }
-    addItem(product, selectedRentalPeriod, startDate, endDate, selectedCity);
-    toast.success('Added to cart');
+    const period = RENTAL_PERIODS.find(p => p.value === selectedRentalPeriod);
+    const message = buildRentalMessage(product.name, {
+      period: period?.label.toLowerCase(),
+      price: product.pricing[selectedRentalPeriod],
+      city: selectedCity,
+    });
+    window.open(buildWhatsAppUrl(message), '_blank', 'noopener');
   };
 
   if (loading) {

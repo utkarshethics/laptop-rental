@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { buildWhatsAppUrl, buildRentalMessage } from '@/lib/whatsapp';
 
 interface CardProps {
   children: React.ReactNode;
@@ -178,10 +179,14 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
             </p>
           </div>
           <button
-            onClick={e => { e.stopPropagation(); onAddToCart?.(); }}
+            onClick={e => {
+              e.stopPropagation();
+              const message = buildRentalMessage(product.name, { period: 'monthly', price: product.pricing.monthly });
+              window.open(buildWhatsAppUrl(message), '_blank', 'noopener');
+            }}
             className="btn-primary btn-sm whitespace-nowrap"
             disabled={product.availability.inStock === 0}
-            aria-label={`Add ${product.name} to cart`}
+            aria-label={`Rent ${product.name} on WhatsApp`}
           >
             Rent Now
           </button>
