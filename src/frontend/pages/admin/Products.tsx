@@ -8,7 +8,7 @@ import { Modal } from '@/components/ui/Modal';
 import { formatCurrency } from '@/lib/utils';
 
 const BRANDS = ['HP', 'Dell', 'Lenovo', 'Apple', 'ASUS', 'Acer'];
-const CATEGORIES = ['laptop', 'desktop', 'monitor', 'tablet', 'accessories'];
+const CATEGORIES = ['laptop'];
 const STATUS_OPTIONS = ['active', 'inactive', 'out_of_stock', 'discontinued'];
 
 const MOCK_PRODUCTS = [
