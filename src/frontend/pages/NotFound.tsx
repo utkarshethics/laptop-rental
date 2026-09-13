@@ -34,9 +34,9 @@ export function NotFound() {
               <RotateCcw className="w-5 h-5 mx-auto mb-1 text-primary-600" />
               Laptops
             </Link>
-            <Link to="/products?category=desktop" className="p-3 rounded-lg bg-secondary-50 hover:bg-secondary-100 transition-colors text-center text-body-sm text-secondary-700">
+            <Link to="/products?category=laptop&tag=gaming" className="p-3 rounded-lg bg-secondary-50 hover:bg-secondary-100 transition-colors text-center text-body-sm text-secondary-700">
               <RotateCcw className="w-5 h-5 mx-auto mb-1 text-primary-600" />
-              Desktops
+              Gaming Laptops
             </Link>
             <Link to="/products?brand=Apple" className="p-3 rounded-lg bg-secondary-50 hover:bg-secondary-100 transition-colors text-center text-body-sm text-secondary-700">
               <RotateCcw className="w-5 h-5 mx-auto mb-1 text-primary-600" />

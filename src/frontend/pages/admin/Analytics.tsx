@@ -12,11 +12,10 @@ const REVENUE_DATA = [
 ];
 
 const CATEGORY_REVENUE = [
-  { category: 'Laptops', revenue: 8900000, percentage: 65 },
-  { category: 'Desktops', revenue: 2100000, percentage: 15 },
-  { category: 'Monitors', revenue: 1400000, percentage: 10 },
-  { category: 'Tablets', revenue: 800000, percentage: 6 },
-  { category: 'Accessories', revenue: 500000, percentage: 4 },
+  { category: 'Business Laptops', revenue: 5206000, percentage: 38 },
+  { category: 'Gaming Laptops', revenue: 3699000, percentage: 27 },
+  { category: 'MacBook Rentals', revenue: 2740000, percentage: 20 },
+  { category: 'Student Laptops', revenue: 2055000, percentage: 15 },
 ];
 
 const CITY_PERFORMANCE = [

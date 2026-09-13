@@ -18,14 +18,6 @@ const BRANDS: { value: Brand; label: string }[] = [
   { value: 'Acer', label: 'Acer' },
 ];
 
-const CATEGORIES: { value: Category; label: string }[] = [
-  { value: 'laptop', label: 'Laptops' },
-  { value: 'desktop', label: 'Desktops' },
-  { value: 'monitor', label: 'Monitors' },
-  { value: 'tablet', label: 'Tablets' },
-  { value: 'accessories', label: 'Accessories' },
-];
-
 const SORT_OPTIONS = [
   { value: 'newest', label: 'Newest Arrivals' },
   { value: 'price_asc', label: 'Price: Low to High' },
@@ -676,29 +668,6 @@ export function Products() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-secondary-700 mb-3">Categories</label>
-                    <div className="space-y-2">
-                      {CATEGORIES.map(category => (
-                        <label key={category.value} className="flex items-center gap-2 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={filters.categories?.includes(category.value) || false}
-                            onChange={e => setFilters(prev => ({
-                              ...prev,
-                              categories: e.target.checked
-                                ? [...(prev.categories || []), category.value]
-                                : prev.categories?.filter(c => c !== category.value),
-                              page: 1,
-                            }))}
-                            className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
-                          />
-                          <span className="text-body-sm text-secondary-700">{category.label}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
                     <label className="block text-sm font-medium text-secondary-700 mb-3">Price Range (Monthly)</label>
                     <div className="flex items-center gap-2">
                       <Input
@@ -838,29 +807,6 @@ export function Products() {
                     className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                   />
                   <span className="text-body-sm text-secondary-700">{brand.label}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-secondary-700 mb-3">Categories</label>
-            <div className="space-y-2">
-              {CATEGORIES.map(category => (
-                <label key={category.value} className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={filters.categories?.includes(category.value) || false}
-                    onChange={e => setFilters(prev => ({
-                      ...prev,
-                      categories: e.target.checked
-                        ? [...(prev.categories || []), category.value]
-                        : prev.categories?.filter(c => c !== category.value),
-                      page: 1,
-                    }))}
-                    className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
-                  />
-                  <span className="text-body-sm text-secondary-700">{category.label}</span>
                 </label>
               ))}
             </div>

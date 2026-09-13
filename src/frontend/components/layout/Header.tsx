@@ -8,10 +8,6 @@ import { useState, useEffect } from 'react';
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/products', label: 'Laptops' },
-  { href: '/products?category=desktop', label: 'Desktops' },
-  { href: '/products?category=monitor', label: 'Monitors' },
-  { href: '/products?category=tablet', label: 'Tablets' },
-  { href: '/products?category=accessories', label: 'Accessories' },
 ];
 
 const CITIES = [

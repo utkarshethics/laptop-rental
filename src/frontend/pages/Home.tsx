@@ -6,9 +6,9 @@ import { formatCurrency, cn } from '@/lib/utils';
 
 const CATEGORIES = [
   { icon: Laptop, label: 'Laptops', count: '500+', href: '/products?category=laptop', color: 'bg-blue-100 text-blue-600', iconColor: 'text-blue-600' },
-  { icon: Cpu, label: 'Desktops', count: '100+', href: '/products?category=desktop', color: 'bg-green-100 text-green-600', iconColor: 'text-green-600' },
-  { icon: Monitor, label: 'Monitors', count: '200+', href: '/products?category=monitor', color: 'bg-purple-100 text-purple-600', iconColor: 'text-purple-600' },
-  { icon: Tablet, label: 'Tablets', count: '50+', href: '/products?category=tablet', color: 'bg-orange-100 text-orange-600', iconColor: 'text-orange-600' },
+  { icon: Cpu, label: 'Rent on EMI', count: 'Flexible', href: '/products', color: 'bg-green-100 text-green-600', iconColor: 'text-green-600' },
+  { icon: Monitor, label: 'Business Plans', count: 'Custom', href: '/products', color: 'bg-purple-100 text-purple-600', iconColor: 'text-purple-600' },
+  { icon: Tablet, label: 'Gaming Laptops', count: '10+', href: '/products?category=laptop&tag=gaming', color: 'bg-orange-100 text-orange-600', iconColor: 'text-orange-600' },
 ];
 
 const BRANDS = [

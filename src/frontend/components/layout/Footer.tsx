@@ -8,9 +8,6 @@ const FOOTER_LINKS = {
     { label: 'Gaming Laptops', href: '/products?category=laptop&tag=gaming' },
     { label: 'Student Laptops', href: '/products?category=laptop&tag=student' },
     { label: 'MacBook Rentals', href: '/products?brand=Apple' },
-    { label: 'Desktops', href: '/products?category=desktop' },
-    { label: 'Monitors', href: '/products?category=monitor' },
-    { label: 'Tablets', href: '/products?category=tablet' },
   ],
   support: [
     { label: 'Help Center', href: '/help' },
