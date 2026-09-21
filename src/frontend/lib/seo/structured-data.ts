@@ -1,5 +1,5 @@
 import type { CityMeta } from '../../data/seo-data';
-import { ORGANIZATION, FAQ_QUESTIONS, LAPTOP_CATEGORIES } from '../../data/seo-data';
+import { ORGANIZATION, FAQ_QUESTIONS, LAPTOP_CATEGORIES, CITY_META } from '../../data/seo-data';
 
 export function generateOrganizationSchema() {
   return {
