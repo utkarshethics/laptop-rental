@@ -1,0 +1,28 @@
+# LaptopRent India - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://laptoponrent.online/sitemap.xml
+Sitemap: https://laptoponrent.online/sitemap-cities.xml
+Sitemap: https://laptoponrent.online/sitemap-categories.xml
+Sitemap: https://laptoponrent.online/sitemap-blog.xml
+
+# Disallow admin/private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /login/
+Disallow: /register/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /search?
+Disallow: /filter?
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 10
+
+# Host
+Host: https://laptoponrent.online

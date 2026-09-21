@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
@@ -29,6 +29,26 @@ const AdminOrders = lazy(() => import('./pages/admin/Orders').then(m => ({ defau
 const AdminUsers = lazy(() => import('./pages/admin/Users').then(m => ({ default: m.AdminUsers })));
 const AdminAnalytics = lazy(() => import('./pages/admin/Analytics').then(m => ({ default: m.AdminAnalytics })));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
+const CitiesPage = lazy(() => import('./pages/CitiesPage').then(m => ({ default: m.CitiesPage })));
+const CityPage = lazy(() => import('./pages/cities/CityPage').then(m => ({ default: m.CityPage })));
+const CategoriesPage = lazy(() => import('./pages/CategoriesPage').then(m => ({ default: m.CategoriesPage })));
+const CategoryPage = lazy(() => import('./pages/categories/CategoryPage').then(m => ({ default: m.CategoryPage })));
+const BlogListingPage = lazy(() => import('./pages/blog/BlogListingPage').then(m => ({ default: m.BlogListingPage })));
+
+const CityPageRoute = () => {
+  const { citySlug = '' } = useParams();
+  return <CityPage citySlug={citySlug} />;
+};
+
+const CategoryPageRoute = () => {
+  const { categorySlug = '' } = useParams();
+  return <CategoryPage categorySlug={categorySlug} />;
+};
+
+const BlogCategoryRoute = () => {
+  const { category } = useParams();
+  return <BlogListingPage category={category} />;
+};
 
 const PageLoader = () => (
   <div className="flex h-[60vh] items-center justify-center">
@@ -47,8 +67,14 @@ function App() {
               <Routes>
 <Route path="/" element={<MainLayout />}>
   <Route index element={<Navigate to="/products?category=laptop&sort=newest" replace />} />
-  <Route path="home" element={<Home />} />
-  <Route path="products" element={<Products />} />
+<Route path="home" element={<Home />} />
+                  <Route path="cities" element={<CitiesPage />} />
+                  <Route path="rental/:citySlug" element={<CityPageRoute />} />
+                  <Route path="categories" element={<CategoriesPage />} />
+                  <Route path="category/:categorySlug" element={<CategoryPageRoute />} />
+                  <Route path="blog" element={<BlogListingPage />} />
+                  <Route path="blog/category/:category" element={<BlogCategoryRoute />} />
+                  <Route path="products" element={<Products />} />
                   <Route path="products/:id" element={<ProductDetail />} />
                   <Route path="cart" element={<Cart />} />
                   <Route path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
