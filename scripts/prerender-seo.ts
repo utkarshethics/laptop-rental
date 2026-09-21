@@ -55,14 +55,18 @@ function buildPage(opts: {
     hreflang = [], geo,
   } = opts;
 
+  const canonicalUrl = (route === '/' || canonical.endsWith('/'))
+    ? canonical
+    : `${canonical}/`;
+
   let html = template;
   html = html.replace(/<title>.*<\/title>/, `<title>${title}</title>`);
   html = replaceHead(html, 'description', description);
   html = replaceHead(html, 'keywords', keywords);
-  html = replaceHead(html, 'canonical', canonical);
+  html = replaceHead(html, 'canonical', canonicalUrl);
   html = replaceHead(html, 'og:title', ogTitle);
   html = replaceHead(html, 'og:description', description);
-  html = replaceHead(html, 'og:url', ogUrl);
+  html = replaceHead(html, 'og:url', canonicalUrl);
   html = html.replace(/<meta property="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${ogTitle}" />`);
   html = html.replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${description}" />`);
 
@@ -79,7 +83,7 @@ function buildPage(opts: {
     : `<meta name="geo.region" content="IN" />`;
 
   const hreflangs = hreflang
-    .map(h => `\n    <link rel="alternate" hreflang="${h.code}" href="${h.href}" />`)
+    .map(h => `\n    <link rel="alternate" hreflang="${h.code}" href="${h.href === BASE || h.href.endsWith('/') ? h.href : `${h.href}/`}" />`)
     .join('');
   const jsonLdBlocks = jsonLd
     .filter(Boolean)
@@ -323,3 +327,53 @@ for (const cat of LAPTOP_CATEGORIES) {
 }
 
 console.log('Prerender complete.');
+
+// ---- Sitemaps (trailing-slash URLs matching generated pages) -------------
+const TODAY = toDate(new Date().toISOString());
+const loc = (p: string) => (p === '/' ? `${BASE}/` : `${BASE}${p.replace(/\/$/, '')}/`);
+
+const sitemap = (entries: Array<{ url: string; priority?: number; freq?: string }>) =>
+  '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  entries.map(e => `  <url>\n    <loc>${loc(e.url)}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>${e.freq || 'monthly'}</changefreq>\n    <priority>${e.priority || '0.7'}</priority>\n  </url>`).join('\n') +
+  '\n</urlset>\n';
+
+const sitemapIndex = (names: string[]) =>
+  '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+  names.map(n => `  <sitemap>\n    <loc>${BASE}/${n}</loc>\n    <lastmod>${TODAY}</lastmod>\n  </sitemap>`).join('\n') +
+  '\n</sitemapindex>\n';
+
+writeFileSync(resolve(DIST, 'sitemap.xml'), sitemap([
+  { url: '/', priority: 1.0, freq: 'daily' },
+  { url: '/home', priority: 0.8 },
+  { url: '/products', priority: 0.9 },
+  { url: '/categories', priority: 0.9 },
+  { url: '/cities', priority: 0.9 },
+  { url: '/blog', priority: 0.8 },
+  ...LAPTOP_CATEGORIES.map(c => ({ url: `/category/${c.id}`, priority: 0.8 })),
+  ...INDIAN_CITIES.map(c => ({ url: `/rental/${c.slug}`, priority: 0.9 })),
+]));
+
+writeFileSync(resolve(DIST, 'sitemap-cities.xml'), sitemap(
+  INDIAN_CITIES.map(c => ({ url: `/rental/${c.slug}`, priority: 0.9, freq: 'weekly' })),
+));
+
+writeFileSync(resolve(DIST, 'sitemap-categories.xml'), sitemap(
+  LAPTOP_CATEGORIES.map(c => ({ url: `/category/${c.id}`, priority: 0.8 })),
+));
+
+writeFileSync(resolve(DIST, 'sitemap-blog.xml'), sitemap([
+  { url: '/blog', priority: 0.7 },
+  ...[...new Set(BLOG_POSTS.map(p => p.category))].map(c => ({ url: `/blog/category/${c}`, priority: 0.6 })),
+  ...BLOG_POSTS.map(p => ({ url: `/blog/${p.slug}`, priority: 0.6, freq: 'monthly' })),
+]));
+
+writeFileSync(resolve(DIST, 'sitemap-index.xml'), sitemapIndex([
+  'sitemap.xml',
+  'sitemap-cities.xml',
+  'sitemap-categories.xml',
+  'sitemap-blog.xml',
+]));
+
+console.log('Sitemaps generated.');
