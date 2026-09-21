@@ -1,5 +1,5 @@
-import type { CityMeta } from '../data/seo-data';
-import { ORGANIZATION, FAQ_QUESTIONS, LAPTOP_CATEGORIES } from '../data/seo-data';
+import type { CityMeta } from '../../data/seo-data';
+import { ORGANIZATION, FAQ_QUESTIONS, LAPTOP_CATEGORIES } from '../../data/seo-data';
 
 export function generateOrganizationSchema() {
   return {
@@ -229,19 +229,6 @@ export function generateCityPageSchema(citySlug: string) {
       '@type': 'Organization',
       name: 'LaptopRent',
       url: 'https://laptoponrent.online',
-    },
-    areaServed: {
-      '@type': 'City',
-      name: city.name,
-      containedInPlace: {
-        '@type': 'State',
-        name: city.keywords[0].split(' ')[2] || 'India',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: INHERITED_CITIES.find(c => c.slug === citySlug)?.lat || 0,
-        longitude: INHERITED_CITIES.find(c => c.slug === citySlug)?.lng || 0,
-      },
     },
     serviceType: 'Laptop Rental',
     serviceArea: {

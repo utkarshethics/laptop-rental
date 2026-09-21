@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { LAPTOP_CATEGORIES } from '../../data/seo-data';
+import { LAPTOP_CATEGORIES } from '../data/seo-data';
 
 export function CategoriesPage() {
   const schemas = [
@@ -99,7 +99,7 @@ export function CategoriesPage() {
                     </span>
                   </div>
                 </Link>
-              )}
+              ))}
             </div>
           </div>
         </section>

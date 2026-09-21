@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { INDIAN_CITIES, CITY_META } from '../../data/seo-data';
+import { INDIAN_CITIES, CITY_META } from '../data/seo-data';
 
 export function CitiesPage() {
   const tier1Cities = INDIAN_CITIES.filter(c => c.tier === 1);
