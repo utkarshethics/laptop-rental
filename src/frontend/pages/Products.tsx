@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/Input';
 import { Dropdown } from '@/components/ui/Dropdown';
 import { Card, ProductCard } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
+import { WhatsAppFloat } from '@/components/whatsapp/WhatsAppFloat';
 import { formatCurrency, cn } from '@/lib/utils';
 import { Product, Brand, Category, ProductFilters } from '@/types';
 
@@ -847,6 +848,8 @@ export function Products() {
           </div>
         </div>
       </Modal>
+
+      <WhatsAppFloat />
     </div>
   );
 }
