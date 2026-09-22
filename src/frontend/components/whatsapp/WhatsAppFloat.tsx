@@ -1,7 +1,7 @@
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export function WhatsAppFloat() {
-  const url = buildWhatsAppUrl('Hi LaptopRent! I need help choosing a laptop to rent.');
+  const url = buildWhatsAppUrl('Hi, I want to rent a laptop');
 
   return (
     <a
