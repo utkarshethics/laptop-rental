@@ -7,7 +7,8 @@ import { Dropdown } from '@/components/ui/Dropdown';
 import { Modal } from '@/components/ui/Modal';
 import { Card } from '@/components/ui/Card';
 import { formatCurrency, cn } from '@/lib/utils';
-import { buildWhatsAppUrl, buildRentalMessage } from '@/lib/whatsapp';
+import { buildRentalMessage } from '@/lib/whatsapp';
+import { openWhatsAppLead } from '@/lib/lead';
 import { Product, RentalPeriod, RENTAL_PERIODS } from '@/types';
 import { MOCK_PRODUCTS } from './Products';
 import { useCart } from '@/context/CartContext';
@@ -79,7 +80,7 @@ export function ProductDetail() {
       price: product.pricing[selectedRentalPeriod],
       city: selectedCity,
     });
-    window.open(buildWhatsAppUrl(message), '_blank', 'noopener');
+    openWhatsAppLead(message);
   };
 
   if (loading) {

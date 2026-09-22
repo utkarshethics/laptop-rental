@@ -1,11 +1,13 @@
-import { buildWhatsAppUrl } from '@/lib/whatsapp';
+import { openWhatsAppLead } from '@/lib/lead';
 
 export function WhatsAppFloat() {
-  const url = buildWhatsAppUrl('Hi, I want to rent a laptop');
-
   return (
     <a
-      href={url}
+      href="#"
+      onClick={(e) => {
+        e.preventDefault();
+        openWhatsAppLead('Hi, I want to rent a laptop');
+      }}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"

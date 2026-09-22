@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
-import { buildWhatsAppUrl, buildRentalMessage } from '@/lib/whatsapp';
+import { buildRentalMessage } from '@/lib/whatsapp';
+import { openWhatsAppLead } from '@/lib/lead';
 
 interface CardProps {
   children: React.ReactNode;
@@ -182,7 +183,7 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
             onClick={e => {
               e.stopPropagation();
               const message = buildRentalMessage(product.name, { period: 'monthly', price: product.pricing.monthly });
-              window.open(buildWhatsAppUrl(message), '_blank', 'noopener');
+              openWhatsAppLead(message);
             }}
             className="btn-primary btn-sm whitespace-nowrap"
             disabled={product.availability.inStock === 0}
