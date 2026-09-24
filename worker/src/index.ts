@@ -5,6 +5,7 @@ export interface Env {
   LEAD_TOKEN?: string;
   CRM_ON_FAILED?: string;
   BOOKINGS_KV?: KVNamespace;
+  LAPTOP_RENT_LINK_IDS?: string;
 }
 
 interface BookingRecord {
@@ -16,6 +17,12 @@ interface BookingRecord {
   amount: number;
   currency: string;
   processedAt: string;
+}
+
+function ownsLink(env: Env, linkId: string): boolean {
+  const ids = (env.LAPTOP_RENT_LINK_IDS || '').split(',').map(s => s.trim()).filter(Boolean);
+  if (ids.length === 0) return false;
+  return ids.includes(linkId);
 }
 
 const BUSINESS = 'LaptopRent';
@@ -107,6 +114,9 @@ export default {
     }
 
     const record = toRecord(parsed.payment, parsed.event);
+    if (!ownsLink(env, record.linkId)) {
+      return json({ received: true, event: parsed.event, owned: false });
+    }
     const key = dedupeKey(parsed.payment, parsed.event);
     if (env.BOOKINGS_KV && (await env.BOOKINGS_KV.get(key)) !== null) {
       return json({ received: true, event: parsed.event, duplicate: true });
