@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { LEAD_WEBHOOK_URL, BUSINESS_NAME } from '@/lib/lead';
+import { submitLead, BUSINESS_NAME } from '@/lib/lead';
 import { WHATSAPP_NUMBER } from '@/lib/whatsapp';
 
 export function WhatsAppLeadModal() {
@@ -42,16 +42,12 @@ export function WhatsAppLeadModal() {
     setError('');
     setSubmitting(true);
 
-    fetch(LEAD_WEBHOOK_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        business: BUSINESS_NAME,
-        name: trimmedName,
-        phone: trimmedPhone,
-        message: intentRef.current || `Inquiry from ${BUSINESS_NAME}`,
-      }),
+    void submitLead({
+      name: trimmedName,
+      phone: trimmedPhone,
+      intent: intentRef.current || `Inquiry from ${BUSINESS_NAME}`,
+    }).catch(() => {
+      setSubmitting(false);
     });
 
     const defaultText = encodeURIComponent(`Hi, my name is ${trimmedName}. I am contacting from ${BUSINESS_NAME}.`);
