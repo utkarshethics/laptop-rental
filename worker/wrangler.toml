@@ -4,3 +4,4 @@ compatibility_date = "2025-01-01"
 
 [vars]
 CRM_ON_FAILED = "0"
+LAPTOP_RENT_LINK_IDS = "plink_TfrpceYFPIv3Ch"
