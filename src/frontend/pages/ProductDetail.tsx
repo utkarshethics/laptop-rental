@@ -133,7 +133,7 @@ export function ProductDetail() {
                 <img
                   src={product.images[selectedImage].url}
                   alt={product.images[selectedImage].alt}
-                  className="w-full h-full object-cover cursor-zoom-in"
+                  className="w-full h-full object-contain cursor-zoom-in"
                   onClick={() => setImageModalOpen(true)}
                 />
               ) : (

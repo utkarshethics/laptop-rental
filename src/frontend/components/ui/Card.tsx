@@ -125,7 +125,7 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
           <img
             src={primaryImage.url}
             alt={primaryImage.alt}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
         ) : (
