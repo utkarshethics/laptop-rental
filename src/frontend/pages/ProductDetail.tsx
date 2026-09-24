@@ -7,8 +7,7 @@ import { Dropdown } from '@/components/ui/Dropdown';
 import { Modal } from '@/components/ui/Modal';
 import { Card } from '@/components/ui/Card';
 import { formatCurrency, cn } from '@/lib/utils';
-import { buildRentalMessage } from '@/lib/whatsapp';
-import { openWhatsAppLead } from '@/lib/lead';
+import { openTokenBooking } from '@/lib/tokenBooking';
 import { Product, RentalPeriod, RENTAL_PERIODS } from '@/types';
 import { MOCK_PRODUCTS } from './Products';
 import { useCart } from '@/context/CartContext';
@@ -74,13 +73,15 @@ export function ProductDetail() {
 
   const handleBuyNow = () => {
     if (!product) return;
-    const period = RENTAL_PERIODS.find(p => p.value === selectedRentalPeriod);
-    const message = buildRentalMessage(product.name, {
-      period: period?.label.toLowerCase(),
-      price: product.pricing[selectedRentalPeriod],
+    const primaryImage = product.images.find(img => img.isPrimary) || product.images[0];
+    openTokenBooking({
+      id: product.id,
+      name: product.name,
+      brand: product.brand,
+      imageUrl: primaryImage?.url,
+      monthlyPrice: product.pricing.monthly,
       city: selectedCity,
     });
-    openWhatsAppLead(message);
   };
 
   if (loading) {

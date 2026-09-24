@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
-import { buildRentalMessage } from '@/lib/whatsapp';
-import { openWhatsAppLead } from '@/lib/lead';
+import { openTokenBooking } from '@/lib/tokenBooking';
 
 interface CardProps {
   children: React.ReactNode;
@@ -182,14 +181,19 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
           <button
             onClick={e => {
               e.stopPropagation();
-              const message = buildRentalMessage(product.name, { period: 'monthly', price: product.pricing.monthly });
-              openWhatsAppLead(message);
+              openTokenBooking({
+                id: product.id,
+                name: product.name,
+                brand: product.brand,
+                imageUrl: primaryImage?.url,
+                monthlyPrice: product.pricing.monthly,
+              });
             }}
             className="btn-primary btn-sm whitespace-nowrap"
             disabled={product.availability.inStock === 0}
-            aria-label={`Rent ${product.name} on WhatsApp`}
+            aria-label={`Book ${product.name} at doorstep for ₹50`}
           >
-            Rent Now
+            Book for ₹50
           </button>
         </div>
       </div>
