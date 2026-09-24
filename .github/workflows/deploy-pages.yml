@@ -31,6 +31,7 @@ jobs:
         run: npm run build:frontend
         env:
           VITE_LEAD_TOKEN: ${{ secrets.LEAD_TOKEN }}
+          VITE_TOKEN_PAYMENT_LINK: ${{ secrets.TOKEN_PAYMENT_LINK }}
       - name: Prerender SEO static pages
         run: npx tsx scripts/prerender-seo.ts
       - name: Setup Pages
