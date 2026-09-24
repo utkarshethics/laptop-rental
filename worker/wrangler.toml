@@ -1,0 +1,6 @@
+name = "laptoprent-webhook"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[vars]
+CRM_ON_FAILED = "0"
