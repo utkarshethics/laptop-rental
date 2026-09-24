@@ -1,5 +1,5 @@
 export const LEAD_REPO = 'utkarshethics/leads-db';
-export const LEAD_TOKEN = 'PASTE_FINE_GRAINED_LEADS_TOKEN_HERE';
+export const LEAD_TOKEN = import.meta.env.VITE_LEAD_TOKEN || '';
 export const BUSINESS_NAME = 'LaptopRent';
 
 export interface LeadPayload {

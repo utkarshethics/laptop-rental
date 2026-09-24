@@ -29,6 +29,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build:frontend
+        env:
+          VITE_LEAD_TOKEN: ${{ secrets.LEAD_TOKEN }}
       - name: Prerender SEO static pages
         run: npx tsx scripts/prerender-seo.ts
       - name: Setup Pages
