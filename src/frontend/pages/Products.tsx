@@ -466,6 +466,120 @@ export const MOCK_PRODUCTS: Product[] = [
     availability: { inStock: 19, totalStock: 28, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Pune'] },
     rating: 4.4, reviewCount: 83, featured: false, tags: ['gaming', 'budget'], createdAt: '2025-12-20', updatedAt: '2025-12-20',
   },
+  {
+    id: '26', name: 'Dell Precision 3570', brand: 'Dell', category: 'laptop',
+    description: 'Mobile workstation with Intel i7, 32GB RAM, 1TB NVMe SSD, Quadro graphics',
+    shortDescription: 'Certified workstation for CAD, BIM and data work',
+    images: [{ url: '/assets/products/dell/precision-3570/hero.jpg', alt: 'Dell Precision 3570', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i7-12700H', category: 'processor' },
+      { key: 'RAM', value: '32GB DDR5', category: 'memory' },
+      { key: 'Storage', value: '1TB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '15.6" FHD IPS', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
+    ],
+    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 5000, currency: 'INR' },
+    availability: { inStock: 9, totalStock: 14, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
+    rating: 4.7, reviewCount: 42, featured: false, tags: ['business', 'workstation'], createdAt: '2026-02-01', updatedAt: '2026-02-01',
+  },
+  {
+    id: '27', name: 'HP ZBook Fury 16', brand: 'HP', category: 'laptop',
+    description: '16-inch pro workstation with Intel Xeon, 64GB RAM, 2TB SSD, RTX graphics',
+    shortDescription: 'Maximum-power workstation for engineers and creators',
+    images: [{ url: '/assets/products/hp/zbook-fury-16/hero.jpg', alt: 'HP ZBook Fury 16', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i9-13950HX', category: 'processor' },
+      { key: 'RAM', value: '64GB DDR5', category: 'memory' },
+      { key: 'Storage', value: '2TB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '16" QHD+ 165Hz', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
+    ],
+    pricing: { monthly: 1499, quarterly: 3999, yearly: 14999, deposit: 6000, currency: 'INR' },
+    availability: { inStock: 5, totalStock: 9, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
+    rating: 4.8, reviewCount: 31, featured: true, tags: ['premium', 'workstation'], createdAt: '2026-02-03', updatedAt: '2026-02-03',
+  },
+  {
+    id: '28', name: 'ASUS ZenBook 14', brand: 'ASUS', category: 'laptop',
+    description: 'Ultra-slim OLED ultrabook with Intel i7, 16GB RAM, 1TB SSD',
+    shortDescription: 'Featherlight premium ultrabook for professionals on the go',
+    images: [{ url: '/assets/products/asus/zenbook-14/hero.jpg', alt: 'ASUS ZenBook 14', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
+      { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
+      { key: 'Storage', value: '1TB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '14" 2.8K OLED', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Home', category: 'os' },
+    ],
+    pricing: { monthly: 999, quarterly: 2749, yearly: 9999, deposit: 4000, currency: 'INR' },
+    availability: { inStock: 14, totalStock: 20, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune', 'Chennai'] },
+    rating: 4.7, reviewCount: 56, featured: false, tags: ['premium', 'ultrabook', 'student'], createdAt: '2026-02-05', updatedAt: '2026-02-05',
+  },
+  {
+    id: '29', name: 'Lenovo Legion 5 Pro', brand: 'Lenovo', category: 'laptop',
+    description: 'Gaming laptop with Ryzen 7, 16GB RAM, 1TB SSD, RTX 4060',
+    shortDescription: 'Pro-grade gaming rig with a 16" 165Hz display',
+    images: [{ url: '/assets/products/lenovo/legion-5-pro/hero.jpg', alt: 'Lenovo Legion 5 Pro', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'AMD Ryzen 7 7745HX', category: 'processor' },
+      { key: 'Graphics', value: 'NVIDIA RTX 4060 8GB', category: 'graphics' },
+      { key: 'RAM', value: '16GB DDR5', category: 'memory' },
+      { key: 'Storage', value: '1TB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '16" QHD+ 165Hz', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Home', category: 'os' },
+    ],
+    pricing: { monthly: 1249, quarterly: 3399, yearly: 12499, deposit: 8000, currency: 'INR' },
+    availability: { inStock: 8, totalStock: 12, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
+    rating: 4.7, reviewCount: 68, featured: true, tags: ['gaming', 'premium'], createdAt: '2026-02-07', updatedAt: '2026-02-07',
+  },
+  {
+    id: '30', name: 'Acer Predator Helios 16', brand: 'Acer', category: 'laptop',
+    description: 'Flagship gaming laptop with Intel i9, 32GB RAM, 2TB SSD, RTX 4080',
+    shortDescription: 'Desktop-class gaming performance in a 16" chassis',
+    images: [{ url: '/assets/products/acer/predator-helios-16/hero.jpg', alt: 'Acer Predator Helios 16', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i9-13900HX', category: 'processor' },
+      { key: 'Graphics', value: 'NVIDIA RTX 4080 12GB', category: 'graphics' },
+      { key: 'RAM', value: '32GB DDR5', category: 'memory' },
+      { key: 'Storage', value: '2TB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '16" WQXGA 240Hz', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Home', category: 'os' },
+    ],
+    pricing: { monthly: 1399, quarterly: 3799, yearly: 13999, deposit: 10000, currency: 'INR' },
+    availability: { inStock: 6, totalStock: 9, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
+    rating: 4.8, reviewCount: 44, featured: false, tags: ['gaming', 'premium'], createdAt: '2026-02-09', updatedAt: '2026-02-09',
+  },
+  {
+    id: '31', name: 'Samsung Galaxy Book4 Ultra', brand: 'Samsung', category: 'laptop',
+    description: 'Premium laptop with Intel i7, 16GB RAM, 1TB SSD',
+    shortDescription: 'Slim touchscreen ultrabook for professionals',
+    images: [{ url: '/assets/products/samsung/galaxy-book4-ultra/hero.jpg', alt: 'Samsung Galaxy Book4 Ultra', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i7-13705H', category: 'processor' },
+      { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
+      { key: 'Storage', value: '1TB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '16" 3K AMOLED', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Home', category: 'os' },
+    ],
+    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 6000, currency: 'INR' },
+    availability: { inStock: 7, totalStock: 11, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
+    rating: 4.7, reviewCount: 39, featured: false, tags: ['premium', 'creative'], createdAt: '2026-02-11', updatedAt: '2026-02-11',
+  },
+  {
+    id: '32', name: 'HP ProBook 450', brand: 'HP', category: 'laptop',
+    description: 'Business laptop with Intel i5, 16GB RAM, 512GB SSD',
+    shortDescription: 'Everyday business laptop for small teams',
+    images: [{ url: '/assets/products/hp/probook-450/hero.jpg', alt: 'HP ProBook 450', isPrimary: true, order: 0 }],
+    specifications: [
+      { key: 'Processor', value: 'Intel Core i5-1335U', category: 'processor' },
+      { key: 'RAM', value: '16GB DDR4', category: 'memory' },
+      { key: 'Storage', value: '512GB NVMe SSD', category: 'storage' },
+      { key: 'Display', value: '15.6" FHD', category: 'display' },
+      { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
+    ],
+    pricing: { monthly: 899, quarterly: 2499, yearly: 8999, deposit: 3000, currency: 'INR' },
+    availability: { inStock: 16, totalStock: 24, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Pune'] },
+    rating: 4.5, reviewCount: 52, featured: false, tags: ['business', 'budget'], createdAt: '2026-02-13', updatedAt: '2026-02-13',
+  },
 
 ];
 
@@ -718,7 +832,7 @@ export function Products() {
               <>
                 <div className={cn(
                   'gap-6',
-                  viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'space-y-4'
+                  viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'space-y-4'
                 )}>
                   {paginatedProducts.map(product => (
                     <ProductCard
