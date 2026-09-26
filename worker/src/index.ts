@@ -21,7 +21,7 @@ interface BookingRecord {
 
 function ownsLink(env: Env, linkId: string): boolean {
   const ids = (env.LAPTOP_RENT_LINK_IDS || '').split(',').map(s => s.trim()).filter(Boolean);
-  if (ids.length === 0) return true;
+  if (ids.length === 0) return false;
   return ids.includes(linkId);
 }
 
