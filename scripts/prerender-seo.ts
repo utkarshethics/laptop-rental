@@ -6,6 +6,7 @@ import {
   CITY_META,
   LAPTOP_CATEGORIES,
   BLOG_POSTS,
+  FAQ_QUESTIONS,
 } from '../src/frontend/data/seo-data';
 import {
   generateBreadcrumbSchema,
@@ -17,7 +18,13 @@ import {
 const DIST = resolve(process.cwd(), 'dist/frontend');
 const BASE = 'https://laptoponrent.online';
 
-const template = readFileSync(resolve(DIST, 'index.html'), 'utf8');
+// This file doubles as the Vite build output for `/`, which this script then
+// overwrites. A second run without a fresh build would therefore read the
+// already-prerendered homepage as its template and stamp the homepage body onto
+// every route. Normalise `#root` back to empty so the script is idempotent.
+const template = readFileSync(resolve(DIST, 'index.html'), 'utf8')
+  .replace(/<div class="seo-static">[\s\S]*?<\/div>\s*<\/div>/, '</div>')
+  .replace(/(<div id="root")>[\s\S]*?<\/div>/, '$1></div>');
 
 function replaceHead(html: string, key: string, value: string): string {
   const re = new RegExp(`<meta[^>]*name=["']${key}["'][^>]*>|<meta[^>]*property=["']${key}["'][^>]*>|` +
@@ -38,6 +45,17 @@ function writePage(route: string, html: string) {
   console.log(`  prerender -> /${route.replace(/^\//, '').replace(/index\.html.*/, '')}`);
 }
 
+const esc = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/** Injects static crawlable markup into #root. React replaces it on mount. */
+function injectBody(html: string, body: string): string {
+  return html.replace(
+    '<div id="root"></div>',
+    `<div id="root"><div class="seo-static">${body}</div></div>`,
+  );
+}
+
 function buildPage(opts: {
   route: string;
   title: string;
@@ -49,10 +67,11 @@ function buildPage(opts: {
   jsonLd: unknown[];
   hreflang?: Array<{ code: string; href: string }>;
   geo?: { region: string; place: string; lat: string; lng: string };
+  body?: string;
 }) {
   const {
     route, title, description, keywords, canonical, ogTitle, ogUrl, jsonLd,
-    hreflang = [], geo,
+    hreflang = [], geo, body = '',
   } = opts;
 
   const canonicalUrl = (route === '/' || canonical.endsWith('/'))
@@ -91,10 +110,110 @@ function buildPage(opts: {
     .join('\n');
 
   html = html.replace('</head>', `${geoMeta}\n\n    ${hreflangs}${jsonLdBlocks}\n  </head>`);
+  if (body) html = injectBody(html, body);
   writePage(route, html);
 }
 
 const toDate = (iso: string) => new Date(iso).toISOString().slice(0, 10);
+
+// ---- Homepage --------------------------------------------------------------
+// `/` is the highest-priority URL in sitemap.xml but was never prerendered, and
+// the app replaces it with a client-side <Navigate> to /products. Crawlers were
+// therefore served an empty shell. Static markup goes in #root; React replaces
+// it on mount.
+const TOP_CITIES = INDIAN_CITIES.slice(0, 12);
+const TIER1 = INDIAN_CITIES.filter(c => c.tier === 1);
+
+buildPage({
+  route: '/',
+  title: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
+  description: 'Rent laptops in India from ₹849/month. MacBook, gaming, business and student laptops from HP, Dell, Lenovo, ASUS, Acer and Surface. Same-day delivery in 25+ cities with 18% GST invoice.',
+  keywords: 'laptop rental, laptop on rent, macbook rental, gaming laptop rental, computer rental india, rent laptop india',
+  canonical: `${BASE}/`,
+  ogTitle: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
+  ogUrl: `${BASE}/`,
+  hreflang: [
+    { code: 'en-IN', href: `${BASE}/` },
+    { code: 'x-default', href: `${BASE}/` },
+  ],
+  jsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': `${BASE}/#business`,
+      name: 'LaptopRent',
+      legalName: 'LaptopRent Technologies Private Limited',
+      description: 'Laptop rental service in India offering MacBook, gaming, business and student laptops on flexible monthly plans with same-day delivery in 25+ cities.',
+      url: `${BASE}/`,
+      telephone: '+91-80-8090-0666',
+      priceRange: '₹₹',
+      currenciesAccepted: 'INR',
+      paymentAccepted: 'Cash, UPI, Credit Card, Debit Card, Bank Transfer',
+      image: `${BASE}/assets/og-default.jpg`,
+      logo: `${BASE}/assets/logo.svg`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Shiv Shakti Industrial Premises, NM Joshi Marg',
+        addressLocality: 'Mumbai',
+        addressRegion: 'Maharashtra',
+        postalCode: '400011',
+        addressCountry: 'IN',
+      },
+      areaServed: INDIAN_CITIES.map(c => ({
+        '@type': 'City',
+        name: `${c.name}, ${c.state}`,
+      })),
+      makesOffer: LAPTOP_CATEGORIES.map(cat => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: cat.name, description: cat.description },
+        priceCurrency: 'INR',
+        price: cat.priceRange.split(' - ')[0].replace(/[₹,]/g, ''),
+        url: `${BASE}/category/${cat.id}`,
+      })),
+      openingHoursSpecification: [{
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '09:00',
+        closes: '19:00',
+      }],
+    },
+    generateBreadcrumbSchema([{ name: 'Home', url: `${BASE}/` }]),
+    generateFAQSchema(),
+  ],
+  body: `
+    <main>
+      <h1>Laptop Rental in India - Flexible Monthly Plans from ₹849</h1>
+      <p>LaptopRent rents laptops on rent across ${INDIAN_CITIES.length} Indian cities, with same-day
+      delivery and flexible plans from one day to twelve months. Every rental includes a
+      18% GST invoice under HSN 997315, so registered businesses can claim full input tax credit.</p>
+
+      <h2>Why rent a laptop instead of buying one?</h2>
+      <p>Renting spreads the cost of a device over the period you actually need it. A
+      ₹1,20,000 business laptop used for eight months costs about ₹8,000 per month on rent
+      and leaves you with no depreciation, no resale effort and no maintenance overhead.
+      When the requirement changes, you upgrade rather than write off a device.</p>
+
+      <h2>Laptop rental categories</h2>
+      <ul>
+        ${LAPTOP_CATEGORIES.map(cat => `<li><a href="/category/${cat.id}/">${esc(cat.name)}</a> - ${esc(cat.description)}. ${esc(cat.priceRange)}.</li>`).join('\n        ')}
+      </ul>
+
+      <h2>Where we deliver</h2>
+      <p>We deliver same-day in ${TIER1.map(c => c.name).join(', ')} and across
+      ${INDIAN_CITIES.length} cities including ${INDIAN_CITIES.filter(c => c.tier !== 1).slice(0, 8).map(c => c.name).join(', ')}.</p>
+      <ul>
+        ${TOP_CITIES.map(c => `<li><a href="/rental/${c.slug}/">Laptop rental in ${esc(c.name)}</a> - same-day delivery in ${esc(c.name)}, ${esc(c.state)}.</li>`).join('\n        ')}
+      </ul>
+      <p><a href="/cities/">See all ${INDIAN_CITIES.length} cities we serve</a>.</p>
+
+      <h2>Frequently asked questions</h2>
+      ${FAQ_QUESTIONS.slice(0, 4).map(f => `<h3>${esc(f.question)}</h3><p>${esc(f.answer)}</p>`).join('\n      ')}
+
+      <h2>Talk to a laptop rental specialist</h2>
+      <p>Call +91-80-8090-0666 or browse the <a href="/categories/">full category list</a> to
+      find the right device for your requirement.</p>
+    </main>`,
+});
 
 // ---- Cities index ---------------------------------------------------------
 buildPage({
@@ -120,6 +239,16 @@ buildPage({
       },
     })),
   }],
+  body: `
+    <main>
+      <h1>Laptop Rental in ${INDIAN_CITIES.length}+ Indian Cities</h1>
+      <p>LaptopRent delivers rental laptops to ${INDIAN_CITIES.length} cities across India, with
+      same-day delivery in tier-1 metros. Choose a city to see local pricing, popular models and
+      delivery details.</p>
+      <ul>
+        ${INDIAN_CITIES.map(c => `<li><a href="/rental/${c.slug}/">Laptop rental in ${esc(c.name)}</a> - ${esc(c.state)} - same-day delivery, from ₹849/month.</li>`).join('\n        ')}
+      </ul>
+    </main>`,
 });
 
 // ---- Category index -------------------------------------------------------
@@ -146,6 +275,15 @@ buildPage({
       },
     })),
   }],
+  body: `
+    <main>
+      <h1>Laptop Rental Categories in India</h1>
+      <p>Rent laptops by category across ${INDIAN_CITIES.length} Indian cities. All rentals include
+      maintenance support, a 18% GST invoice and flexible terms from one month to twelve months.</p>
+      <ul>
+        ${LAPTOP_CATEGORIES.map(cat => `<li><a href="/category/${cat.id}/">${esc(cat.name)}</a> - ${esc(cat.description)}. ${esc(cat.priceRange)}.</li>`).join('\n        ')}
+      </ul>
+    </main>`,
 });
 
 // ---- Blog index + category hubs ------------------------------------------
@@ -170,6 +308,15 @@ buildPage({
       articleSection: p.category,
     })),
   }],
+  body: `
+    <main>
+      <h1>Laptop Rental Blog - Guides, Comparisons and City Guides</h1>
+      <p>Practical writing on renting a laptop in India: cost analysis, model guides, corporate
+      and student rental advice, and city-specific delivery information.</p>
+      <ul>
+        ${BLOG_POSTS.map(p => `<li><a href="/blog/${p.slug}/">${esc(p.title)}</a> - ${esc(p.readTime || '5 min read')}.</li>`).join('\n        ')}
+      </ul>
+    </main>`,
 });
 
 for (const cat of [...new Set(BLOG_POSTS.map(p => p.category))]) {
@@ -195,6 +342,22 @@ for (const cat of [...new Set(BLOG_POSTS.map(p => p.category))]) {
         articleSection: p.category,
       })),
     }],
+    body: `
+    <main>
+      <h1>${esc(cat.replace(/-/g, ' ').replace(/\b\w/g, ch => ch.toUpperCase()))} - LaptopRent Blog</h1>
+      <p>Articles on ${esc(cat.replace(/-/g, ' '))} for laptop rental in India, written to help
+      businesses and individuals decide whether to rent or buy, and which model fits the budget
+      and workload. Every rental we offer includes a 18% GST invoice under HSN 997315 and same-day
+      delivery in ${INDIAN_CITIES.length} cities.</p>
+      <h2>In this section</h2>
+      <ul>
+        ${posts.map(p => `<li><a href="/blog/${p.slug}/">${esc(p.title)}</a> - ${esc(p.readTime || '5 min')} read.</li>`).join('\n        ')}
+      </ul>
+      <h2>Ready to rent?</h2>
+      <p>Compare <a href="/categories/">all laptop rental categories</a> or check
+      <a href="/rental/${INDIAN_CITIES[0].slug}/">rental in ${esc(INDIAN_CITIES[0].name)}</a>.
+      Call +91-80-8090-0666 to talk to a specialist.</p>
+    </main>`,
   });
 }
 
@@ -231,6 +394,19 @@ for (const post of BLOG_POSTS) {
       articleSection: post.category,
       timeRequired: post.readTime,
     }],
+    body: `
+    <main>
+      <h1>${esc(post.title)}</h1>
+      <p>${esc(body)}</p>
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Rental spreads cost over the period you actually need the device.</li>
+        <li>Every LaptopRent rental includes a 18% GST invoice under HSN 997315.</li>
+        <li>Same-day delivery is available in ${INDIAN_CITIES.length} cities.</li>
+      </ul>
+      <p>Browse <a href="/categories/">rental categories</a> or see
+      <a href="/rental/${INDIAN_CITIES[0].slug}/">rental in ${esc(INDIAN_CITIES[0].name)}</a>.</p>
+    </main>`,
   });
 }
 
@@ -286,6 +462,25 @@ for (const city of INDIAN_CITIES) {
       { code: 'x-default', href: `${BASE}/rental/${city.slug}` },
     ],
     jsonLd: schemas,
+    body: `
+    <main>
+      <h1>Laptop Rental in ${esc(city.name)}</h1>
+      <p>${esc(description)}</p>
+      <h2>Popular laptop categories in ${esc(city.name)}</h2>
+      <ul>
+        ${LAPTOP_CATEGORIES.slice(0, 8).map(cat => `<li><a href="/category/${cat.id}/">${esc(cat.name)}</a> in ${esc(city.name)} - ${esc(cat.priceRange)}.</li>`).join('\n        ')}
+      </ul>
+      <h2>Delivery areas in ${esc(city.name)}</h2>
+      <p>We deliver to ${areas.map(a => esc(a)).join(', ')} and surrounding localities in
+      ${esc(city.name)}, ${esc(city.state)}. Renting starts from ${esc(price)} with same-day
+      delivery for orders confirmed before 2 PM.</p>
+      <h2>Why rent a laptop in ${esc(city.name)}?</h2>
+      <p>Businesses and students in ${esc(city.name)} rent rather than buy because it keeps
+      capital free, allows upgrades as requirements change, and includes a 18% GST invoice that
+      registered entities can claim against input tax credit.</p>
+      <p>Browse <a href="/rental/${city.slug}/">laptop rental in ${esc(city.name)}</a> or compare
+      <a href="/categories/">all rental categories</a>. Nearby: ${INDIAN_CITIES.filter(c => c.slug !== city.slug).slice(0, 5).map(c => `<a href="/rental/${c.slug}/">${esc(c.name)}</a>`).join(', ')}.</p>
+    </main>`,
   });
 }
 
@@ -323,6 +518,24 @@ for (const cat of LAPTOP_CATEGORIES) {
       ]),
       generateFAQSchema(),
     ],
+    body: `
+    <main>
+      <h1>${esc(cat.name)} in India</h1>
+      <p>${esc(cat.description)}. Rent from ${esc(cat.priceRange)} with same-day delivery in
+      ${INDIAN_CITIES.length} cities, maintenance included and a 18% GST invoice on every order.</p>
+      <h2>What is included</h2>
+      <ul>
+        <li>Delivery to your city within 24 hours</li>
+        <li>Maintenance and hardware support for the rental term</li>
+        <li>18% GST invoice under HSN 997315</li>
+        <li>Flexible upgrade path if your requirement changes</li>
+      </ul>
+      <h2>Available in</h2>
+      <p>${INDIAN_CITIES.slice(0, 10).map(c => `<a href="/rental/${c.slug}/">${esc(c.name)}</a>`).join(', ')}
+      and ${INDIAN_CITIES.length - 10} more cities.</p>
+      <h2>Frequently asked questions</h2>
+      ${FAQ_QUESTIONS.slice(0, 3).map(f => `<h3>${esc(f.question)}</h3><p>${esc(f.answer)}</p>`).join('\n      ')}
+    </main>`,
   });
 }
 
