@@ -17,7 +17,6 @@ Disallow: /account/
 Disallow: /login/
 Disallow: /register/
 Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /search?
 Disallow: /filter?
 
