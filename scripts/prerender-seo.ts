@@ -346,8 +346,6 @@ const sitemapIndex = (names: string[]) =>
 
 writeFileSync(resolve(DIST, 'sitemap.xml'), sitemap([
   { url: '/', priority: 1.0, freq: 'daily' },
-  { url: '/home', priority: 0.8 },
-  { url: '/products', priority: 0.9 },
   { url: '/categories', priority: 0.9 },
   { url: '/cities', priority: 0.9 },
   { url: '/blog', priority: 0.8 },
