@@ -557,13 +557,13 @@ const sitemapIndex = (names: string[]) =>
   names.map(n => `  <sitemap>\n    <loc>${BASE}/${n}</loc>\n    <lastmod>${TODAY}</lastmod>\n  </sitemap>`).join('\n') +
   '\n</sitemapindex>\n';
 
+// Only the top-level pages that no child sitemap owns. Cities, categories and
+// the blog (including its category hubs) each have a dedicated child sitemap, so
+// re-listing them here duplicated 40 URLs across the sitemap set.
 writeFileSync(resolve(DIST, 'sitemap.xml'), sitemap([
   { url: '/', priority: 1.0, freq: 'daily' },
   { url: '/categories', priority: 0.9 },
   { url: '/cities', priority: 0.9 },
-  { url: '/blog', priority: 0.8 },
-  ...LAPTOP_CATEGORIES.map(c => ({ url: `/category/${c.id}`, priority: 0.8 })),
-  ...INDIAN_CITIES.map(c => ({ url: `/rental/${c.slug}`, priority: 0.9 })),
 ]));
 
 writeFileSync(resolve(DIST, 'sitemap-cities.xml'), sitemap(
@@ -587,4 +587,24 @@ writeFileSync(resolve(DIST, 'sitemap-index.xml'), sitemapIndex([
   'sitemap-blog.xml',
 ]));
 
-console.log('Sitemaps generated.');
+// Every URL must be claimed by exactly one child sitemap. A URL in two sitemaps
+// wastes crawl budget and is treated as a low-quality sitemap set.
+{
+  const seen = new Map<string, string>();
+  const dupes: string[] = [];
+  for (const name of ['sitemap.xml', 'sitemap-cities.xml', 'sitemap-categories.xml', 'sitemap-blog.xml']) {
+    const body = readFileSync(resolve(DIST, name), 'utf8');
+    for (const m of body.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+      const url = m[1];
+      const owner = seen.get(url);
+      if (owner) dupes.push(`${url} (in ${owner} and ${name})`);
+      else seen.set(url, name);
+    }
+  }
+  if (dupes.length) {
+    console.error(`\nREFUSING TO WRITE - ${dupes.length} duplicate URLs across sitemaps:`);
+    for (const d of dupes) console.error(`  ${d}`);
+    process.exit(1);
+  }
+  console.log(`Sitemaps generated: ${seen.size} unique URLs, no cross-sitemap duplicates.`);
+}

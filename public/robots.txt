@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
+Sitemap: https://laptoponrent.online/sitemap-index.xml
 Sitemap: https://laptoponrent.online/sitemap.xml
 Sitemap: https://laptoponrent.online/sitemap-cities.xml
 Sitemap: https://laptoponrent.online/sitemap-categories.xml
