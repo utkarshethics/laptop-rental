@@ -11,8 +11,13 @@ const FOOTER_LINKS = {
     ],
     brand: [
       { label: 'MacBook Rentals', href: '/products?brand=Apple' },
+      { label: 'HP Rentals', href: '/products?brand=HP' },
+      { label: 'Dell Rentals', href: '/products?brand=Dell' },
+      { label: 'Lenovo Rentals', href: '/products?brand=Lenovo' },
       { label: 'Samsung Rentals', href: '/products?brand=Samsung' },
       { label: 'MSI Rentals', href: '/products?brand=MSI' },
+      { label: 'ASUS Rentals', href: '/products?brand=ASUS' },
+      { label: 'Acer Rentals', href: '/products?brand=Acer' },
     ],
   },
   support: [
@@ -110,7 +115,7 @@ export function Footer() {
               </div>
               <div>
                 <h4 className="text-xs font-medium uppercase tracking-wide text-secondary-500 mb-2">By Brand</h4>
-                <ul className="space-y-3" role="list">
+                <ul className="grid grid-cols-2 gap-x-6 gap-y-3" role="list">
                   {FOOTER_LINKS.products.brand.map(link => (
                     <li key={link.href}>
                       <Link to={link.href} className="text-secondary-400 hover:text-white transition-colors text-sm">

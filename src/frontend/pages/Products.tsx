@@ -670,7 +670,19 @@ export function Products() {
     (filters.page || 1) * (filters.limit || 12)
   );
 
-  const activeFilterCount = (filters.brands?.length || 0) + (filters.categories?.length || 0) + (filters.tags?.length || 0) + (filters.priceRange ? 1 : 0);
+  const brandCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const p of MOCK_PRODUCTS) counts[p.brand] = (counts[p.brand] || 0) + 1;
+    return counts;
+  }, []);
+
+  const useCaseCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const p of MOCK_PRODUCTS) for (const t of p.tags) counts[t] = (counts[t] || 0) + 1;
+    return counts;
+  }, []);
+
+  const activeFilterCount = (filters.brands?.length || 0) + (filters.tags?.length || 0) + (filters.priceRange ? 1 : 0);
 
   const clearFilters = () => {
     setFilters({ ...filters, brands: [], categories: [], tags: [], priceRange: undefined, page: 1 });
@@ -789,7 +801,7 @@ export function Products() {
                             }))}
                             className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                           />
-                          <span className="text-body-sm text-secondary-700">{brand.label}</span>
+                          <span className="text-body-sm text-secondary-700">{brand.label} <span className="text-secondary-400">({brandCounts[brand.value] || 0})</span></span>
                         </label>
                       ))}
                     </div>
@@ -812,7 +824,7 @@ export function Products() {
                             }))}
                             className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                           />
-                          <span className="text-body-sm text-secondary-700">{useCase.label}</span>
+                          <span className="text-body-sm text-secondary-700">{useCase.label} <span className="text-secondary-400">({useCaseCounts[useCase.value] || 0})</span></span>
                         </label>
                       ))}
                     </div>
@@ -957,7 +969,7 @@ export function Products() {
                     }))}
                     className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                   />
-                  <span className="text-body-sm text-secondary-700">{brand.label}</span>
+                  <span className="text-body-sm text-secondary-700">{brand.label} <span className="text-secondary-400">({brandCounts[brand.value] || 0})</span></span>
                 </label>
               ))}
             </div>
@@ -980,7 +992,7 @@ export function Products() {
                     }))}
                     className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                   />
-                  <span className="text-body-sm text-secondary-700">{useCase.label}</span>
+                  <span className="text-body-sm text-secondary-700">{useCase.label} <span className="text-secondary-400">({useCaseCounts[useCase.value] || 0})</span></span>
                 </label>
               ))}
             </div>

@@ -153,7 +153,7 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="flex-1 min-w-0">
             <p className="text-caption text-secondary-500 font-medium uppercase tracking-wide">{product.brand}</p>
-            <h3 className="text-heading-sm font-semibold text-secondary-900 truncate">{product.name}</h3>
+            <h3 className="text-heading-sm font-semibold text-secondary-900 line-clamp-2 min-h-10">{product.name}</h3>
           </div>
           <div className="flex items-center gap-1 text-secondary-500">
             <svg className="w-4 h-4 fill-current text-warning-500" viewBox="0 0 24 24">
@@ -165,11 +165,12 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
         </div>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
-          <span className={servedInCity ? 'badge badge-success text-xs' : 'badge badge-warning text-xs'}>
-            {servedInCity ? `In stock · ${city}` : `On request · ${city}`}
-          </span>
-          {product.availability.inStock > 0 && servedInCity && (
-            <span className="badge badge-secondary text-xs">{product.availability.inStock} in stock</span>
+          {servedInCity && product.availability.inStock > 0 ? (
+            <span className="badge badge-success text-xs">
+              In stock · {city} ({product.availability.inStock} available)
+            </span>
+          ) : (
+            <span className="badge badge-warning text-xs">On request · {city}</span>
           )}
         </div>
 
