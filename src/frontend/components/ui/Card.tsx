@@ -98,6 +98,16 @@ export function CardFooter({ children, className }: CardFooterProps) {
   );
 }
 
+function specSummary(specifications: { key: string; value: string; category: string }[] | undefined): string | null {
+  if (!specifications || specifications.length === 0) return null;
+  const pick = (cats: string[]) => specifications.find(s => cats.includes(s.category));
+  const ram = pick(['memory']);
+  const storage = pick(['storage']);
+  const chip = pick(['graphics']) || pick(['processor']);
+  const parts = [ram?.value, storage?.value, chip?.value].filter(Boolean) as string[];
+  return parts.length ? parts.join(' · ') : null;
+}
+
 interface ProductCardProps {
   product: {
     id: string;
@@ -110,6 +120,7 @@ interface ProductCardProps {
     reviewCount: number;
     availability: { inStock: number; cities: string[] };
     featured?: boolean;
+    specifications?: { key: string; value: string; category: string }[];
   };
   onAddToCart?: () => void;
   onClick?: () => void;
@@ -119,6 +130,7 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
   const primaryImage = product.images.find(img => img.isPrimary) || product.images[0];
   const { city } = useCity();
   const servedInCity = product.availability.cities.includes(city);
+  const specs = specSummary(product.specifications);
 
   return (
     <Card hover padding="none" className="group overflow-hidden" onClick={onClick}>
@@ -165,6 +177,11 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
         </div>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
+          {specs && (
+            <span className="w-full text-caption text-secondary-600 truncate" title={specs}>
+              {specs}
+            </span>
+          )}
           {servedInCity && product.availability.inStock > 0 ? (
             <span className="badge badge-success text-xs">
               In stock · {city} ({product.availability.inStock} available)

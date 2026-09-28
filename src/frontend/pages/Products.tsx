@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Filter, X, ChevronDown, Grid, List, Loader2 } from 'lucide-react';
+import { Filter, X, ChevronDown, Grid, List, Loader2, Search } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Dropdown } from '@/components/ui/Dropdown';
@@ -608,6 +608,7 @@ export function Products() {
   const [showFilters, setShowFilters] = useState(false);
   const [filterModalOpen, setFilterModalOpen] = useState(false);
   const [selectedRentalPeriod, setSelectedRentalPeriod] = useState<'monthly' | 'quarterly' | 'yearly'>('monthly');
+  const [query, setQuery] = useState(searchParams.get('q') || '');
 
   useEffect(() => {
     const params = new URLSearchParams();
@@ -619,12 +620,25 @@ export function Products() {
       params.set('maxPrice', String(filters.priceRange[1]));
     }
     if (filters.sortBy) params.set('sort', filters.sortBy);
+    if (query.trim()) params.set('q', query.trim());
     if (filters.page && filters.page > 1) params.set('page', String(filters.page));
     setSearchParams(params, { replace: true });
-  }, [filters, setSearchParams]);
+  }, [filters, setSearchParams, query]);
 
   const filteredProducts = useMemo(() => {
     let result = [...MOCK_PRODUCTS];
+
+    const q = query.trim().toLowerCase();
+    if (q) {
+      result = result.filter(p => {
+        const haystack = [
+          p.name, p.brand, p.category, p.description, p.shortDescription,
+          ...p.tags,
+          ...p.specifications.map(s => `${s.key} ${s.value}`),
+        ].join(' ').toLowerCase();
+        return haystack.includes(q);
+      });
+    }
 
     if (filters.brands?.length) {
       result = result.filter(p => filters.brands!.includes(p.brand));
@@ -662,7 +676,7 @@ export function Products() {
     }
 
     return result;
-  }, [filters, selectedRentalPeriod]);
+  }, [filters, selectedRentalPeriod, query]);
 
   const totalPages = Math.ceil(filteredProducts.length / (filters.limit || 12));
   const paginatedProducts = filteredProducts.slice(
@@ -699,6 +713,20 @@ export function Products() {
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
+              <div className="relative w-full sm:w-64">
+                <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-secondary-400" />
+                <Input
+                  type="search"
+                  placeholder="Search laptops…"
+                  value={query}
+                  onChange={e => {
+                    setQuery(e.target.value);
+                    setFilters(prev => ({ ...prev, page: 1 }));
+                  }}
+                  className="pl-9"
+                />
+              </div>
+
               <div className="hidden sm:flex items-center gap-2">
                 <Button
                   variant={viewMode === 'grid' ? 'primary' : 'outline'}
@@ -732,7 +760,7 @@ export function Products() {
                 variant="outline"
                 size="sm"
                 onClick={() => setFilterModalOpen(true)}
-                className={cn('gap-2', activeFilterCount > 0 && 'bg-primary-50 border-primary-200 text-primary-700')}
+                className={cn('lg:hidden gap-2', activeFilterCount > 0 && 'bg-primary-50 border-primary-200 text-primary-700')}
               >
                 <Filter className="w-4 h-4" />
                 Filters
