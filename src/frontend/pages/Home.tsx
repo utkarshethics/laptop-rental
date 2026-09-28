@@ -18,6 +18,8 @@ const BRANDS = [
   { name: 'Apple', count: '80+', logo: 'Apple' },
   { name: 'ASUS', count: '60+', logo: 'ASUS' },
   { name: 'Acer', count: '50+', logo: 'Acer' },
+  { name: 'Samsung', count: '40+', logo: 'Samsung' },
+  { name: 'MSI', count: '30+', logo: 'MSI' },
 ];
 
 const FEATURES = [
@@ -61,7 +63,7 @@ const FEATURED_PRODUCTS = [
     brand: 'Dell',
     category: 'laptop',
     images: [{ url: '/assets/products/dell/latitude-5430/hero.jpg', alt: 'Dell Latitude 5430', isPrimary: true }],
-    pricing: { monthly: 1099 },
+    pricing: { monthly: 999 },
     rating: 4.7,
     reviewCount: 98,
     availability: { inStock: 22, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune'] },
@@ -97,7 +99,7 @@ const FEATURED_PRODUCTS = [
     brand: 'ASUS',
     category: 'laptop',
     images: [{ url: '/assets/products/asus/rog-zephyrus-g14/hero.jpg', alt: 'ASUS ROG Zephyrus G14', isPrimary: true }],
-    pricing: { monthly: 1299 },
+    pricing: { monthly: 1399 },
     rating: 4.7,
     reviewCount: 87,
     availability: { inStock: 6, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
@@ -143,7 +145,7 @@ export function Home() {
               Rent Premium Laptops Without the Premium Price
             </h1>
             <p className="text-body-lg text-secondary-600 mb-10 max-w-2xl mx-auto animate-slide-up">
-              Access the latest HP, Dell, Lenovo, MacBook, ASUS & Acer laptops. Flexible plans from 1 day to 1 year. Free doorstep delivery across India.
+              Access the latest HP, Dell, Lenovo, Apple, ASUS, Acer, Samsung & MSI laptops. Flexible plans from 1 day to 1 year. Free doorstep delivery across India.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 animate-slide-up">
               <Link to="/products" className="btn-primary btn-lg">

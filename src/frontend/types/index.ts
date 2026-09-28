@@ -46,6 +46,7 @@ export interface Product {
   tags: string[];
   createdAt: string;
   updatedAt: string;
+  releasedAt: string;
 }
 
 export interface ProductImage {
@@ -77,12 +78,13 @@ export interface Availability {
   nextAvailableDate?: string;
 }
 
-export type Brand = 'HP' | 'Dell' | 'Lenovo' | 'Apple' | 'ASUS' | 'Acer';
+export type Brand = 'HP' | 'Dell' | 'Lenovo' | 'Apple' | 'ASUS' | 'Acer' | 'Samsung' | 'MSI';
 export type Category = 'laptop' | 'desktop' | 'monitor' | 'tablet' | 'accessories';
 
 export interface ProductFilters {
   brands?: Brand[];
   categories?: Category[];
+  tags?: string[];
   priceRange?: [number, number];
   specifications?: Record<string, string[]>;
   cities?: string[];

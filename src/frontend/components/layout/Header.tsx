@@ -1,9 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import { useCart } from '@/context/CartContext';
+import { useCity } from '@/context/CityContext';
 import { Menu, X, ShoppingCart, User, LogOut, LayoutDashboard, ShoppingBag, Truck, Shield, Star, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -26,16 +27,10 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [cityMenuOpen, setCityMenuOpen] = useState(false);
-  const [selectedCity, setSelectedCity] = useState('Bangalore');
-
-  useEffect(() => {
-    const savedCity = localStorage.getItem('selectedCity');
-    if (savedCity) setSelectedCity(savedCity);
-  }, []);
+  const { city: selectedCity, setCity } = useCity();
 
   const handleCityChange = (city: string) => {
-    setSelectedCity(city);
-    localStorage.setItem('selectedCity', city);
+    setCity(city);
     setCityMenuOpen(false);
   };
 

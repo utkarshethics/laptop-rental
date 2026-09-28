@@ -12,6 +12,7 @@ import { Product, RentalPeriod, RENTAL_PERIODS } from '@/types';
 import { MOCK_PRODUCTS } from './Products';
 import { useCart } from '@/context/CartContext';
 import { useAuth } from '@/context/AuthContext';
+import { useCity } from '@/context/CityContext';
 import toast from 'react-hot-toast';
 
 export function ProductDetail() {
@@ -28,7 +29,8 @@ export function ProductDetail() {
     return tomorrow.toISOString().split('T')[0];
   });
   const [endDate, setEndDate] = useState('');
-  const [selectedCity, setSelectedCity] = useState('Bangalore');
+  const { city } = useCity();
+  const [selectedCity, setSelectedCity] = useState(city);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);

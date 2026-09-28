@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 import { openTokenBooking } from '@/lib/tokenBooking';
+import { useCity } from '@/context/CityContext';
 
 interface CardProps {
   children: React.ReactNode;
@@ -116,6 +117,8 @@ interface ProductCardProps {
 
 export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps) {
   const primaryImage = product.images.find(img => img.isPrimary) || product.images[0];
+  const { city } = useCity();
+  const servedInCity = product.availability.cities.includes(city);
 
   return (
     <Card hover padding="none" className="group overflow-hidden" onClick={onClick}>
@@ -162,13 +165,11 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
         </div>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
-          {product.availability.cities.slice(0, 3).map(city => (
-            <span key={city} className="badge badge-secondary text-xs">
-              {city}
-            </span>
-          ))}
-          {product.availability.cities.length > 3 && (
-            <span className="badge badge-secondary text-xs">+{product.availability.cities.length - 3} more</span>
+          <span className={servedInCity ? 'badge badge-success text-xs' : 'badge badge-warning text-xs'}>
+            {servedInCity ? `In stock · ${city}` : `On request · ${city}`}
+          </span>
+          {product.availability.inStock > 0 && servedInCity && (
+            <span className="badge badge-secondary text-xs">{product.availability.inStock} in stock</span>
           )}
         </div>
 
@@ -196,6 +197,9 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
             Book for ₹50
           </button>
         </div>
+        <p className="text-caption text-secondary-500 mt-2">
+          ₹50 refundable booking token · adjusted in your 1st month's rent
+        </p>
       </div>
     </Card>
   );

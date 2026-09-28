@@ -17,6 +17,14 @@ const BRANDS: { value: Brand; label: string }[] = [
   { value: 'Apple', label: 'Apple' },
   { value: 'ASUS', label: 'ASUS' },
   { value: 'Acer', label: 'Acer' },
+  { value: 'Samsung', label: 'Samsung' },
+  { value: 'MSI', label: 'MSI' },
+];
+
+const USE_CASES: { value: string; label: string }[] = [
+  { value: 'business', label: 'Business' },
+  { value: 'gaming', label: 'Gaming' },
+  { value: 'student', label: 'Student' },
 ];
 
 const SORT_OPTIONS = [
@@ -51,7 +59,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1199, quarterly: 3299, yearly: 11999, deposit: 4000, currency: 'INR' },
     availability: { inStock: 15, totalStock: 20, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Hyderabad'] },
-    rating: 4.8, reviewCount: 124, featured: true, tags: ['business', 'premium'], createdAt: '2024-01-15', updatedAt: '2024-01-15',
+    rating: 4.8, reviewCount: 124, featured: true, tags: ['business', 'premium'], releasedAt: '2022-05-15', createdAt: '2024-01-15', updatedAt: '2024-01-15',
   },
   {
     id: '2', name: 'Dell Latitude 5430', brand: 'Dell', category: 'laptop',
@@ -65,9 +73,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '14" FHD', category: 'display' },
       { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
     ],
-    pricing: { monthly: 1099, quarterly: 2999, yearly: 10999, deposit: 3000, currency: 'INR' },
+    pricing: { monthly: 999, quarterly: 2699, yearly: 9999, deposit: 3000, currency: 'INR' },
     availability: { inStock: 22, totalStock: 30, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune'] },
-    rating: 4.7, reviewCount: 98, featured: false, tags: ['business', 'budget'], createdAt: '2024-01-10', updatedAt: '2024-01-10',
+    rating: 4.7, reviewCount: 98, featured: false, tags: ['business', 'budget'], releasedAt: '2022-06-10', createdAt: '2024-01-10', updatedAt: '2024-01-10',
   },
   {
     id: '3', name: 'MacBook Air M2', brand: 'Apple', category: 'laptop',
@@ -88,7 +96,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 8000, currency: 'INR' },
     availability: { inStock: 8, totalStock: 15, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.9, reviewCount: 210, featured: true, tags: ['premium', 'creative', 'student'], createdAt: '2024-01-20', updatedAt: '2024-01-20',
+    rating: 4.9, reviewCount: 210, featured: true, tags: ['premium', 'creative', 'student'], releasedAt: '2022-07-15', createdAt: '2024-01-20', updatedAt: '2024-01-20',
   },
   {
     id: '4', name: 'Lenovo ThinkPad X1 Carbon Gen 11', brand: 'Lenovo', category: 'laptop',
@@ -107,7 +115,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1249, quarterly: 3399, yearly: 12499, deposit: 5000, currency: 'INR' },
     availability: { inStock: 12, totalStock: 18, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 'Chennai'] },
-    rating: 4.8, reviewCount: 156, featured: true, tags: ['business', 'premium', 'ultrabook'], createdAt: '2024-01-18', updatedAt: '2024-01-18',
+    rating: 4.8, reviewCount: 156, featured: true, tags: ['business', 'premium', 'ultrabook'], releasedAt: '2023-04-10', createdAt: '2024-01-18', updatedAt: '2024-01-18',
   },
   {
     id: '5', name: 'ASUS ROG Zephyrus G14', brand: 'ASUS', category: 'laptop',
@@ -122,9 +130,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Graphics', value: 'NVIDIA RTX 4060', category: 'graphics' },
       { key: 'OS', value: 'Windows 11 Home', category: 'os' },
     ],
-    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 10000, currency: 'INR' },
+    pricing: { monthly: 1399, quarterly: 3799, yearly: 13999, deposit: 10000, currency: 'INR' },
     availability: { inStock: 6, totalStock: 10, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.7, reviewCount: 87, featured: false, tags: ['gaming', 'performance'], createdAt: '2024-01-22', updatedAt: '2024-01-22',
+    rating: 4.7, reviewCount: 87, featured: false, tags: ['gaming', 'performance'], releasedAt: '2023-06-10', createdAt: '2024-01-22', updatedAt: '2024-01-22',
   },
   {
     id: '6', name: 'Acer Swift Go 14', brand: 'Acer', category: 'laptop',
@@ -140,7 +148,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 999, quarterly: 2749, yearly: 9999, deposit: 3000, currency: 'INR' },
     availability: { inStock: 18, totalStock: 25, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Hyderabad', 'Pune'] },
-    rating: 4.6, reviewCount: 73, featured: false, tags: ['student', 'budget', 'oled'], createdAt: '2024-01-25', updatedAt: '2024-01-25',
+    rating: 4.6, reviewCount: 73, featured: false, tags: ['student', 'budget', 'oled'], releasedAt: '2023-02-15', createdAt: '2024-01-25', updatedAt: '2024-01-25',
   },
   {
     id: '7', name: 'MacBook Pro 14 M3', brand: 'Apple', category: 'laptop',
@@ -159,9 +167,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '14.2" Liquid Retina XDR', category: 'display' },
       { key: 'OS', value: 'macOS Sonoma', category: 'os' },
     ],
-    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 10000, currency: 'INR' },
+    pricing: { monthly: 1599, quarterly: 4299, yearly: 15999, deposit: 10000, currency: 'INR' },
     availability: { inStock: 6, totalStock: 12, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
-    rating: 4.9, reviewCount: 186, featured: true, tags: ['premium', 'creative', 'developer'], createdAt: '2026-01-25', updatedAt: '2026-01-25',
+    rating: 4.9, reviewCount: 186, featured: true, tags: ['premium', 'creative', 'developer', 'business'], releasedAt: '2023-11-07', createdAt: '2026-01-25', updatedAt: '2026-01-25',
   },
   {
     id: '8', name: 'HP Spectre x360 14', brand: 'HP', category: 'laptop',
@@ -180,7 +188,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1249, quarterly: 3399, yearly: 12499, deposit: 6000, currency: 'INR' },
     availability: { inStock: 9, totalStock: 15, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune'] },
-    rating: 4.8, reviewCount: 84, featured: true, tags: ['premium', 'creative', 'student'], createdAt: '2026-01-22', updatedAt: '2026-01-22',
+    rating: 4.8, reviewCount: 84, featured: true, tags: ['premium', 'creative', 'student'], releasedAt: '2023-07-20', createdAt: '2026-01-22', updatedAt: '2026-01-22',
   },
   {
     id: '9', name: 'Lenovo IdeaPad Slim 5', brand: 'Lenovo', category: 'laptop',
@@ -196,7 +204,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 899, quarterly: 2499, yearly: 8999, deposit: 3000, currency: 'INR' },
     availability: { inStock: 14, totalStock: 20, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.5, reviewCount: 67, featured: false, tags: ['budget', 'student'], createdAt: '2026-01-20', updatedAt: '2026-01-20',
+    rating: 4.5, reviewCount: 67, featured: false, tags: ['budget', 'student'], releasedAt: '2023-03-15', createdAt: '2026-01-20', updatedAt: '2026-01-20',
   },
   {
     id: '10', name: 'HP Pavilion 15', brand: 'HP', category: 'laptop',
@@ -212,7 +220,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 899, quarterly: 2499, yearly: 8999, deposit: 3000, currency: 'INR' },
     availability: { inStock: 20, totalStock: 30, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Pune'] },
-    rating: 4.4, reviewCount: 112, featured: false, tags: ['budget', 'student', 'multimedia'], createdAt: '2026-01-18', updatedAt: '2026-01-18',
+    rating: 4.4, reviewCount: 112, featured: false, tags: ['budget', 'student', 'multimedia'], releasedAt: '2023-02-10', createdAt: '2026-01-18', updatedAt: '2026-01-18',
   },
   {
     id: '11', name: 'Dell Inspiron 15', brand: 'Dell', category: 'laptop',
@@ -228,7 +236,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 849, quarterly: 2349, yearly: 8499, deposit: 3000, currency: 'INR' },
     availability: { inStock: 18, totalStock: 25, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Kolkata'] },
-    rating: 4.4, reviewCount: 91, featured: false, tags: ['budget', 'student'], createdAt: '2026-01-16', updatedAt: '2026-01-16',
+    rating: 4.4, reviewCount: 91, featured: false, tags: ['budget', 'student'], releasedAt: '2023-01-20', createdAt: '2026-01-16', updatedAt: '2026-01-16',
   },
   {
     id: '12', name: 'ASUS VivoBook 15', brand: 'ASUS', category: 'laptop',
@@ -244,7 +252,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 799, quarterly: 2199, yearly: 7999, deposit: 3000, currency: 'INR' },
     availability: { inStock: 25, totalStock: 35, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Hyderabad', 'Pune'] },
-    rating: 4.3, reviewCount: 143, featured: false, tags: ['budget', 'student'], createdAt: '2026-01-14', updatedAt: '2026-01-14',
+    rating: 4.3, reviewCount: 143, featured: false, tags: ['budget', 'student'], releasedAt: '2023-01-15', createdAt: '2026-01-14', updatedAt: '2026-01-14',
   },
   {
     id: '13', name: 'Samsung Galaxy Book3 Pro', brand: 'Samsung', category: 'laptop',
@@ -258,9 +266,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '14" 3K AMOLED', category: 'display' },
       { key: 'OS', value: 'Windows 11 Home', category: 'os' },
     ],
-    pricing: { monthly: 1099, quarterly: 2999, yearly: 10999, deposit: 5000, currency: 'INR' },
+    pricing: { monthly: 1199, quarterly: 3249, yearly: 11999, deposit: 5000, currency: 'INR' },
     availability: { inStock: 7, totalStock: 12, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.7, reviewCount: 58, featured: false, tags: ['premium', 'student', 'creative'], createdAt: '2026-01-12', updatedAt: '2026-01-12',
+    rating: 4.7, reviewCount: 58, featured: false, tags: ['premium', 'student', 'creative'], releasedAt: '2023-02-22', createdAt: '2026-01-12', updatedAt: '2026-01-12',
   },
   {
     id: '14', name: 'MSI GF63 Thin', brand: 'MSI', category: 'laptop',
@@ -277,7 +285,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1099, quarterly: 2999, yearly: 10999, deposit: 6000, currency: 'INR' },
     availability: { inStock: 11, totalStock: 18, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
-    rating: 4.5, reviewCount: 76, featured: true, tags: ['gaming', 'premium'], createdAt: '2026-01-10', updatedAt: '2026-01-10',
+    rating: 4.5, reviewCount: 76, featured: true, tags: ['gaming', 'premium'], releasedAt: '2023-01-25', createdAt: '2026-01-10', updatedAt: '2026-01-10',
   },
   {
     id: '15', name: 'Acer Nitro V 15', brand: 'Acer', category: 'laptop',
@@ -294,7 +302,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 949, quarterly: 2599, yearly: 9499, deposit: 5000, currency: 'INR' },
     availability: { inStock: 16, totalStock: 24, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Pune'] },
-    rating: 4.6, reviewCount: 39, featured: false, tags: ['gaming', 'budget'], createdAt: '2026-01-08', updatedAt: '2026-01-08',
+    rating: 4.6, reviewCount: 39, featured: false, tags: ['gaming', 'budget'], releasedAt: '2023-04-12', createdAt: '2026-01-08', updatedAt: '2026-01-08',
   },
 
   {
@@ -314,9 +322,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '15.3" Liquid Retina', category: 'display' },
       { key: 'OS', value: 'macOS Sonoma', category: 'os' },
     ],
-    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 8000, currency: 'INR' },
+    pricing: { monthly: 1399, quarterly: 3799, yearly: 13999, deposit: 8000, currency: 'INR' },
     availability: { inStock: 10, totalStock: 16, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Hyderabad'] },
-    rating: 4.8, reviewCount: 132, featured: true, tags: ['premium', 'student', 'creative'], createdAt: '2026-01-07', updatedAt: '2026-01-07',
+    rating: 4.8, reviewCount: 132, featured: true, tags: ['premium', 'student', 'creative'], releasedAt: '2023-06-13', createdAt: '2026-01-07', updatedAt: '2026-01-07',
   },
   {
     id: '17', name: 'Dell XPS 13 Plus', brand: 'Dell', category: 'laptop',
@@ -332,7 +340,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1249, quarterly: 3399, yearly: 12499, deposit: 6000, currency: 'INR' },
     availability: { inStock: 8, totalStock: 14, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.7, reviewCount: 64, featured: true, tags: ['premium', 'business'], createdAt: '2026-01-05', updatedAt: '2026-01-05',
+    rating: 4.7, reviewCount: 64, featured: true, tags: ['premium', 'business'], releasedAt: '2023-03-01', createdAt: '2026-01-05', updatedAt: '2026-01-05',
   },
   {
     id: '18', name: 'Lenovo ThinkPad T14 Gen 4', brand: 'Lenovo', category: 'laptop',
@@ -348,7 +356,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1199, quarterly: 3299, yearly: 11999, deposit: 5000, currency: 'INR' },
     availability: { inStock: 13, totalStock: 20, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune', 'Hyderabad'] },
-    rating: 4.8, reviewCount: 118, featured: false, tags: ['business', 'premium'], createdAt: '2026-01-03', updatedAt: '2026-01-03',
+    rating: 4.8, reviewCount: 118, featured: false, tags: ['business', 'premium'], releasedAt: '2023-05-10', createdAt: '2026-01-03', updatedAt: '2026-01-03',
   },
   {
     id: '19', name: 'HP Victus 15', brand: 'HP', category: 'laptop',
@@ -365,7 +373,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 949, quarterly: 2599, yearly: 9499, deposit: 5000, currency: 'INR' },
     availability: { inStock: 17, totalStock: 25, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai'] },
-    rating: 4.5, reviewCount: 88, featured: false, tags: ['gaming', 'budget'], createdAt: '2026-01-01', updatedAt: '2026-01-01',
+    rating: 4.5, reviewCount: 88, featured: false, tags: ['gaming', 'budget'], releasedAt: '2022-05-02', createdAt: '2026-01-01', updatedAt: '2026-01-01',
   },
   {
     id: '20', name: 'ASUS ROG Strix G16', brand: 'ASUS', category: 'laptop',
@@ -380,9 +388,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '16" QHD+ 165Hz', category: 'display' },
       { key: 'OS', value: 'Windows 11 Home', category: 'os' },
     ],
-    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 10000, currency: 'INR' },
+    pricing: { monthly: 1449, quarterly: 3899, yearly: 14499, deposit: 10000, currency: 'INR' },
     availability: { inStock: 5, totalStock: 10, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
-    rating: 4.7, reviewCount: 95, featured: true, tags: ['gaming', 'premium'], createdAt: '2025-12-28', updatedAt: '2025-12-28',
+    rating: 4.7, reviewCount: 95, featured: true, tags: ['gaming', 'premium'], releasedAt: '2023-02-17', createdAt: '2025-12-28', updatedAt: '2025-12-28',
   },
 
   {
@@ -397,9 +405,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '16.2" Liquid Retina XDR', category: 'display' },
       { key: 'OS', value: 'macOS Sonoma', category: 'os' },
     ],
-    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 10000, currency: 'INR' },
+    pricing: { monthly: 1899, quarterly: 5149, yearly: 18999, deposit: 10000, currency: 'INR' },
     availability: { inStock: 4, totalStock: 8, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
-    rating: 4.9, reviewCount: 157, featured: true, tags: ['premium', 'creative', 'developer'], createdAt: '2025-12-25', updatedAt: '2025-12-25',
+    rating: 4.9, reviewCount: 157, featured: true, tags: ['premium', 'creative', 'developer', 'business'], releasedAt: '2024-11-08', createdAt: '2025-12-25', updatedAt: '2025-12-25',
   },
   {
     id: '22', name: 'Dell Latitude 7450', brand: 'Dell', category: 'laptop',
@@ -415,7 +423,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1199, quarterly: 3299, yearly: 11999, deposit: 5000, currency: 'INR' },
     availability: { inStock: 12, totalStock: 18, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune'] },
-    rating: 4.7, reviewCount: 102, featured: false, tags: ['business', 'premium'], createdAt: '2025-12-23', updatedAt: '2025-12-23',
+    rating: 4.7, reviewCount: 102, featured: false, tags: ['business', 'premium'], releasedAt: '2023-06-15', createdAt: '2025-12-23', updatedAt: '2025-12-23',
   },
   {
     id: '23', name: 'Lenovo Yoga 9i', brand: 'Lenovo', category: 'laptop',
@@ -431,7 +439,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1249, quarterly: 3399, yearly: 12499, deposit: 6000, currency: 'INR' },
     availability: { inStock: 7, totalStock: 12, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai'] },
-    rating: 4.7, reviewCount: 71, featured: true, tags: ['premium', 'creative', 'student'], createdAt: '2025-12-22', updatedAt: '2025-12-22',
+    rating: 4.7, reviewCount: 71, featured: true, tags: ['premium', 'creative', 'student'], releasedAt: '2023-01-12', createdAt: '2025-12-22', updatedAt: '2025-12-22',
   },
   {
     id: '24', name: 'HP EliteBook 860 G9', brand: 'HP', category: 'laptop',
@@ -447,7 +455,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1199, quarterly: 3299, yearly: 11999, deposit: 5000, currency: 'INR' },
     availability: { inStock: 11, totalStock: 16, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 'Pune'] },
-    rating: 4.8, reviewCount: 96, featured: false, tags: ['business', 'premium'], createdAt: '2025-12-21', updatedAt: '2025-12-21',
+    rating: 4.8, reviewCount: 96, featured: false, tags: ['business', 'premium'], releasedAt: '2022-06-20', createdAt: '2025-12-21', updatedAt: '2025-12-21',
   },
   {
     id: '25', name: 'Acer Aspire 7', brand: 'Acer', category: 'laptop',
@@ -464,7 +472,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 849, quarterly: 2349, yearly: 8499, deposit: 3000, currency: 'INR' },
     availability: { inStock: 19, totalStock: 28, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Pune'] },
-    rating: 4.4, reviewCount: 83, featured: false, tags: ['gaming', 'budget'], createdAt: '2025-12-20', updatedAt: '2025-12-20',
+    rating: 4.4, reviewCount: 83, featured: false, tags: ['gaming', 'budget'], releasedAt: '2022-05-18', createdAt: '2025-12-20', updatedAt: '2025-12-20',
   },
   {
     id: '26', name: 'Dell Precision 3570', brand: 'Dell', category: 'laptop',
@@ -478,9 +486,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '15.6" FHD IPS', category: 'display' },
       { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
     ],
-    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 5000, currency: 'INR' },
+    pricing: { monthly: 1499, quarterly: 4049, yearly: 14999, deposit: 5000, currency: 'INR' },
     availability: { inStock: 9, totalStock: 14, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
-    rating: 4.7, reviewCount: 42, featured: false, tags: ['business', 'workstation'], createdAt: '2026-02-01', updatedAt: '2026-02-01',
+    rating: 4.7, reviewCount: 42, featured: false, tags: ['business', 'workstation'], releasedAt: '2022-05-06', createdAt: '2026-02-01', updatedAt: '2026-02-01',
   },
   {
     id: '27', name: 'HP ZBook Fury 16', brand: 'HP', category: 'laptop',
@@ -494,9 +502,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '16" QHD+ 165Hz', category: 'display' },
       { key: 'OS', value: 'Windows 11 Pro', category: 'os' },
     ],
-    pricing: { monthly: 1499, quarterly: 3999, yearly: 14999, deposit: 6000, currency: 'INR' },
+    pricing: { monthly: 1899, quarterly: 5149, yearly: 18999, deposit: 6000, currency: 'INR' },
     availability: { inStock: 5, totalStock: 9, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.8, reviewCount: 31, featured: true, tags: ['premium', 'workstation'], createdAt: '2026-02-03', updatedAt: '2026-02-03',
+    rating: 4.8, reviewCount: 31, featured: true, tags: ['premium', 'workstation', 'business'], releasedAt: '2023-04-20', createdAt: '2026-02-03', updatedAt: '2026-02-03',
   },
   {
     id: '28', name: 'ASUS ZenBook 14', brand: 'ASUS', category: 'laptop',
@@ -512,7 +520,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 999, quarterly: 2749, yearly: 9999, deposit: 4000, currency: 'INR' },
     availability: { inStock: 14, totalStock: 20, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Pune', 'Chennai'] },
-    rating: 4.7, reviewCount: 56, featured: false, tags: ['premium', 'ultrabook', 'student'], createdAt: '2026-02-05', updatedAt: '2026-02-05',
+    rating: 4.7, reviewCount: 56, featured: false, tags: ['premium', 'ultrabook', 'student'], releasedAt: '2023-02-23', createdAt: '2026-02-05', updatedAt: '2026-02-05',
   },
   {
     id: '29', name: 'Lenovo Legion 5 Pro', brand: 'Lenovo', category: 'laptop',
@@ -529,7 +537,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 1249, quarterly: 3399, yearly: 12499, deposit: 8000, currency: 'INR' },
     availability: { inStock: 8, totalStock: 12, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Hyderabad'] },
-    rating: 4.7, reviewCount: 68, featured: true, tags: ['gaming', 'premium'], createdAt: '2026-02-07', updatedAt: '2026-02-07',
+    rating: 4.7, reviewCount: 68, featured: true, tags: ['gaming', 'premium'], releasedAt: '2023-03-08', createdAt: '2026-02-07', updatedAt: '2026-02-07',
   },
   {
     id: '30', name: 'Acer Predator Helios 16', brand: 'Acer', category: 'laptop',
@@ -544,9 +552,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '16" WQXGA 240Hz', category: 'display' },
       { key: 'OS', value: 'Windows 11 Home', category: 'os' },
     ],
-    pricing: { monthly: 1399, quarterly: 3799, yearly: 13999, deposit: 10000, currency: 'INR' },
+    pricing: { monthly: 1699, quarterly: 4599, yearly: 16999, deposit: 10000, currency: 'INR' },
     availability: { inStock: 6, totalStock: 9, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.8, reviewCount: 44, featured: false, tags: ['gaming', 'premium'], createdAt: '2026-02-09', updatedAt: '2026-02-09',
+    rating: 4.8, reviewCount: 44, featured: false, tags: ['gaming', 'premium'], releasedAt: '2023-03-05', createdAt: '2026-02-09', updatedAt: '2026-02-09',
   },
   {
     id: '31', name: 'Samsung Galaxy Book4 Ultra', brand: 'Samsung', category: 'laptop',
@@ -560,9 +568,9 @@ export const MOCK_PRODUCTS: Product[] = [
       { key: 'Display', value: '16" 3K AMOLED', category: 'display' },
       { key: 'OS', value: 'Windows 11 Home', category: 'os' },
     ],
-    pricing: { monthly: 1299, quarterly: 3499, yearly: 12999, deposit: 6000, currency: 'INR' },
+    pricing: { monthly: 1399, quarterly: 3799, yearly: 13999, deposit: 6000, currency: 'INR' },
     availability: { inStock: 7, totalStock: 11, cities: ['Bangalore', 'Mumbai', 'Delhi'] },
-    rating: 4.7, reviewCount: 39, featured: false, tags: ['premium', 'creative'], createdAt: '2026-02-11', updatedAt: '2026-02-11',
+    rating: 4.7, reviewCount: 39, featured: false, tags: ['premium', 'creative', 'business'], releasedAt: '2024-02-01', createdAt: '2026-02-11', updatedAt: '2026-02-11',
   },
   {
     id: '32', name: 'HP ProBook 450', brand: 'HP', category: 'laptop',
@@ -578,7 +586,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
     pricing: { monthly: 899, quarterly: 2499, yearly: 8999, deposit: 3000, currency: 'INR' },
     availability: { inStock: 16, totalStock: 24, cities: ['Bangalore', 'Mumbai', 'Delhi', 'Chennai', 'Pune'] },
-    rating: 4.5, reviewCount: 52, featured: false, tags: ['business', 'budget'], createdAt: '2026-02-13', updatedAt: '2026-02-13',
+    rating: 4.5, reviewCount: 52, featured: false, tags: ['business', 'budget'], releasedAt: '2023-04-28', createdAt: '2026-02-13', updatedAt: '2026-02-13',
   },
 
 ];
@@ -588,6 +596,7 @@ export function Products() {
   const [filters, setFilters] = useState<ProductFilters>({
     brands: searchParams.get('brand')?.split(',') as Brand[] || [],
     categories: searchParams.get('category')?.split(',') as Category[] || [],
+    tags: searchParams.get('tag')?.split(',') || [],
     priceRange: searchParams.get('minPrice') && searchParams.get('maxPrice')
       ? [Number(searchParams.get('minPrice')), Number(searchParams.get('maxPrice'))]
       : undefined,
@@ -604,6 +613,7 @@ export function Products() {
     const params = new URLSearchParams();
     if (filters.brands?.length) params.set('brand', filters.brands.join(','));
     if (filters.categories?.length) params.set('category', filters.categories.join(','));
+    if (filters.tags?.length) params.set('tag', filters.tags.join(','));
     if (filters.priceRange) {
       params.set('minPrice', String(filters.priceRange[0]));
       params.set('maxPrice', String(filters.priceRange[1]));
@@ -621,6 +631,9 @@ export function Products() {
     }
     if (filters.categories?.length) {
       result = result.filter(p => filters.categories!.includes(p.category));
+    }
+    if (filters.tags?.length) {
+      result = result.filter(p => filters.tags!.some(t => p.tags.includes(t)));
     }
     if (filters.priceRange) {
       const [min, max] = filters.priceRange;
@@ -645,7 +658,7 @@ export function Products() {
         break;
       case 'newest':
       default:
-        result.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        result.sort((a, b) => new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime());
     }
 
     return result;
@@ -657,10 +670,10 @@ export function Products() {
     (filters.page || 1) * (filters.limit || 12)
   );
 
-  const activeFilterCount = (filters.brands?.length || 0) + (filters.categories?.length || 0) + (filters.priceRange ? 1 : 0);
+  const activeFilterCount = (filters.brands?.length || 0) + (filters.categories?.length || 0) + (filters.tags?.length || 0) + (filters.priceRange ? 1 : 0);
 
   const clearFilters = () => {
-    setFilters({ ...filters, brands: [], categories: [], priceRange: undefined, page: 1 });
+    setFilters({ ...filters, brands: [], categories: [], tags: [], priceRange: undefined, page: 1 });
   };
 
   return (
@@ -777,6 +790,29 @@ export function Products() {
                             className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                           />
                           <span className="text-body-sm text-secondary-700">{brand.label}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-secondary-700 mb-3">Use Case</label>
+                    <div className="space-y-2">
+                      {USE_CASES.map(useCase => (
+                        <label key={useCase.value} className="flex items-center gap-2 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={filters.tags?.includes(useCase.value) || false}
+                            onChange={e => setFilters(prev => ({
+                              ...prev,
+                              tags: e.target.checked
+                                ? [...(prev.tags || []), useCase.value]
+                                : prev.tags?.filter(t => t !== useCase.value),
+                              page: 1,
+                            }))}
+                            className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
+                          />
+                          <span className="text-body-sm text-secondary-700">{useCase.label}</span>
                         </label>
                       ))}
                     </div>
@@ -922,6 +958,29 @@ export function Products() {
                     className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                   />
                   <span className="text-body-sm text-secondary-700">{brand.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-secondary-700 mb-3">Use Case</label>
+            <div className="space-y-2">
+              {USE_CASES.map(useCase => (
+                <label key={useCase.value} className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={filters.tags?.includes(useCase.value) || false}
+                    onChange={e => setFilters(prev => ({
+                      ...prev,
+                      tags: e.target.checked
+                        ? [...(prev.tags || []), useCase.value]
+                        : prev.tags?.filter(t => t !== useCase.value),
+                      page: 1,
+                    }))}
+                    className="w-4 h-4 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
+                  />
+                  <span className="text-body-sm text-secondary-700">{useCase.label}</span>
                 </label>
               ))}
             </div>

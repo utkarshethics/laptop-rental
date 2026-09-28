@@ -7,32 +7,32 @@ import { Card } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
 import { formatCurrency } from '@/lib/utils';
 
-const BRANDS = ['HP', 'Dell', 'Lenovo', 'Apple', 'ASUS', 'Acer'];
+const BRANDS = ['HP', 'Dell', 'Lenovo', 'Apple', 'ASUS', 'Acer', 'Samsung', 'MSI'];
 const CATEGORIES = ['laptop'];
 const STATUS_OPTIONS = ['active', 'inactive', 'out_of_stock', 'discontinued'];
 
 const MOCK_PRODUCTS = [
   { id: '1', name: 'HP EliteBook 840 G9', brand: 'HP', category: 'laptop', price: 1199, stock: 15, status: 'active', featured: true, createdAt: '2024-01-15' },
-  { id: '2', name: 'Dell Latitude 5430', brand: 'Dell', category: 'laptop', price: 1099, stock: 22, status: 'active', featured: false, createdAt: '2024-01-10' },
+  { id: '2', name: 'Dell Latitude 5430', brand: 'Dell', category: 'laptop', price: 999, stock: 22, status: 'active', featured: false, createdAt: '2024-01-10' },
   { id: '3', name: 'MacBook Air M2', brand: 'Apple', category: 'laptop', price: 1299, stock: 8, status: 'active', featured: true, createdAt: '2024-01-20' },
   { id: '4', name: 'Lenovo ThinkPad X1 Carbon', brand: 'Lenovo', category: 'laptop', price: 1249, stock: 12, status: 'active', featured: true, createdAt: '2024-01-18' },
-  { id: '5', name: 'ASUS ROG Zephyrus G14', brand: 'ASUS', category: 'laptop', price: 1299, stock: 6, status: 'active', featured: false, createdAt: '2024-01-22' },
+  { id: '5', name: 'ASUS ROG Zephyrus G14', brand: 'ASUS', category: 'laptop', price: 1399, stock: 6, status: 'active', featured: false, createdAt: '2024-01-22' },
   { id: '6', name: 'Acer Swift Go 14', brand: 'Acer', category: 'laptop', price: 999, stock: 18, status: 'active', featured: false, createdAt: '2024-01-25' },
-  { id: '7', name: 'MacBook Pro 14', brand: 'Apple', category: 'laptop', price: 1299, stock: 6, status: 'active', featured: true, createdAt: '2026-01-25' },
+  { id: '7', name: 'MacBook Pro 14', brand: 'Apple', category: 'laptop', price: 1599, stock: 6, status: 'active', featured: true, createdAt: '2026-01-25' },
   { id: '8', name: 'HP Spectre x360 14', brand: 'HP', category: 'laptop', price: 1249, stock: 9, status: 'active', featured: true, createdAt: '2026-01-22' },
   { id: '9', name: 'Lenovo IdeaPad Slim 5', brand: 'Lenovo', category: 'laptop', price: 899, stock: 14, status: 'active', featured: false, createdAt: '2026-01-20' },
   { id: '10', name: 'HP Pavilion 15', brand: 'HP', category: 'laptop', price: 899, stock: 20, status: 'active', featured: false, createdAt: '2026-01-18' },
   { id: '11', name: 'Dell Inspiron 15', brand: 'Dell', category: 'laptop', price: 849, stock: 18, status: 'active', featured: false, createdAt: '2026-01-16' },
   { id: '12', name: 'ASUS VivoBook 15', brand: 'ASUS', category: 'laptop', price: 799, stock: 25, status: 'active', featured: false, createdAt: '2026-01-14' },
-  { id: '13', name: 'Samsung Galaxy Book3 Pro', brand: 'Samsung', category: 'laptop', price: 1099, stock: 7, status: 'active', featured: false, createdAt: '2026-01-12' },
+  { id: '13', name: 'Samsung Galaxy Book3 Pro', brand: 'Samsung', category: 'laptop', price: 1199, stock: 7, status: 'active', featured: false, createdAt: '2026-01-12' },
   { id: '14', name: 'MSI GF63 Thin', brand: 'MSI', category: 'laptop', price: 1099, stock: 11, status: 'active', featured: true, createdAt: '2026-01-10' },
   { id: '15', name: 'Acer Nitro V 15', brand: 'Acer', category: 'laptop', price: 949, stock: 16, status: 'active', featured: false, createdAt: '2026-01-08' },
-  { id: '16', name: 'MacBook Air 15 M3', brand: 'Apple', category: 'laptop', price: 1299, stock: 10, status: 'active', featured: true, createdAt: '2026-01-07' },
+  { id: '16', name: 'MacBook Air 15 M3', brand: 'Apple', category: 'laptop', price: 1399, stock: 10, status: 'active', featured: true, createdAt: '2026-01-07' },
   { id: '17', name: 'Dell XPS 13 Plus', brand: 'Dell', category: 'laptop', price: 1249, stock: 8, status: 'active', featured: true, createdAt: '2026-01-05' },
   { id: '18', name: 'Lenovo ThinkPad T14 Gen 4', brand: 'Lenovo', category: 'laptop', price: 1199, stock: 13, status: 'active', featured: false, createdAt: '2026-01-03' },
   { id: '19', name: 'HP Victus 15', brand: 'HP', category: 'laptop', price: 949, stock: 17, status: 'active', featured: false, createdAt: '2026-01-01' },
-  { id: '20', name: 'ASUS ROG Strix G16', brand: 'ASUS', category: 'laptop', price: 1299, stock: 5, status: 'active', featured: true, createdAt: '2025-12-28' },
-  { id: '21', name: 'MacBook Pro 16 M4', brand: 'Apple', category: 'laptop', price: 1299, stock: 4, status: 'active', featured: true, createdAt: '2025-12-25' },
+  { id: '20', name: 'ASUS ROG Strix G16', brand: 'ASUS', category: 'laptop', price: 1449, stock: 5, status: 'active', featured: true, createdAt: '2025-12-28' },
+  { id: '21', name: 'MacBook Pro 16 M4', brand: 'Apple', category: 'laptop', price: 1899, stock: 4, status: 'active', featured: true, createdAt: '2025-12-25' },
   { id: '22', name: 'Dell Latitude 7450', brand: 'Dell', category: 'laptop', price: 1199, stock: 12, status: 'active', featured: false, createdAt: '2025-12-23' },
   { id: '23', name: 'Lenovo Yoga 9i', brand: 'Lenovo', category: 'laptop', price: 1249, stock: 7, status: 'active', featured: true, createdAt: '2025-12-22' },
   { id: '24', name: 'HP EliteBook 860 G9', brand: 'HP', category: 'laptop', price: 1199, stock: 11, status: 'active', featured: false, createdAt: '2025-12-21' },

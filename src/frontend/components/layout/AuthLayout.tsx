@@ -15,7 +15,7 @@ export function AuthLayout() {
             Rent Premium Laptops<br />Without the Premium Price
           </h1>
           <p className="text-lg text-primary-100 mb-8 max-w-lg">
-            Access the latest HP, Dell, Lenovo, MacBook, ASUS & Acer laptops.
+            Access the latest HP, Dell, Lenovo, Apple, ASUS, Acer, Samsung & MSI laptops.
             Flexible plans. Free delivery. Damage protection included.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-primary-100 text-sm">

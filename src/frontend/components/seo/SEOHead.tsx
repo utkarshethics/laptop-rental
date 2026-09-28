@@ -267,6 +267,8 @@ export function generateCategoryBreadcrumbs(categorySlug: string) {
     'microsoft-surface-rental': 'Surface Laptop Rental',
     'workstation-rental': 'Mobile Workstation Rental',
     'budget-laptop-rental': 'Budget Laptop Rental',
+    'samsung-laptop-rental': 'Samsung Laptop Rental',
+    'msi-laptop-rental': 'MSI Laptop Rental',
   };
   return [
     { name: 'Home', url: '/' },
@@ -291,6 +293,8 @@ export function generateProductBreadcrumbs(categorySlug: string, productName: st
     'microsoft-surface-rental': 'Surface Laptop Rental',
     'workstation-rental': 'Mobile Workstation Rental',
     'budget-laptop-rental': 'Budget Laptop Rental',
+    'samsung-laptop-rental': 'Samsung Laptop Rental',
+    'msi-laptop-rental': 'MSI Laptop Rental',
   };
   return [
     { name: 'Home', url: '/' },

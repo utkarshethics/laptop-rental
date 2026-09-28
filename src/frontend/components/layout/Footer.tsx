@@ -2,13 +2,19 @@ import { Link } from 'react-router-dom';
 import { Laptop, Truck, Shield, Star, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, ArrowUpRight } from 'lucide-react';
 
 const FOOTER_LINKS = {
-  products: [
-    { label: 'All Laptops', href: '/products' },
-    { label: 'Business Laptops', href: '/products?category=laptop&tag=business' },
-    { label: 'Gaming Laptops', href: '/products?category=laptop&tag=gaming' },
-    { label: 'Student Laptops', href: '/products?category=laptop&tag=student' },
-    { label: 'MacBook Rentals', href: '/products?brand=Apple' },
-  ],
+  products: {
+    use: [
+      { label: 'All Laptops', href: '/products' },
+      { label: 'Business Laptops', href: '/products?category=laptop&tag=business' },
+      { label: 'Gaming Laptops', href: '/products?category=laptop&tag=gaming' },
+      { label: 'Student Laptops', href: '/products?category=laptop&tag=student' },
+    ],
+    brand: [
+      { label: 'MacBook Rentals', href: '/products?brand=Apple' },
+      { label: 'Samsung Rentals', href: '/products?brand=Samsung' },
+      { label: 'MSI Rentals', href: '/products?brand=MSI' },
+    ],
+  },
   support: [
     { label: 'Help Center', href: '/help' },
     { label: 'FAQs', href: '/faq' },
@@ -69,7 +75,7 @@ export function Footer() {
               <span className="font-bold text-xl text-white">LaptopRent</span>
             </Link>
             <p className="text-secondary-400 text-body mb-6 max-w-xs">
-              India's trusted laptop rental platform. Rent premium laptops from HP, Dell, Lenovo, Apple, ASUS & Acer with free doorstep delivery.
+              India's trusted laptop rental platform. Rent premium laptops from HP, Dell, Lenovo, Apple, ASUS, Acer, Samsung & MSI with free doorstep delivery.
             </p>
             <div className="flex flex-wrap gap-4">
               {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
@@ -89,18 +95,32 @@ export function Footer() {
 
           <div>
             <h3 className="font-semibold text-white mb-4">Products</h3>
-            <ul className="space-y-3" role="list">
-              {FOOTER_LINKS.products.map(link => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    className="text-secondary-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="space-y-5">
+              <div>
+                <h4 className="text-xs font-medium uppercase tracking-wide text-secondary-500 mb-2">By Use Case</h4>
+                <ul className="space-y-3" role="list">
+                  {FOOTER_LINKS.products.use.map(link => (
+                    <li key={link.href}>
+                      <Link to={link.href} className="text-secondary-400 hover:text-white transition-colors text-sm">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xs font-medium uppercase tracking-wide text-secondary-500 mb-2">By Brand</h4>
+                <ul className="space-y-3" role="list">
+                  {FOOTER_LINKS.products.brand.map(link => (
+                    <li key={link.href}>
+                      <Link to={link.href} className="text-secondary-400 hover:text-white transition-colors text-sm">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
 
           <div>
