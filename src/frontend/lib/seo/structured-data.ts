@@ -425,3 +425,210 @@ export function generateLocalBusinessSchema(citySlug: string) {
     ],
   };
 }
+// ---------------------------------------------------------------------------
+// Entity graph assembly
+//
+// The generators above each return a standalone document, so every page used
+// to emit several separate ld+json blocks in which the organization was
+// re-declared inline as an unrelated node each time. Nothing shared an @id, so
+// no engine could tell that the "LaptopRent" in the Service, the Brand and the
+// publisher was the same company.
+//
+// buildEntityGraph folds the per-page documents into a single @graph, gives
+// every top-level node an @id, and rewrites repeated inline copies of the
+// global entities as references to one page-independent node. Nested values
+// keep no @id, so every reference always resolves inside the same graph.
+// ---------------------------------------------------------------------------
+
+const BASE = 'https://laptoponrent.online';
+
+type Json = Record<string, unknown>;
+
+const typeOf = (n: Json): string[] => (Array.isArray(n['@type']) ? (n['@type'] as string[]) : [String(n['@type'] ?? '')]);
+
+/** Page-independent entities: the same node on every page of the site. */
+const GLOBAL_SLUG: Record<string, string> = {
+  Organization: 'organization',
+  WebSite: 'website',
+  Brand: 'brand',
+};
+
+const slugify = (s: string) => s.replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+
+const GLOBAL_SLUG_BY_SLUG: Record<string, string> = Object.fromEntries(
+  Object.entries(GLOBAL_SLUG).map(([t, s]) => [s, t]),
+);
+
+const isBareRef = (v: unknown): v is Json =>
+  !!v && typeof v === 'object' && !Array.isArray(v)
+  && typeof (v as Json)['@id'] === 'string' && Object.keys(v as Json).length === 1;
+
+/** True for an inline copy of one of the global entities. */
+function isGlobalCopy(v: unknown, slug: string): boolean {
+  if (!v || typeof v !== 'object' || Array.isArray(v)) return false;
+  const o = v as Json;
+  // Checked inline rather than via the isBareRef type guard, which would narrow
+  // this branch to `never` and make every property access below an error.
+  if (typeof o['@id'] === 'string' && Object.keys(o).length === 1) return false;
+  if (!typeOf(o).some((t) => GLOBAL_SLUG[t] === slug)) return false;
+  return o['name'] === ORGANIZATION.name || slug === 'website' || slug === 'brand';
+}
+
+/** Replace inline duplicates of a global entity with a reference to its @id. */
+function derefGlobals(node: unknown, globalIds: Map<string, string>): unknown {
+  if (Array.isArray(node)) return node.map((v) => derefGlobals(v, globalIds));
+  if (!node || typeof node !== 'object') return node;
+  const o = node as Json;
+  for (const [slug, id] of globalIds) {
+    if (isGlobalCopy(o, slug)) return { '@id': id };
+  }
+  const out: Json = {};
+  for (const [k, v] of Object.entries(o)) out[k] = derefGlobals(v, globalIds);
+  return out;
+}
+
+export function buildEntityGraph(
+  schemas: unknown[],
+  opts: { url: string; name?: string; description?: string; isHome?: boolean },
+) {
+  // Flatten, and separate real definitions from bare references. The React
+  // SEO layer emits a nested @graph whose first entries are nothing but
+  // {"@id": "...#organization"} with no @type and no properties, i.e.
+  // references to entities it never defines.
+  const flat: Json[] = [];
+  const pendingRefs = new Set<string>();
+  const push = (n: Json) => {
+    if (Array.isArray(n['@graph'])) { (n['@graph'] as Json[]).forEach(push); return; }
+    const bare = isBareRef(n);
+    if (bare) {
+      const id = n['@id'] as string;
+      if (id.startsWith(`${BASE}/#`)) pendingRefs.add(id);
+      return;
+    }
+    flat.push(n);
+  };
+  schemas.filter(Boolean).forEach((s) => {
+    const c = { ...(s as Json) };
+    delete c['@context'];
+    push(c);
+  });
+
+  // A breadcrumb that only points at the homepage describes no trail, so the
+  // homepage does not emit one.
+  const kept = opts.isHome
+    ? flat.filter((d) => !typeOf(d).includes('BreadcrumbList'))
+    : flat;
+
+  // Pass 1: which global entities does this page declare?
+  const globalIds = new Map<string, string>();
+  for (const d of kept) {
+    for (const t of typeOf(d)) {
+      const slug = GLOBAL_SLUG[t];
+      if (slug && !globalIds.has(slug)) globalIds.set(slug, `${BASE}/#${slug}`);
+    }
+  }
+  // A reference to a global entity counts as a need for it, even when this
+  // page never defines it.
+  for (const id of pendingRefs) {
+    const slug = id.slice(`${BASE}/#`.length);
+    if (GLOBAL_SLUG_BY_SLUG[slug]) globalIds.set(slug, id);
+  }
+
+  // Pass 2: give every top-level node an @id.
+  const used = new Set<string>();
+  const graph: Json[] = kept.map((d) => {
+    const types = typeOf(d);
+    const node: Json = {};
+    for (const [k, v] of Object.entries(d)) {
+      if (k === '@id') continue;
+      if (k === '@type' && types.some((t) => GLOBAL_SLUG[t])) continue;
+      node[k] = v;
+    }
+    const global = types.map((t) => GLOBAL_SLUG[t]).find(Boolean);
+    if (global) {
+      node['@type'] = types.find((t) => !GLOBAL_SLUG[t]) ?? types[0];
+      node['@id'] = globalIds.get(global)!;
+    } else {
+      const base = `${opts.url}#${slugify(types[0] || 'entity')}`;
+      let id = base;
+      let n = 2;
+      while (used.has(id)) id = `${base}-${n++}`;
+      used.add(id);
+      node['@id'] = id;
+    }
+    return node;
+  });
+
+  // Hoist any global entity that other nodes will reference but this page never
+  // declared at the top level, so no reference dangles.
+  for (const [slug, id] of globalIds) {
+    if (graph.some((g) => g['@id'] === id)) continue;
+    if (slug === 'organization') {
+      graph.unshift({
+        '@type': 'Organization', '@id': id, name: ORGANIZATION.name,
+        legalName: ORGANIZATION.legalName, url: ORGANIZATION.url,
+        logo: ORGANIZATION.logo, sameAs: ORGANIZATION.sameAs,
+        contactPoint: ORGANIZATION.contactPoint, address: ORGANIZATION.address,
+        foundingDate: ORGANIZATION.foundingDate, founders: ORGANIZATION.founders,
+      });
+    } else if (slug === 'website') {
+      graph.unshift({ '@type': 'WebSite', '@id': id, url: `${BASE}/`, name: ORGANIZATION.name });
+    } else {
+      graph.unshift({ '@type': 'Brand', '@id': id, name: ORGANIZATION.name });
+    }
+  }
+
+  const derefed = graph.map((n) => derefGlobals(n, globalIds) as Json);
+
+  // Resolve the remaining dangling references. The React layer points at
+  // bare-origin ids such as .../#faqpage and .../#localbusiness, but the
+  // entities it means are page-scoped and were assigned .../<path>/#faqpage.
+  // Map each such reference onto the node actually declared on this page, and
+  // drop it if the page declares no such entity.
+  const defined = new Set(derefed.map((n) => n['@id'] as string));
+  const bySlug = new Map<string, string>();
+  for (const n of derefed) {
+    const id = n['@id'] as string;
+    const frag = id.includes('#') ? id.slice(id.indexOf('#') + 1) : '';
+    if (frag && !bySlug.has(frag)) bySlug.set(frag, id);
+  }
+  const rebase = (node: unknown): unknown => {
+    if (Array.isArray(node)) return node.map(rebase);
+    if (!node || typeof node !== 'object') return node;
+    if (isBareRef(node)) {
+      const id = node['@id'] as string;
+      if (defined.has(id)) return node;
+      const frag = id.includes('#') ? id.slice(id.indexOf('#') + 1) : '';
+      const target = bySlug.get(frag);
+      return target ? { '@id': target } : undefined;
+    }
+    const out: Json = {};
+    for (const [k, v] of Object.entries(node as Json)) {
+      const r = rebase(v);
+      if (r !== undefined) out[k] = r;
+    }
+    return out;
+  };
+  for (let i = 0; i < derefed.length; i++) derefed[i] = rebase(derefed[i]) as Json;
+
+  const has = (t: string) => derefed.some((n) => typeOf(n).includes(t));
+  const firstId = (t: string) => derefed.find((n) => typeOf(n).includes(t))?.['@id'];
+
+  // Every page states which page it is, and what it is about.
+  const webPage: Json = {
+    '@type': 'WebPage',
+    '@id': `${opts.url}#webpage`,
+    url: opts.url,
+    ...(opts.name ? { name: opts.name } : {}),
+    ...(opts.description ? { description: opts.description } : {}),
+    isPartOf: { '@id': `${BASE}/#website` },
+    about: { '@id': `${BASE}/#organization` },
+    inLanguage: 'en-IN',
+  };
+  const main = firstId('Service') || firstId('Product') || firstId('BlogPosting') || firstId('ItemList');
+  if (main) webPage.mainEntity = { '@id': main };
+  if (has('BreadcrumbList')) webPage.breadcrumb = { '@id': `${opts.url}#breadcrumb` };
+  derefed.push(webPage);
+
+  return { '@context': 'https://schema.org', '@graph': derefed };
+}

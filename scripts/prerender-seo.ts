@@ -1,5 +1,5 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
+import { dirname, join, resolve } from 'node:path';
 
 import {
   INDIAN_CITIES,
@@ -13,6 +13,7 @@ import {
   generateCityPageSchema,
   generateFAQSchema,
   generateLocalBusinessSchema,
+  buildEntityGraph,
 } from '../src/frontend/lib/seo/structured-data';
 
 const DIST = resolve(process.cwd(), 'dist/frontend');
@@ -104,11 +105,38 @@ function buildPage(opts: {
   const hreflangs = hreflang
     .map(h => `\n    <link rel="alternate" hreflang="${h.code}" href="${h.href === BASE || h.href.endsWith('/') ? h.href : `${h.href}/`}" />`)
     .join('');
-  const jsonLdBlocks = jsonLd
-    .filter(Boolean)
-    .map(s => `\n    <script type="application/ld+json">\n    ${JSON.stringify(s, null, 2)}\n    </script>`)
-    .join('\n');
+  // The Vite build already rendered the React SEO layer into this HTML, which
+  // emits one ld+json block per component: the built pages carried 13 blocks,
+  // including three byte-identical LocalBusiness and three identical
+  // BreadcrumbList entries. Fold those in, drop exact duplicates, and emit a
+  // single @graph so each page states its entities exactly once.
+  const EXISTING = /<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>\s*/g;
+  const built = (html.match(EXISTING) || [])
+    .map((b) => {
+      try { return JSON.parse(b.replace(/<[^>]+>/g, '')); } catch { return null; }
+    })
+    .filter(Boolean);
+  const merged = [...built, ...jsonLd].filter(Boolean);
+  const seen = new Set<string>();
+  const deduped = merged.filter((s) => {
+    const o = s as Record<string, unknown>;
+    const k = JSON.stringify(o, Object.keys(o).sort());
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
 
+  // One @graph per page. The generators return standalone documents, so folding
+  // them here is what gives every page shared, resolvable entity @ids.
+  const entityGraph = buildEntityGraph(deduped, {
+    url: canonicalUrl,
+    name: title,
+    description,
+    isHome: route === '/',
+  });
+  const jsonLdBlocks = `\n    <script type="application/ld+json">\n    ${JSON.stringify(entityGraph, null, 2)}\n    </script>`;
+
+  html = html.replace(EXISTING, '');
   html = html.replace('</head>', `${geoMeta}\n\n    ${hreflangs}${jsonLdBlocks}\n  </head>`);
   if (body) html = injectBody(html, body);
   writePage(route, html);
@@ -607,4 +635,17 @@ writeFileSync(resolve(DIST, 'sitemap-index.xml'), sitemapIndex([
     process.exit(1);
   }
   console.log(`Sitemaps generated: ${seen.size} unique URLs, no cross-sitemap duplicates.`);
+}
+/**
+ * GitHub Pages uploads dist/frontend wholesale, so anything left in that
+ * directory becomes a live URL. Finder-style duplicates ("sitemap 3.xml",
+ * "robots 2.txt", "index 3.html") accumulated there and would publish as
+ * indexable junk alongside the real files. Remove them, and any stale copy of
+ * a generated sitemap, so the published tree matches the sitemaps exactly.
+ */
+const junk = readdirSync(DIST, { withFileTypes: true })
+  .filter((e) => e.isFile() && /^.+ \d+\.[^.]+$/.test(e.name));
+for (const j of junk) {
+  unlinkSync(join(DIST, j.name));
+  console.log(`removed stray build artifact: ${j.name}`);
 }
