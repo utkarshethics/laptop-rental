@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { Filter, X, ChevronDown, Grid, List, Loader2, Search } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -592,6 +592,7 @@ export const MOCK_PRODUCTS: Product[] = [
 ];
 
 export function Products() {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [filters, setFilters] = useState<ProductFilters>({
     brands: searchParams.get('brand')?.split(',') as Brand[] || [],
@@ -704,15 +705,32 @@ export function Products() {
 
   return (
     <div className="min-h-screen bg-secondary-50">
-      <div className="bg-white border-b border-secondary-200 sticky top-16 z-30">
-        <div className="container py-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <h1 className="text-heading-lg font-bold text-secondary-900">Products</h1>
-              <span className="text-body-sm text-secondary-500">{filteredProducts.length} products found</span>
+      <div className="bg-white border-b border-secondary-200 z-30 shadow-sm md:sticky md:top-16">
+        <div className="container py-3 sm:py-4">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <h1 className="text-heading-md sm:text-heading-lg font-bold text-secondary-900">Products</h1>
+                <span className="text-body-sm text-secondary-500">({filteredProducts.length} found)</span>
+              </div>
+
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setFilterModalOpen(true)}
+                className={cn('lg:hidden gap-1.5', activeFilterCount > 0 && 'bg-primary-50 border-primary-200 text-primary-700 font-medium')}
+              >
+                <Filter className="w-4 h-4" />
+                Filters
+                {activeFilterCount > 0 && (
+                  <span className="w-5 h-5 rounded-full bg-primary-600 text-white text-xs flex items-center justify-center font-bold">
+                    {activeFilterCount}
+                  </span>
+                )}
+              </Button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
               <div className="relative w-full sm:w-64">
                 <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-secondary-400" />
                 <Input
@@ -723,7 +741,7 @@ export function Products() {
                     setQuery(e.target.value);
                     setFilters(prev => ({ ...prev, page: 1 }));
                   }}
-                  className="pl-9"
+                  className="pl-9 w-full"
                 />
               </div>
 
@@ -746,43 +764,30 @@ export function Products() {
                 </Button>
               </div>
 
-              <div className="relative">
-                <Dropdown
-                  options={SORT_OPTIONS.map(o => ({ value: o.value, label: o.label }))}
-                  value={filters.sortBy}
-                  onChange={value => setFilters(prev => ({ ...prev, sortBy: value as ProductFilters['sortBy'], page: 1 }))}
-                  placeholder="Sort by"
-                  className="w-48"
-                />
+              <div className="flex items-center gap-2 w-full sm:w-auto">
+                <div className="relative flex-1 sm:w-48">
+                  <Dropdown
+                    options={SORT_OPTIONS.map(o => ({ value: o.value, label: o.label }))}
+                    value={filters.sortBy}
+                    onChange={value => setFilters(prev => ({ ...prev, sortBy: value as ProductFilters['sortBy'], page: 1 }))}
+                    placeholder="Sort by"
+                    className="w-full"
+                  />
+                </div>
               </div>
-
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setFilterModalOpen(true)}
-                className={cn('lg:hidden gap-2', activeFilterCount > 0 && 'bg-primary-50 border-primary-200 text-primary-700')}
-              >
-                <Filter className="w-4 h-4" />
-                Filters
-                {activeFilterCount > 0 && (
-                  <span className="w-5 h-5 rounded-full bg-primary-600 text-white text-xs flex items-center justify-center">
-                    {activeFilterCount}
-                  </span>
-                )}
-              </Button>
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-2 text-body-sm text-secondary-600">
-              <span>View prices:</span>
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-secondary-100 sm:border-0 sm:pt-0">
+            <div className="flex items-center gap-2 text-xs sm:text-body-sm text-secondary-600">
+              <span className="font-medium whitespace-nowrap">View prices:</span>
               <div className="flex bg-secondary-100 rounded-lg p-1">
                 {RENTAL_PERIODS.map(period => (
                   <button
                     key={period.value}
                     onClick={() => setSelectedRentalPeriod(period.value as 'monthly' | 'quarterly' | 'yearly')}
                     className={cn(
-                      'px-3 py-1.5 rounded-md text-xs font-medium transition-colors',
+                      'px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-md text-xs font-medium transition-colors',
                       selectedRentalPeriod === period.value
                         ? 'bg-white text-primary-700 shadow-sm'
                         : 'text-secondary-600 hover:text-secondary-900'
@@ -793,13 +798,54 @@ export function Products() {
                 ))}
               </div>
             </div>
+
+            {activeFilterCount > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5">
+                {filters.brands?.map(brand => (
+                  <span
+                    key={brand}
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700 border border-primary-200"
+                  >
+                    {brand}
+                    <button
+                      onClick={() => setFilters(prev => ({ ...prev, brands: prev.brands?.filter(b => b !== brand), page: 1 }))}
+                      className="hover:text-primary-900 ml-0.5"
+                      aria-label={`Remove ${brand} filter`}
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </span>
+                ))}
+                {filters.tags?.map(tag => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700 border border-primary-200 capitalize"
+                  >
+                    {tag}
+                    <button
+                      onClick={() => setFilters(prev => ({ ...prev, tags: prev.tags?.filter(t => t !== tag), page: 1 }))}
+                      className="hover:text-primary-900 ml-0.5"
+                      aria-label={`Remove ${tag} filter`}
+                    >
+                      <X className="w-3 h-3" />
+                    </button>
+                  </span>
+                ))}
+                <button
+                  onClick={clearFilters}
+                  className="text-xs text-secondary-500 hover:text-primary-600 underline ml-1"
+                >
+                  Clear all
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
 
-      <div className="container py-8">
+      <div className="container py-4 sm:py-8">
         <div className="grid lg:grid-cols-4 gap-8">
-          <aside className="lg:col-span-1">
+          <aside className="hidden lg:block lg:col-span-1">
             <div className="sticky top-24 space-y-6">
               <div className="bg-white rounded-xl border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -907,7 +953,7 @@ export function Products() {
             ) : (
               <>
                 <div className={cn(
-                  'gap-6',
+                  'gap-4 sm:gap-6',
                   viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'space-y-4'
                 )}>
                   {paginatedProducts.map(product => (
@@ -917,9 +963,11 @@ export function Products() {
                         ...product,
                         pricing: {
                           ...product.pricing,
-                          monthly: product.pricing.monthly,
+                          monthly: (product.pricing as any)[selectedRentalPeriod] || product.pricing.monthly,
                         }
                       }}
+                      periodLabel={selectedRentalPeriod}
+                      onClick={() => navigate(`/products/${product.id}`)}
                     />
                   ))}
                 </div>
@@ -979,7 +1027,7 @@ export function Products() {
         title="Filter Products"
         size="lg"
       >
-        <div className="space-y-6">
+        <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-1">
           <div>
             <label className="block text-sm font-medium text-secondary-700 mb-3">Brands</label>
             <div className="space-y-2">
@@ -1057,7 +1105,7 @@ export function Products() {
 
           <div className="flex justify-end gap-3 pt-4 border-t border-secondary-100">
             <Button variant="outline" onClick={clearFilters}>Clear All</Button>
-            <Button onClick={() => setFilterModalOpen(false)}>Apply Filters</Button>
+            <Button onClick={() => setFilterModalOpen(false)}>Apply Filters ({filteredProducts.length})</Button>
           </div>
         </div>
       </Modal>

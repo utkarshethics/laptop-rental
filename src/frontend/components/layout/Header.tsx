@@ -193,7 +193,7 @@ export function Header() {
                 )}
               </div>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="hidden sm:flex items-center gap-2">
                 <Link
                   to="/login"
                   className="px-4 py-2 text-sm font-medium text-secondary-600 hover:text-secondary-900 transition-colors"
@@ -302,8 +302,8 @@ export function Header() {
         )}
       </nav>
 
-      <div className="bg-primary-600 px-4 py-2 text-center text-sm text-white">
-        <span className="font-medium">🚚 Free Doorstep Delivery</span> across {selectedCity} | <span className="font-medium">🔒 Secure Payments</span> | <span className="font-medium">🛡️ Damage Protection</span> included
+      <div className="bg-primary-600 px-3 py-1.5 sm:py-2 text-center text-xs sm:text-sm text-white">
+        <span className="font-medium">🚚 Free Doorstep Delivery</span> across {selectedCity} <span className="opacity-60 mx-1">|</span> <span className="font-medium">🔒 Secure Payments</span> <span className="hidden sm:inline"><span className="opacity-60 mx-1">|</span> <span className="font-medium">🛡️ Damage Protection</span> included</span>
       </div>
     </header>
   );

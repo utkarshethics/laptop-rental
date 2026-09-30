@@ -72,9 +72,9 @@ export function Footer() {
 
   return (
     <footer className="bg-secondary-900 text-secondary-300" role="contentinfo">
-      <div className="container py-16 lg:py-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
-          <div className="col-span-2 lg:col-span-2">
+      <div className="container py-12 sm:py-16 lg:py-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4" aria-label="LaptopRent Home">
               <Laptop className="w-8 h-8 text-primary-400" />
               <span className="font-bold text-xl text-white">LaptopRent</span>
@@ -98,7 +98,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
             <h3 className="font-semibold text-white mb-4">Products</h3>
             <div className="space-y-5">
               <div>

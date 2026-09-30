@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { openTokenBooking } from '@/lib/tokenBooking';
 import { useCity } from '@/context/CityContext';
@@ -114,26 +115,29 @@ interface ProductCardProps {
     name: string;
     brand: string;
     category: string;
-    images: { url: string; alt: string }[];
-    pricing: { daily: number; monthly: number };
+    images: { url: string; alt: string; isPrimary?: boolean }[];
+    pricing: { daily?: number; monthly: number; quarterly?: number; yearly?: number };
     rating: number;
     reviewCount: number;
     availability: { inStock: number; cities: string[] };
     featured?: boolean;
     specifications?: { key: string; value: string; category: string }[];
   };
+  periodLabel?: 'monthly' | 'quarterly' | 'yearly';
   onAddToCart?: () => void;
   onClick?: () => void;
 }
 
-export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps) {
+export function ProductCard({ product, periodLabel = 'monthly', onAddToCart, onClick }: ProductCardProps) {
   const primaryImage = product.images.find(img => img.isPrimary) || product.images[0];
   const { city } = useCity();
   const servedInCity = product.availability.cities.includes(city);
   const specs = specSummary(product.specifications);
 
+  const periodSuffix = periodLabel === 'quarterly' ? '/quarter' : periodLabel === 'yearly' ? '/year' : '/month';
+
   return (
-    <Card hover padding="none" className="group overflow-hidden" onClick={onClick}>
+    <Card hover padding="none" className="group overflow-hidden cursor-pointer" onClick={onClick}>
       <div className="relative aspect-[4/3] overflow-hidden bg-secondary-50">
         {primaryImage ? (
           <img
@@ -165,9 +169,15 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="flex-1 min-w-0">
             <p className="text-caption text-secondary-500 font-medium uppercase tracking-wide">{product.brand}</p>
-            <h3 className="text-heading-sm font-semibold text-secondary-900 line-clamp-2 min-h-10">{product.name}</h3>
+            <Link
+              to={`/products/${product.id}`}
+              onClick={e => e.stopPropagation()}
+              className="hover:text-primary-600 transition-colors"
+            >
+              <h3 className="text-heading-sm font-semibold text-secondary-900 line-clamp-2 min-h-10">{product.name}</h3>
+            </Link>
           </div>
-          <div className="flex items-center gap-1 text-secondary-500">
+          <div className="flex items-center gap-1 text-secondary-500 flex-shrink-0">
             <svg className="w-4 h-4 fill-current text-warning-500" viewBox="0 0 24 24">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
@@ -191,11 +201,14 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
           )}
         </div>
 
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-heading-md font-bold text-primary-600">
-              ₹{product.pricing.monthly.toLocaleString()}<span className="text-body-sm font-normal text-secondary-500">/month</span>
-            </p>
+        <div className="flex items-center justify-between gap-1.5 pt-1">
+          <div className="min-w-0">
+            <span className="text-heading-sm font-bold text-primary-600 whitespace-nowrap">
+              ₹{product.pricing.monthly.toLocaleString()}
+            </span>
+            <span className="text-caption text-secondary-500 block leading-tight whitespace-nowrap">
+              {periodSuffix}
+            </span>
           </div>
           <button
             onClick={e => {
@@ -208,7 +221,7 @@ export function ProductCard({ product, onAddToCart, onClick }: ProductCardProps)
                 monthlyPrice: product.pricing.monthly,
               });
             }}
-            className="btn-primary btn-sm whitespace-nowrap"
+            className="btn-primary btn-sm whitespace-nowrap flex-shrink-0"
             disabled={product.availability.inStock === 0}
             aria-label={`Book ${product.name} at doorstep for ₹50`}
           >

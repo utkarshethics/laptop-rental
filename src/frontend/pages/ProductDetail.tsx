@@ -128,8 +128,8 @@ export function ProductDetail() {
         </div>
       </nav>
 
-      <div className="container py-8">
-        <div className="grid lg:grid-cols-2 gap-8">
+      <div className="container py-4 sm:py-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
           <div className="space-y-4">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-secondary-50">
               {product.images[selectedImage] ? (
@@ -176,51 +176,7 @@ export function ProductDetail() {
             </div>
           </div>
 
-          <Modal
-            isOpen={imageModalOpen}
-            onClose={() => setImageModalOpen(false)}
-            size="full"
-            showCloseButton={true}
-          >
-            <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-black">
-              <img
-                src={product.images[selectedImage].url}
-                alt={product.images[selectedImage].alt}
-                className="w-full h-full object-contain"
-              />
-              <button
-                onClick={() => setSelectedImage((selectedImage - 1 + product.images.length) % product.images.length)}
-                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 text-white hover:bg-white/30"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => setSelectedImage((selectedImage + 1) % product.images.length)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 text-white hover:bg-white/30"
-                aria-label="Next image"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="flex justify-center gap-2 mt-4">
-              {product.images.map((image, index) => (
-                <button
-                  key={image.id || index}
-                  onClick={() => setSelectedImage(index)}
-                  className={cn(
-                    'w-16 h-16 rounded-lg overflow-hidden border-2 transition-all',
-                    selectedImage === index ? 'border-primary-500' : 'border-transparent hover:border-white/30'
-                  )}
-                >
-                  <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
-                </button>
-              ))}
-            </div>
-          </Modal>
-        </div>
-
-        <div className="lg:col-span-2 lg:col-start-2 space-y-6">
+          <div className="space-y-6">
           <div>
             <p className="text-body-sm text-secondary-500 font-medium uppercase tracking-wide mb-1">{product.brand}</p>
             <h1 className="text-display-sm font-bold text-secondary-900 mb-3">{product.name}</h1>
@@ -250,7 +206,7 @@ export function ProductDetail() {
               )}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 mb-4">
+            <div className="grid grid-cols-3 gap-2 mb-4">
               {RENTAL_PERIODS.map(period => (
                 <button
                   key={period.value}
@@ -356,24 +312,68 @@ export function ProductDetail() {
               <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> {selectedCity}</span>
             </div>
           </div>
-
-          <div className="grid lg:grid-cols-3 gap-6">
-            {[
-              { icon: Truck, title: 'Free Delivery', desc: 'Doorstep delivery & pickup across India' },
-              { icon: Shield, title: 'Damage Protection', desc: 'Comprehensive coverage included' },
-              { icon: RotateCcw, title: 'Easy Returns', desc: 'Hassle-free return & exchange' },
-            ].map((item, index) => (
-              <Card key={index} padding="md" className="text-center">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-primary-100 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-primary-600" />
-                </div>
-                <h4 className="font-semibold text-secondary-900 mb-1">{item.title}</h4>
-                <p className="text-body-sm text-secondary-500">{item.desc}</p>
-              </Card>
-            ))}
-          </div>
         </div>
       </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-8">
+          {[
+            { icon: Truck, title: 'Free Delivery', desc: 'Doorstep delivery & pickup across India' },
+            { icon: Shield, title: 'Damage Protection', desc: 'Comprehensive coverage included' },
+            { icon: RotateCcw, title: 'Easy Returns', desc: 'Hassle-free return & exchange' },
+          ].map((item, index) => (
+            <Card key={index} padding="md" className="text-center">
+              <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-primary-100 flex items-center justify-center">
+                <item.icon className="w-6 h-6 text-primary-600" />
+              </div>
+              <h4 className="font-semibold text-secondary-900 mb-1">{item.title}</h4>
+              <p className="text-body-sm text-secondary-500">{item.desc}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <Modal
+        isOpen={imageModalOpen}
+        onClose={() => setImageModalOpen(false)}
+        size="full"
+        showCloseButton={true}
+      >
+        <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-black">
+          <img
+            src={product.images[selectedImage]?.url}
+            alt={product.images[selectedImage]?.alt}
+            className="w-full h-full object-contain"
+          />
+          <button
+            onClick={() => setSelectedImage((selectedImage - 1 + product.images.length) % product.images.length)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 text-white hover:bg-white/30"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={() => setSelectedImage((selectedImage + 1) % product.images.length)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 text-white hover:bg-white/30"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
+        <div className="flex justify-center gap-2 mt-4">
+          {product.images.map((image, index) => (
+            <button
+              key={image.id || index}
+              onClick={() => setSelectedImage(index)}
+              className={cn(
+                'w-16 h-16 rounded-lg overflow-hidden border-2 transition-all',
+                selectedImage === index ? 'border-primary-500' : 'border-transparent hover:border-white/30'
+              )}
+            >
+              <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
+      </Modal>
 
       <div className="bg-secondary-50 py-16">
         <div className="container">
