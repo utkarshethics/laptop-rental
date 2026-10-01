@@ -8,6 +8,7 @@ Sitemap: https://laptoponrent.online/sitemap.xml
 Sitemap: https://laptoponrent.online/sitemap-cities.xml
 Sitemap: https://laptoponrent.online/sitemap-categories.xml
 Sitemap: https://laptoponrent.online/sitemap-blog.xml
+Sitemap: https://laptoponrent.online/sitemap-products.xml
 
 # Disallow admin/private areas
 Disallow: /admin/
