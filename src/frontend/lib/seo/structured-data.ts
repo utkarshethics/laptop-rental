@@ -472,15 +472,19 @@ function isGlobalCopy(v: unknown, slug: string): boolean {
 }
 
 /** Replace inline duplicates of a global entity with a reference to its @id. */
-function derefGlobals(node: unknown, globalIds: Map<string, string>): unknown {
-  if (Array.isArray(node)) return node.map((v) => derefGlobals(v, globalIds));
+function derefGlobals(node: unknown, globalIds: Map<string, string>, selfId?: string): unknown {
+  if (Array.isArray(node)) return node.map((v) => derefGlobals(v, globalIds, selfId));
   if (!node || typeof node !== 'object') return node;
   const o = node as Json;
   for (const [slug, id] of globalIds) {
+    // Never rewrite a node into a reference to itself: the page's own
+    // Organization/WebSite node is a global copy too, and collapsing it leaves a
+    // bare {"@id": ...} node with no @type, which is not a valid entity.
+    if (id === selfId) continue;
     if (isGlobalCopy(o, slug)) return { '@id': id };
   }
   const out: Json = {};
-  for (const [k, v] of Object.entries(o)) out[k] = derefGlobals(v, globalIds);
+  for (const [k, v] of Object.entries(o)) out[k] = derefGlobals(v, globalIds, selfId);
   return out;
 }
 
@@ -575,7 +579,8 @@ export function buildEntityGraph(
     }
   }
 
-  const derefed = graph.map((n) => derefGlobals(n, globalIds) as Json);
+  const derefed = graph.map((n) =>
+    derefGlobals(n, globalIds, n['@id'] as string | undefined) as Json);
 
   // Resolve the remaining dangling references. The React layer points at
   // bare-origin ids such as .../#faqpage and .../#localbusiness, but the

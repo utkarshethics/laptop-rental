@@ -71,11 +71,12 @@ function buildPage(opts: {
   hreflang?: Array<{ code: string; href: string }>;
   geo?: { region: string; place: string; lat: string; lng: string };
   ogImage?: string;
+  ogType?: string;
   body?: string;
 }) {
   const {
     route, title, description, keywords, canonical, ogTitle, ogUrl, jsonLd,
-    hreflang = [], geo, ogImage, body = '',
+    hreflang = [], geo, ogImage, ogType = 'website', body = '',
   } = opts;
 
   const canonicalUrl = (route === '/' || canonical.endsWith('/'))
@@ -93,6 +94,7 @@ function buildPage(opts: {
   // Product pages pass the model's own hero so social cards show the laptop
   // rather than the site-wide default image.
   if (ogImage) html = replaceHead(html, 'og:image', ogImage);
+  html = replaceHead(html, 'og:type', ogType);
   html = replaceHead(html, 'twitter:url', canonicalUrl);
   html = html.replace(/<meta property="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${ogTitle}" />`);
   html = html.replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${description}" />`);
@@ -133,9 +135,33 @@ function buildPage(opts: {
     return true;
   });
 
+  // The built template already carries the site-wide FAQPage, so any page that
+  // also passes generateFAQSchema() shipped two FAQPage entities in its graph.
+  // Only one is valid per page. Exact-duplicate removal cannot catch it because
+  // the two carry different question sets, so collapse by entity type, keeping
+  // the page-specific schema that was passed in after the template's.
+  const SINGLETON_TYPES = new Set([
+    'FAQPage', 'Product', 'ItemList', 'BreadcrumbList', 'Service',
+    'Article', 'BlogPosting', 'LocalBusiness', 'CollectionPage', 'WebPage',
+  ]);
+  const typeOfSchema = (s: unknown): string => {
+    const o = s as Record<string, unknown>;
+    const t = o['@type'];
+    return Array.isArray(t) ? String(t[0]) : String(t ?? '');
+  };
+  const lastByType = new Map<string, number>();
+  deduped.forEach((s, i) => {
+    const t = typeOfSchema(s);
+    if (SINGLETON_TYPES.has(t)) lastByType.set(t, i);
+  });
+  const singleton = deduped.filter((s, i) => {
+    const t = typeOfSchema(s);
+    return !SINGLETON_TYPES.has(t) || lastByType.get(t) === i;
+  });
+
   // One @graph per page. The generators return standalone documents, so folding
   // them here is what gives every page shared, resolvable entity @ids.
-  const entityGraph = buildEntityGraph(deduped, {
+  const entityGraph = buildEntityGraph(singleton, {
     url: canonicalUrl,
     name: title,
     description,
@@ -668,6 +694,7 @@ for (const p of MOCK_PRODUCTS) {
     ogTitle: `${p.name} on rent from ${inr(p.pricing.monthly)}/month`,
     ogUrl: `${BASE}/products/${p.id}`,
     ogImage: `${BASE}${heroOf(p)}`,
+    ogType: 'product',
     jsonLd: [
       generateProductSchema({
         id: p.id,
