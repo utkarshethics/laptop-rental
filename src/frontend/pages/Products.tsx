@@ -65,7 +65,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '2', name: 'Dell Latitude 5430', brand: 'Dell', category: 'laptop',
     description: 'Reliable business laptop with Intel i5, 8GB RAM, 256GB SSD',
     shortDescription: 'Affordable business laptop for everyday work',
-    images: [{ url: '/assets/products/dell/latitude-5430/hero.jpg', alt: 'Dell Latitude 5430', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/dell/latitude-5430/hero.jpg', alt: 'Dell Latitude 5430', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/latitude-5430/angle-1.jpg', alt: 'Dell Latitude 5430 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1235U', category: 'processor' },
       { key: 'RAM', value: '8GB DDR4', category: 'memory' },
@@ -121,7 +124,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '5', name: 'ASUS ROG Zephyrus G14', brand: 'ASUS', category: 'laptop',
     description: 'Gaming laptop with AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 4060',
     shortDescription: 'Compact gaming powerhouse',
-    images: [{ url: '/assets/products/asus/rog-zephyrus-g14/hero.jpg', alt: 'ROG Zephyrus G14', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/asus/rog-zephyrus-g14/hero.jpg', alt: 'ASUS ROG Zephyrus G14', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/rog-zephyrus-g14/angle-1.jpg', alt: 'ASUS ROG Zephyrus G14 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 9 7940HS', category: 'processor' },
       { key: 'RAM', value: '16GB DDR5', category: 'memory' },
@@ -138,7 +144,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '6', name: 'Acer Swift Go 14', brand: 'Acer', category: 'laptop',
     description: 'Lightweight laptop with Intel i5, 16GB RAM, 512GB SSD, OLED display',
     shortDescription: 'Affordable OLED laptop for students',
-    images: [{ url: '/assets/products/acer/swift-go-14/hero.jpg', alt: 'Acer Swift Go 14', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/acer/swift-go-14/hero.jpg', alt: 'Acer Swift Go 14', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/swift-go-14/angle-1.jpg', alt: 'Acer Swift Go 14 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-13500H', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -194,7 +203,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '9', name: 'Lenovo IdeaPad Slim 5', brand: 'Lenovo', category: 'laptop',
     description: 'Slim everyday laptop with Ryzen 5, 16GB RAM, 512GB SSD',
     shortDescription: 'Lightweight student laptop with great battery life',
-    images: [{ url: '/assets/products/lenovo/ideapad-slim-5/hero.jpg', alt: 'Lenovo IdeaPad Slim 5', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/lenovo/ideapad-slim-5/hero.jpg', alt: 'Lenovo IdeaPad Slim 5', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/ideapad-slim-5/angle-1.jpg', alt: 'Lenovo IdeaPad Slim 5 — second angle view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 5 7530U', category: 'processor' },
       { key: 'RAM', value: '16GB DDR4', category: 'memory' },
@@ -210,7 +222,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '10', name: 'HP Pavilion 15', brand: 'HP', category: 'laptop',
     description: 'All-round laptop with Intel i5, 16GB RAM, 512GB SSD',
     shortDescription: 'Best-selling family and student laptop',
-    images: [{ url: '/assets/products/hp/pavilion-15/hero.jpg', alt: 'HP Pavilion 15', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/hp/pavilion-15/hero.jpg', alt: 'HP Pavilion 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/pavilion-15/angle-1.jpg', alt: 'HP Pavilion 15 — second angle view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1334U', category: 'processor' },
       { key: 'RAM', value: '16GB DDR4', category: 'memory' },
@@ -226,7 +241,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '11', name: 'Dell Inspiron 15', brand: 'Dell', category: 'laptop',
     description: 'Value laptop with Intel i5, 16GB RAM, 512GB SSD',
     shortDescription: 'Reliable everyday laptop for work and study',
-    images: [{ url: '/assets/products/dell/inspiron-15/hero.jpg', alt: 'Dell Inspiron 15', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/dell/inspiron-15/hero.jpg', alt: 'Dell Inspiron 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/inspiron-15/angle-1.jpg', alt: 'Dell Inspiron 15 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1335U', category: 'processor' },
       { key: 'RAM', value: '16GB DDR4', category: 'memory' },
@@ -242,7 +260,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '12', name: 'ASUS VivoBook 15', brand: 'ASUS', category: 'laptop',
     description: 'Entry-level laptop with Intel i3, 8GB RAM, 512GB SSD',
     shortDescription: 'Lightest budget laptop for daily browsing and study',
-    images: [{ url: '/assets/products/asus/vivobook-15/hero.jpg', alt: 'ASUS VivoBook 15', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/asus/vivobook-15/hero.jpg', alt: 'ASUS VivoBook 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/vivobook-15/angle-1.jpg', alt: 'ASUS VivoBook 15 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i3-1315U', category: 'processor' },
       { key: 'RAM', value: '8GB DDR4', category: 'memory' },
@@ -258,7 +279,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '13', name: 'Samsung Galaxy Book3 Pro', brand: 'Samsung', category: 'laptop',
     description: 'Ultra-thin premium laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Featherlight AMOLED display laptop for professionals',
-    images: [{ url: '/assets/products/samsung/galaxy-book3-pro/hero.jpg', alt: 'Samsung Galaxy Book3 Pro', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/samsung/galaxy-book3-pro/hero.jpg', alt: 'Samsung Galaxy Book3 Pro', isPrimary: true, order: 0 },
+      { url: '/assets/products/samsung/galaxy-book3-pro/angle-1.jpg', alt: 'Samsung Galaxy Book3 Pro — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -274,7 +298,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '14', name: 'MSI GF63 Thin', brand: 'MSI', category: 'laptop',
     description: 'Gaming laptop with RTX 3050, 16GB RAM, 512GB SSD',
     shortDescription: 'Entry gaming laptop with 144Hz display',
-    images: [{ url: '/assets/products/msi/gf63-thin/hero.jpg', alt: 'MSI GF63 Thin', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/msi/gf63-thin/hero.jpg', alt: 'MSI GF63 Thin', isPrimary: true, order: 0 },
+      { url: '/assets/products/msi/gf63-thin/angle-1.jpg', alt: 'MSI GF63 Thin — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-12450H', category: 'processor' },
       { key: 'Graphics', value: 'NVIDIA RTX 3050 4GB', category: 'graphics' },
@@ -291,7 +318,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '15', name: 'Acer Nitro V 15', brand: 'Acer', category: 'laptop',
     description: 'Budget gaming laptop with RTX 4050, 16GB RAM, 512GB SSD',
     shortDescription: 'Affordable RTX gaming laptop for students',
-    images: [{ url: '/assets/products/acer/nitro-v-15/hero.jpg', alt: 'Acer Nitro V 15', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/acer/nitro-v-15/hero.jpg', alt: 'Acer Nitro V 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/nitro-v-15/angle-1.jpg', alt: 'Acer Nitro V 15 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 5 7535HS', category: 'processor' },
       { key: 'Graphics', value: 'NVIDIA RTX 4050 6GB', category: 'graphics' },
@@ -330,7 +360,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '17', name: 'Dell XPS 13 Plus', brand: 'Dell', category: 'laptop',
     description: 'Ultra-premium thin laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Stunning edge-to-edge keyboard designer laptop',
-    images: [{ url: '/assets/products/dell/xps-13-plus/hero.jpg', alt: 'Dell XPS 13 Plus', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/dell/xps-13-plus/hero.jpg', alt: 'Dell XPS 13 Plus', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/xps-13-plus/angle-1.jpg', alt: 'Dell XPS 13 Plus — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -346,7 +379,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '18', name: 'Lenovo ThinkPad T14 Gen 4', brand: 'Lenovo', category: 'laptop',
     description: 'Business workhorse with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Legendary ThinkPad reliability for professionals',
-    images: [{ url: '/assets/products/lenovo/thinkpad-t14/hero.jpg', alt: 'Lenovo ThinkPad T14 Gen 4', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/lenovo/thinkpad-t14/hero.jpg', alt: 'Lenovo ThinkPad T14 Gen 4', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/thinkpad-t14/angle-1.jpg', alt: 'Lenovo ThinkPad T14 Gen 4 — second angle view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
       { key: 'RAM', value: '16GB DDR5', category: 'memory' },
@@ -362,7 +398,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '19', name: 'HP Victus 15', brand: 'HP', category: 'laptop',
     description: 'Entry gaming laptop with RTX 3050, 16GB RAM, 512GB SSD',
     shortDescription: 'Budget gaming powerhouse from HP',
-    images: [{ url: '/assets/products/hp/victus-15/hero.jpg', alt: 'HP Victus 15', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/hp/victus-15/hero.jpg', alt: 'HP Victus 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/victus-15/angle-1.jpg', alt: 'HP Victus 15 — second angle view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-12500H', category: 'processor' },
       { key: 'Graphics', value: 'NVIDIA RTX 3050 4GB', category: 'graphics' },
@@ -379,7 +418,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '20', name: 'ASUS ROG Strix G16', brand: 'ASUS', category: 'laptop',
     description: 'High-refresh gaming laptop with RTX 4060, 16GB RAM, 1TB SSD',
     shortDescription: 'Serious esports-ready gaming rig',
-    images: [{ url: '/assets/products/asus/rog-strix-g16/hero.jpg', alt: 'ASUS ROG Strix G16', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/asus/rog-strix-g16/hero.jpg', alt: 'ASUS ROG Strix G16', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/rog-strix-g16/angle-1.jpg', alt: 'ASUS ROG Strix G16 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-13650HX', category: 'processor' },
       { key: 'Graphics', value: 'NVIDIA RTX 4060 8GB', category: 'graphics' },
@@ -397,7 +439,12 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '21', name: 'MacBook Pro 16 M4', brand: 'Apple', category: 'laptop',
     description: 'Pro workstation with M4 chip, 36GB unified memory, 1TB SSD',
     shortDescription: 'The ultimate laptop for video editors and developers',
-    images: [{ url: '/assets/products/apple/macbook-pro-16/hero.jpg', alt: 'MacBook Pro 16 M4', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/apple/macbook-pro-16/hero.jpg', alt: 'MacBook Pro 16 M4', isPrimary: true, order: 0 },
+      { url: '/assets/products/apple/macbook-pro-16/angle-1.jpg', alt: 'MacBook Pro 16 M4 — screen open', isPrimary: false, order: 1 },
+      { url: '/assets/products/apple/macbook-pro-16/angle-2.jpg', alt: 'MacBook Pro 16 M4 — front view', isPrimary: false, order: 2 },
+      { url: '/assets/products/apple/macbook-pro-16/angle-3.jpg', alt: 'MacBook Pro 16 M4 — rear ports', isPrimary: false, order: 3 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Apple M4', category: 'processor' },
       { key: 'RAM', value: '36GB Unified', category: 'memory' },
@@ -413,7 +460,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '22', name: 'Dell Latitude 7450', brand: 'Dell', category: 'laptop',
     description: 'Premium business ultrabook with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Enterprise-grade security and battery life',
-    images: [{ url: '/assets/products/dell/latitude-7450/hero.jpg', alt: 'Dell Latitude 7450', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/dell/latitude-7450/hero.jpg', alt: 'Dell Latitude 7450', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/latitude-7450/angle-1.jpg', alt: 'Dell Latitude 7450 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1365U', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -429,7 +479,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '23', name: 'Lenovo Yoga 9i', brand: 'Lenovo', category: 'laptop',
     description: 'Premium 2-in-1 convertible with Intel i7, 16GB RAM, 1TB SSD',
     shortDescription: 'Rotating soundbar OLED convertible for creators',
-    images: [{ url: '/assets/products/lenovo/yoga-9i/hero.jpg', alt: 'Lenovo Yoga 9i', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/lenovo/yoga-9i/hero.jpg', alt: 'Lenovo Yoga 9i', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/yoga-9i/angle-1.jpg', alt: 'Lenovo Yoga 9i — second angle view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -445,7 +498,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '24', name: 'HP EliteBook 860 G9', brand: 'HP', category: 'laptop',
     description: '15.6-inch business laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Big-screen business laptop for professionals',
-    images: [{ url: '/assets/products/hp/elitebook-860-g9/hero.jpg', alt: 'HP EliteBook 860 G9', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/hp/elitebook-860-g9/hero.jpg', alt: 'HP EliteBook 860 G9', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/elitebook-860-g9/angle-1.jpg', alt: 'HP EliteBook 860 G9 — second angle view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1265U', category: 'processor' },
       { key: 'RAM', value: '16GB DDR5', category: 'memory' },
@@ -461,7 +517,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '25', name: 'Acer Aspire 7', brand: 'Acer', category: 'laptop',
     description: 'Value gaming laptop with RTX 3050, 16GB RAM, 512GB SSD',
     shortDescription: 'Great entry gaming plus work laptop',
-    images: [{ url: '/assets/products/acer/aspire-7/hero.jpg', alt: 'Acer Aspire 7', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/acer/aspire-7/hero.jpg', alt: 'Acer Aspire 7', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/aspire-7/angle-1.jpg', alt: 'Acer Aspire 7 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 7 5825HS', category: 'processor' },
       { key: 'Graphics', value: 'NVIDIA RTX 3050 4GB', category: 'graphics' },
@@ -478,7 +537,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '26', name: 'Dell Precision 3570', brand: 'Dell', category: 'laptop',
     description: 'Mobile workstation with Intel i7, 32GB RAM, 1TB NVMe SSD, Quadro graphics',
     shortDescription: 'Certified workstation for CAD, BIM and data work',
-    images: [{ url: '/assets/products/dell/precision-3570/hero.jpg', alt: 'Dell Precision 3570', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/dell/precision-3570/hero.jpg', alt: 'Dell Precision 3570', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/precision-3570/angle-1.jpg', alt: 'Dell Precision 3570 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-12700H', category: 'processor' },
       { key: 'RAM', value: '32GB DDR5', category: 'memory' },
@@ -494,7 +556,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '27', name: 'HP ZBook Fury 16', brand: 'HP', category: 'laptop',
     description: '16-inch pro workstation with Intel Xeon, 64GB RAM, 2TB SSD, RTX graphics',
     shortDescription: 'Maximum-power workstation for engineers and creators',
-    images: [{ url: '/assets/products/hp/zbook-fury-16/hero.jpg', alt: 'HP ZBook Fury 16', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/hp/zbook-fury-16/hero.jpg', alt: 'HP ZBook Fury 16', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/zbook-fury-16/angle-1.jpg', alt: 'HP ZBook Fury 16 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i9-13950HX', category: 'processor' },
       { key: 'RAM', value: '64GB DDR5', category: 'memory' },
@@ -510,7 +575,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '28', name: 'ASUS ZenBook 14', brand: 'ASUS', category: 'laptop',
     description: 'Ultra-slim OLED ultrabook with Intel i7, 16GB RAM, 1TB SSD',
     shortDescription: 'Featherlight premium ultrabook for professionals on the go',
-    images: [{ url: '/assets/products/asus/zenbook-14/hero.jpg', alt: 'ASUS ZenBook 14', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/asus/zenbook-14/hero.jpg', alt: 'ASUS ZenBook 14', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/zenbook-14/angle-1.jpg', alt: 'ASUS ZenBook 14 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -526,7 +594,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '29', name: 'Lenovo Legion 5 Pro', brand: 'Lenovo', category: 'laptop',
     description: 'Gaming laptop with Ryzen 7, 16GB RAM, 1TB SSD, RTX 4060',
     shortDescription: 'Pro-grade gaming rig with a 16" 165Hz display',
-    images: [{ url: '/assets/products/lenovo/legion-5-pro/hero.jpg', alt: 'Lenovo Legion 5 Pro', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/lenovo/legion-5-pro/hero.jpg', alt: 'Lenovo Legion 5 Pro', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/legion-5-pro/angle-1.jpg', alt: 'Lenovo Legion 5 Pro — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 7 7745HX', category: 'processor' },
       { key: 'Graphics', value: 'NVIDIA RTX 4060 8GB', category: 'graphics' },
@@ -543,7 +614,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '30', name: 'Acer Predator Helios 16', brand: 'Acer', category: 'laptop',
     description: 'Flagship gaming laptop with Intel i9, 32GB RAM, 2TB SSD, RTX 4080',
     shortDescription: 'Desktop-class gaming performance in a 16" chassis',
-    images: [{ url: '/assets/products/acer/predator-helios-16/hero.jpg', alt: 'Acer Predator Helios 16', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/acer/predator-helios-16/hero.jpg', alt: 'Acer Predator Helios 16', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/predator-helios-16/angle-1.jpg', alt: 'Acer Predator Helios 16 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i9-13900HX', category: 'processor' },
       { key: 'Graphics', value: 'NVIDIA RTX 4080 12GB', category: 'graphics' },
@@ -560,7 +634,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '31', name: 'Samsung Galaxy Book4 Ultra', brand: 'Samsung', category: 'laptop',
     description: 'Premium laptop with Intel i7, 16GB RAM, 1TB SSD',
     shortDescription: 'Slim touchscreen ultrabook for professionals',
-    images: [{ url: '/assets/products/samsung/galaxy-book4-ultra/hero.jpg', alt: 'Samsung Galaxy Book4 Ultra', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/samsung/galaxy-book4-ultra/hero.jpg', alt: 'Samsung Galaxy Book4 Ultra', isPrimary: true, order: 0 },
+      { url: '/assets/products/samsung/galaxy-book4-ultra/angle-1.jpg', alt: 'Samsung Galaxy Book4 Ultra — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-13705H', category: 'processor' },
       { key: 'RAM', value: '16GB LPDDR5', category: 'memory' },
@@ -576,7 +653,10 @@ export const MOCK_PRODUCTS: Product[] = [
     id: '32', name: 'HP ProBook 450', brand: 'HP', category: 'laptop',
     description: 'Business laptop with Intel i5, 16GB RAM, 512GB SSD',
     shortDescription: 'Everyday business laptop for small teams',
-    images: [{ url: '/assets/products/hp/probook-450/hero.jpg', alt: 'HP ProBook 450', isPrimary: true, order: 0 }],
+    images: [
+      { url: '/assets/products/hp/probook-450/hero.jpg', alt: 'HP ProBook 450', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/probook-450/angle-1.jpg', alt: 'HP ProBook 450 — close-up detail view', isPrimary: false, order: 1 },
+    ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1335U', category: 'processor' },
       { key: 'RAM', value: '16GB DDR4', category: 'memory' },
