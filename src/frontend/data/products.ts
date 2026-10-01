@@ -263,7 +263,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Entry gaming laptop with 144Hz display',
     images: [
       { url: '/assets/products/msi/gf63-thin/hero.jpg', alt: 'MSI GF63 Thin', isPrimary: true, order: 0 },
-      { url: '/assets/products/msi/gf63-thin/angle-1.jpg', alt: 'MSI GF63 Thin — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/msi/gf63-thin/angle-1.jpg', alt: 'MSI GF63 Thin — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-12450H', category: 'processor' },
@@ -521,7 +521,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Maximum-power workstation for engineers and creators',
     images: [
       { url: '/assets/products/hp/zbook-fury-16/hero.jpg', alt: 'HP ZBook Fury 16', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/zbook-fury-16/angle-1.jpg', alt: 'HP ZBook Fury 16 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/zbook-fury-16/angle-1.jpg', alt: 'HP ZBook Fury 16 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i9-13950HX', category: 'processor' },
@@ -618,7 +618,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Everyday business laptop for small teams',
     images: [
       { url: '/assets/products/hp/probook-450/hero.jpg', alt: 'HP ProBook 450', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/probook-450/angle-1.jpg', alt: 'HP ProBook 450 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/probook-450/angle-1.jpg', alt: 'HP ProBook 450 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1335U', category: 'processor' },
