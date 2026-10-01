@@ -30,7 +30,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Affordable business laptop for everyday work',
     images: [
       { url: '/assets/products/dell/latitude-5430/hero.jpg', alt: 'Dell Latitude 5430', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/latitude-5430/angle-1.jpg', alt: 'Dell Latitude 5430 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/latitude-5430/angle-1.jpg', alt: 'Dell Latitude 5430 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1235U', category: 'processor' },
@@ -89,7 +89,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Compact gaming powerhouse',
     images: [
       { url: '/assets/products/asus/rog-zephyrus-g14/hero.jpg', alt: 'ASUS ROG Zephyrus G14', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/rog-zephyrus-g14/angle-1.jpg', alt: 'ASUS ROG Zephyrus G14 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/rog-zephyrus-g14/angle-1.jpg', alt: 'ASUS ROG Zephyrus G14 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 9 7940HS', category: 'processor' },
@@ -109,7 +109,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Affordable OLED laptop for students',
     images: [
       { url: '/assets/products/acer/swift-go-14/hero.jpg', alt: 'Acer Swift Go 14', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/swift-go-14/angle-1.jpg', alt: 'Acer Swift Go 14 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/swift-go-14/angle-1.jpg', alt: 'Acer Swift Go 14 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-13500H', category: 'processor' },
@@ -206,7 +206,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Reliable everyday laptop for work and study',
     images: [
       { url: '/assets/products/dell/inspiron-15/hero.jpg', alt: 'Dell Inspiron 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/inspiron-15/angle-1.jpg', alt: 'Dell Inspiron 15 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/inspiron-15/angle-1.jpg', alt: 'Dell Inspiron 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1335U', category: 'processor' },
@@ -225,7 +225,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Lightest budget laptop for daily browsing and study',
     images: [
       { url: '/assets/products/asus/vivobook-15/hero.jpg', alt: 'ASUS VivoBook 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/vivobook-15/angle-1.jpg', alt: 'ASUS VivoBook 15 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/vivobook-15/angle-1.jpg', alt: 'ASUS VivoBook 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i3-1315U', category: 'processor' },
@@ -244,7 +244,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Featherlight AMOLED display laptop for professionals',
     images: [
       { url: '/assets/products/samsung/galaxy-book3-pro/hero.jpg', alt: 'Samsung Galaxy Book3 Pro', isPrimary: true, order: 0 },
-      { url: '/assets/products/samsung/galaxy-book3-pro/angle-1.jpg', alt: 'Samsung Galaxy Book3 Pro — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/samsung/galaxy-book3-pro/angle-1.jpg', alt: 'Samsung Galaxy Book3 Pro — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
@@ -283,7 +283,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Affordable RTX gaming laptop for students',
     images: [
       { url: '/assets/products/acer/nitro-v-15/hero.jpg', alt: 'Acer Nitro V 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/nitro-v-15/angle-1.jpg', alt: 'Acer Nitro V 15 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/nitro-v-15/angle-1.jpg', alt: 'Acer Nitro V 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 5 7535HS', category: 'processor' },
@@ -325,7 +325,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Stunning edge-to-edge keyboard designer laptop',
     images: [
       { url: '/assets/products/dell/xps-13-plus/hero.jpg', alt: 'Dell XPS 13 Plus', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/xps-13-plus/angle-1.jpg', alt: 'Dell XPS 13 Plus — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/xps-13-plus/angle-1.jpg', alt: 'Dell XPS 13 Plus — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
@@ -383,7 +383,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Serious esports-ready gaming rig',
     images: [
       { url: '/assets/products/asus/rog-strix-g16/hero.jpg', alt: 'ASUS ROG Strix G16', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/rog-strix-g16/angle-1.jpg', alt: 'ASUS ROG Strix G16 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/rog-strix-g16/angle-1.jpg', alt: 'ASUS ROG Strix G16 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-13650HX', category: 'processor' },
@@ -425,7 +425,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Enterprise-grade security and battery life',
     images: [
       { url: '/assets/products/dell/latitude-7450/hero.jpg', alt: 'Dell Latitude 7450', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/latitude-7450/angle-1.jpg', alt: 'Dell Latitude 7450 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/latitude-7450/angle-1.jpg', alt: 'Dell Latitude 7450 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1365U', category: 'processor' },
@@ -482,7 +482,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Great entry gaming plus work laptop',
     images: [
       { url: '/assets/products/acer/aspire-7/hero.jpg', alt: 'Acer Aspire 7', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/aspire-7/angle-1.jpg', alt: 'Acer Aspire 7 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/aspire-7/angle-1.jpg', alt: 'Acer Aspire 7 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 7 5825HS', category: 'processor' },
@@ -502,7 +502,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Certified workstation for CAD, BIM and data work',
     images: [
       { url: '/assets/products/dell/precision-3570/hero.jpg', alt: 'Dell Precision 3570', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/precision-3570/angle-1.jpg', alt: 'Dell Precision 3570 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/precision-3570/angle-1.jpg', alt: 'Dell Precision 3570 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-12700H', category: 'processor' },
@@ -540,7 +540,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Featherlight premium ultrabook for professionals on the go',
     images: [
       { url: '/assets/products/asus/zenbook-14/hero.jpg', alt: 'ASUS ZenBook 14', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/zenbook-14/angle-1.jpg', alt: 'ASUS ZenBook 14 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/zenbook-14/angle-1.jpg', alt: 'ASUS ZenBook 14 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
@@ -559,7 +559,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Pro-grade gaming rig with a 16" 165Hz display',
     images: [
       { url: '/assets/products/lenovo/legion-5-pro/hero.jpg', alt: 'Lenovo Legion 5 Pro', isPrimary: true, order: 0 },
-      { url: '/assets/products/lenovo/legion-5-pro/angle-1.jpg', alt: 'Lenovo Legion 5 Pro — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/lenovo/legion-5-pro/angle-1.jpg', alt: 'Lenovo Legion 5 Pro — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 7 7745HX', category: 'processor' },
@@ -579,7 +579,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Desktop-class gaming performance in a 16" chassis',
     images: [
       { url: '/assets/products/acer/predator-helios-16/hero.jpg', alt: 'Acer Predator Helios 16', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/predator-helios-16/angle-1.jpg', alt: 'Acer Predator Helios 16 — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/predator-helios-16/angle-1.jpg', alt: 'Acer Predator Helios 16 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i9-13900HX', category: 'processor' },
@@ -599,7 +599,7 @@ export const MOCK_PRODUCTS: Product[] = [
     shortDescription: 'Slim touchscreen ultrabook for professionals',
     images: [
       { url: '/assets/products/samsung/galaxy-book4-ultra/hero.jpg', alt: 'Samsung Galaxy Book4 Ultra', isPrimary: true, order: 0 },
-      { url: '/assets/products/samsung/galaxy-book4-ultra/angle-1.jpg', alt: 'Samsung Galaxy Book4 Ultra — close-up detail view', isPrimary: false, order: 1 },
+      { url: '/assets/products/samsung/galaxy-book4-ultra/angle-1.jpg', alt: 'Samsung Galaxy Book4 Ultra — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-13705H', category: 'processor' },
