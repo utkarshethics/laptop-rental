@@ -8,11 +8,13 @@ import {
   BLOG_POSTS,
   FAQ_QUESTIONS,
 } from '../src/frontend/data/seo-data';
+import { MOCK_PRODUCTS } from '../src/frontend/data/products';
 import {
   generateBreadcrumbSchema,
   generateCityPageSchema,
   generateFAQSchema,
   generateLocalBusinessSchema,
+  generateProductSchema,
   buildEntityGraph,
 } from '../src/frontend/lib/seo/structured-data';
 
@@ -68,11 +70,12 @@ function buildPage(opts: {
   jsonLd: unknown[];
   hreflang?: Array<{ code: string; href: string }>;
   geo?: { region: string; place: string; lat: string; lng: string };
+  ogImage?: string;
   body?: string;
 }) {
   const {
     route, title, description, keywords, canonical, ogTitle, ogUrl, jsonLd,
-    hreflang = [], geo, body = '',
+    hreflang = [], geo, ogImage, body = '',
   } = opts;
 
   const canonicalUrl = (route === '/' || canonical.endsWith('/'))
@@ -87,6 +90,10 @@ function buildPage(opts: {
   html = replaceHead(html, 'og:title', ogTitle);
   html = replaceHead(html, 'og:description', description);
   html = replaceHead(html, 'og:url', canonicalUrl);
+  // Product pages pass the model's own hero so social cards show the laptop
+  // rather than the site-wide default image.
+  if (ogImage) html = replaceHead(html, 'og:image', ogImage);
+  html = replaceHead(html, 'twitter:url', canonicalUrl);
   html = html.replace(/<meta property="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${ogTitle}" />`);
   html = html.replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${description}" />`);
 
@@ -567,6 +574,169 @@ for (const cat of LAPTOP_CATEGORIES) {
   });
 }
 
+// ---- Product listing and product detail pages ---------------------------
+// `/products` and `/products/<id>` are client-only routes: nothing wrote them
+// into dist, so GitHub Pages served a 404 for the catalog and for every product
+// URL a shared link pointed at. The homepage itself redirects to
+// `/products?category=laptop&sort=newest`, so a hard refresh on any listing the
+// user reached also 404'd. Both are prerendered here so the catalog and the
+// carousel are crawlable and survive a refresh.
+
+const inr = (n: number) => `₹${n.toLocaleString('en-IN')}`;
+const productUrl = (id: string) => `${BASE}/products/${id}/`;
+const heroOf = (p: (typeof MOCK_PRODUCTS)[number]) =>
+  (p.images.find(i => i.isPrimary) || p.images[0]).url;
+const firstSpec = (p: (typeof MOCK_PRODUCTS)[number], label: string) =>
+  p.specifications.find(s => s.key.toLowerCase() === label)?.value || '';
+
+const BRAND_LIST = [...new Set(MOCK_PRODUCTS.map(p => p.brand))].sort();
+const SORTED_PRODUCTS = [...MOCK_PRODUCTS].sort((a, b) => a.pricing.monthly - b.pricing.monthly);
+const CHEAPEST = SORTED_PRODUCTS[0].pricing.monthly;
+
+buildPage({
+  route: '/products',
+  title: `All Laptop Rental Models in India | From ${inr(CHEAPEST)}/month | LaptopRent`,
+  description: `Browse all ${MOCK_PRODUCTS.length} laptops available to rent in India from ${inr(CHEAPEST)}/month. HP, Dell, Lenovo, ASUS, Acer, Apple and Samsung models with same-day delivery, maintenance included and a 18% GST invoice.`,
+  keywords: 'laptop rental, rent laptop india, laptop on rent, laptop rental models, macbook rental, gaming laptop rental',
+  canonical: `${BASE}/products`,
+  ogTitle: `Laptop Rental Models in India | From ${inr(CHEAPEST)}/month`,
+  ogUrl: `${BASE}/products`,
+  jsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Laptop rental models in India',
+      description: `All ${MOCK_PRODUCTS.length} laptop models available to rent across India.`,
+      url: `${BASE}/products`,
+      mainEntity: {
+        '@type': 'ItemList',
+        numberOfItems: MOCK_PRODUCTS.length,
+        itemListElement: SORTED_PRODUCTS.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          url: productUrl(p.id),
+          name: p.name,
+        })),
+      },
+    },
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Laptops', url: `${BASE}/products` },
+    ]),
+  ],
+  body: `
+    <main>
+      <h1>Laptop rental models in India</h1>
+      <p>All ${MOCK_PRODUCTS.length} laptops we stock are available to rent from
+      ${inr(CHEAPEST)}/month. Every rental includes delivery, maintenance for the term and a
+      18% GST invoice, with same-day delivery in ${INDIAN_CITIES.length} cities.</p>
+      <h2>All models</h2>
+      <ul>
+        ${SORTED_PRODUCTS.map(p => `<li><a href="/products/${p.id}/">${esc(p.name)}</a>
+        ${esc(p.brand)} &middot; ${esc(firstSpec(p, 'processor') || p.shortDescription)} &middot;
+        from ${inr(p.pricing.monthly)}/month</li>`).join('\n        ')}
+      </ul>
+      <h2>Shop by brand</h2>
+      <ul>
+        ${BRAND_LIST.map(b => `<li><a href="/products/?brand=${encodeURIComponent(b)}">${esc(b)}</a></li>`).join('\n        ')}
+      </ul>
+      <h2>Browse by need</h2>
+      <ul>
+        ${LAPTOP_CATEGORIES.slice(0, 6).map(c => `<li><a href="/category/${c.id}/">${esc(c.name)}</a> from ${esc(c.priceRange)}</li>`).join('\n        ')}
+      </ul>
+      <h2>Available in</h2>
+      <p>${INDIAN_CITIES.slice(0, 10).map(c => `<a href="/rental/${c.slug}/">${esc(c.name)}</a>`).join(', ')}
+      and ${INDIAN_CITIES.length - 10} more cities.</p>
+    </main>`,
+});
+
+for (const p of MOCK_PRODUCTS) {
+  const specs = Object.fromEntries(p.specifications.map(s => [s.key, s.value]));
+  const deposit = p.pricing.deposit;
+  const cats = LAPTOP_CATEGORIES.filter(c => p.tags.some(t => c.id.includes(t) || t.includes(c.id)));
+  const related = MOCK_PRODUCTS
+    .filter(o => o.id !== p.id && (o.brand === p.brand || o.tags.some(t => p.tags.includes(t))))
+    .slice(0, 6);
+  const gallery = [heroOf(p), ...p.images.filter(i => !i.isPrimary).map(i => i.url)];
+
+  buildPage({
+    route: `/products/${p.id}`,
+    title: `${p.name} Rental in India | ${inr(p.pricing.monthly)}/month | LaptopRent`,
+    description: `Rent ${p.name} in India from ${inr(p.pricing.monthly)}/month (${inr(p.pricing.quarterly)}/quarter, ${inr(p.pricing.yearly)}/year). ${p.shortDescription}. ${inr(deposit)} refundable deposit, maintenance included, same-day delivery in ${INDIAN_CITIES.length} cities.`,
+    keywords: `${p.name.toLowerCase()} rental, rent ${p.name.toLowerCase()}, ${p.brand.toLowerCase()} laptop rental, ${p.name.toLowerCase()} on rent`,
+    canonical: `${BASE}/products/${p.id}`,
+    ogTitle: `${p.name} on rent from ${inr(p.pricing.monthly)}/month`,
+    ogUrl: `${BASE}/products/${p.id}`,
+    ogImage: `${BASE}${heroOf(p)}`,
+    jsonLd: [
+      generateProductSchema({
+        id: p.id,
+        name: p.name,
+        description: p.description,
+        brand: p.brand,
+        model: p.name,
+        specs,
+        price: p.pricing.monthly,
+        currency: p.pricing.currency,
+        availability: p.availability.inStock > 0 ? 'in_stock' : 'out_of_stock',
+        image: gallery.map(u => `${BASE}${u}`),
+        url: productUrl(p.id),
+        category: cats[0]?.name || 'Laptop Rental',
+        rentalPeriod: 'month',
+        rating: p.rating,
+        reviewCount: p.reviewCount,
+      }),
+      generateBreadcrumbSchema([
+        { name: 'Home', url: `${BASE}/` },
+        { name: 'Laptops', url: `${BASE}/products` },
+        { name: p.name, url: productUrl(p.id) },
+      ]),
+      generateFAQSchema(),
+    ],
+    body: `
+    <main>
+      <h1>${esc(p.name)} rental in India</h1>
+      <p>${esc(p.description)}. Rent the ${esc(p.name)} from
+      ${inr(p.pricing.monthly)}/month, ${inr(p.pricing.quarterly)}/quarter or
+      ${inr(p.pricing.yearly)}/year with a ${inr(deposit)} fully refundable deposit.</p>
+      <p>Rated ${p.rating} out of 5 from ${p.reviewCount} rental reviews.
+      ${p.availability.inStock > 0
+        ? `${p.availability.inStock} units in stock, available in ${p.availability.cities.slice(0, 3).join(', ')} and other cities.`
+        : 'Currently unavailable, enquire for the next available date.'}</p>
+      <h2>Specifications</h2>
+      <table>
+        <tbody>
+          ${p.specifications.map(s => `<tr><th scope="row">${esc(s.key)}</th><td>${esc(s.value)}</td></tr>`).join('\n          ')}
+        </tbody>
+      </table>
+      <h2>Rental plans</h2>
+      <ul>
+        <li>Monthly: ${inr(p.pricing.monthly)}</li>
+        <li>Quarterly: ${inr(p.pricing.quarterly)}</li>
+        <li>Yearly: ${inr(p.pricing.yearly)}</li>
+        <li>Refundable deposit: ${inr(deposit)}</li>
+      </ul>
+      <h2>What is included</h2>
+      <ul>
+        <li>Doorstep delivery in ${INDIAN_CITIES.length} cities, same day for orders before 2 PM</li>
+        <li>Maintenance and hardware support for the rental term</li>
+        <li>18% GST invoice under HSN 997315</li>
+        <li>Free upgrade to an equivalent model if your requirement changes</li>
+      </ul>
+      <h2>Available in</h2>
+      <p>${p.availability.cities.slice(0, 5).map(city =>
+        `<a href="/rental/${(INDIAN_CITIES.find(c => c.name === city)?.slug || '')}/">${esc(city)}</a>`).join(', ')}
+      and ${INDIAN_CITIES.length - 5} more cities.</p>
+      <h2>Frequently asked questions</h2>
+      ${FAQ_QUESTIONS.slice(0, 3).map(f => `<h3>${esc(f.question)}</h3><p>${esc(f.answer)}</p>`).join('\n      ')}
+      ${related.length ? `<h2>Similar laptops</h2>
+      <ul>
+        ${related.map(o => `<li><a href="/products/${o.id}/">${esc(o.name)}</a> from ${inr(o.pricing.monthly)}/month</li>`).join('\n        ')}
+      </ul>` : ''}
+    </main>`,
+  });
+}
+
 console.log('Prerender complete.');
 
 // ---- Sitemaps (trailing-slash URLs matching generated pages) -------------
@@ -590,6 +760,7 @@ const sitemapIndex = (names: string[]) =>
 // re-listing them here duplicated 40 URLs across the sitemap set.
 writeFileSync(resolve(DIST, 'sitemap.xml'), sitemap([
   { url: '/', priority: 1.0, freq: 'daily' },
+  { url: '/products', priority: 0.9 },
   { url: '/categories', priority: 0.9 },
   { url: '/cities', priority: 0.9 },
 ]));
@@ -608,11 +779,19 @@ writeFileSync(resolve(DIST, 'sitemap-blog.xml'), sitemap([
   ...BLOG_POSTS.map(p => ({ url: `/blog/${p.slug}`, priority: 0.6, freq: 'monthly' })),
 ]));
 
+// The catalog and every product page are now prerendered, so they belong in the
+// sitemap set. `/products` stays in sitemap.xml with the other top-level pages;
+// only the individual model URLs go in the child sitemap.
+writeFileSync(resolve(DIST, 'sitemap-products.xml'), sitemap(
+  MOCK_PRODUCTS.map(p => ({ url: `/products/${p.id}`, priority: 0.8, freq: 'weekly' })),
+));
+
 writeFileSync(resolve(DIST, 'sitemap-index.xml'), sitemapIndex([
   'sitemap.xml',
   'sitemap-cities.xml',
   'sitemap-categories.xml',
   'sitemap-blog.xml',
+  'sitemap-products.xml',
 ]));
 
 // Every URL must be claimed by exactly one child sitemap. A URL in two sitemaps
@@ -620,7 +799,7 @@ writeFileSync(resolve(DIST, 'sitemap-index.xml'), sitemapIndex([
 {
   const seen = new Map<string, string>();
   const dupes: string[] = [];
-  for (const name of ['sitemap.xml', 'sitemap-cities.xml', 'sitemap-categories.xml', 'sitemap-blog.xml']) {
+  for (const name of ['sitemap.xml', 'sitemap-cities.xml', 'sitemap-categories.xml', 'sitemap-blog.xml', 'sitemap-products.xml']) {
     const body = readFileSync(resolve(DIST, name), 'utf8');
     for (const m of body.matchAll(/<loc>([^<]+)<\/loc>/g)) {
       const url = m[1];

@@ -147,10 +147,12 @@ export function generateProductSchema(product: {
   price: number;
   currency: string;
   availability: string;
-  image: string;
+  image: string | string[];
   url: string;
   category: string;
   rentalPeriod: string;
+  rating?: number;
+  reviewCount?: number;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -164,7 +166,6 @@ export function generateProductSchema(product: {
     model: product.model,
     sku: product.id,
     category: product.category,
-    description: product.description,
     image: product.image,
     url: product.url,
     offers: {
@@ -197,22 +198,18 @@ export function generateProductSchema(product: {
       name,
       value,
     })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.5',
-      reviewCount: '127',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Rajesh K.' },
-        datePublished: '2024-01-15',
-        reviewBody: 'Excellent service, laptop delivered on time, great condition.',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    // Aggregate rating is only emitted when the caller supplies the product's
+    // real rating. It previously shipped hardcoded 4.5/127 with a fabricated
+    // review attached, which is invalid review markup on every product page.
+    ...(product.rating && product.reviewCount ? {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: String(product.rating),
+        reviewCount: String(product.reviewCount),
+        bestRating: '5',
+        worstRating: '1',
       },
-    ],
+    } : {}),
   };
 }
 
