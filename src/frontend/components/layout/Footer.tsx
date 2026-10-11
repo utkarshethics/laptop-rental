@@ -41,14 +41,14 @@ const FOOTER_LINKS = {
     { label: 'Investor Relations', href: '/investors' },
   ],
   cities: [
-    { label: 'Bangalore', href: '/products?city=bangalore' },
-    { label: 'Mumbai', href: '/products?city=mumbai' },
-    { label: 'Delhi', href: '/products?city=delhi' },
-    { label: 'Chennai', href: '/products?city=chennai' },
-    { label: 'Hyderabad', href: '/products?city=hyderabad' },
-    { label: 'Pune', href: '/products?city=pune' },
-    { label: 'Kolkata', href: '/products?city=kolkata' },
-    { label: 'Ahmedabad', href: '/products?city=ahmedabad' },
+    { label: 'Bangalore', href: '/rental/bangalore' },
+    { label: 'Mumbai', href: '/rental/mumbai' },
+    { label: 'Delhi', href: '/rental/delhi' },
+    { label: 'Chennai', href: '/rental/chennai' },
+    { label: 'Hyderabad', href: '/rental/hyderabad' },
+    { label: 'Pune', href: '/rental/pune' },
+    { label: 'Kolkata', href: '/rental/kolkata' },
+    { label: 'Ahmedabad', href: '/rental/ahmedabad' },
   ],
 };
 
