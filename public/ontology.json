@@ -1,0 +1,613 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "brand": "LaptopRent",
+  "legalName": "LaptopRent Technologies Private Limited",
+  "origin": "https://laptoponrent.online",
+  "version": "2026-GEO-LLMO-v1",
+  "description": "Knowledge Graph & Semantic Entity Ontology for LaptopRent (laptoponrent.online)",
+  "triples": [
+    {
+      "subject": "LaptopRent",
+      "predicate": "providesService",
+      "object": "Laptop Rental (wd:Q1358656)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "providesService",
+      "object": "MacBook Rental (wd:Q11110)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "providesService",
+      "object": "Gaming Laptop Rental (wd:Q1141427)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "providesService",
+      "object": "Workstation Rental (wd:Q192534)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Bangalore (https://www.wikidata.org/wiki/Q1355)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Mumbai (https://www.wikidata.org/wiki/Q1156)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Delhi (https://www.wikidata.org/wiki/Q1353)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Hyderabad (https://www.wikidata.org/wiki/Q1361)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Chennai (https://www.wikidata.org/wiki/Q1352)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Pune (https://www.wikidata.org/wiki/Q1538)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Kolkata (https://www.wikidata.org/wiki/Q1348)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Ahmedabad (https://www.wikidata.org/wiki/Q1191)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Gurgaon (https://www.wikidata.org/wiki/Q12620)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Noida (https://www.wikidata.org/wiki/Q204439)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Jaipur (https://www.wikidata.org/wiki/Q132682)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Lucknow (https://www.wikidata.org/wiki/Q47916)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Indore (https://www.wikidata.org/wiki/Q66616)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Bhopal (https://www.wikidata.org/wiki/Q80989)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Coimbatore (https://www.wikidata.org/wiki/Q40960)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Kochi (https://www.wikidata.org/wiki/Q1800)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Chandigarh (https://www.wikidata.org/wiki/Q43433)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Patna (https://www.wikidata.org/wiki/Q80484)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Nagpur (https://www.wikidata.org/wiki/Q1511)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Surat (https://www.wikidata.org/wiki/Q4629)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Visakhapatnam (https://www.wikidata.org/wiki/Q200016)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Bhubaneswar (https://www.wikidata.org/wiki/Q172486)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Mysore (https://www.wikidata.org/wiki/Q10086)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Guwahati (https://www.wikidata.org/wiki/Q199558)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Jodhpur (https://www.wikidata.org/wiki/Q200019)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "basePriceStudent",
+      "object": "₹849/month"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "basePriceBusiness",
+      "object": "₹1,200/month"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "basePriceMacBook",
+      "object": "₹2,999/month"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "taxSpecification",
+      "object": "18% GST (HSN 997315)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "deliveryModel",
+      "object": "Same-day doorstep delivery"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "contactPhone",
+      "object": "+91-80-8090-0666"
+    }
+  ],
+  "organization": {
+    "name": "LaptopRent",
+    "legalName": "LaptopRent Technologies Private Limited",
+    "url": "https://laptoponrent.online",
+    "logo": "https://laptoponrent.online/assets/logo.svg",
+    "sameAs": [
+      "https://www.linkedin.com/company/laptoprent",
+      "https://twitter.com/laptoprent",
+      "https://www.facebook.com/laptoprent",
+      "https://www.instagram.com/laptoprent",
+      "https://www.wikidata.org/wiki/Q3962",
+      "https://www.wikidata.org/wiki/Q1358656"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-80-8090-0666",
+      "contactType": "customer service",
+      "availableLanguage": [
+        "English",
+        "Hindi"
+      ],
+      "hoursAvailable": "Mo-Sat 09:00-19:00"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shiv Shakti Industrial Premises, NM Joshi Marg",
+      "addressLocality": "Mumbai",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400011",
+      "addressCountry": "IN"
+    },
+    "foundingDate": "2024-01-01",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Utkarsh Gupta"
+      }
+    ],
+    "knowsAbout": [
+      {
+        "@type": "DefinedTerm",
+        "name": "Laptop Rental",
+        "sameAs": "https://www.wikidata.org/wiki/Q1358656"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Laptop Computer",
+        "sameAs": "https://www.wikidata.org/wiki/Q3962"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "MacBook Rental",
+        "sameAs": "https://www.wikidata.org/wiki/Q11110"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Personal Computer",
+        "sameAs": "https://www.wikidata.org/wiki/Q16338"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Workstation Computer",
+        "sameAs": "https://www.wikidata.org/wiki/Q192534"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Gaming Laptop",
+        "sameAs": "https://www.wikidata.org/wiki/Q1141427"
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "IT Equipment Rental",
+        "sameAs": "https://www.wikidata.org/wiki/Q1358656"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "macbook-rental",
+      "name": "MacBook Rental",
+      "description": "MacBook Air & Pro rentals with M1/M2/M3 chips",
+      "priceRange": "₹2,999 - ₹15,000/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q11110"
+    },
+    {
+      "id": "gaming-laptop-rental",
+      "name": "Gaming Laptop Rental",
+      "description": "RTX 30/40 series high-performance gaming laptops",
+      "priceRange": "₹3,500 - ₹8,000/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q1141427"
+    },
+    {
+      "id": "business-laptop-rental",
+      "name": "Business Laptop Rental",
+      "description": "Office & corporate laptops with 16GB+ RAM",
+      "priceRange": "₹1,200 - ₹2,800/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q3962"
+    },
+    {
+      "id": "student-laptop-rental",
+      "name": "Student Laptop Rental",
+      "description": "Affordable laptops for students & academics",
+      "priceRange": "₹849 - ₹1,500/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q3962"
+    },
+    {
+      "id": "macbook-air-rental",
+      "name": "MacBook Air Rental",
+      "description": "M1, M2, M3 MacBook Air models",
+      "priceRange": "₹2,999 - ₹6,500/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q488192"
+    },
+    {
+      "id": "macbook-pro-rental",
+      "name": "MacBook Pro Rental",
+      "description": "M1/M2/M3 Pro & Max chip models",
+      "priceRange": "₹4,500 - ₹15,000/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q483881"
+    },
+    {
+      "id": "dell-laptop-rental",
+      "name": "Dell Laptop Rental",
+      "description": "XPS, Inspiron, Latitude, Vostro, Precision",
+      "priceRange": "₹999 - ₹4,500/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q30873"
+    },
+    {
+      "id": "hp-laptop-rental",
+      "name": "HP Laptop Rental",
+      "description": "Spectre, Envy, Pavilion, ProBook, Omen",
+      "priceRange": "₹999 - ₹5,000/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q80978"
+    },
+    {
+      "id": "lenovo-laptop-rental",
+      "name": "Lenovo Laptop Rental",
+      "description": "ThinkPad, IdeaPad, Yoga, Legion",
+      "priceRange": "₹1,199 - ₹4,800/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q14799"
+    },
+    {
+      "id": "asus-laptop-rental",
+      "name": "ASUS Laptop Rental",
+      "description": "ZenBook, Vivobook, ROG, TUF Gaming",
+      "priceRange": "₹1,299 - ₹5,500/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q152864"
+    },
+    {
+      "id": "acer-laptop-rental",
+      "name": "Acer Laptop Rental",
+      "description": "Swift, Aspire, Predator, Nitro Gaming",
+      "priceRange": "₹999 - ₹4,500/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q485172"
+    },
+    {
+      "id": "microsoft-surface-rental",
+      "name": "Surface Laptop Rental",
+      "description": "Surface Laptop, Pro, Book, Go",
+      "priceRange": "₹1,499 - ₹4,500/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q423233"
+    },
+    {
+      "id": "workstation-rental",
+      "name": "Mobile Workstation Rental",
+      "description": "RTX A-series, Xeon, 32GB+ RAM for AI/ML",
+      "priceRange": "₹5,000 - ₹15,000/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q192534"
+    },
+    {
+      "id": "budget-laptop-rental",
+      "name": "Budget Laptop Rental",
+      "description": "Under ₹1,500/month laptops for basic use",
+      "priceRange": "₹849 - ₹1,500/mo",
+      "wikidata": "https://www.wikidata.org/wiki/Q3962"
+    }
+  ],
+  "cities": [
+    {
+      "slug": "bangalore",
+      "name": "Bangalore",
+      "state": "Karnataka",
+      "shortName": "BLR",
+      "lat": 12.9716,
+      "lng": 77.5946,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1355"
+    },
+    {
+      "slug": "mumbai",
+      "name": "Mumbai",
+      "state": "Maharashtra",
+      "shortName": "BOM",
+      "lat": 19.076,
+      "lng": 72.8777,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1156"
+    },
+    {
+      "slug": "delhi",
+      "name": "Delhi",
+      "state": "Delhi",
+      "shortName": "DEL",
+      "lat": 28.7041,
+      "lng": 77.1025,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1353"
+    },
+    {
+      "slug": "hyderabad",
+      "name": "Hyderabad",
+      "state": "Telangana",
+      "shortName": "HYD",
+      "lat": 17.385,
+      "lng": 78.4867,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1361"
+    },
+    {
+      "slug": "chennai",
+      "name": "Chennai",
+      "state": "Tamil Nadu",
+      "shortName": "MAA",
+      "lat": 13.0827,
+      "lng": 80.2707,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1352"
+    },
+    {
+      "slug": "pune",
+      "name": "Pune",
+      "state": "Maharashtra",
+      "shortName": "PNQ",
+      "lat": 18.5204,
+      "lng": 73.8567,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1538"
+    },
+    {
+      "slug": "kolkata",
+      "name": "Kolkata",
+      "state": "West Bengal",
+      "shortName": "CCU",
+      "lat": 22.5726,
+      "lng": 88.3639,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1348"
+    },
+    {
+      "slug": "ahmedabad",
+      "name": "Ahmedabad",
+      "state": "Gujarat",
+      "shortName": "AMD",
+      "lat": 23.0225,
+      "lng": 72.5714,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q1191"
+    },
+    {
+      "slug": "gurgaon",
+      "name": "Gurgaon",
+      "state": "Haryana",
+      "shortName": "GGN",
+      "lat": 28.4595,
+      "lng": 77.0266,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q12620"
+    },
+    {
+      "slug": "noida",
+      "name": "Noida",
+      "state": "Uttar Pradesh",
+      "shortName": "NCR",
+      "lat": 28.5355,
+      "lng": 77.391,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q204439"
+    },
+    {
+      "slug": "jaipur",
+      "name": "Jaipur",
+      "state": "Rajasthan",
+      "shortName": "JAI",
+      "lat": 26.9124,
+      "lng": 75.7873,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q132682"
+    },
+    {
+      "slug": "lucknow",
+      "name": "Lucknow",
+      "state": "Uttar Pradesh",
+      "shortName": "LKO",
+      "lat": 26.8467,
+      "lng": 80.9462,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q47916"
+    },
+    {
+      "slug": "indore",
+      "name": "Indore",
+      "state": "Madhya Pradesh",
+      "shortName": "IDR",
+      "lat": 22.7196,
+      "lng": 75.8577,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q66616"
+    },
+    {
+      "slug": "bhopal",
+      "name": "Bhopal",
+      "state": "Madhya Pradesh",
+      "shortName": "BHO",
+      "lat": 23.2599,
+      "lng": 77.4126,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q80989"
+    },
+    {
+      "slug": "coimbatore",
+      "name": "Coimbatore",
+      "state": "Tamil Nadu",
+      "shortName": "CJB",
+      "lat": 11.0168,
+      "lng": 76.9558,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q40960"
+    },
+    {
+      "slug": "kochi",
+      "name": "Kochi",
+      "state": "Kerala",
+      "shortName": "COK",
+      "lat": 9.9312,
+      "lng": 76.2673,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q1800"
+    },
+    {
+      "slug": "chandigarh",
+      "name": "Chandigarh",
+      "state": "Punjab",
+      "shortName": "IXC",
+      "lat": 30.7333,
+      "lng": 76.7794,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q43433"
+    },
+    {
+      "slug": "patna",
+      "name": "Patna",
+      "state": "Bihar",
+      "shortName": "PAT",
+      "lat": 25.5941,
+      "lng": 85.1376,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q80484"
+    },
+    {
+      "slug": "nagpur",
+      "name": "Nagpur",
+      "state": "Maharashtra",
+      "shortName": "NAG",
+      "lat": 21.1458,
+      "lng": 79.0882,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q1511"
+    },
+    {
+      "slug": "surat",
+      "name": "Surat",
+      "state": "Gujarat",
+      "shortName": "STV",
+      "lat": 21.1702,
+      "lng": 72.8311,
+      "tier": 1,
+      "wikidata": "https://www.wikidata.org/wiki/Q4629"
+    },
+    {
+      "slug": "visakhapatnam",
+      "name": "Visakhapatnam",
+      "state": "Andhra Pradesh",
+      "shortName": "VTZ",
+      "lat": 17.6868,
+      "lng": 83.2185,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200016"
+    },
+    {
+      "slug": "bhubaneswar",
+      "name": "Bhubaneswar",
+      "state": "Odisha",
+      "shortName": "BBI",
+      "lat": 20.2961,
+      "lng": 85.8245,
+      "tier": 3,
+      "wikidata": "https://www.wikidata.org/wiki/Q172486"
+    },
+    {
+      "slug": "mysore",
+      "name": "Mysore",
+      "state": "Karnataka",
+      "shortName": "MYQ",
+      "lat": 12.2958,
+      "lng": 76.6394,
+      "tier": 3,
+      "wikidata": "https://www.wikidata.org/wiki/Q10086"
+    },
+    {
+      "slug": "guwahati",
+      "name": "Guwahati",
+      "state": "Assam",
+      "shortName": "GAU",
+      "lat": 26.1445,
+      "lng": 91.7362,
+      "tier": 3,
+      "wikidata": "https://www.wikidata.org/wiki/Q199558"
+    },
+    {
+      "slug": "jodhpur",
+      "name": "Jodhpur",
+      "state": "Rajasthan",
+      "shortName": "JDH",
+      "lat": 26.2389,
+      "lng": 73.0243,
+      "tier": 3,
+      "wikidata": "https://www.wikidata.org/wiki/Q200019"
+    }
+  ]
+}

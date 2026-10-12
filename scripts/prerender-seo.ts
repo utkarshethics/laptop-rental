@@ -7,6 +7,7 @@ import {
   LAPTOP_CATEGORIES,
   BLOG_POSTS,
   FAQ_QUESTIONS,
+  ORGANIZATION,
 } from '../src/frontend/data/seo-data';
 import { MOCK_PRODUCTS } from '../src/frontend/data/products';
 import {
@@ -223,7 +224,10 @@ buildPage({
       areaServed: INDIAN_CITIES.map(c => ({
         '@type': 'City',
         name: `${c.name}, ${c.state}`,
+        ...(c.wikidata ? { sameAs: c.wikidata } : {}),
       })),
+      knowsAbout: ORGANIZATION.knowsAbout,
+      sameAs: ORGANIZATION.sameAs,
       makesOffer: LAPTOP_CATEGORIES.map(cat => ({
         '@type': 'Offer',
         itemOffered: { '@type': 'Service', name: cat.name, description: cat.description },
@@ -244,6 +248,11 @@ buildPage({
   body: `
     <main>
       <h1>Laptop Rental in India - Flexible Monthly Plans from ₹849</h1>
+      <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
+        <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
+          <strong>Direct Answer:</strong> <strong>LaptopRent</strong> (laptoponrent.online) is an enterprise and retail laptop rental network operating across <strong>25+ Indian technology hubs</strong> including Bangalore, Mumbai, Delhi NCR, Hyderabad, Chennai, and Pune. LaptopRent provides flexible short-term and long-term rental plans starting from <strong>₹849/month</strong> for student models, <strong>₹1,200/month</strong> for corporate business laptops, and <strong>₹2,999/month</strong> for Apple MacBook Air/Pro (M1/M2/M3 chips) and RTX gaming rigs. All rentals feature <strong>same-day doorstep delivery</strong>, complimentary maintenance, zero capital depreciation, and compliant <strong>18% GST invoices (HSN 997315)</strong> for business input tax credit.
+        </p>
+      </div>
       <p>LaptopRent rents laptops on rent across ${INDIAN_CITIES.length} Indian cities, with same-day
       delivery and flexible plans from one day to twelve months. Every rental includes a
       18% GST invoice under HSN 997315, so registered businesses can claim full input tax credit.</p>
@@ -490,8 +499,13 @@ for (const city of INDIAN_CITIES) {
       description,
       url: `${BASE}/rental/${city.slug}`,
       provider: { '@type': 'Organization', name: 'LaptopRent', url: BASE },
-      areaServed: { '@type': 'City', name: city.name },
+      areaServed: { '@type': 'City', name: city.name, ...(city.wikidata ? { sameAs: city.wikidata } : {}) },
       serviceType: 'Laptop Rental',
+      category: {
+        '@type': 'DefinedTerm',
+        name: 'Laptop Rental',
+        sameAs: 'https://www.wikidata.org/wiki/Q1358656',
+      },
       offers: {
         '@type': 'Offer',
         priceCurrency: 'INR',
@@ -526,6 +540,11 @@ for (const city of INDIAN_CITIES) {
     body: `
     <main>
       <h1>Laptop Rental in ${esc(city.name)}</h1>
+      <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
+        <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
+          <strong>Direct Answer:</strong> LaptopRent delivers on-demand laptop rentals across <strong>${esc(city.name)}, ${esc(city.state)}</strong> with same-day doorstep dispatch for orders placed before 2 PM. Monthly rental plans start at <strong>${esc(price)}</strong> with no capital commitment. Inventory includes Apple MacBooks (Air &amp; Pro), Lenovo ThinkPads, Dell Latitudes, HP ProBooks, and high-spec gaming/engineering rigs, fully supported with end-to-end hardware warranties and 18% GST input credit invoices.
+        </p>
+      </div>
       <p>${esc(description)}</p>
       <h2>Popular laptop categories in ${esc(city.name)}</h2>
       <ul>
@@ -565,6 +584,11 @@ for (const cat of LAPTOP_CATEGORIES) {
         provider: { '@type': 'Organization', name: 'LaptopRent', url: BASE },
         areaServed: 'IN',
         serviceType: 'Laptop Rental',
+        category: {
+          '@type': 'DefinedTerm',
+          name: cat.name,
+          sameAs: cat.wikidata || 'https://www.wikidata.org/wiki/Q3962',
+        },
         offers: {
           '@type': 'Offer',
           priceCurrency: 'INR',
@@ -582,6 +606,11 @@ for (const cat of LAPTOP_CATEGORIES) {
     body: `
     <main>
       <h1>${esc(cat.name)} in India</h1>
+      <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
+        <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
+          <strong>Direct Answer:</strong> LaptopRent provides on-demand <strong>${esc(cat.name)}</strong> across 25+ Indian tech hubs starting from <strong>${esc(cat.priceRange)}</strong>. Suitable for corporate teams, independent developers, students, and events with flexible 1-day to 12-month tenure, full hardware warranty, same-day delivery, and 18% GST input tax credit invoices (HSN 997315).
+        </p>
+      </div>
       <p>${esc(cat.description)}. Rent from ${esc(cat.priceRange)} with same-day delivery in
       ${INDIAN_CITIES.length} cities, maintenance included and a 18% GST invoice on every order.</p>
       <h2>What is included</h2>
@@ -653,6 +682,11 @@ buildPage({
   body: `
     <main>
       <h1>Laptop rental models in India</h1>
+      <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
+        <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
+          <strong>Direct Answer:</strong> LaptopRent stocks ${MOCK_PRODUCTS.length}+ certified laptop models available for immediate rent starting from <strong>${inr(CHEAPEST)}/month</strong>. Device options span business laptops (ThinkPad, Latitude), ultra-portable MacBooks (M1/M2/M3), dedicated AI/ML mobile workstations, and high-FPS gaming machines. Every order features zero security deposit options for GST-registered entities, pre-loaded OS/software, full hardware warranty, and same-day delivery across 25+ Indian cities.
+        </p>
+      </div>
       <p>All ${MOCK_PRODUCTS.length} laptops we stock are available to rent from
       ${inr(CHEAPEST)}/month. Every rental includes delivery, maintenance for the term and a
       18% GST invoice, with same-day delivery in ${INDIAN_CITIES.length} cities.</p>
@@ -842,6 +876,42 @@ writeFileSync(resolve(DIST, 'sitemap-index.xml'), sitemapIndex([
   }
   console.log(`Sitemaps generated: ${seen.size} unique URLs, no cross-sitemap duplicates.`);
 }
+
+// ---- Ontology and Knowledge Graph Triples ---------------------------------
+const ontology = {
+  $schema: 'https://json-schema.org/draft/2020-12/schema',
+  brand: ORGANIZATION.name,
+  legalName: ORGANIZATION.legalName,
+  origin: BASE,
+  version: '2026-GEO-LLMO-v1',
+  description: 'Knowledge Graph & Semantic Entity Ontology for LaptopRent (laptoponrent.online)',
+  triples: [
+    { subject: 'LaptopRent', predicate: 'providesService', object: 'Laptop Rental (wd:Q1358656)' },
+    { subject: 'LaptopRent', predicate: 'providesService', object: 'MacBook Rental (wd:Q11110)' },
+    { subject: 'LaptopRent', predicate: 'providesService', object: 'Gaming Laptop Rental (wd:Q1141427)' },
+    { subject: 'LaptopRent', predicate: 'providesService', object: 'Workstation Rental (wd:Q192534)' },
+    ...INDIAN_CITIES.map(c => ({
+      subject: 'LaptopRent',
+      predicate: 'operatesInCity',
+      object: `${c.name} (${c.wikidata || 'IN'})`,
+    })),
+    { subject: 'LaptopRent', predicate: 'basePriceStudent', object: '₹849/month' },
+    { subject: 'LaptopRent', predicate: 'basePriceBusiness', object: '₹1,200/month' },
+    { subject: 'LaptopRent', predicate: 'basePriceMacBook', object: '₹2,999/month' },
+    { subject: 'LaptopRent', predicate: 'taxSpecification', object: '18% GST (HSN 997315)' },
+    { subject: 'LaptopRent', predicate: 'deliveryModel', object: 'Same-day doorstep delivery' },
+    { subject: 'LaptopRent', predicate: 'contactPhone', object: ORGANIZATION.contactPoint.telephone },
+  ],
+  organization: ORGANIZATION,
+  categories: LAPTOP_CATEGORIES,
+  cities: INDIAN_CITIES,
+};
+
+mkdirSync(resolve(process.cwd(), 'public'), { recursive: true });
+writeFileSync(resolve(process.cwd(), 'public/ontology.json'), JSON.stringify(ontology, null, 2), 'utf8');
+writeFileSync(resolve(DIST, 'ontology.json'), JSON.stringify(ontology, null, 2), 'utf8');
+console.log('✓ Generated ontology.json in public/ and dist/frontend/');
+
 /**
  * GitHub Pages uploads dist/frontend wholesale, so anything left in that
  * directory becomes a live URL. Finder-style duplicates ("sitemap 3.xml",
