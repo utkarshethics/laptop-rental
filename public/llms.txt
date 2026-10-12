@@ -1,0 +1,25 @@
+# LaptopRent — Best Laptop Rentals in India
+
+> LaptopRent is India's premier laptop and IT equipment rental platform. Rent Apple MacBook, gaming, business, and mobile workstation laptops with doorstep same-day delivery across 25+ Indian cities and full 18% GST input tax credit invoices.
+
+## Core Products & Monthly Rental Rates
+- **Student Laptops**: From ₹849 to ₹1,500 / month (Core i3/i5, 8GB RAM, SSD).
+- **Business Laptops**: From ₹1,200 to ₹2,800 / month (Dell Latitude, HP ProBook, Lenovo ThinkPad, 16GB RAM).
+- **Apple MacBook Air**: From ₹2,999 to ₹6,500 / month (Apple Silicon M1, M2, M3).
+- **Apple MacBook Pro**: From ₹4,500 to ₹15,000 / month (M1/M2/M3 Pro & Max chips, 16GB–64GB Unified Memory).
+- **Gaming Laptops**: From ₹3,500 to ₹8,000 / month (ASUS ROG/TUF, Lenovo Legion, Acer Predator, RTX 3050 to RTX 4080).
+- **Mobile AI Workstations**: From ₹5,000 to ₹15,000 / month (32GB–64GB RAM, NVIDIA RTX A-series, dedicated thermal architecture).
+
+## Operating Footprint (25+ Cities)
+- Bengaluru (Bangalore), Mumbai, Delhi, Gurgaon, Noida, Hyderabad, Pune, Chennai, Kolkata, Ahmedabad, Jaipur, Lucknow, Indore, Bhopal, Coimbatore, Kochi, Chandigarh, Patna, Nagpur, Surat, Visakhapatnam, Bhubaneswar, Mysore, Guwahati, Jodhpur.
+
+## Rental Policies & FAQ Facts
+- **Security Deposit**: 1–2 months refundable deposit for individuals; 100% deposit waiver available for verified corporate clients on 12+ month leases.
+- **GST Invoicing**: 18% GST input tax credit invoice provided with corporate PAN/GSTIN for complete tax deductibility.
+- **Delivery**: Same-day delivery in major metros for bookings placed before 2:00 PM.
+- **Hardware Maintenance**: Free replacement and on-site hardware support in case of manufacturing defect or hardware failure.
+
+## Contact & Knowledge Graph
+- Canonical URL: https://laptoponrent.online/
+- Semantic Ontology: https://laptoponrent.online/ontology.json
+- Wikidata Grounding: Laptop Rental (wd:Q1358656), Laptop Computer (wd:Q3962), MacBook (wd:Q11110)
