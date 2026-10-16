@@ -13,7 +13,7 @@ export const ORGANIZATION = {
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+91-80-8090-0666',
+    telephone: '+91-78922-40243',
     contactType: 'customer service',
     availableLanguage: ['English', 'Hindi'],
     hoursAvailable: 'Mo-Sat 09:00-19:00',

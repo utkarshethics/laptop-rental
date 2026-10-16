@@ -207,7 +207,7 @@ buildPage({
       legalName: 'LaptopRent Technologies Private Limited',
       description: 'Laptop rental service in India offering MacBook, gaming, business and student laptops on flexible monthly plans with same-day delivery in 25+ cities.',
       url: `${BASE}/`,
-      telephone: '+91-80-8090-0666',
+      telephone: '+91-78922-40243',
       priceRange: '₹₹',
       currenciesAccepted: 'INR',
       paymentAccepted: 'Cash, UPI, Credit Card, Debit Card, Bank Transfer',
@@ -280,7 +280,7 @@ buildPage({
       ${FAQ_QUESTIONS.slice(0, 4).map(f => `<h3>${esc(f.question)}</h3><p>${esc(f.answer)}</p>`).join('\n      ')}
 
       <h2>Talk to a laptop rental specialist</h2>
-      <p>Call +91-80-8090-0666 or browse the <a href="/categories/">full category list</a> to
+      <p>Call +91-78922-40243 or WhatsApp us at +91-78922-40243, or browse the <a href="/categories/">full category list</a> to
       find the right device for your requirement.</p>
     </main>`,
 });
@@ -426,7 +426,7 @@ for (const cat of [...new Set(BLOG_POSTS.map(p => p.category))]) {
       <h2>Ready to rent?</h2>
       <p>Compare <a href="/categories/">all laptop rental categories</a> or check
       <a href="/rental/${INDIAN_CITIES[0].slug}/">rental in ${esc(INDIAN_CITIES[0].name)}</a>.
-      Call +91-80-8090-0666 to talk to a specialist.</p>
+      Call or WhatsApp +91-78922-40243 to talk to a specialist.</p>
     </main>`,
   });
 }

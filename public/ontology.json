@@ -179,7 +179,7 @@
     {
       "subject": "LaptopRent",
       "predicate": "contactPhone",
-      "object": "+91-80-8090-0666"
+      "object": "+91-78922-40243"
     }
   ],
   "organization": {
@@ -197,7 +197,7 @@
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-80-8090-0666",
+      "telephone": "+91-78922-40243",
       "contactType": "customer service",
       "availableLanguage": [
         "English",

@@ -121,7 +121,7 @@ export function generateServiceSchema(categoryId: string) {
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: 'https://laptoponrent.online',
-      servicePhone: '+91-80-8090-0666',
+      servicePhone: '+91-78922-40243',
       servicePostalAddress: {
         '@type': 'PostalAddress',
         streetAddress: 'Shiv Shakti Industrial Premises, NM Joshi Marg',
@@ -132,7 +132,7 @@ export function generateServiceSchema(categoryId: string) {
       },
       availableLanguage: ['English', 'Hindi'],
       hoursAvailable: 'Mo-Sat 09:00-19:00',
-      serviceSmsNumber: '+91-93857-95958',
+      serviceSmsNumber: '+91-78922-40243',
     },
   };
 }
@@ -240,7 +240,7 @@ export function generateCityPageSchema(citySlug: string) {
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: `https://laptoponrent.online/rental/${citySlug}`,
-      servicePhone: '+91-80-8090-0666',
+      servicePhone: '+91-78922-40243',
       servicePostalAddress: {
         '@type': 'PostalAddress',
         addressLocality: city.name,
@@ -386,7 +386,7 @@ export function generateLocalBusinessSchema(citySlug: string) {
     name: `LaptopRent ${city.name}`,
     description: city.description,
     url: `https://laptoponrent.online/rental/${citySlug}`,
-    telephone: '+91-80-8090-0666',
+    telephone: '+91-78922-40243',
     address: {
       '@type': 'PostalAddress',
       addressLocality: city.name,

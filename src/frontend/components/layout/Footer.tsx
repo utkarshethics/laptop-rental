@@ -79,9 +79,13 @@ export function Footer() {
               <Laptop className="w-8 h-8 text-primary-400" />
               <span className="font-bold text-xl text-white">LaptopRent</span>
             </Link>
-            <p className="text-secondary-400 text-body mb-6 max-w-xs">
+            <p className="text-secondary-400 text-body mb-4 max-w-xs">
               India's trusted laptop rental platform. Rent premium laptops from HP, Dell, Lenovo, Apple, ASUS, Acer, Samsung & MSI with free doorstep delivery.
             </p>
+            <div className="mb-6 space-y-1 text-sm text-secondary-300">
+              <p>Customer Support: <a href="tel:+917892240243" className="text-white hover:underline font-medium">+91 7892240243</a></p>
+              <p>WhatsApp: <a href="https://wa.me/917892240243" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline font-medium">+91 7892240243</a></p>
+            </div>
             <div className="flex flex-wrap gap-4">
               {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
                 <a

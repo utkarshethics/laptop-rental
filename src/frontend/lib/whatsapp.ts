@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = '919019745931';
+export const WHATSAPP_NUMBER = '917892240243';
 
 export function buildWhatsAppUrl(message: string): string {
   return `https://api.whatsapp.com/send/?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
