@@ -10,8 +10,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Business laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Premium business laptop for professionals',
     images: [
-      { url: '/assets/products/hp/elitebook-840-g9/hero.jpg', alt: 'HP EliteBook 840 G9', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/elitebook-840-g9/angle-1.jpg', alt: 'HP EliteBook 840 G9 — screen open', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/elitebook-840-g9/hero.webp', alt: 'HP EliteBook 840 G9', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/elitebook-840-g9/angle-1.webp', alt: 'HP EliteBook 840 G9 — screen open', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1255U', category: 'processor' },
@@ -29,8 +29,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Reliable business laptop with Intel i5, 8GB RAM, 256GB SSD',
     shortDescription: 'Affordable business laptop for everyday work',
     images: [
-      { url: '/assets/products/dell/latitude-5430/hero.jpg', alt: 'Dell Latitude 5430', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/latitude-5430/angle-1.jpg', alt: 'Dell Latitude 5430 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/latitude-5430/hero.webp', alt: 'Dell Latitude 5430', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/latitude-5430/angle-1.webp', alt: 'Dell Latitude 5430 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1235U', category: 'processor' },
@@ -48,10 +48,10 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Ultra-portable with M2 chip, 8GB RAM, 256GB SSD',
     shortDescription: 'Apple\'s most portable laptop with incredible performance',
     images: [
-      { url: '/assets/products/apple/macbook-air-m2/hero.jpg', alt: 'MacBook Air M2 (Midnight)', isPrimary: true, order: 0 },
-      { url: '/assets/products/apple/macbook-air-m2/angle-1.jpg', alt: 'MacBook Air M2 — front', isPrimary: false, order: 1 },
-      { url: '/assets/products/apple/macbook-air-m2/angle-2.jpg', alt: 'MacBook Air M2 (Starlight)', isPrimary: false, order: 2 },
-      { url: '/assets/products/apple/macbook-air-m2/angle-3.jpg', alt: 'MacBook Air M2 — rear ports', isPrimary: false, order: 3 },
+      { url: '/assets/products/apple/macbook-air-m2/hero.webp', alt: 'MacBook Air M2 (Midnight)', isPrimary: true, order: 0 },
+      { url: '/assets/products/apple/macbook-air-m2/angle-1.webp', alt: 'MacBook Air M2 — front', isPrimary: false, order: 1 },
+      { url: '/assets/products/apple/macbook-air-m2/angle-2.webp', alt: 'MacBook Air M2 (Starlight)', isPrimary: false, order: 2 },
+      { url: '/assets/products/apple/macbook-air-m2/angle-3.webp', alt: 'MacBook Air M2 — rear ports', isPrimary: false, order: 3 },
     ],
     specifications: [
       { key: 'Processor', value: 'Apple M2', category: 'processor' },
@@ -69,8 +69,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Ultra-light business laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'The ultimate business ultrabook',
     images: [
-      { url: '/assets/products/lenovo/thinkpad-x1-carbon/hero.jpg', alt: 'ThinkPad X1 Carbon Gen 11', isPrimary: true, order: 0 },
-      { url: '/assets/products/lenovo/thinkpad-x1-carbon/angle-1.jpg', alt: 'ThinkPad X1 Carbon Gen 11 — 180° view', isPrimary: false, order: 1 },
+      { url: '/assets/products/lenovo/thinkpad-x1-carbon/hero.webp', alt: 'ThinkPad X1 Carbon Gen 11', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/thinkpad-x1-carbon/angle-1.webp', alt: 'ThinkPad X1 Carbon Gen 11 — 180° view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
@@ -88,8 +88,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Gaming laptop with AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 4060',
     shortDescription: 'Compact gaming powerhouse',
     images: [
-      { url: '/assets/products/asus/rog-zephyrus-g14/hero.jpg', alt: 'ASUS ROG Zephyrus G14', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/rog-zephyrus-g14/angle-1.jpg', alt: 'ASUS ROG Zephyrus G14 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/rog-zephyrus-g14/hero.webp', alt: 'ASUS ROG Zephyrus G14', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/rog-zephyrus-g14/angle-1.webp', alt: 'ASUS ROG Zephyrus G14 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 9 7940HS', category: 'processor' },
@@ -108,8 +108,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Lightweight laptop with Intel i5, 16GB RAM, 512GB SSD, OLED display',
     shortDescription: 'Affordable OLED laptop for students',
     images: [
-      { url: '/assets/products/acer/swift-go-14/hero.jpg', alt: 'Acer Swift Go 14', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/swift-go-14/angle-1.jpg', alt: 'Acer Swift Go 14 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/swift-go-14/hero.webp', alt: 'Acer Swift Go 14', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/swift-go-14/angle-1.webp', alt: 'Acer Swift Go 14 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-13500H', category: 'processor' },
@@ -127,10 +127,10 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Pro laptop with M3 Pro chip, 18GB unified memory, 512GB SSD',
     shortDescription: 'Apple\'s pro powerhouse for creators and developers',
     images: [
-      { url: '/assets/products/apple/macbook-pro-14/hero.jpg', alt: 'MacBook Pro 14 M3', isPrimary: true, order: 0 },
-      { url: '/assets/products/apple/macbook-pro-14/angle-1.jpg', alt: 'MacBook Pro 14 — lid open', isPrimary: false, order: 1 },
-      { url: '/assets/products/apple/macbook-pro-14/angle-2.jpg', alt: 'MacBook Pro 14 — display', isPrimary: false, order: 2 },
-      { url: '/assets/products/apple/macbook-pro-14/angle-3.jpg', alt: 'MacBook Pro 14 — ports', isPrimary: false, order: 3 },
+      { url: '/assets/products/apple/macbook-pro-14/hero.webp', alt: 'MacBook Pro 14 M3', isPrimary: true, order: 0 },
+      { url: '/assets/products/apple/macbook-pro-14/angle-1.webp', alt: 'MacBook Pro 14 — lid open', isPrimary: false, order: 1 },
+      { url: '/assets/products/apple/macbook-pro-14/angle-2.webp', alt: 'MacBook Pro 14 — display', isPrimary: false, order: 2 },
+      { url: '/assets/products/apple/macbook-pro-14/angle-3.webp', alt: 'MacBook Pro 14 — ports', isPrimary: false, order: 3 },
     ],
     specifications: [
       { key: 'Processor', value: 'Apple M3 Pro', category: 'processor' },
@@ -148,8 +148,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Premium 2-in-1 convertible with Intel i7, 16GB RAM, 1TB SSD',
     shortDescription: 'Stunning OLED convertible for business and creative work',
     images: [
-      { url: '/assets/products/hp/spectre-x360-14/hero.jpg', alt: 'HP Spectre x360 14', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/spectre-x360-14/angle-1.jpg', alt: 'HP Spectre x360 14 — tent mode', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/spectre-x360-14/hero.webp', alt: 'HP Spectre x360 14', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/spectre-x360-14/angle-1.webp', alt: 'HP Spectre x360 14 — tent mode', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
@@ -167,8 +167,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Slim everyday laptop with Ryzen 5, 16GB RAM, 512GB SSD',
     shortDescription: 'Lightweight student laptop with great battery life',
     images: [
-      { url: '/assets/products/lenovo/ideapad-slim-5/hero.jpg', alt: 'Lenovo IdeaPad Slim 5', isPrimary: true, order: 0 },
-      { url: '/assets/products/lenovo/ideapad-slim-5/angle-1.jpg', alt: 'Lenovo IdeaPad Slim 5 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/lenovo/ideapad-slim-5/hero.webp', alt: 'Lenovo IdeaPad Slim 5', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/ideapad-slim-5/angle-1.webp', alt: 'Lenovo IdeaPad Slim 5 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 5 7530U', category: 'processor' },
@@ -186,8 +186,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'All-round laptop with Intel i5, 16GB RAM, 512GB SSD',
     shortDescription: 'Best-selling family and student laptop',
     images: [
-      { url: '/assets/products/hp/pavilion-15/hero.jpg', alt: 'HP Pavilion 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/pavilion-15/angle-1.jpg', alt: 'HP Pavilion 15 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/pavilion-15/hero.webp', alt: 'HP Pavilion 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/pavilion-15/angle-1.webp', alt: 'HP Pavilion 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1334U', category: 'processor' },
@@ -205,8 +205,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Value laptop with Intel i5, 16GB RAM, 512GB SSD',
     shortDescription: 'Reliable everyday laptop for work and study',
     images: [
-      { url: '/assets/products/dell/inspiron-15/hero.jpg', alt: 'Dell Inspiron 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/inspiron-15/angle-1.jpg', alt: 'Dell Inspiron 15 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/inspiron-15/hero.webp', alt: 'Dell Inspiron 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/inspiron-15/angle-1.webp', alt: 'Dell Inspiron 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1335U', category: 'processor' },
@@ -224,8 +224,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Entry-level laptop with Intel i3, 8GB RAM, 512GB SSD',
     shortDescription: 'Lightest budget laptop for daily browsing and study',
     images: [
-      { url: '/assets/products/asus/vivobook-15/hero.jpg', alt: 'ASUS VivoBook 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/vivobook-15/angle-1.jpg', alt: 'ASUS VivoBook 15 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/vivobook-15/hero.webp', alt: 'ASUS VivoBook 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/vivobook-15/angle-1.webp', alt: 'ASUS VivoBook 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i3-1315U', category: 'processor' },
@@ -243,8 +243,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Ultra-thin premium laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Featherlight AMOLED display laptop for professionals',
     images: [
-      { url: '/assets/products/samsung/galaxy-book3-pro/hero.jpg', alt: 'Samsung Galaxy Book3 Pro', isPrimary: true, order: 0 },
-      { url: '/assets/products/samsung/galaxy-book3-pro/angle-1.jpg', alt: 'Samsung Galaxy Book3 Pro — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/samsung/galaxy-book3-pro/hero.webp', alt: 'Samsung Galaxy Book3 Pro', isPrimary: true, order: 0 },
+      { url: '/assets/products/samsung/galaxy-book3-pro/angle-1.webp', alt: 'Samsung Galaxy Book3 Pro — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
@@ -262,8 +262,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Gaming laptop with RTX 3050, 16GB RAM, 512GB SSD',
     shortDescription: 'Entry gaming laptop with 144Hz display',
     images: [
-      { url: '/assets/products/msi/gf63-thin/hero.jpg', alt: 'MSI GF63 Thin', isPrimary: true, order: 0 },
-      { url: '/assets/products/msi/gf63-thin/angle-1.jpg', alt: 'MSI GF63 Thin — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/msi/gf63-thin/hero.webp', alt: 'MSI GF63 Thin', isPrimary: true, order: 0 },
+      { url: '/assets/products/msi/gf63-thin/angle-1.webp', alt: 'MSI GF63 Thin — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-12450H', category: 'processor' },
@@ -282,8 +282,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Budget gaming laptop with RTX 4050, 16GB RAM, 512GB SSD',
     shortDescription: 'Affordable RTX gaming laptop for students',
     images: [
-      { url: '/assets/products/acer/nitro-v-15/hero.jpg', alt: 'Acer Nitro V 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/nitro-v-15/angle-1.jpg', alt: 'Acer Nitro V 15 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/nitro-v-15/hero.webp', alt: 'Acer Nitro V 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/nitro-v-15/angle-1.webp', alt: 'Acer Nitro V 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 5 7535HS', category: 'processor' },
@@ -303,10 +303,10 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Big-screen ultrabook with M3 chip, 16GB unified memory, 512GB SSD',
     shortDescription: 'Apple\'s 15-inch Air with the versatile M3 chip',
     images: [
-      { url: '/assets/products/apple/macbook-air-15/hero.jpg', alt: 'MacBook Air 15 M3', isPrimary: true, order: 0 },
-      { url: '/assets/products/apple/macbook-air-15/angle-1.jpg', alt: 'MacBook Air 15 — screen open', isPrimary: false, order: 1 },
-      { url: '/assets/products/apple/macbook-air-15/angle-2.jpg', alt: 'MacBook Air 15 — display', isPrimary: false, order: 2 },
-      { url: '/assets/products/apple/macbook-air-15/angle-3.jpg', alt: 'MacBook Air 15 — rear ports', isPrimary: false, order: 3 },
+      { url: '/assets/products/apple/macbook-air-15/hero.webp', alt: 'MacBook Air 15 M3', isPrimary: true, order: 0 },
+      { url: '/assets/products/apple/macbook-air-15/angle-1.webp', alt: 'MacBook Air 15 — screen open', isPrimary: false, order: 1 },
+      { url: '/assets/products/apple/macbook-air-15/angle-2.webp', alt: 'MacBook Air 15 — display', isPrimary: false, order: 2 },
+      { url: '/assets/products/apple/macbook-air-15/angle-3.webp', alt: 'MacBook Air 15 — rear ports', isPrimary: false, order: 3 },
     ],
     specifications: [
       { key: 'Processor', value: 'Apple M3', category: 'processor' },
@@ -324,8 +324,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Ultra-premium thin laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Stunning edge-to-edge keyboard designer laptop',
     images: [
-      { url: '/assets/products/dell/xps-13-plus/hero.jpg', alt: 'Dell XPS 13 Plus', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/xps-13-plus/angle-1.jpg', alt: 'Dell XPS 13 Plus — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/xps-13-plus/hero.webp', alt: 'Dell XPS 13 Plus', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/xps-13-plus/angle-1.webp', alt: 'Dell XPS 13 Plus — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
@@ -343,8 +343,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Business workhorse with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Legendary ThinkPad reliability for professionals',
     images: [
-      { url: '/assets/products/lenovo/thinkpad-t14/hero.jpg', alt: 'Lenovo ThinkPad T14 Gen 4', isPrimary: true, order: 0 },
-      { url: '/assets/products/lenovo/thinkpad-t14/angle-1.jpg', alt: 'Lenovo ThinkPad T14 Gen 4 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/lenovo/thinkpad-t14/hero.webp', alt: 'Lenovo ThinkPad T14 Gen 4', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/thinkpad-t14/angle-1.webp', alt: 'Lenovo ThinkPad T14 Gen 4 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
@@ -362,8 +362,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Entry gaming laptop with RTX 3050, 16GB RAM, 512GB SSD',
     shortDescription: 'Budget gaming powerhouse from HP',
     images: [
-      { url: '/assets/products/hp/victus-15/hero.jpg', alt: 'HP Victus 15', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/victus-15/angle-1.jpg', alt: 'HP Victus 15 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/victus-15/hero.webp', alt: 'HP Victus 15', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/victus-15/angle-1.webp', alt: 'HP Victus 15 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-12500H', category: 'processor' },
@@ -382,8 +382,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'High-refresh gaming laptop with RTX 4060, 16GB RAM, 1TB SSD',
     shortDescription: 'Serious esports-ready gaming rig',
     images: [
-      { url: '/assets/products/asus/rog-strix-g16/hero.jpg', alt: 'ASUS ROG Strix G16', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/rog-strix-g16/angle-1.jpg', alt: 'ASUS ROG Strix G16 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/rog-strix-g16/hero.webp', alt: 'ASUS ROG Strix G16', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/rog-strix-g16/angle-1.webp', alt: 'ASUS ROG Strix G16 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-13650HX', category: 'processor' },
@@ -403,10 +403,10 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Pro workstation with M4 chip, 36GB unified memory, 1TB SSD',
     shortDescription: 'The ultimate laptop for video editors and developers',
     images: [
-      { url: '/assets/products/apple/macbook-pro-16/hero.jpg', alt: 'MacBook Pro 16 M4', isPrimary: true, order: 0 },
-      { url: '/assets/products/apple/macbook-pro-16/angle-1.jpg', alt: 'MacBook Pro 16 M4 — screen open', isPrimary: false, order: 1 },
-      { url: '/assets/products/apple/macbook-pro-16/angle-2.jpg', alt: 'MacBook Pro 16 M4 — front view', isPrimary: false, order: 2 },
-      { url: '/assets/products/apple/macbook-pro-16/angle-3.jpg', alt: 'MacBook Pro 16 M4 — rear ports', isPrimary: false, order: 3 },
+      { url: '/assets/products/apple/macbook-pro-16/hero.webp', alt: 'MacBook Pro 16 M4', isPrimary: true, order: 0 },
+      { url: '/assets/products/apple/macbook-pro-16/angle-1.webp', alt: 'MacBook Pro 16 M4 — screen open', isPrimary: false, order: 1 },
+      { url: '/assets/products/apple/macbook-pro-16/angle-2.webp', alt: 'MacBook Pro 16 M4 — front view', isPrimary: false, order: 2 },
+      { url: '/assets/products/apple/macbook-pro-16/angle-3.webp', alt: 'MacBook Pro 16 M4 — rear ports', isPrimary: false, order: 3 },
     ],
     specifications: [
       { key: 'Processor', value: 'Apple M4', category: 'processor' },
@@ -424,8 +424,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Premium business ultrabook with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Enterprise-grade security and battery life',
     images: [
-      { url: '/assets/products/dell/latitude-7450/hero.jpg', alt: 'Dell Latitude 7450', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/latitude-7450/angle-1.jpg', alt: 'Dell Latitude 7450 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/latitude-7450/hero.webp', alt: 'Dell Latitude 7450', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/latitude-7450/angle-1.webp', alt: 'Dell Latitude 7450 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1365U', category: 'processor' },
@@ -443,8 +443,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Premium 2-in-1 convertible with Intel i7, 16GB RAM, 1TB SSD',
     shortDescription: 'Rotating soundbar OLED convertible for creators',
     images: [
-      { url: '/assets/products/lenovo/yoga-9i/hero.jpg', alt: 'Lenovo Yoga 9i', isPrimary: true, order: 0 },
-      { url: '/assets/products/lenovo/yoga-9i/angle-1.jpg', alt: 'Lenovo Yoga 9i — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/lenovo/yoga-9i/hero.webp', alt: 'Lenovo Yoga 9i', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/yoga-9i/angle-1.webp', alt: 'Lenovo Yoga 9i — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1360P', category: 'processor' },
@@ -462,8 +462,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: '15.6-inch business laptop with Intel i7, 16GB RAM, 512GB SSD',
     shortDescription: 'Big-screen business laptop for professionals',
     images: [
-      { url: '/assets/products/hp/elitebook-860-g9/hero.jpg', alt: 'HP EliteBook 860 G9', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/elitebook-860-g9/angle-1.jpg', alt: 'HP EliteBook 860 G9 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/elitebook-860-g9/hero.webp', alt: 'HP EliteBook 860 G9', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/elitebook-860-g9/angle-1.webp', alt: 'HP EliteBook 860 G9 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1265U', category: 'processor' },
@@ -481,8 +481,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Value gaming laptop with RTX 3050, 16GB RAM, 512GB SSD',
     shortDescription: 'Great entry gaming plus work laptop',
     images: [
-      { url: '/assets/products/acer/aspire-7/hero.jpg', alt: 'Acer Aspire 7', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/aspire-7/angle-1.jpg', alt: 'Acer Aspire 7 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/aspire-7/hero.webp', alt: 'Acer Aspire 7', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/aspire-7/angle-1.webp', alt: 'Acer Aspire 7 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 7 5825HS', category: 'processor' },
@@ -501,8 +501,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Mobile workstation with Intel i7, 32GB RAM, 1TB NVMe SSD, Quadro graphics',
     shortDescription: 'Certified workstation for CAD, BIM and data work',
     images: [
-      { url: '/assets/products/dell/precision-3570/hero.jpg', alt: 'Dell Precision 3570', isPrimary: true, order: 0 },
-      { url: '/assets/products/dell/precision-3570/angle-1.jpg', alt: 'Dell Precision 3570 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/dell/precision-3570/hero.webp', alt: 'Dell Precision 3570', isPrimary: true, order: 0 },
+      { url: '/assets/products/dell/precision-3570/angle-1.webp', alt: 'Dell Precision 3570 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-12700H', category: 'processor' },
@@ -520,8 +520,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: '16-inch pro workstation with Intel Xeon, 64GB RAM, 2TB SSD, RTX graphics',
     shortDescription: 'Maximum-power workstation for engineers and creators',
     images: [
-      { url: '/assets/products/hp/zbook-fury-16/hero.jpg', alt: 'HP ZBook Fury 16', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/zbook-fury-16/angle-1.jpg', alt: 'HP ZBook Fury 16 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/zbook-fury-16/hero.webp', alt: 'HP ZBook Fury 16', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/zbook-fury-16/angle-1.webp', alt: 'HP ZBook Fury 16 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i9-13950HX', category: 'processor' },
@@ -539,8 +539,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Ultra-slim OLED ultrabook with Intel i7, 16GB RAM, 1TB SSD',
     shortDescription: 'Featherlight premium ultrabook for professionals on the go',
     images: [
-      { url: '/assets/products/asus/zenbook-14/hero.jpg', alt: 'ASUS ZenBook 14', isPrimary: true, order: 0 },
-      { url: '/assets/products/asus/zenbook-14/angle-1.jpg', alt: 'ASUS ZenBook 14 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/asus/zenbook-14/hero.webp', alt: 'ASUS ZenBook 14', isPrimary: true, order: 0 },
+      { url: '/assets/products/asus/zenbook-14/angle-1.webp', alt: 'ASUS ZenBook 14 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-1355U', category: 'processor' },
@@ -558,8 +558,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Gaming laptop with Ryzen 7, 16GB RAM, 1TB SSD, RTX 4060',
     shortDescription: 'Pro-grade gaming rig with a 16" 165Hz display',
     images: [
-      { url: '/assets/products/lenovo/legion-5-pro/hero.jpg', alt: 'Lenovo Legion 5 Pro', isPrimary: true, order: 0 },
-      { url: '/assets/products/lenovo/legion-5-pro/angle-1.jpg', alt: 'Lenovo Legion 5 Pro — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/lenovo/legion-5-pro/hero.webp', alt: 'Lenovo Legion 5 Pro', isPrimary: true, order: 0 },
+      { url: '/assets/products/lenovo/legion-5-pro/angle-1.webp', alt: 'Lenovo Legion 5 Pro — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'AMD Ryzen 7 7745HX', category: 'processor' },
@@ -578,8 +578,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Flagship gaming laptop with Intel i9, 32GB RAM, 2TB SSD, RTX 4080',
     shortDescription: 'Desktop-class gaming performance in a 16" chassis',
     images: [
-      { url: '/assets/products/acer/predator-helios-16/hero.jpg', alt: 'Acer Predator Helios 16', isPrimary: true, order: 0 },
-      { url: '/assets/products/acer/predator-helios-16/angle-1.jpg', alt: 'Acer Predator Helios 16 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/acer/predator-helios-16/hero.webp', alt: 'Acer Predator Helios 16', isPrimary: true, order: 0 },
+      { url: '/assets/products/acer/predator-helios-16/angle-1.webp', alt: 'Acer Predator Helios 16 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i9-13900HX', category: 'processor' },
@@ -598,8 +598,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Premium laptop with Intel i7, 16GB RAM, 1TB SSD',
     shortDescription: 'Slim touchscreen ultrabook for professionals',
     images: [
-      { url: '/assets/products/samsung/galaxy-book4-ultra/hero.jpg', alt: 'Samsung Galaxy Book4 Ultra', isPrimary: true, order: 0 },
-      { url: '/assets/products/samsung/galaxy-book4-ultra/angle-1.jpg', alt: 'Samsung Galaxy Book4 Ultra — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/samsung/galaxy-book4-ultra/hero.webp', alt: 'Samsung Galaxy Book4 Ultra', isPrimary: true, order: 0 },
+      { url: '/assets/products/samsung/galaxy-book4-ultra/angle-1.webp', alt: 'Samsung Galaxy Book4 Ultra — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i7-13705H', category: 'processor' },
@@ -617,8 +617,8 @@ export const MOCK_PRODUCTS: Product[] = [
     description: 'Business laptop with Intel i5, 16GB RAM, 512GB SSD',
     shortDescription: 'Everyday business laptop for small teams',
     images: [
-      { url: '/assets/products/hp/probook-450/hero.jpg', alt: 'HP ProBook 450', isPrimary: true, order: 0 },
-      { url: '/assets/products/hp/probook-450/angle-1.jpg', alt: 'HP ProBook 450 — second angle view', isPrimary: false, order: 1 },
+      { url: '/assets/products/hp/probook-450/hero.webp', alt: 'HP ProBook 450', isPrimary: true, order: 0 },
+      { url: '/assets/products/hp/probook-450/angle-1.webp', alt: 'HP ProBook 450 — second angle view', isPrimary: false, order: 1 },
     ],
     specifications: [
       { key: 'Processor', value: 'Intel Core i5-1335U', category: 'processor' },
