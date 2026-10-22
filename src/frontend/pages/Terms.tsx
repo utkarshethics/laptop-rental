@@ -93,13 +93,13 @@ export function Terms() {
 
             <section className="bg-white p-6 md:p-8 rounded-xl border border-secondary-200 shadow-sm space-y-3">
               <h2 className="text-xl font-bold text-secondary-900 border-b border-secondary-100 pb-2">
-                5. Monthly Billing, Payment Gateway &amp; 18% GST
+                5. Rent, Security Deposit &amp; Payment Gateway
               </h2>
               <p>
-                All prices are quoted in Indian Rupees (INR) and are subject to mandatory 18% Goods and Services Tax (GST) under HSN 997315. Tax invoices are issued monthly by STAGE-X with full input tax credit eligibility for GST-registered entities.
+                Monthly rent and the refundable security deposit are shown at checkout in Indian Rupees and are the final amount payable &ndash; no GST is added. Rent is paid in advance for the rental period chosen.
               </p>
               <p>
-                <strong>Payment Gateway Notice:</strong> Payments on this website are processed by <strong>STAGE-X</strong> via secure Razorpay checkout (UPI, Credit/Debit Cards, Net Banking). Field delivery riders are not authorized to collect cash payments for rental leases.
+                <strong>Payment Gateway Notice:</strong> Payments on this website are processed by <strong>STAGE-X</strong> via secure payment gateway checkout (UPI, Credit/Debit Cards, Net Banking). Field delivery riders are not authorized to collect cash payments for rental leases.
               </p>
             </section>
 

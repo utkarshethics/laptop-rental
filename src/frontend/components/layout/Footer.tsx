@@ -21,6 +21,8 @@ const FOOTER_LINKS = {
     ],
   },
   support: [
+    { label: 'Product & Pricing', href: '/pricing' },
+    { label: 'Book a Laptop', href: '/booking' },
     { label: 'Rental Terms', href: '/terms' },
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Cancellation & Refund', href: '/cancellation-refund-policy' },
@@ -83,9 +85,9 @@ export function Footer() {
             </p>
             <div className="mb-6 space-y-1.5 text-sm text-secondary-300">
               <p>Email: <a href="mailto:connect@laptoponrent.online" className="text-white hover:underline font-medium">connect@laptoponrent.online</a></p>
-              <p>Support: <a href="tel:+917892240243" className="text-white hover:underline font-medium">+91 78922 40243</a></p>
+              <p>Customer Care: <a href="tel:+917892240243" className="text-white hover:underline font-medium">+91 78922 40243</a></p>
               <p>WhatsApp: <a href="https://wa.me/917892240243" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline font-medium">+91 78922 40243</a></p>
-              <p className="text-xs text-secondary-400">Hours: Mon&ndash;Sun, 6:00 AM &ndash; 7:00 PM IST</p>
+              <p className="text-xs text-secondary-400">Hours: Monday to Saturday, 10:00 AM &ndash; 7:00 PM</p>
             </div>
             <div className="flex flex-wrap gap-4">
               {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
@@ -215,11 +217,11 @@ export function Footer() {
 
           <div className="w-full text-center text-xs text-secondary-400 space-y-1 pt-4 border-t border-secondary-800/60 leading-relaxed">
             <p>
-              laptoponrent.online (LaptopRent) is a brand (trade name) of STAGE-X, a sole proprietorship.
+              laptoponrent.online is a brand of STAGE-X, a technology platform connecting customers with partner laptop rental providers. Laptops are owned and delivered by partner rental companies; bookings, payments, deposits, support and refunds are handled by STAGE-X.
               <br />
-              Office: 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India
+              Operational Office: 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India
               <br />
-              Email: <a href="mailto:connect@laptoponrent.online" className="underline text-secondary-300">connect@laptoponrent.online</a> &middot; Hours: 6:00 AM &ndash; 7:00 PM IST
+              Customer Care: <a href="tel:+917892240243" className="text-secondary-300 hover:underline">+91 78922 40243</a> &middot; Email: <a href="mailto:connect@laptoponrent.online" className="underline text-secondary-300">connect@laptoponrent.online</a> &middot; Hours: Monday to Saturday, 10:00 AM &ndash; 7:00 PM
             </p>
             <p>Payments on this website are processed by STAGE-X.</p>
             <p>&copy; {currentYear} STAGE-X. All rights reserved.</p>

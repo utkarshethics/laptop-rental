@@ -135,8 +135,13 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-secondary-900">Operating Hours</h3>
-                    <p className="text-secondary-600">Every day, 6:00 AM &ndash; 7:00 PM IST</p>
+                    <p className="text-secondary-600">Monday to Saturday, 10:00 AM &ndash; 7:00 PM</p>
                   </div>
+                </div>
+
+                <div className="pt-2 border-t border-secondary-100 text-xs text-secondary-500 space-y-1">
+                  <p>For orders, payments, repairs or refunds, call or email us with your order ID.</p>
+                  <p><strong>Grievance contact:</strong> Grievance Officer, <a href="mailto:connect@laptoponrent.online" className="text-primary-600 underline">connect@laptoponrent.online</a></p>
                 </div>
               </div>
             </div>

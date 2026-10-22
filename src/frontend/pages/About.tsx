@@ -84,8 +84,8 @@ export function About() {
               <div className="w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center">
                 <Award className="w-5 h-5" />
               </div>
-              <h3 className="font-semibold text-secondary-900">18% GST Invoicing</h3>
-              <p className="text-sm text-secondary-600">Official tax invoices for full input tax credit on corporate leases.</p>
+              <h3 className="font-semibold text-secondary-900">Transparent Pricing</h3>
+              <p className="text-sm text-secondary-600">Final prices with zero hidden fees and 100% refundable security deposits.</p>
             </div>
 
             <div className="p-5 rounded-xl border border-secondary-200 bg-white shadow-sm space-y-2">

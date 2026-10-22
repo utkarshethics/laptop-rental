@@ -405,7 +405,7 @@ export function ProductDetail() {
               '24/7 customer support',
               'Easy return & exchange',
               'No cost EMI available',
-              'GST invoice for business',
+              '100% refundable security deposit',
             ].map((item, index) => (
               <div key={index} className="flex items-center gap-3 p-4 bg-white rounded-xl border border-secondary-200">
                 <CheckCircle className="w-5 h-5 text-success-500 flex-shrink-0" />

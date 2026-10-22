@@ -74,7 +74,7 @@ export function Privacy() {
               <ul className="list-disc pl-5 space-y-1.5 text-secondary-600">
                 <li>Executing KYC verification and fraud prevention for high-value computer hardware.</li>
                 <li>Coordinating doorstep delivery, on-site hardware setup, and scheduled return pickup.</li>
-                <li>Generating statutory 18% GST tax invoices and accounting receipts.</li>
+                <li>Generating order receipts and accounting records.</li>
                 <li>Issuing security deposit refunds, token credits, and warranty replacement tickets.</li>
                 <li>Sending transactional status updates via SMS and WhatsApp.</li>
               </ul>

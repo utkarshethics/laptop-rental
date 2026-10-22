@@ -133,19 +133,11 @@ export function PricingDisclaimer() {
 
             <section className="bg-white p-6 md:p-8 rounded-xl border border-secondary-200 shadow-sm space-y-3">
               <h2 className="text-xl font-bold text-secondary-900 border-b border-secondary-100 pb-2">
-                4. Taxes &amp; GST Invoicing (18%)
+                4. Taxes &amp; Final Pricing
               </h2>
               <p>
-                All rentals, service subscriptions, and logistics services comply with Indian taxation statutes:
+                Rent and refundable security deposits are the final amount payable &ndash; no GST is added. STAGE-X is a sole proprietorship operating within applicable exemption limits. Official digital order receipts are issued by STAGE-X upon order completion.
               </p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  Standard <strong>18% GST</strong> (Goods and Services Tax) is applicable to monthly rental fees and shown itemized on every invoice.
-                </li>
-                <li>
-                  Registered businesses can provide their legal GSTIN during onboarding to receive compliant B2B tax invoices and claim full <strong>Input Tax Credit (ITC)</strong>.
-                </li>
-              </ul>
             </section>
 
             <section className="bg-white p-6 md:p-8 rounded-xl border border-secondary-200 shadow-sm space-y-3">

@@ -189,7 +189,7 @@ const TIER1 = INDIAN_CITIES.filter(c => c.tier === 1);
 buildPage({
   route: '/',
   title: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
-  description: 'Rent laptops in India from ₹849/month. MacBook, gaming, business and student laptops from HP, Dell, Lenovo, ASUS, Acer and Surface. Same-day delivery in 25+ cities with 18% GST invoice.',
+  description: 'Rent laptops in India from ₹849/month. MacBook, gaming, business and student laptops from HP, Dell, Lenovo, ASUS, Acer and Surface. Same-day delivery in 25+ cities with refundable security deposit.',
   keywords: 'laptop rental, laptop on rent, macbook rental, gaming laptop rental, computer rental india, rent laptop india',
   canonical: `${BASE}/`,
   ogTitle: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
@@ -244,12 +244,12 @@ buildPage({
       <h1>Laptop Rental in India - Flexible Monthly Plans from ₹849</h1>
       <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
         <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
-          <strong>Direct Answer:</strong> <strong>LaptopRent</strong> (laptoponrent.online) is an enterprise and retail laptop rental network operating across <strong>25+ Indian technology hubs</strong> including Bangalore, Mumbai, Delhi NCR, Hyderabad, Chennai, and Pune. LaptopRent provides flexible short-term and long-term rental plans starting from <strong>₹849/month</strong> for student models, <strong>₹1,200/month</strong> for corporate business laptops, and <strong>₹2,999/month</strong> for Apple MacBook Air/Pro (M1/M2/M3 chips) and RTX gaming rigs. All rentals feature <strong>same-day doorstep delivery</strong>, complimentary maintenance, zero capital depreciation, and compliant <strong>18% GST invoices (HSN 997315)</strong> for business input tax credit.
+          <strong>Direct Answer:</strong> <strong>LaptopRent</strong> (laptoponrent.online) is an enterprise and retail laptop rental network operating across <strong>25+ Indian technology hubs</strong> including Bangalore, Mumbai, Delhi NCR, Hyderabad, Chennai, and Pune. LaptopRent provides flexible short-term and long-term rental plans starting from <strong>₹849/month</strong> for student models, <strong>₹1,200/month</strong> for corporate business laptops, and <strong>₹2,999/month</strong> for Apple MacBook Air/Pro (M1/M2/M3 chips) and RTX gaming rigs. All rentals feature <strong>same-day doorstep delivery</strong>, complimentary maintenance, zero capital depreciation, and fully refundable security deposits and zero hidden charges.
         </p>
       </div>
       <p>LaptopRent rents laptops on rent across ${INDIAN_CITIES.length} Indian cities, with same-day
       delivery and flexible plans from one day to twelve months. Every rental includes a
-      18% GST invoice under HSN 997315, so registered businesses can claim full input tax credit.</p>
+      Rent and deposit are the final amount payable – no GST is added.</p>
 
       <h2>Why rent a laptop instead of buying one?</h2>
       <p>Renting spreads the cost of a device over the period you actually need it. A
@@ -343,7 +343,7 @@ buildPage({
     <main>
       <h1>Laptop Rental Categories in India</h1>
       <p>Rent laptops by category across ${INDIAN_CITIES.length} Indian cities. All rentals include
-      maintenance support, a 18% GST invoice and flexible terms from one month to twelve months.</p>
+      maintenance support, transparent refundable deposits and flexible terms from one month to twelve months.</p>
       <ul>
         ${LAPTOP_CATEGORIES.map(cat => `<li><a href="/category/${cat.id}/">${esc(cat.name)}</a> - ${esc(cat.description)}. ${esc(cat.priceRange)}.</li>`).join('\n        ')}
       </ul>
@@ -411,7 +411,7 @@ for (const cat of [...new Set(BLOG_POSTS.map(p => p.category))]) {
       <h1>${esc(cat.replace(/-/g, ' ').replace(/\b\w/g, ch => ch.toUpperCase()))} - LaptopRent Blog</h1>
       <p>Articles on ${esc(cat.replace(/-/g, ' '))} for laptop rental in India, written to help
       businesses and individuals decide whether to rent or buy, and which model fits the budget
-      and workload. Every rental we offer includes a 18% GST invoice under HSN 997315 and same-day
+      and workload. Every rental we offer includes transparent refundable security deposits and same-day
       delivery in ${INDIAN_CITIES.length} cities.</p>
       <h2>In this section</h2>
       <ul>
@@ -430,7 +430,7 @@ const BLOG_BODY: Record<string, string> = {
   guides: 'This guide covers the essential considerations for choosing a rental laptop in India, including specifications, budgets, and rental terms. We compare the best options across popular laptop types to help you decide quickly and confidently.',
   comparisons: 'In this comparison we analyse total cost of ownership, flexibility, upgrade paths, and exit options to help you decide between renting and buying a laptop in India.',
   'city-guides': 'Our city-specific rental guide covers the best laptop rental options, local delivery areas, and practical tips for getting a rental laptop delivered quickly in this Indian city.',
-  business: 'This article explains how corporate and SME teams can simplify device management with flexible laptop rental, including GST input tax credit benefits, volume pricing, and faster onboarding.',
+  business: 'This article explains how corporate and SME teams can simplify device management with flexible laptop rental, including zero maintenance costs, flexible tenure, and fast onboarding.',
   events: 'Planning an event, training, or examination? This guide walks through rental planning for events, including quantities, durations, and onsite support considerations.',
 };
 
@@ -465,7 +465,7 @@ for (const post of BLOG_POSTS) {
       <h2>Key takeaways</h2>
       <ul>
         <li>Rental spreads cost over the period you actually need the device.</li>
-        <li>Every LaptopRent rental includes a 18% GST invoice under HSN 997315.</li>
+        <li>Rent and deposit are the final amount payable – no GST is added.</li>
         <li>Same-day delivery is available in ${INDIAN_CITIES.length} cities.</li>
       </ul>
       <p>Browse <a href="/categories/">rental categories</a> or see
@@ -536,7 +536,7 @@ for (const city of INDIAN_CITIES) {
       <h1>Laptop Rental in ${esc(city.name)}</h1>
       <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
         <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
-          <strong>Direct Answer:</strong> LaptopRent delivers on-demand laptop rentals across <strong>${esc(city.name)}, ${esc(city.state)}</strong> with same-day doorstep dispatch for orders placed before 2 PM. Monthly rental plans start at <strong>${esc(price)}</strong> with no capital commitment. Inventory includes Apple MacBooks (Air &amp; Pro), Lenovo ThinkPads, Dell Latitudes, HP ProBooks, and high-spec gaming/engineering rigs, fully supported with end-to-end hardware warranties and 18% GST input credit invoices.
+          <strong>Direct Answer:</strong> LaptopRent delivers on-demand laptop rentals across <strong>${esc(city.name)}, ${esc(city.state)}</strong> with same-day doorstep dispatch for orders placed before 2 PM. Monthly rental plans start at <strong>${esc(price)}</strong> with no capital commitment. Inventory includes Apple MacBooks (Air &amp; Pro), Lenovo ThinkPads, Dell Latitudes, HP ProBooks, and high-spec gaming/engineering rigs, fully supported with end-to-end hardware warranties and 100% refundable security deposits.
         </p>
       </div>
       <p>${esc(description)}</p>
@@ -550,7 +550,7 @@ for (const city of INDIAN_CITIES) {
       delivery for orders confirmed before 2 PM.</p>
       <h2>Why rent a laptop in ${esc(city.name)}?</h2>
       <p>Businesses and students in ${esc(city.name)} rent rather than buy because it keeps
-      capital free, allows upgrades as requirements change, and includes a 18% GST invoice that
+      capital free, allows upgrades as requirements change, and includes transparent terms where
       registered entities can claim against input tax credit.</p>
       <p>Browse <a href="/rental/${city.slug}/">laptop rental in ${esc(city.name)}</a> or compare
       <a href="/categories/">all rental categories</a>. Nearby: ${INDIAN_CITIES.filter(c => c.slug !== city.slug).slice(0, 5).map(c => `<a href="/rental/${c.slug}/">${esc(c.name)}</a>`).join(', ')}.</p>
@@ -602,16 +602,16 @@ for (const cat of LAPTOP_CATEGORIES) {
       <h1>${esc(cat.name)} in India</h1>
       <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
         <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
-          <strong>Direct Answer:</strong> LaptopRent provides on-demand <strong>${esc(cat.name)}</strong> across 25+ Indian tech hubs starting from <strong>${esc(cat.priceRange)}</strong>. Suitable for corporate teams, independent developers, students, and events with flexible 1-day to 12-month tenure, full hardware warranty, same-day delivery, and 18% GST input tax credit invoices (HSN 997315).
+          <strong>Direct Answer:</strong> LaptopRent provides on-demand <strong>${esc(cat.name)}</strong> across 25+ Indian tech hubs starting from <strong>${esc(cat.priceRange)}</strong>. Suitable for corporate teams, independent developers, students, and events with flexible 1-day to 12-month tenure, full hardware warranty, same-day delivery, and 100% refundable security deposits.
         </p>
       </div>
       <p>${esc(cat.description)}. Rent from ${esc(cat.priceRange)} with same-day delivery in
-      ${INDIAN_CITIES.length} cities, maintenance included and a 18% GST invoice on every order.</p>
+      ${INDIAN_CITIES.length} cities, maintenance included and refundable security deposits on every order.</p>
       <h2>What is included</h2>
       <ul>
         <li>Delivery to your city within 24 hours</li>
         <li>Maintenance and hardware support for the rental term</li>
-        <li>18% GST invoice under HSN 997315</li>
+        <li>Rent and deposit are the final amount payable – no GST is added</li>
         <li>Flexible upgrade path if your requirement changes</li>
       </ul>
       <h2>Available in</h2>
@@ -645,7 +645,7 @@ const CHEAPEST = SORTED_PRODUCTS[0].pricing.monthly;
 buildPage({
   route: '/products',
   title: `All Laptop Rental Models in India | From ${inr(CHEAPEST)}/month | LaptopRent`,
-  description: `Browse all ${MOCK_PRODUCTS.length} laptops available to rent in India from ${inr(CHEAPEST)}/month. HP, Dell, Lenovo, ASUS, Acer, Apple and Samsung models with same-day delivery, maintenance included and a 18% GST invoice.`,
+  description: `Browse all ${MOCK_PRODUCTS.length} laptops available to rent in India from ${inr(CHEAPEST)}/month. HP, Dell, Lenovo, ASUS, Acer, Apple and Samsung models with same-day delivery, maintenance included and refundable security deposits.`,
   keywords: 'laptop rental, rent laptop india, laptop on rent, laptop rental models, macbook rental, gaming laptop rental',
   canonical: `${BASE}/products`,
   ogTitle: `Laptop Rental Models in India | From ${inr(CHEAPEST)}/month`,
@@ -683,7 +683,7 @@ buildPage({
       </div>
       <p>All ${MOCK_PRODUCTS.length} laptops we stock are available to rent from
       ${inr(CHEAPEST)}/month. Every rental includes delivery, maintenance for the term and a
-      18% GST invoice, with same-day delivery in ${INDIAN_CITIES.length} cities.</p>
+      transparent deposits, with same-day delivery in ${INDIAN_CITIES.length} cities.</p>
       <h2>All models</h2>
       <ul>
         ${SORTED_PRODUCTS.map(p => `<li><a href="/products/${p.id}/">${esc(p.name)}</a>
@@ -775,7 +775,7 @@ for (const p of MOCK_PRODUCTS) {
       <ul>
         <li>Doorstep delivery in ${INDIAN_CITIES.length} cities, same day for orders before 2 PM</li>
         <li>Maintenance and hardware support for the rental term</li>
-        <li>18% GST invoice under HSN 997315</li>
+        <li>Rent and deposit are the final amount payable – no GST is added</li>
         <li>Free upgrade to an equivalent model if your requirement changes</li>
       </ul>
       <h2>Available in</h2>
@@ -828,7 +828,7 @@ buildPage({
     <ul>
       <li>Enterprise Hardware: Apple MacBook, Lenovo ThinkPad, Dell Latitude, HP ProBook, RTX Gaming and Mobile Workstations.</li>
       <li>Speed & Convenience: Same-day doorstep delivery in major metros for orders confirmed before 2:00 PM.</li>
-      <li>Transparent Pricing: Advance token of ₹50 adjusted in your 1st month rent, no hidden charges, and standard 18% GST invoices.</li>
+      <li>Transparent Pricing: Advance token of ₹50 adjusted in your 1st month rent, no hidden charges, and zero GST added.</li>
       <li>Comprehensive Support: 100% free hardware defect repairs and swaps for maximum uptime.</li>
     </ul>
     <h2>Contact & Office Address</h2>
@@ -1007,8 +1007,8 @@ buildPage({
 buildPage({
   route: '/pricing-disclaimer',
   title: 'Pricing & Billing Disclaimer | LaptopRent (a brand of STAGE-X)',
-  description: 'Transparent monthly rental rates, ₹50 token credit policy, security deposit terms, and GST invoicing for LaptopRent operated by STAGE-X Bengaluru.',
-  keywords: 'pricing disclaimer, laptop rental prices, gst invoice rental, deposit terms, stage-x pricing',
+  description: 'Transparent monthly rental rates, ₹50 token credit policy, security deposit terms, and final pricing for LaptopRent operated by STAGE-X Bengaluru.',
+  keywords: 'pricing disclaimer, laptop rental prices, deposit terms, stage-x pricing',
   canonical: `${BASE}/pricing-disclaimer`,
   ogTitle: 'Pricing & Billing Disclaimer | LaptopRent (a brand of STAGE-X)',
   ogUrl: `${BASE}/pricing-disclaimer`,
@@ -1028,11 +1028,83 @@ buildPage({
     <p>Student laptops from ₹849/mo, corporate business laptops from ₹1,200/mo, Apple MacBook Air from ₹2,999/mo, MacBook Pro from ₹4,500/mo, and gaming rigs from ₹3,500/mo.</p>
     <h2>2. ₹50 Reservation Token Advance</h2>
     <p>The ₹50 token confirms reservation and is 100% credited against your 1st month rental invoice. Refunded in 24-48 hours if cancelled before dispatch.</p>
-    <h2>3. Taxes & Invoicing (18% GST)</h2>
-    <p>Compliant 18% GST invoices provided. Input tax credit (ITC) available for registered businesses.</p>
+    <h2>3. Taxes & Final Pricing</h2>
+    <p>Rent and security deposits are the final amount payable – no GST is added. The deposit is refunded within 7 working days of return.</p>
     <h2>4. Payment Processing</h2>
     <p>Payments on this website are processed by STAGE-X via Razorpay. Support: connect@laptoponrent.online.</p>
   </main>`,
+});
+
+
+buildPage({
+  route: '/pricing',
+  title: 'Laptop Rental Pricing & Security Deposit Rates | LaptopRent',
+  description: 'View complete rental rates and refundable security deposits for 32+ laptop models. Prices from ₹799/month. Rent and deposit are final – no GST added.',
+  keywords: 'laptop rental pricing, laptop rent per month, security deposit laptops, laptoprent rates',
+  canonical: `${BASE}/pricing`,
+  ogTitle: 'Laptop Rental Pricing & Security Deposit Rates | LaptopRent',
+  ogUrl: `${BASE}/pricing`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Pricing', url: `${BASE}/pricing/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Product & Pricing Schedule</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Customer Care: +91 78922 40243 · connect@laptoponrent.online.</strong>
+    </div>
+    <p>Rent premium laptops from ₹799 to ₹1,899 per month with transparent, 100% refundable security deposits.</p>
+    <div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:1rem;margin:1rem 0;">
+      <strong>Pricing Guarantee:</strong> Rent and deposit are the final amount payable – no GST is added. The deposit is refunded within 7 working days of return.
+    </div>
+    <h2>Featured Laptop Rates</h2>
+    <ul>
+      <li>ASUS VivoBook 15: Rent ₹799/month · Refundable Deposit ₹2,000</li>
+      <li>Dell Latitude 5430: Rent ₹999/month · Refundable Deposit ₹3,000</li>
+      <li>HP EliteBook 840 G9: Rent ₹1,199/month · Refundable Deposit ₹4,000</li>
+      <li>MacBook Air M2: Rent ₹1,899/month · Refundable Deposit ₹5,000</li>
+      <li>MacBook Pro 16 M4: Rent ₹1,899/month · Refundable Deposit ₹5,000</li>
+      <li>HP ZBook Fury 16: Rent ₹1,899/month · Refundable Deposit ₹5,000</li>
+    </ul>
+    <p><a href="/booking">Book a Laptop Online</a></p>
+  </main>`,
+});
+
+buildPage({
+  route: '/booking',
+  title: 'Book a Laptop on Rent | Online Reservation | LaptopRent',
+  description: 'Book your rental laptop online. All mandatory customer details, doorstep delivery date, and instant order summary. Powered by STAGE-X.',
+  keywords: 'book laptop rental, rent a laptop online, laptop reservation, laptoprent booking',
+  canonical: `${BASE}/booking`,
+  ogTitle: 'Book a Laptop on Rent | Online Reservation | LaptopRent',
+  ogUrl: `${BASE}/booking`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Booking', url: `${BASE}/booking/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Book Your Rental Laptop</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Customer Care: +91 78922 40243 · connect@laptoponrent.online.</strong>
+    </div>
+    <p>Complete your booking online with doorstep delivery across major Indian cities.</p>
+    <p>You are paying STAGE-X (laptoponrent.online). Rent and the refundable security deposit are the final amount payable – no GST is added. Your laptop will be delivered by a rental partner in your city.</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/book',
+  title: 'Book a Laptop on Rent | Online Reservation | LaptopRent',
+  description: 'Book your rental laptop online. Powered by STAGE-X.',
+  canonical: `${BASE}/book`,
+  jsonLd: [],
+  body: `<main><h1>Redirecting to Booking...</h1><p><a href="/booking">Click here to book a laptop</a></p></main>`,
 });
 
 buildPage({
@@ -1090,6 +1162,8 @@ writeFileSync(resolve(DIST, 'sitemap.xml'), sitemap([
   { url: '/products', priority: 0.9 },
   { url: '/categories', priority: 0.9 },
   { url: '/cities', priority: 0.9 },
+  { url: '/pricing', priority: 0.8 },
+  { url: '/booking', priority: 0.8 },
   { url: '/about', priority: 0.8 },
   { url: '/contact', priority: 0.8 },
   { url: '/terms', priority: 0.7 },
@@ -1172,7 +1246,7 @@ const ontology = {
     { subject: 'LaptopRent', predicate: 'basePriceStudent', object: '₹849/month' },
     { subject: 'LaptopRent', predicate: 'basePriceBusiness', object: '₹1,200/month' },
     { subject: 'LaptopRent', predicate: 'basePriceMacBook', object: '₹2,999/month' },
-    { subject: 'LaptopRent', predicate: 'taxSpecification', object: '18% GST (HSN 997315)' },
+    { subject: 'LaptopRent', predicate: 'taxSpecification', object: 'No GST Added - Final Amount Payable' },
     { subject: 'LaptopRent', predicate: 'deliveryModel', object: 'Same-day doorstep delivery' },
     { subject: 'LaptopRent', predicate: 'contactPhone', object: ORGANIZATION.contactPoint.telephone },
   ],

@@ -45,11 +45,11 @@ export function CitiesPage() {
     <>
       <Helmet>
         <title>Cities We Serve - Laptop Rental Across India | LaptopRent</title>
-        <meta name="description" content="Laptop rental services across 25+ major Indian cities. Bangalore, Mumbai, Delhi, Hyderabad, Chennai, Pune, and more. Same-day delivery, 18% GST invoice." />
+        <meta name="description" content="Laptop rental services across 25+ major Indian cities. Bangalore, Mumbai, Delhi, Hyderabad, Chennai, Pune, and more. Same-day delivery, free maintenance, refundable security deposit." />
         <meta name="keywords" content="laptop rental cities, laptop rental bangalore, laptop rental mumbai, laptop rental delhi, laptop rental hyderabad, laptop rental chennai, laptop rental pune" />
         <link rel="canonical" href="https://laptoponrent.online/cities" />
         <meta property="og:title" content="Cities We Serve - Laptop Rental Across India | LaptopRent" />
-        <meta property="og:description" content="Find laptop rental services in your city. 25+ major Indian cities with same-day delivery and 18% GST invoices." />
+        <meta property="og:description" content="Find laptop rental services in your city. 25+ major Indian cities with same-day delivery, free maintenance, and refundable deposit." />
         <meta property="og:image" content="https://laptoponrent.online/assets/og-cities.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas, null, 2) }} />
       </Helmet>
