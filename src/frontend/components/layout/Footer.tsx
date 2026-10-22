@@ -21,24 +21,23 @@ const FOOTER_LINKS = {
     ],
   },
   support: [
-    { label: 'Help Center', href: '/help' },
-    { label: 'FAQs', href: '/faq' },
     { label: 'Rental Terms', href: '/terms' },
     { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Return Policy', href: '/returns' },
+    { label: 'Cancellation & Refund', href: '/cancellation-refund-policy' },
+    { label: 'Delivery Policy', href: '/delivery-policy' },
+    { label: 'Pricing Disclaimer', href: '/pricing-disclaimer' },
+    { label: 'Damage Protection', href: '/damage-protection-policy' },
     { label: 'Contact Us', href: '/contact' },
-    { label: 'Track Order', href: '/track' },
-    { label: 'Bulk Enquiry', href: '/bulk-enquiry' },
+    { label: 'Help & FAQs', href: '/faq' },
   ],
   company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Careers', href: '/careers' },
+    { label: 'All Laptops', href: '/products' },
+    { label: 'Categories', href: '/categories' },
+    { label: 'Cities', href: '/cities' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Press', href: '/press' },
-    { label: 'Partners', href: '/partners' },
-    { label: 'Affiliate Program', href: '/affiliate' },
-    { label: 'Corporate Rentals', href: '/corporate' },
-    { label: 'Investor Relations', href: '/investors' },
+    { label: 'Contact Us', href: '/contact' },
+    { label: 'Bulk Enquiry', href: '/contact' },
   ],
   cities: [
     { label: 'Bangalore', href: '/rental/bangalore' },
@@ -82,9 +81,11 @@ export function Footer() {
             <p className="text-secondary-400 text-body mb-4 max-w-xs">
               India's trusted laptop rental platform. Rent premium laptops from HP, Dell, Lenovo, Apple, ASUS, Acer, Samsung & MSI with free doorstep delivery.
             </p>
-            <div className="mb-6 space-y-1 text-sm text-secondary-300">
-              <p>Customer Support: <a href="tel:+917892240243" className="text-white hover:underline font-medium">+91 7892240243</a></p>
-              <p>WhatsApp: <a href="https://wa.me/917892240243" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline font-medium">+91 7892240243</a></p>
+            <div className="mb-6 space-y-1.5 text-sm text-secondary-300">
+              <p>Email: <a href="mailto:connect@laptoponrent.online" className="text-white hover:underline font-medium">connect@laptoponrent.online</a></p>
+              <p>Support: <a href="tel:+917892240243" className="text-white hover:underline font-medium">+91 78922 40243</a></p>
+              <p>WhatsApp: <a href="https://wa.me/917892240243" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline font-medium">+91 78922 40243</a></p>
+              <p className="text-xs text-secondary-400">Hours: Mon&ndash;Sun, 6:00 AM &ndash; 7:00 PM IST</p>
             </div>
             <div className="flex flex-wrap gap-4">
               {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
@@ -195,20 +196,33 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-secondary-800">
-          <p className="text-secondary-500 text-sm">
-            © {currentYear} LaptopRent. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6 text-sm text-secondary-500">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <a href="mailto:legal@laptoprent.in" className="hover:text-white transition-colors">Legal</a>
+        <div className="pt-8 border-t border-secondary-800 space-y-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex flex-wrap items-center gap-4 text-xs text-secondary-400">
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">Rental Terms</Link>
+              <Link to="/cancellation-refund-policy" className="hover:text-white transition-colors">Cancellation &amp; Refund</Link>
+              <Link to="/delivery-policy" className="hover:text-white transition-colors">Delivery Policy</Link>
+              <Link to="/pricing-disclaimer" className="hover:text-white transition-colors">Pricing Disclaimer</Link>
+              <Link to="/damage-protection-policy" className="hover:text-white transition-colors">Damage Protection</Link>
+            </div>
+            <div className="flex items-center gap-2 text-secondary-500 text-xs">
+              <span>Made with</span>
+              <span className="text-error-500">♥</span>
+              <span>in India</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-secondary-500">
-            <span className="text-sm">Made with</span>
-            <span className="text-error-500">♥</span>
-            <span className="text-sm">in India</span>
+
+          <div className="w-full text-center text-xs text-secondary-400 space-y-1 pt-4 border-t border-secondary-800/60 leading-relaxed">
+            <p>
+              laptoponrent.online (LaptopRent) is a brand (trade name) of STAGE-X, a sole proprietorship.
+              <br />
+              Office: 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India
+              <br />
+              Email: <a href="mailto:connect@laptoponrent.online" className="underline text-secondary-300">connect@laptoponrent.online</a> &middot; Hours: 6:00 AM &ndash; 7:00 PM IST
+            </p>
+            <p>Payments on this website are processed by STAGE-X.</p>
+            <p>&copy; {currentYear} STAGE-X. All rights reserved.</p>
           </div>
         </div>
       </div>

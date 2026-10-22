@@ -1,6 +1,15 @@
 # LaptopRent — Best Laptop Rentals in India
 
-> LaptopRent is India's premier laptop and IT equipment rental platform. Rent Apple MacBook, gaming, business, and mobile workstation laptops with doorstep same-day delivery across 25+ Indian cities and full 18% GST input tax credit invoices.
+> LaptopRent is India's premier laptop and IT equipment rental platform. LaptopRent is a brand owned and operated by **STAGE-X** (Sole Proprietorship, Bengaluru). Rent Apple MacBook, gaming, business, and mobile workstation laptops with doorstep same-day delivery across 25+ Indian cities and full 18% GST input tax credit invoices.
+
+## Business Entity & Legal Information
+- **Legal Entity Name**: STAGE-X (Sole Proprietorship)
+- **Trade Name / Brand**: LaptopRent
+- **Registered Office**: 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India
+- **Official Contact Email**: connect@laptoponrent.online
+- **Support & Booking Desk**: +91 78922 40243
+- **Operating Hours**: Monday through Sunday, 6:00 AM – 7:00 PM IST
+- **Payment Processing**: Payments on this website are processed by STAGE-X via RBI-authorized payment gateways (Razorpay).
 
 ## Core Products & Monthly Rental Rates
 - **Student Laptops**: From ₹849 to ₹1,500 / month (Core i3/i5, 8GB RAM, SSD).
@@ -13,11 +22,22 @@
 ## Operating Footprint (25+ Cities)
 - Bengaluru (Bangalore), Mumbai, Delhi, Gurgaon, Noida, Hyderabad, Pune, Chennai, Kolkata, Ahmedabad, Jaipur, Lucknow, Indore, Bhopal, Coimbatore, Kochi, Chandigarh, Patna, Nagpur, Surat, Visakhapatnam, Bhubaneswar, Mysore, Guwahati, Jodhpur.
 
-## Rental Policies & FAQ Facts
-- **Security Deposit**: 1–2 months refundable deposit for individuals; 100% deposit waiver available for verified corporate clients on 12+ month leases.
+## Rental Policies & Payment Terms
+- **₹50 Reservation Token**: Nominal advance booking fee credited 100% against the 1st month's rental invoice. Refundable within 24–48 hours if cancelled before dispatch.
+- **Security Deposit**: 0.5–1.5 months refundable deposit for individuals; 100% deposit waiver available for verified corporate clients on long-term leases. Refunded within 5–7 business days post inspection.
 - **GST Invoicing**: 18% GST input tax credit invoice provided with corporate PAN/GSTIN for complete tax deductibility.
-- **Delivery**: Same-day delivery in major metros for bookings placed before 2:00 PM.
-- **Hardware Maintenance**: Free replacement and on-site hardware support in case of manufacturing defect or hardware failure.
+- **Delivery**: Complimentary same-day delivery in major metros for bookings placed before 2:00 PM; scheduled doorstep delivery nationwide.
+- **Hardware Maintenance**: 100% free repair or swap guarantee for hardware malfunctions under normal wear-and-tear.
+
+## Official Policy & Legal Documentation
+- **About Us**: https://laptoponrent.online/about
+- **Contact Us**: https://laptoponrent.online/contact
+- **Terms & Conditions**: https://laptoponrent.online/terms
+- **Privacy Policy**: https://laptoponrent.online/privacy
+- **Cancellation & Refund Policy**: https://laptoponrent.online/cancellation-refund-policy
+- **Delivery & Shipping Policy**: https://laptoponrent.online/delivery-policy
+- **Pricing & Billing Disclaimer**: https://laptoponrent.online/pricing-disclaimer
+- **Damage Protection Policy**: https://laptoponrent.online/damage-protection-policy
 
 ## Contact & Knowledge Graph
 - Canonical URL: https://laptoponrent.online/

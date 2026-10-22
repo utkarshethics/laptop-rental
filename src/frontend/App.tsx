@@ -34,6 +34,14 @@ const CityPage = lazy(() => import('./pages/cities/CityPage').then(m => ({ defau
 const CategoriesPage = lazy(() => import('./pages/CategoriesPage').then(m => ({ default: m.CategoriesPage })));
 const CategoryPage = lazy(() => import('./pages/categories/CategoryPage').then(m => ({ default: m.CategoryPage })));
 const BlogListingPage = lazy(() => import('./pages/blog/BlogListingPage').then(m => ({ default: m.BlogListingPage })));
+const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
+const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
+const Terms = lazy(() => import('./pages/Terms').then(m => ({ default: m.Terms })));
+const Privacy = lazy(() => import('./pages/Privacy').then(m => ({ default: m.Privacy })));
+const CancellationRefundPolicy = lazy(() => import('./pages/CancellationRefundPolicy').then(m => ({ default: m.CancellationRefundPolicy })));
+const DeliveryPolicy = lazy(() => import('./pages/DeliveryPolicy').then(m => ({ default: m.DeliveryPolicy })));
+const PricingDisclaimer = lazy(() => import('./pages/PricingDisclaimer').then(m => ({ default: m.PricingDisclaimer })));
+const DamageProtectionPolicy = lazy(() => import('./pages/DamageProtectionPolicy').then(m => ({ default: m.DamageProtectionPolicy })));
 
 const CityPageRoute = () => {
   const { citySlug = '' } = useParams();
@@ -84,6 +92,17 @@ function App() {
                   <Route path="account" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
                   <Route path="account/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
                   <Route path="account/orders/:id" element={<ProtectedRoute><OrderDetail /></ProtectedRoute>} />
+                  <Route path="about" element={<About />} />
+                  <Route path="contact" element={<Contact />} />
+                  <Route path="terms" element={<Terms />} />
+                  <Route path="privacy" element={<Privacy />} />
+                  <Route path="cancellation-refund-policy" element={<CancellationRefundPolicy />} />
+                  <Route path="delivery-policy" element={<DeliveryPolicy />} />
+                  <Route path="pricing-disclaimer" element={<PricingDisclaimer />} />
+                  <Route path="damage-protection-policy" element={<DamageProtectionPolicy />} />
+                  <Route path="returns" element={<Navigate to="/cancellation-refund-policy" replace />} />
+                  <Route path="refunds" element={<Navigate to="/cancellation-refund-policy" replace />} />
+                  <Route path="shipping" element={<Navigate to="/delivery-policy" replace />} />
                   <Route path="admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
                   <Route path="admin/products" element={<AdminRoute><AdminProducts /></AdminRoute>} />
                   <Route path="admin/orders" element={<AdminRoute><AdminOrders /></AdminRoute>} />

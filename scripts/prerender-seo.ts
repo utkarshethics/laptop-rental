@@ -204,23 +204,17 @@ buildPage({
       '@type': 'LocalBusiness',
       '@id': `${BASE}/#business`,
       name: 'LaptopRent',
-      legalName: 'LaptopRent Technologies Private Limited',
+      legalName: ORGANIZATION.legalName,
       description: 'Laptop rental service in India offering MacBook, gaming, business and student laptops on flexible monthly plans with same-day delivery in 25+ cities.',
       url: `${BASE}/`,
-      telephone: '+91-78922-40243',
+      telephone: ORGANIZATION.contactPoint.telephone,
+      email: ORGANIZATION.email,
       priceRange: '₹₹',
       currenciesAccepted: 'INR',
-      paymentAccepted: 'Cash, UPI, Credit Card, Debit Card, Bank Transfer',
+      paymentAccepted: 'UPI, Credit Card, Debit Card, Net Banking',
       image: `${BASE}/assets/og-default.jpg`,
       logo: `${BASE}/assets/logo.svg`,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Shiv Shakti Industrial Premises, NM Joshi Marg',
-        addressLocality: 'Mumbai',
-        addressRegion: 'Maharashtra',
-        postalCode: '400011',
-        addressCountry: 'IN',
-      },
+      address: ORGANIZATION.address,
       areaServed: INDIAN_CITIES.map(c => ({
         '@type': 'City',
         name: `${c.name}, ${c.state}`,
@@ -798,6 +792,278 @@ for (const p of MOCK_PRODUCTS) {
   });
 }
 
+
+// ---- Company & Legal Policy Pages (Payment Gateway & Compliance) -------
+buildPage({
+  route: '/about',
+  title: 'About LaptopRent | Premium Laptop Rentals by STAGE-X',
+  description: "Learn about LaptopRent, India's trusted laptop rental service operating across 25+ cities. LaptopRent is a brand of STAGE-X, based in Bengaluru.",
+  keywords: 'about laptoprent, stage-x bengaluru, laptop rentals india, laptop on rent',
+  canonical: `${BASE}/about`,
+  ogTitle: 'About LaptopRent | Premium Laptop Rentals by STAGE-X',
+  ogUrl: `${BASE}/about`,
+  jsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About LaptopRent',
+      description: 'Learn about LaptopRent, a brand owned and operated by STAGE-X Bengaluru.',
+      url: `${BASE}/about/`,
+    },
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'About Us', url: `${BASE}/about/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>About LaptopRent</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <p>LaptopRent is India's leading laptop and IT equipment rental platform, serving startups, enterprise teams, remote professionals, and students across 25+ cities.</p>
+    <h2>Legal Entity & Operations</h2>
+    <p>LaptopRent is a brand owned and operated by <strong>STAGE-X</strong>, a registered sole proprietorship headquartered in Bengaluru, Karnataka, India.</p>
+    <h2>Our Core Pillars</h2>
+    <ul>
+      <li>Enterprise Hardware: Apple MacBook, Lenovo ThinkPad, Dell Latitude, HP ProBook, RTX Gaming and Mobile Workstations.</li>
+      <li>Speed & Convenience: Same-day doorstep delivery in major metros for orders confirmed before 2:00 PM.</li>
+      <li>Transparent Pricing: Advance token of ₹50 adjusted in your 1st month rent, no hidden charges, and standard 18% GST invoices.</li>
+      <li>Comprehensive Support: 100% free hardware defect repairs and swaps for maximum uptime.</li>
+    </ul>
+    <h2>Contact & Office Address</h2>
+    <p>Registered Office: 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India.</p>
+    <p>Email: <a href="mailto:connect@laptoponrent.online">connect@laptoponrent.online</a> | Phone: +91 78922 40243 (Mon-Sun, 6:00 AM - 7:00 PM IST)</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/contact',
+  title: 'Contact LaptopRent | Support & Office Address - STAGE-X',
+  description: 'Contact LaptopRent customer support, sales, and registered office in Bengaluru. Email connect@laptoponrent.online or call +91 78922 40243.',
+  keywords: 'contact laptoprent, stage-x contact, laptop rental support bangalore, laptop rental customer service',
+  canonical: `${BASE}/contact`,
+  ogTitle: 'Contact LaptopRent | Support & Office Address - STAGE-X',
+  ogUrl: `${BASE}/contact`,
+  jsonLd: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact LaptopRent',
+      description: 'Contact information and registered office details for LaptopRent operated by STAGE-X.',
+      url: `${BASE}/contact/`,
+    },
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Contact Us', url: `${BASE}/contact/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Contact LaptopRent</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <h2>Customer Support & Enquiries</h2>
+    <p>Our dedicated team is available 7 days a week, 6:00 AM to 7:00 PM IST to assist with bookings, KYC, delivery tracking, and technical support.</p>
+    <ul>
+      <li>General & Business Enquiries: <a href="mailto:connect@laptoponrent.online">connect@laptoponrent.online</a></li>
+      <li>Phone & WhatsApp: +91 78922 40243</li>
+      <li>Registered Office: STAGE-X, 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India</li>
+    </ul>
+    <h2>Payments Notice</h2>
+    <p>Payments on this website are processed by <strong>STAGE-X</strong> via secure RBI-licensed payment aggregators.</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/terms',
+  title: 'Terms of Service | LaptopRent (a brand of STAGE-X)',
+  description: 'Official Terms of Service for laptoponrent.online, operated by STAGE-X Bengaluru. Outlining ₹50 booking token, security deposits, warranty, and rental agreements.',
+  keywords: 'terms of service, laptop rent terms, stage-x terms, rental agreement',
+  canonical: `${BASE}/terms`,
+  ogTitle: 'Terms of Service | LaptopRent (a brand of STAGE-X)',
+  ogUrl: `${BASE}/terms`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Terms of Service', url: `${BASE}/terms/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Terms of Service</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <h2>1. Ownership and Agreement</h2>
+    <p>This website (laptoponrent.online) and its rental services are operated by STAGE-X, a sole proprietorship based in Bengaluru, Karnataka, India. By accessing or booking through this website, you agree to these Terms.</p>
+    <h2>2. ₹50 Reservation Token</h2>
+    <p>A nominal ₹50 reservation token confirms delivery dispatch and is 100% credited against your first month invoice. If cancelled prior to dispatch, it is fully refundable within 24 to 48 hours.</p>
+    <h2>3. Security Deposits & Payments</h2>
+    <p>Payments on this website are processed by STAGE-X. Refundable security deposits are returned within 5 to 7 business days following device return and inspection.</p>
+    <h2>4. Hardware Warranty & Care</h2>
+    <p>We provide complimentary repair or device swap for regular operational hardware failures. Renter is responsible for reasonable safeguarding of the equipment.</p>
+    <h2>5. Governing Law & Jurisdiction</h2>
+    <p>These terms are governed by the laws of India, subject to the jurisdiction of courts in Bengaluru, Karnataka.</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/privacy',
+  title: 'Privacy Policy | LaptopRent (a brand of STAGE-X)',
+  description: 'Digital Personal Data Protection Act (DPDP 2023) compliant privacy policy for laptoponrent.online operated by STAGE-X Bengaluru.',
+  keywords: 'privacy policy, dpdp 2023, data protection, laptoprent privacy, stage-x privacy',
+  canonical: `${BASE}/privacy`,
+  ogTitle: 'Privacy Policy | LaptopRent (a brand of STAGE-X)',
+  ogUrl: `${BASE}/privacy`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Privacy Policy', url: `${BASE}/privacy/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Privacy Policy</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <h2>1. Introduction & Compliance</h2>
+    <p>STAGE-X operates laptoponrent.online in compliance with the Digital Personal Data Protection Act 2023 (DPDP Act) and the Information Technology Act 2000.</p>
+    <h2>2. Information We Collect</h2>
+    <p>We collect identity details (name, contact information, delivery address), KYC verification documents required for asset rental, and transaction records.</p>
+    <h2>3. Payment Data Security</h2>
+    <p>Payments on this website are processed by STAGE-X via PCI-DSS compliant gateways (such as Razorpay). We do not store sensitive card PINs, CVVs, or net banking credentials on our servers.</p>
+    <h2>4. Data Sanitization Guarantee</h2>
+    <p>All returned rental devices undergo certified DoD 5220.22-M / NIST SP 800-88 data sanitization to guarantee complete privacy between rental cycles.</p>
+    <h2>5. Grievance Redressal Officer</h2>
+    <p>Grievance Officer, STAGE-X, 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038. Email: connect@laptoponrent.online.</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/cancellation-refund-policy',
+  title: 'Cancellation & Refund Policy | LaptopRent (a brand of STAGE-X)',
+  description: 'Comprehensive cancellation timelines, ₹50 token refund protocol, security deposit return windows, and rental early return terms for LaptopRent operated by STAGE-X Bengaluru.',
+  keywords: 'cancellation policy, refund policy, deposit refund, laptop rental cancellation, stage-x refunds',
+  canonical: `${BASE}/cancellation-refund-policy`,
+  ogTitle: 'Cancellation & Refund Policy | LaptopRent (a brand of STAGE-X)',
+  ogUrl: `${BASE}/cancellation-refund-policy`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Cancellation & Refund Policy', url: `${BASE}/cancellation-refund-policy/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Cancellation & Refund Policy</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <h2>1. ₹50 Token Advance Refund</h2>
+    <p>If you cancel prior to dispatch, or if verification cannot be completed, the ₹50 token is refunded 100% within 24 to 48 hours to the original payment source.</p>
+    <h2>2. Security Deposit Refund</h2>
+    <p>Security deposits are processed for 100% refund within 5 to 7 business days following device return and physical inspection. Normal wear-and-tear is never deducted.</p>
+    <h2>3. Early Return & Lease Termination</h2>
+    <p>Subscriptions can be adjusted with standard 7 days advance notice. Unused tenure balance is reconciled transparently.</p>
+    <h2>4. How to Request a Refund</h2>
+    <p>Reach out to connect@laptoponrent.online or WhatsApp +91 78922 40243 with your booking reference.</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/delivery-policy',
+  title: 'Doorstep Delivery Policy | LaptopRent (a brand of STAGE-X)',
+  description: 'Doorstep delivery timelines, verification protocols, and coverage zones across 25+ Indian cities for LaptopRent operated by STAGE-X Bengaluru.',
+  keywords: 'delivery policy, doorstep laptop rental delivery, shipping policy, same day delivery laptops',
+  canonical: `${BASE}/delivery-policy`,
+  ogTitle: 'Doorstep Delivery Policy | LaptopRent (a brand of STAGE-X)',
+  ogUrl: `${BASE}/delivery-policy`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Delivery Policy', url: `${BASE}/delivery-policy/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Delivery & Logistics Policy</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <h2>1. Free Doorstep Delivery & Pickup</h2>
+    <p>Complimentary delivery and pickup across 25+ Indian cities. Zero courier or hidden fees on standard rental agreements.</p>
+    <h2>2. Same-Day Delivery Cutoff</h2>
+    <p>Orders verified by 2:00 PM IST receive same-day delivery in major metro areas (Bengaluru, Mumbai, Delhi NCR, Hyderabad, Pune, Chennai). Next-day delivery across other cities.</p>
+    <h2>3. Delivery Handover & Inspection</h2>
+    <p>Each laptop is delivered sanitized with charger, accessories, and pre-installed OS. The customer inspects physical and booting condition upon delivery.</p>
+    <h2>4. Logistics Desk</h2>
+    <p>STAGE-X, Indiranagar Bengaluru. Email: connect@laptoponrent.online | WhatsApp: +91 78922 40243.</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/pricing-disclaimer',
+  title: 'Pricing & Billing Disclaimer | LaptopRent (a brand of STAGE-X)',
+  description: 'Transparent monthly rental rates, ₹50 token credit policy, security deposit terms, and GST invoicing for LaptopRent operated by STAGE-X Bengaluru.',
+  keywords: 'pricing disclaimer, laptop rental prices, gst invoice rental, deposit terms, stage-x pricing',
+  canonical: `${BASE}/pricing-disclaimer`,
+  ogTitle: 'Pricing & Billing Disclaimer | LaptopRent (a brand of STAGE-X)',
+  ogUrl: `${BASE}/pricing-disclaimer`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Pricing Disclaimer', url: `${BASE}/pricing-disclaimer/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Pricing, Deposits & Billing Disclaimer</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <h2>1. Transparent Monthly Rental Structure</h2>
+    <p>Student laptops from ₹849/mo, corporate business laptops from ₹1,200/mo, Apple MacBook Air from ₹2,999/mo, MacBook Pro from ₹4,500/mo, and gaming rigs from ₹3,500/mo.</p>
+    <h2>2. ₹50 Reservation Token Advance</h2>
+    <p>The ₹50 token confirms reservation and is 100% credited against your 1st month rental invoice. Refunded in 24-48 hours if cancelled before dispatch.</p>
+    <h2>3. Taxes & Invoicing (18% GST)</h2>
+    <p>Compliant 18% GST invoices provided. Input tax credit (ITC) available for registered businesses.</p>
+    <h2>4. Payment Processing</h2>
+    <p>Payments on this website are processed by STAGE-X via Razorpay. Support: connect@laptoponrent.online.</p>
+  </main>`,
+});
+
+buildPage({
+  route: '/damage-protection-policy',
+  title: 'Damage Protection & Hardware Warranty Policy | LaptopRent (a brand of STAGE-X)',
+  description: 'Comprehensive damage protection, hardware defect replacement guarantee, and repair guidelines for LaptopRent operated by STAGE-X Bengaluru.',
+  keywords: 'damage protection, hardware warranty, laptop repair policy, replacement guarantee, stage-x warranty',
+  canonical: `${BASE}/damage-protection-policy`,
+  ogTitle: 'Damage Protection & Hardware Warranty Policy | LaptopRent (a brand of STAGE-X)',
+  ogUrl: `${BASE}/damage-protection-policy`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Damage Protection Policy', url: `${BASE}/damage-protection-policy/` },
+    ]),
+  ],
+  body: `
+  <main>
+    <h1>Damage Protection & Hardware Warranty Policy</h1>
+    <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+    </div>
+    <h2>1. 100% Free Hardware Defect Guarantee</h2>
+    <p>Internal hardware malfunctions (RAM, SSD, motherboard, thermal fans, battery failure) under normal use are repaired or swapped at zero cost to the customer within 24-48 hours.</p>
+    <h2>2. Normal Wear vs Physical Damage</h2>
+    <p>Normal wear-and-tear is accepted with zero charges. Accidental damage (screen cracks, liquid spills) is repaired at actual OEM cost without administrative surcharges.</p>
+    <h2>3. Incident Reporting</h2>
+    <p>Report issues to WhatsApp +91 78922 40243 or connect@laptoponrent.online for swift remote diagnostics or doorstep device swap.</p>
+  </main>`,
+});
+
 console.log('Prerender complete.');
 
 // ---- Sitemaps (trailing-slash URLs matching generated pages) -------------
@@ -824,6 +1090,14 @@ writeFileSync(resolve(DIST, 'sitemap.xml'), sitemap([
   { url: '/products', priority: 0.9 },
   { url: '/categories', priority: 0.9 },
   { url: '/cities', priority: 0.9 },
+  { url: '/about', priority: 0.8 },
+  { url: '/contact', priority: 0.8 },
+  { url: '/terms', priority: 0.7 },
+  { url: '/privacy', priority: 0.7 },
+  { url: '/cancellation-refund-policy', priority: 0.7 },
+  { url: '/delivery-policy', priority: 0.7 },
+  { url: '/pricing-disclaimer', priority: 0.7 },
+  { url: '/damage-protection-policy', priority: 0.7 },
 ]));
 
 writeFileSync(resolve(DIST, 'sitemap-cities.xml'), sitemap(

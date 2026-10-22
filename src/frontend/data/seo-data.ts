@@ -1,6 +1,6 @@
 export const ORGANIZATION = {
   name: 'LaptopRent',
-  legalName: 'LaptopRent Technologies Private Limited',
+  legalName: 'STAGE-X',
   url: 'https://laptoponrent.online',
   logo: 'https://laptoponrent.online/assets/logo.svg',
   sameAs: [
@@ -16,14 +16,15 @@ export const ORGANIZATION = {
     telephone: '+91-78922-40243',
     contactType: 'customer service',
     availableLanguage: ['English', 'Hindi'],
-    hoursAvailable: 'Mo-Sat 09:00-19:00',
+    hoursAvailable: 'Mo-Su 06:00-19:00',
+    email: 'connect@laptoponrent.online',
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Shiv Shakti Industrial Premises, NM Joshi Marg',
-    addressLocality: 'Mumbai',
-    addressRegion: 'Maharashtra',
-    postalCode: '400011',
+    streetAddress: '2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage',
+    addressLocality: 'Bengaluru',
+    addressRegion: 'Karnataka',
+    postalCode: '560038',
     addressCountry: 'IN',
   },
   foundingDate: '2024-01-01',
