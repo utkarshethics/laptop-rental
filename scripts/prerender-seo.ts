@@ -894,7 +894,7 @@ buildPage({
   <main>
     <h1>Terms of Service</h1>
     <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
-      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
+      <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Customer Care: +91 78922 40243 · connect@laptoponrent.online.</strong>
     </div>
     <h2>1. Ownership and Agreement</h2>
     <p>This website (laptoponrent.online) and its rental services are operated by STAGE-X, a sole proprietorship based in Bengaluru, Karnataka, India. By accessing or booking through this website, you agree to these Terms.</p>
@@ -906,6 +906,8 @@ buildPage({
     <p>We provide complimentary repair or device swap for regular operational hardware failures. Renter is responsible for reasonable safeguarding of the equipment.</p>
     <h2>5. Governing Law & Jurisdiction</h2>
     <p>These terms are governed by the laws of India, subject to the jurisdiction of courts in Bengaluru, Karnataka.</p>
+    <h2>6. Contact & Support Desk</h2>
+    <p>For any inquiries regarding these terms or your rental contract: STAGE-X, 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Customer Care: +91 78922 40243 | Email: <a href="mailto:connect@laptoponrent.online">connect@laptoponrent.online</a> (Mon–Sat, 10:00 AM – 7:00 PM IST).</p>
   </main>`,
 });
 
