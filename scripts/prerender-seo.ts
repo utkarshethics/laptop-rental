@@ -539,6 +539,14 @@ for (const city of INDIAN_CITIES) {
           <strong>Direct Answer:</strong> LaptopRent delivers on-demand laptop rentals across <strong>${esc(city.name)}, ${esc(city.state)}</strong> with same-day doorstep dispatch for orders placed before 2 PM. Monthly rental plans start at <strong>${esc(price)}</strong> with no capital commitment. Inventory includes Apple MacBooks (Air &amp; Pro), Lenovo ThinkPads, Dell Latitudes, HP ProBooks, and high-spec gaming/engineering rigs, fully supported with end-to-end hardware warranties and 100% refundable security deposits.
         </p>
       </div>
+      <div style="display:flex;gap:12px;margin:1.5rem 0;flex-wrap:wrap;align-items:center;">
+        <a href="/booking/?city=${encodeURIComponent(city.slug)}" style="display:inline-flex;align-items:center;background:#2563eb;color:#ffffff;padding:12px 24px;border-radius:8px;font-weight:700;text-decoration:none;font-size:1rem;box-shadow:0 4px 14px rgba(37,99,235,0.3);">
+          ⚡ Book Laptop in ${esc(city.name)} from ${esc(price)} →
+        </a>
+        <a href="/category/business-laptop-rental/" style="display:inline-flex;align-items:center;background:#f8fafc;color:#1e293b;border:1px solid #cbd5e1;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;">
+          💼 View HP &amp; ThinkPad Stock
+        </a>
+      </div>
       <p>${esc(description)}</p>
       <h2>Popular laptop categories in ${esc(city.name)}</h2>
       <ul>
@@ -771,6 +779,11 @@ for (const p of MOCK_PRODUCTS) {
         <li>Yearly: ${inr(p.pricing.yearly)}</li>
         <li>Refundable deposit: ${inr(deposit)}</li>
       </ul>
+      <div style="margin:1.5rem 0;">
+        <a href="/booking/?model=${encodeURIComponent(p.name)}" style="display:inline-flex;align-items:center;background:#2563eb;color:#ffffff;padding:12px 24px;border-radius:8px;font-weight:700;text-decoration:none;font-size:1rem;box-shadow:0 4px 14px rgba(37,99,235,0.3);">
+          ⚡ Rent ${esc(p.name)} from ${inr(p.pricing.monthly)}/mo →
+        </a>
+      </div>
       <h2>What is included</h2>
       <ul>
         <li>Doorstep delivery in ${INDIAN_CITIES.length} cities, same day for orders before 2 PM</li>
