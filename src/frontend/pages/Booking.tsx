@@ -105,7 +105,12 @@ export function Booking() {
           name="description"
           content="Complete your laptop rental reservation online. Doorstep delivery across major Indian cities by verified partner providers. Managed by STAGE-X."
         />
-        <link rel="canonical" href="https://laptoponrent.online/booking" />
+        <link rel="canonical" href="https://laptoponrent.online/booking/" />
+        {searchParams.toString() ? (
+          <meta name="robots" content="noindex, follow" />
+        ) : (
+          <meta name="robots" content="index, follow" />
+        )}
       </Helmet>
 
       <div className="bg-secondary-50 py-10 md:py-16">

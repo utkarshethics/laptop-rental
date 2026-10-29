@@ -1239,12 +1239,12 @@ buildPage({
 
 buildPage({
   route: '/urgent-laptop-rental',
-  title: 'Urgent Laptop on Rent | 2-Hour Emergency Delivery in 25+ Cities | LaptopRent',
-  description: 'Need a laptop urgently today? LaptopRent provides emergency same-day laptop rentals with 2 to 4-hour doorstep delivery across 25+ Indian cities. Zero deposit for corporate accounts.',
+  title: 'Urgent Laptop on Rent Near Me | 2-Hour Express Delivery in 25+ Cities | LaptopRent',
+  description: 'Need a laptop urgently near you today? LaptopRent provides emergency same-day laptop rentals from ₹49/day with 2 to 4-hour doorstep delivery across 25+ Indian cities. Zero deposit for corporate accounts.',
   keywords: 'urgent laptop on rent, emergency laptop rental, same day laptop delivery, rent laptop 2 hours, laptop rent near me urgent, urgent macbook rental, laptop rent today, laptop kharab ho gaya rent chahiye',
-  canonical: `${BASE}/urgent-laptop-rental`,
-  ogTitle: 'Urgent Laptop on Rent | 2-Hour Emergency Delivery | LaptopRent',
-  ogUrl: `${BASE}/urgent-laptop-rental`,
+  canonical: `${BASE}/urgent-laptop-rental/`,
+  ogTitle: 'Urgent Laptop on Rent Near Me | 2-Hour Express Delivery | LaptopRent',
+  ogUrl: `${BASE}/urgent-laptop-rental/`,
   jsonLd: [
     generateBreadcrumbSchema([
       { name: 'Home', url: `${BASE}/` },
