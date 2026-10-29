@@ -113,6 +113,18 @@
       background: #000;
     }
 
+    .pay-with {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-bottom: 10px;
+    }
+
+    .app-buttons {
+      display: grid;
+      gap: 10px;
+    }
+
     /* QR Code Display */
     .qr-wrapper {
       background: #ffffff;
@@ -264,12 +276,12 @@
 
   <!-- Mobile Direct UPI Launcher -->
   <div class="mobile-pay-cta">
-    <a id="btn-upi-mobile" class="btn-pay" href="#">
-      <span>Pay via Any UPI App</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
-    </a>
+    <p class="pay-with">Pay with</p>
+    <div class="app-buttons">
+      <a id="btn-gpay" class="btn-pay" href="#">Google Pay</a>
+      <a id="btn-phonepe" class="btn-pay" href="#">PhonePe</a>
+      <a id="btn-paytm" class="btn-pay" href="#">Paytm</a>
+    </div>
     <div class="divider-text">OR SCAN QR CODE</div>
   </div>
 
@@ -294,7 +306,7 @@
   </div>
 </div>
 
-<script src="qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   // Configuration
   const defaultVPA = "stagex271026@aubiz";
@@ -317,15 +329,28 @@
   // Build standard UPI URL
   const upiUrl = `upi://pay?pa=${encodeURIComponent(vpa)}&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&cu=INR&tn=${encodeURIComponent(note)}`;
 
-  // Mobile CTA button
-  document.getElementById('btn-upi-mobile').href = upiUrl;
+  // App-specific buttons, so the payment opens in the chosen app
+  // instead of whatever app the phone has set as default for UPI (e.g. WhatsApp)
+  const upiQuery = upiUrl.split('?')[1];
+  const isAndroid = /android/i.test(navigator.userAgent);
+  const upiApps = {
+    'btn-gpay':    { pkg: 'com.google.android.apps.nbu.paisa.user', ios: 'gpay://upi/pay?' },
+    'btn-phonepe': { pkg: 'com.phonepe.app',                         ios: 'phonepe://pay?' },
+    'btn-paytm':   { pkg: 'net.one97.paytm',                         ios: 'paytmmp://pay?' }
+  };
+  Object.keys(upiApps).forEach(id => {
+    const app = upiApps[id];
+    document.getElementById(id).href = isAndroid
+      ? `intent://pay?${upiQuery}#Intent;scheme=upi;package=${app.pkg};end`
+      : app.ios + upiQuery;
+  });
 
   // Determine QR size based on window
   const isSmallScreen = window.innerHeight < 700 || window.innerWidth < 360;
   const qrSize = isSmallScreen ? 160 : 180;
 
   // Generate QR code
-  new QRCode(document.getElementById('qrcode'), {
+  if (window.QRCode) new QRCode(document.getElementById('qrcode'), {
     text: upiUrl,
     width: qrSize,
     height: qrSize,
