@@ -244,7 +244,7 @@ buildPage({
       <h1>Laptop Rental in India - Flexible Monthly Plans from ₹849</h1>
       <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
         <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
-          <strong>Direct Answer:</strong> <strong>LaptopRent</strong> (laptoponrent.online) is an enterprise and retail laptop rental network operating across <strong>25+ Indian technology hubs</strong> including Bangalore, Mumbai, Delhi NCR, Hyderabad, Chennai, and Pune. LaptopRent provides flexible short-term and long-term rental plans starting from <strong>₹849/month</strong> for student models, <strong>₹1,200/month</strong> for corporate business laptops, and <strong>₹2,999/month</strong> for Apple MacBook Air/Pro (M1/M2/M3 chips) and RTX gaming rigs. All rentals feature <strong>same-day doorstep delivery</strong>, complimentary maintenance, zero capital depreciation, and fully refundable security deposits and zero hidden charges.
+          <strong>Direct Answer:</strong> <strong>LaptopRent</strong> (laptoponrent.online) is an enterprise and retail laptop rental network operating across <strong>25+ Indian technology hubs</strong> including Bangalore, Mumbai, Delhi NCR, Hyderabad, Chennai, and Pune. LaptopRent provides flexible short-term and long-term rental plans starting from <strong>₹499/month (just ₹16/day)</strong> for student models, <strong>₹1,200/month</strong> for corporate business laptops, and <strong>₹2,999/month</strong> for Apple MacBook Air/Pro (M1/M2/M3 chips) and RTX gaming rigs. All rentals feature <strong>same-day doorstep delivery</strong>, complimentary maintenance, zero capital depreciation, and fully refundable security deposits and zero hidden charges.
         </p>
       </div>
       <p>LaptopRent rents laptops on rent across ${INDIAN_CITIES.length} Indian cities, with same-day
@@ -681,7 +681,7 @@ for (const cat of LAPTOP_CATEGORIES) {
 
       <h2>Frequently Asked Questions on Daily Laptop Rentals</h2>
       <h3>Can I rent a laptop for just 1 or 2 days?</h3>
-      <p>Yes. We specialize in short-term daily rentals for urgent business presentations, exams, software audits, and temporary office visits. Pricing starts at ₹99/day.</p>
+      <p>Yes. We specialize in short-term daily rentals for urgent business presentations, exams, software audits, and temporary office visits. Pricing starts at ₹49/day.</p>
 
       <h3>How does the Zero Deposit corporate option work?</h3>
       <p>Companies with a valid GSTIN or verified corporate email domain qualify for 100% zero-deposit rental passes. Billing is issued with GST tax invoices for input tax credit.</p>
@@ -1123,7 +1123,7 @@ buildPage({
       <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: connect@laptoponrent.online.</strong>
     </div>
     <h2>1. Transparent Monthly Rental Structure</h2>
-    <p>Student laptops from ₹849/mo, corporate business laptops from ₹1,200/mo, Apple MacBook Air from ₹2,999/mo, MacBook Pro from ₹4,500/mo, and gaming rigs from ₹3,500/mo.</p>
+    <p>Student laptops from ₹499/mo (₹16/day), corporate business laptops from ₹1,200/mo, Apple MacBook Air from ₹2,999/mo, MacBook Pro from ₹4,500/mo, and gaming rigs from ₹3,500/mo.</p>
     <h2>2. ₹50 Reservation Token Advance</h2>
     <p>The ₹50 token confirms reservation and is 100% credited against your 1st month rental invoice. Refunded in 24-48 hours if cancelled before dispatch.</p>
     <h2>3. Taxes & Final Pricing</h2>
@@ -1137,7 +1137,7 @@ buildPage({
 buildPage({
   route: '/pricing',
   title: 'Laptop Rental Pricing & Security Deposit Rates | LaptopRent',
-  description: 'View complete rental rates and refundable security deposits for 32+ laptop models. Prices from ₹799/month. Rent and deposit are final – no GST added.',
+  description: 'View complete rental rates and refundable security deposits for 32+ laptop models. Prices from ₹499/month (just ₹16/day). Rent and deposit are final – no GST added.',
   keywords: 'laptop rental pricing, laptop rent per month, security deposit laptops, laptoprent rates',
   canonical: `${BASE}/pricing`,
   ogTitle: 'Laptop Rental Pricing & Security Deposit Rates | LaptopRent',
@@ -1154,14 +1154,16 @@ buildPage({
     <div class="policy-owner" style="background:#eff6ff;border-left:4px solid #2563eb;padding:1rem;margin-bottom:1.5rem;font-size:0.9rem;">
       <strong>These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Customer Care: +91 78922 40243 · connect@laptoponrent.online.</strong>
     </div>
-    <p>Rent premium laptops from ₹799 to ₹1,899 per month with transparent, 100% refundable security deposits.</p>
+    <p>Rent premium laptops from ₹499 to ₹1,899 per month (starting from just ₹16/day) with transparent, 100% refundable security deposits.</p>
     <div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:1rem;margin:1rem 0;">
       <strong>Pricing Guarantee:</strong> Rent and deposit are the final amount payable – no GST is added. The deposit is refunded within 7 working days of return.
     </div>
     <h2>Featured Laptop Rates</h2>
     <ul>
+      <li>Dell Latitude 5430: Rent ₹499/month · Refundable Deposit ₹2,000</li>
+      <li>Lenovo IdeaPad 3: Rent ₹499/month · Refundable Deposit ₹2,000</li>
+      <li>Acer Aspire 5: Rent ₹499/month · Refundable Deposit ₹2,000</li>
       <li>ASUS VivoBook 15: Rent ₹799/month · Refundable Deposit ₹2,000</li>
-      <li>Dell Latitude 5430: Rent ₹999/month · Refundable Deposit ₹3,000</li>
       <li>HP EliteBook 840 G9: Rent ₹1,199/month · Refundable Deposit ₹4,000</li>
       <li>MacBook Air M2: Rent ₹1,899/month · Refundable Deposit ₹5,000</li>
       <li>MacBook Pro 16 M4: Rent ₹1,899/month · Refundable Deposit ₹5,000</li>
@@ -1308,7 +1310,7 @@ buildPage({
         <span style="background:#fee2e2;color:#991b1b;padding:3px 8px;border-radius:4px;font-size:0.8rem;font-weight:700;">2-HOUR DISPATCH</span>
         <h3 style="margin:10px 0 6px 0;">Standard Business Laptop</h3>
         <p style="margin:0 0 10px 0;color:#64748b;font-size:0.9rem;">Dell Latitude / HP ProBook · Core i5 · 8GB/16GB RAM · 256GB SSD</p>
-        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹99 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
+        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹49 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
         <p style="margin:8px 0 0 0;font-size:0.85rem;color:#475569;">✓ Windows 11, MS Office, Zoom pre-installed</p>
       </div>
 
@@ -1316,7 +1318,7 @@ buildPage({
         <span style="background:#fee2e2;color:#991b1b;padding:3px 8px;border-radius:4px;font-size:0.8rem;font-weight:700;">2-HOUR DISPATCH</span>
         <h3 style="margin:10px 0 6px 0;">Performance Workstation</h3>
         <p style="margin:0 0 10px 0;color:#64748b;font-size:0.9rem;">Lenovo ThinkPad / Dell Precision · Core i7 · 16GB/32GB RAM · 512GB SSD</p>
-        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹149 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
+        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹99 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
         <p style="margin:8px 0 0 0;font-size:0.85rem;color:#475569;">✓ Heavy coding, Docker, testing ready</p>
       </div>
 
@@ -1324,7 +1326,7 @@ buildPage({
         <span style="background:#fee2e2;color:#991b1b;padding:3px 8px;border-radius:4px;font-size:0.8rem;font-weight:700;">2-HOUR DISPATCH</span>
         <h3 style="margin:10px 0 6px 0;">Apple MacBook Air / Pro</h3>
         <p style="margin:0 0 10px 0;color:#64748b;font-size:0.9rem;">M1 / M2 / M3 Chip · Retina Display · 18hr Battery Backup</p>
-        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹299 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
+        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹199 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
         <p style="margin:8px 0 0 0;font-size:0.85rem;color:#475569;">✓ Xcode, Final Cut, iOS dev ready</p>
       </div>
     </div>
@@ -1347,7 +1349,7 @@ buildPage({
     <p class="urgent-faq-a">In Tier-1 metro cities (Bangalore, Mumbai, Delhi NCR, Hyderabad, Pune, Chennai, Kolkata), we dispatch via express intra-city courier within 2 to 4 hours of digital verification.</p>
 
     <h3 class="urgent-faq-q">Can I rent a laptop for just 1 single day?</h3>
-    <p class="urgent-faq-a">Yes. We accommodate 1-day emergency rentals starting at ₹99/day for exams, job interviews, presentations, or temporary hardware breakdowns.</p>
+    <p class="urgent-faq-a">Yes. We accommodate 1-day emergency rentals starting at ₹49/day for exams, job interviews, presentations, or temporary hardware breakdowns.</p>
 
     <h3 class="urgent-faq-q">What software is pre-loaded on the rental laptop?</h3>
     <p class="urgent-faq-a">Every laptop arrives fully factory-reset and pre-loaded with Windows 11/macOS, Google Chrome, Zoom, MS Teams, and Office suite. Specific developer IDEs (VS Code, Python, Node.js) can be pre-configured on request.</p>
