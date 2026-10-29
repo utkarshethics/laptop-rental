@@ -1,9 +1,8 @@
 import { WHATSAPP_NUMBER } from './whatsapp';
 
 export const TOKEN_AMOUNT = 50;
-export const TOKEN_PAYMENT_LINK =
-  import.meta.env.VITE_TOKEN_PAYMENT_LINK ||
-  'https://razorpay.com/payment-link/plink_TfrpceYFPIv3Ch';
+// ₹50 token is paid on the site's own StageX UPI page (Google Pay / PhonePe / Paytm buttons + QR)
+export const TOKEN_PAYMENT_LINK = '/pay.html';
 export const BOOKING_STORAGE_KEY = 'laptoprent_token_bookings';
 
 export interface TokenProduct {
@@ -70,7 +69,7 @@ export function markTokenBookingConfirmed(bookingId: string) {
 
 export function buildBookingConfirmUrl(booking: TokenBooking): string {
   const message = [
-    `I just paid the \u20B950 booking token for ${booking.productName}.`,
+    `I just paid the ₹50 booking token for ${booking.productName}.`,
     `Phone: ${booking.phone}`,
     `Delivery PIN: ${booking.pincode}`,
     `${booking.city ? `City: ${booking.city}.` : ''}`,
@@ -88,5 +87,5 @@ export function buildKycUrl(booking: TokenBooking): string {
 }
 
 export function formatInr(amount: number): string {
-  return `\u20B9${amount.toLocaleString('en-IN')}`;
+  return `₹${amount.toLocaleString('en-IN')}`;
 }

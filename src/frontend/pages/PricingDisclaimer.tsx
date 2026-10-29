@@ -106,7 +106,7 @@ export function PricingDisclaimer() {
                   <strong>Instant Cancellation Protection:</strong> If you cancel before device dispatch, or if verification fails, the ₹50 token is fully refunded within 24 to 48 hours to the source payment method.
                 </li>
                 <li>
-                  <strong>Merchant Verification:</strong> All reservation token transactions are processed through Razorpay under our registered business name: <strong>STAGE-X</strong>.
+                  <strong>Merchant Verification:</strong> All reservation token transactions are paid by UPI directly to our registered business name: <strong>STAGE-X</strong>.
                 </li>
               </ul>
             </section>

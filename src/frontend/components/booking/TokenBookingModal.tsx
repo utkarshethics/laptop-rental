@@ -68,7 +68,7 @@ export function TokenBookingModal() {
     });
     bookingRef.current = booking;
 
-    const link = new URL(TOKEN_PAYMENT_LINK);
+    const link = new URL(TOKEN_PAYMENT_LINK, window.location.origin);
     link.searchParams.set('contact', phoneDigits);
     window.open(link.toString(), '_blank', 'noopener');
 
@@ -86,7 +86,7 @@ export function TokenBookingModal() {
 
   const reopenPayment = () => {
     if (!bookingRef.current) return;
-    const link = new URL(TOKEN_PAYMENT_LINK);
+    const link = new URL(TOKEN_PAYMENT_LINK, window.location.origin);
     link.searchParams.set('contact', bookingRef.current.phone);
     window.open(link.toString(), '_blank', 'noopener');
   };
@@ -171,7 +171,7 @@ export function TokenBookingModal() {
             Pay {formatInr(TOKEN_AMOUNT)} & Confirm Booking
           </button>
           <p className="mt-3 text-center text-body-sm text-secondary-500">
-            Payments are processed by <strong>STAGE-X</strong> via secure Razorpay (UPI, Cards, NetBanking). By proceeding, you agree to our{' '}
+            Payments are processed by <strong>STAGE-X</strong> via UPI (Google Pay, PhonePe, Paytm or any UPI app). By proceeding, you agree to our{' '}
             <a href="/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-600">Terms</a> &amp;{' '}
             <a href="/cancellation-refund-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-600">Refund Policy</a>.
           </p>
@@ -187,7 +187,7 @@ export function TokenBookingModal() {
             Complete your ₹{TOKEN_AMOUNT} payment
           </h3>
           <p className="text-body-sm text-secondary-600 mb-2">
-            A secure Razorpay payment window (Merchant: <strong>STAGE-X</strong>) opened in a new tab for your ₹{TOKEN_AMOUNT} advance token reservation.
+            The <strong>STAGE-X</strong> UPI payment page opened in a new tab for your ₹{TOKEN_AMOUNT} advance token reservation.
           </p>
           <p className="text-body-sm font-medium text-secondary-700 mb-6">
             {bookingRef.current.productName} · {formatInr(bookingRef.current.amount)} token

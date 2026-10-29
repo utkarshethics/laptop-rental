@@ -97,7 +97,7 @@ export function CancellationRefundPolicy() {
                 5. Refund Payment Channels &amp; Verification
               </h2>
               <p>
-                All refunds are issued directly by <strong>STAGE-X</strong> via Razorpay. Funds are credited back strictly to the originating bank account, UPI ID, or card:
+                All refunds are issued directly by <strong>STAGE-X</strong> via UPI / bank transfer. Funds are credited back strictly to the originating bank account, UPI ID, or card:
               </p>
               <ul className="list-disc pl-5 space-y-1.5 text-secondary-600">
                 <li><strong>UPI &amp; Net Banking Reversals:</strong> 24 to 48 banking hours.</li>
