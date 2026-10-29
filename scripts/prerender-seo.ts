@@ -1234,6 +1234,126 @@ buildPage({
   </main>`,
 });
 
+
+buildPage({
+  route: '/urgent-laptop-rental',
+  title: 'Urgent Laptop on Rent | 2-Hour Emergency Delivery in 25+ Cities | LaptopRent',
+  description: 'Need a laptop urgently today? LaptopRent provides emergency same-day laptop rentals with 2 to 4-hour doorstep delivery across 25+ Indian cities. Zero deposit for corporate accounts.',
+  keywords: 'urgent laptop on rent, emergency laptop rental, same day laptop delivery, rent laptop 2 hours, laptop rent near me urgent, urgent macbook rental, laptop rent today, laptop kharab ho gaya rent chahiye',
+  canonical: `${BASE}/urgent-laptop-rental`,
+  ogTitle: 'Urgent Laptop on Rent | 2-Hour Emergency Delivery | LaptopRent',
+  ogUrl: `${BASE}/urgent-laptop-rental`,
+  jsonLd: [
+    generateBreadcrumbSchema([
+      { name: 'Home', url: `${BASE}/` },
+      { name: 'Urgent Laptop Rental', url: `${BASE}/urgent-laptop-rental` },
+    ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Emergency & Urgent Laptop Rental',
+      description: 'Same-day 2 to 4-hour doorstep emergency laptop delivery across 25+ Indian cities.',
+      url: `${BASE}/urgent-laptop-rental`,
+      provider: { '@type': 'Organization', name: 'LaptopRent', url: BASE },
+      areaServed: 'IN',
+      serviceType: 'Urgent Laptop Rental',
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'INR',
+        price: '99',
+        priceValidUntil: '2027-12-31',
+        availability: 'https://schema.org/InStock',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${BASE}/urgent-laptop-rental/#webpage`,
+      url: `${BASE}/urgent-laptop-rental`,
+      name: 'Urgent Laptop on Rent | 2-Hour Emergency Delivery',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['.geo-answer-first', '.emergency-hotline', '.urgent-faq-q', '.urgent-faq-a'],
+      },
+    },
+    generateFAQSchema(),
+  ],
+  body: `
+  <main>
+    <h1>Urgent Laptop on Rent – Same-Day Express Delivery</h1>
+    
+    <div class="geo-answer-first" style="background:#fef2f2;border-left:4px solid #ef4444;padding:1.25rem;margin:1rem 0;border-radius:8px;">
+      <p style="margin:0 0 10px 0;font-size:1.1rem;font-weight:700;color:#991b1b;">
+        ⚡ Laptop Crashed or Urgent Deadline? We Deliver in 2 to 4 Hours!
+      </p>
+      <p style="margin:0;font-size:0.98rem;color:#334155;line-height:1.75;">
+        <strong>Direct Answer:</strong> LaptopRent provides rapid emergency laptop rentals across <strong>25+ Indian cities</strong> (Bangalore, Mumbai, Delhi NCR, Hyderabad, Pune, Chennai, Kolkata, Ahmedabad). If your machine stopped working or you have an emergency hackathon, exam, or audit, our logistics team dispatches ready-to-use, fully configured Core i5/i7 laptops or Apple MacBooks directly to your doorstep in <strong>2 to 4 hours</strong>.
+      </p>
+      <div class="emergency-hotline" style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;align-items:center;">
+        <a href="https://wa.me/917892240243?text=EMERGENCY%20LAPTOP%20RENTAL%3A%20I%20need%20a%20laptop%20urgently%20today" style="display:inline-flex;align-items:center;background:#16a34a;color:#ffffff;padding:12px 22px;border-radius:6px;font-weight:700;text-decoration:none;font-size:1rem;box-shadow:0 4px 12px rgba(22,163,74,0.3);">
+          💬 WhatsApp for 2-Hour Dispatch →
+        </a>
+        <a href="tel:+917892240243" style="display:inline-flex;align-items:center;background:#dc2626;color:#ffffff;padding:12px 22px;border-radius:6px;font-weight:700;text-decoration:none;font-size:1rem;">
+          📞 Call Hotline: +91-78922-40243
+        </a>
+        <a href="/booking/?priority=urgent" style="display:inline-flex;align-items:center;background:#f8fafc;color:#1e293b;border:1px solid #cbd5e1;padding:11px 18px;border-radius:6px;font-weight:600;text-decoration:none;font-size:0.95rem;">
+          Book Online Now
+        </a>
+      </div>
+    </div>
+
+    <h2>Emergency Machine Dispatch Tiers (Ready in Stock)</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:16px;margin:1.5rem 0;">
+      <div style="border:1px solid #e2e8f0;padding:20px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <span style="background:#fee2e2;color:#991b1b;padding:3px 8px;border-radius:4px;font-size:0.8rem;font-weight:700;">2-HOUR DISPATCH</span>
+        <h3 style="margin:10px 0 6px 0;">Standard Business Laptop</h3>
+        <p style="margin:0 0 10px 0;color:#64748b;font-size:0.9rem;">Dell Latitude / HP ProBook · Core i5 · 8GB/16GB RAM · 256GB SSD</p>
+        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹99 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
+        <p style="margin:8px 0 0 0;font-size:0.85rem;color:#475569;">✓ Windows 11, MS Office, Zoom pre-installed</p>
+      </div>
+
+      <div style="border:1px solid #e2e8f0;padding:20px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <span style="background:#fee2e2;color:#991b1b;padding:3px 8px;border-radius:4px;font-size:0.8rem;font-weight:700;">2-HOUR DISPATCH</span>
+        <h3 style="margin:10px 0 6px 0;">Performance Workstation</h3>
+        <p style="margin:0 0 10px 0;color:#64748b;font-size:0.9rem;">Lenovo ThinkPad / Dell Precision · Core i7 · 16GB/32GB RAM · 512GB SSD</p>
+        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹149 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
+        <p style="margin:8px 0 0 0;font-size:0.85rem;color:#475569;">✓ Heavy coding, Docker, testing ready</p>
+      </div>
+
+      <div style="border:1px solid #e2e8f0;padding:20px;border-radius:8px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <span style="background:#fee2e2;color:#991b1b;padding:3px 8px;border-radius:4px;font-size:0.8rem;font-weight:700;">2-HOUR DISPATCH</span>
+        <h3 style="margin:10px 0 6px 0;">Apple MacBook Air / Pro</h3>
+        <p style="margin:0 0 10px 0;color:#64748b;font-size:0.9rem;">M1 / M2 / M3 Chip · Retina Display · 18hr Battery Backup</p>
+        <div style="font-size:1.3rem;font-weight:800;color:#16a34a;">₹299 <small style="font-size:0.85rem;color:#64748b;">/ day</small></div>
+        <p style="margin:8px 0 0 0;font-size:0.85rem;color:#475569;">✓ Xcode, Final Cut, iOS dev ready</p>
+      </div>
+    </div>
+
+    <h2>How Emergency Delivery Works in 3 Simple Steps</h2>
+    <ol style="line-height:1.85;padding-left:1.25rem;">
+      <li><strong>Instant Requirement Check:</strong> WhatsApp or call our urgent hotline (+91 78922 40243) with your city and machine requirements.</li>
+      <li><strong>Rapid 5-Minute Digital KYC:</strong> Submit Aadhaar/PAN (for individuals) or Company GSTIN/Work email (for 100% Zero-Deposit corporate pass).</li>
+      <li><strong>Express Doorstep Delivery:</strong> Our nearest local hub dispatches an executive on a two-wheeler with your sanitized laptop, original charger, and optical mouse.</li>
+    </ol>
+
+    <h2>Zero Security Deposit for Corporate Emergency Orders</h2>
+    <p>If you are a startup, SME, or enterprise with a valid GSTIN or verified corporate email, you qualify for our <strong>Zero Deposit Emergency Rental Pass</strong>. No deposit lock-up; transparent daily or weekly invoicing with 18% GST Input Tax Credit.</p>
+
+    <h2>Cities with 2 to 4-Hour Express Delivery</h2>
+    <p>${INDIAN_CITIES.slice(0, 15).map(c => `<a href="/rental/${c.slug}/">${esc(c.name)}</a>`).join(', ')} and 10+ more cities nationwide.</p>
+
+    <h2>Frequently Asked Questions on Urgent Laptop Rentals</h2>
+    <h3 class="urgent-faq-q">How fast can I get a laptop delivered to my location?</h3>
+    <p class="urgent-faq-a">In Tier-1 metro cities (Bangalore, Mumbai, Delhi NCR, Hyderabad, Pune, Chennai, Kolkata), we dispatch via express intra-city courier within 2 to 4 hours of digital verification.</p>
+
+    <h3 class="urgent-faq-q">Can I rent a laptop for just 1 single day?</h3>
+    <p class="urgent-faq-a">Yes. We accommodate 1-day emergency rentals starting at ₹99/day for exams, job interviews, presentations, or temporary hardware breakdowns.</p>
+
+    <h3 class="urgent-faq-q">What software is pre-loaded on the rental laptop?</h3>
+    <p class="urgent-faq-a">Every laptop arrives fully factory-reset and pre-loaded with Windows 11/macOS, Google Chrome, Zoom, MS Teams, and Office suite. Specific developer IDEs (VS Code, Python, Node.js) can be pre-configured on request.</p>
+  </main>`,
+});
+
 console.log('Prerender complete.');
 
 // ---- Sitemaps (trailing-slash URLs matching generated pages) -------------
@@ -1270,6 +1390,7 @@ writeFileSync(resolve(DIST, 'sitemap.xml'), sitemap([
   { url: '/delivery-policy', priority: 0.7 },
   { url: '/pricing-disclaimer', priority: 0.7 },
   { url: '/damage-protection-policy', priority: 0.7 },
+  { url: '/urgent-laptop-rental', priority: 0.9, freq: 'weekly' },
 ]));
 
 writeFileSync(resolve(DIST, 'sitemap-cities.xml'), sitemap(
