@@ -261,6 +261,13 @@
   },
   "categories": [
     {
+      "id": "daily-short-term-laptop-rental",
+      "name": "Daily & Short-Term Laptop Rental",
+      "description": "Rent laptops per day, weekend, or week from ₹99/day. Zero-deposit corporate passes & express delivery.",
+      "priceRange": "₹99/day - ₹499/day",
+      "wikidata": "https://www.wikidata.org/wiki/Q1358656"
+    },
+    {
       "id": "macbook-rental",
       "name": "MacBook Rental",
       "description": "MacBook Air & Pro rentals with M1/M2/M3 chips",

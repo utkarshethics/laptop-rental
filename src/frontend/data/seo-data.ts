@@ -49,6 +49,7 @@ export const SERVICE_AREAS = [
 ];
 
 export const LAPTOP_CATEGORIES = [
+  { id: 'daily-short-term-laptop-rental', name: 'Daily & Short-Term Laptop Rental', description: 'Rent laptops per day, weekend, or week from ₹99/day. Zero-deposit corporate passes & express delivery.', priceRange: '₹99/day - ₹499/day', wikidata: 'https://www.wikidata.org/wiki/Q1358656' },
   { id: 'macbook-rental', name: 'MacBook Rental', description: 'MacBook Air & Pro rentals with M1/M2/M3 chips', priceRange: '₹2,999 - ₹15,000/mo', wikidata: 'https://www.wikidata.org/wiki/Q11110' },
   { id: 'gaming-laptop-rental', name: 'Gaming Laptop Rental', description: 'RTX 30/40 series high-performance gaming laptops', priceRange: '₹3,500 - ₹8,000/mo', wikidata: 'https://www.wikidata.org/wiki/Q1141427' },
   { id: 'business-laptop-rental', name: 'Business Laptop Rental', description: 'Office & corporate laptops with 16GB+ RAM', priceRange: '₹1,200 - ₹2,800/mo', wikidata: 'https://www.wikidata.org/wiki/Q3962' },

@@ -543,6 +543,9 @@ for (const city of INDIAN_CITIES) {
         <a href="/booking/?city=${encodeURIComponent(city.slug)}" style="display:inline-flex;align-items:center;background:#2563eb;color:#ffffff;padding:12px 24px;border-radius:8px;font-weight:700;text-decoration:none;font-size:1rem;box-shadow:0 4px 14px rgba(37,99,235,0.3);">
           ⚡ Book Laptop in ${esc(city.name)} from ${esc(price)} →
         </a>
+        <a href="/category/daily-short-term-laptop-rental/" style="display:inline-flex;align-items:center;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;">
+          ⏱️ Daily Rentals from ₹99/day
+        </a>
         <a href="/category/business-laptop-rental/" style="display:inline-flex;align-items:center;background:#f8fafc;color:#1e293b;border:1px solid #cbd5e1;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;">
           💼 View HP &amp; ThinkPad Stock
         </a>
@@ -605,7 +608,87 @@ for (const cat of LAPTOP_CATEGORIES) {
       ]),
       generateFAQSchema(),
     ],
-    body: `
+    body: cat.id === 'daily-short-term-laptop-rental' ? `
+    <main>
+      <h1>${esc(cat.name)} in India</h1>
+      <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1.25rem;margin:1rem 0;border-radius:8px;">
+        <p style="margin:0 0 10px 0;font-size:1.05rem;font-weight:600;color:#0f172a;">
+          ⚡ Need a Laptop for 1 Day, a Weekend Hackathon, or a 1-Week Project?
+        </p>
+        <p style="margin:0;font-size:0.95rem;color:#334155;line-height:1.7;">
+          <strong>Direct Answer:</strong> LaptopRent provides emergency short-term and per-day laptop rentals starting from <strong>₹99/day</strong> across 25+ cities. Available with <strong>Zero Security Deposit for GST-registered companies</strong> and 2–4 hour express doorstep delivery. Includes pre-loaded Windows 11/macOS, MS Office, charger, mouse, and hardware warranty.
+        </p>
+        <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;">
+          <a href="/booking/?category=daily-short-term-laptop-rental" style="display:inline-flex;align-items:center;background:#2563eb;color:#ffffff;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;font-size:0.95rem;">
+            Book Daily Rental Now →
+          </a>
+          <a href="https://wa.me/917892240243?text=Hi%2C%20I%20need%20a%20laptop%20on%20rent%20per%20day" style="display:inline-flex;align-items:center;background:#16a34a;color:#ffffff;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;font-size:0.95rem;">
+            💬 WhatsApp for 2-Hour Express Delivery
+          </a>
+        </div>
+      </div>
+
+      <h2>Daily & Short-Term Laptop Rental Pricing</h2>
+      <div style="overflow-x:auto;margin:1.5rem 0;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.95rem;">
+          <thead>
+            <tr style="background:#f1f5f9;border-bottom:2px solid #cbd5e1;">
+              <th style="padding:10px 14px;">Tier &amp; Machine Profile</th>
+              <th style="padding:10px 14px;">Daily Rate (1–3 Days)</th>
+              <th style="padding:10px 14px;">Weekly Pass (7 Days)</th>
+              <th style="padding:10px 14px;">Deposit Terms</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:12px 14px;"><strong>Standard Core i5</strong><br><small style="color:#64748b;">8GB RAM / 256GB SSD (Dell Latitude / HP ProBook)</small></td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹99 / day</td>
+              <td style="padding:12px 14px;font-weight:600;">₹499 / week</td>
+              <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:12px 14px;"><strong>High-Performance Business</strong><br><small style="color:#64748b;">Core i7 / 16GB RAM / 512GB SSD (ThinkPad / Dell XPS)</small></td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹149 / day</td>
+              <td style="padding:12px 14px;font-weight:600;">₹799 / week</td>
+              <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:12px 14px;"><strong>Apple MacBook Air (M1/M2)</strong><br><small style="color:#64748b;">Retina Display / 18hr Battery / Lightweight</small></td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹299 / day</td>
+              <td style="padding:12px 14px;font-weight:600;">₹1,499 / week</td>
+              <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid #e2e8f0;">
+              <td style="padding:12px 14px;"><strong>Gaming &amp; AI Workstation</strong><br><small style="color:#64748b;">RTX 3060/4060 / 32GB RAM / i7 or Ryzen 7</small></td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹399 / day</td>
+              <td style="padding:12px 14px;font-weight:600;">₹1,999 / week</td>
+              <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Why Choose Short-Term Daily Laptop Rental?</h2>
+      <ul>
+        <li><strong>Zero Security Deposit:</strong> Available for GST-registered companies, startups, and corporate teams.</li>
+        <li><strong>2–4 Hour Express Dispatch:</strong> Immediate courier doorstep delivery in Bangalore, Mumbai, Delhi NCR, Hyderabad, Pune, Chennai, and Kolkata.</li>
+        <li><strong>Exam &amp; Hackathon Ready:</strong> Laptops come fully sanitized, factory-reset, and configured with Google Chrome, Zoom, MS Teams, and Office suite.</li>
+        <li><strong>Doorstep Pickup:</strong> When your rental period ends, our logistics partner collects the laptop from your doorstep.</li>
+      </ul>
+
+      <h2>Available for Immediate Delivery In</h2>
+      <p>${INDIAN_CITIES.slice(0, 15).map(c => `<a href="/rental/${c.slug}/">${esc(c.name)}</a>`).join(', ')} and 10+ more cities.</p>
+
+      <h2>Frequently Asked Questions on Daily Laptop Rentals</h2>
+      <h3>Can I rent a laptop for just 1 or 2 days?</h3>
+      <p>Yes. We specialize in short-term daily rentals for urgent business presentations, exams, software audits, and temporary office visits. Pricing starts at ₹99/day.</p>
+
+      <h3>How does the Zero Deposit corporate option work?</h3>
+      <p>Companies with a valid GSTIN or verified corporate email domain qualify for 100% zero-deposit rental passes. Billing is issued with GST tax invoices for input tax credit.</p>
+
+      <h3>How quickly can I get the laptop delivered?</h3>
+      <p>In tier-1 metros (Bangalore, Mumbai, Delhi NCR, Hyderabad, Pune, Chennai), we offer 2 to 4-hour express courier delivery for bookings confirmed before 4 PM.</p>
+    </main>` : `
     <main>
       <h1>${esc(cat.name)} in India</h1>
       <div class="geo-answer-first" style="background:#f0f7ff;border-left:4px solid #2563eb;padding:1rem 1.25rem;margin:1rem 0;border-radius:8px;">
