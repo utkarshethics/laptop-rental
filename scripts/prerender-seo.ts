@@ -544,7 +544,7 @@ for (const city of INDIAN_CITIES) {
           ⚡ Book Laptop in ${esc(city.name)} from ${esc(price)} →
         </a>
         <a href="/category/daily-short-term-laptop-rental/" style="display:inline-flex;align-items:center;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;">
-          ⏱️ Daily Rentals from ₹99/day
+          ⏱️ Daily Rentals from ₹49/day
         </a>
         <a href="/category/business-laptop-rental/" style="display:inline-flex;align-items:center;background:#f8fafc;color:#1e293b;border:1px solid #cbd5e1;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.95rem;">
           💼 View HP &amp; ThinkPad Stock
@@ -616,7 +616,7 @@ for (const cat of LAPTOP_CATEGORIES) {
           ⚡ Need a Laptop for 1 Day, a Weekend Hackathon, or a 1-Week Project?
         </p>
         <p style="margin:0;font-size:0.95rem;color:#334155;line-height:1.7;">
-          <strong>Direct Answer:</strong> LaptopRent provides emergency short-term and per-day laptop rentals starting from <strong>₹99/day</strong> across 25+ cities. Available with <strong>Zero Security Deposit for GST-registered companies</strong> and 2–4 hour express doorstep delivery. Includes pre-loaded Windows 11/macOS, MS Office, charger, mouse, and hardware warranty.
+          <strong>Direct Answer:</strong> LaptopRent provides emergency short-term and per-day laptop rentals starting from <strong>₹49/day (₹499/month)</strong> across 25+ cities. Available with <strong>Zero Security Deposit for GST-registered companies</strong> and 2–4 hour express doorstep delivery. Includes pre-loaded Windows 11/macOS, MS Office, charger, mouse, and hardware warranty.
         </p>
         <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;">
           <a href="/booking/?category=daily-short-term-laptop-rental" style="display:inline-flex;align-items:center;background:#2563eb;color:#ffffff;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;font-size:0.95rem;">
@@ -642,25 +642,25 @@ for (const cat of LAPTOP_CATEGORIES) {
           <tbody>
             <tr style="border-bottom:1px solid #e2e8f0;">
               <td style="padding:12px 14px;"><strong>Standard Core i5</strong><br><small style="color:#64748b;">8GB RAM / 256GB SSD (Dell Latitude / HP ProBook)</small></td>
-              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹99 / day</td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹49 / day</td>
               <td style="padding:12px 14px;font-weight:600;">₹499 / week</td>
               <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0;">
               <td style="padding:12px 14px;"><strong>High-Performance Business</strong><br><small style="color:#64748b;">Core i7 / 16GB RAM / 512GB SSD (ThinkPad / Dell XPS)</small></td>
-              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹149 / day</td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹99 / day</td>
               <td style="padding:12px 14px;font-weight:600;">₹799 / week</td>
               <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0;">
               <td style="padding:12px 14px;"><strong>Apple MacBook Air (M1/M2)</strong><br><small style="color:#64748b;">Retina Display / 18hr Battery / Lightweight</small></td>
-              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹299 / day</td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹199 / day</td>
               <td style="padding:12px 14px;font-weight:600;">₹1,499 / week</td>
               <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
             </tr>
             <tr style="border-bottom:1px solid #e2e8f0;">
               <td style="padding:12px 14px;"><strong>Gaming &amp; AI Workstation</strong><br><small style="color:#64748b;">RTX 3060/4060 / 32GB RAM / i7 or Ryzen 7</small></td>
-              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹399 / day</td>
+              <td style="padding:12px 14px;color:#16a34a;font-weight:700;">₹299 / day</td>
               <td style="padding:12px 14px;font-weight:600;">₹1,999 / week</td>
               <td style="padding:12px 14px;"><span style="background:#dcfce7;color:#15803d;padding:2px 8px;border-radius:4px;font-size:0.85rem;font-weight:600;">Zero Deposit Corporate</span></td>
             </tr>
@@ -1260,7 +1260,7 @@ buildPage({
       offers: {
         '@type': 'Offer',
         priceCurrency: 'INR',
-        price: '99',
+        price: '49',
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
       },

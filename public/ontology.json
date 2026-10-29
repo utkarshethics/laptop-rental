@@ -263,8 +263,8 @@
     {
       "id": "daily-short-term-laptop-rental",
       "name": "Daily & Short-Term Laptop Rental",
-      "description": "Rent laptops per day, weekend, or week from ₹99/day. Zero-deposit corporate passes & express delivery.",
-      "priceRange": "₹99/day - ₹499/day",
+      "description": "Rent laptops per day, weekend, or week from ₹49/day. Zero-deposit corporate passes & express delivery.",
+      "priceRange": "₹49/day - ₹399/day",
       "wikidata": "https://www.wikidata.org/wiki/Q1358656"
     },
     {
@@ -291,8 +291,8 @@
     {
       "id": "student-laptop-rental",
       "name": "Student Laptop Rental",
-      "description": "Affordable laptops for students & academics",
-      "priceRange": "₹849 - ₹1,500/mo",
+      "description": "Affordable laptops for students & academics from ₹16/day",
+      "priceRange": "₹499 - ₹1,200/mo",
       "wikidata": "https://www.wikidata.org/wiki/Q3962"
     },
     {
@@ -361,8 +361,8 @@
     {
       "id": "budget-laptop-rental",
       "name": "Budget Laptop Rental",
-      "description": "Under ₹1,500/month laptops for basic use",
-      "priceRange": "₹849 - ₹1,500/mo",
+      "description": "Under ₹1,500/month laptops for basic use from ₹16/day",
+      "priceRange": "₹499 - ₹1,200/mo",
       "wikidata": "https://www.wikidata.org/wiki/Q3962"
     }
   ],

@@ -49,11 +49,11 @@ export const SERVICE_AREAS = [
 ];
 
 export const LAPTOP_CATEGORIES = [
-  { id: 'daily-short-term-laptop-rental', name: 'Daily & Short-Term Laptop Rental', description: 'Rent laptops per day, weekend, or week from ₹99/day. Zero-deposit corporate passes & express delivery.', priceRange: '₹99/day - ₹499/day', wikidata: 'https://www.wikidata.org/wiki/Q1358656' },
+  { id: 'daily-short-term-laptop-rental', name: 'Daily & Short-Term Laptop Rental', description: 'Rent laptops per day, weekend, or week from ₹49/day. Zero-deposit corporate passes & express delivery.', priceRange: '₹49/day - ₹399/day', wikidata: 'https://www.wikidata.org/wiki/Q1358656' },
   { id: 'macbook-rental', name: 'MacBook Rental', description: 'MacBook Air & Pro rentals with M1/M2/M3 chips', priceRange: '₹2,999 - ₹15,000/mo', wikidata: 'https://www.wikidata.org/wiki/Q11110' },
   { id: 'gaming-laptop-rental', name: 'Gaming Laptop Rental', description: 'RTX 30/40 series high-performance gaming laptops', priceRange: '₹3,500 - ₹8,000/mo', wikidata: 'https://www.wikidata.org/wiki/Q1141427' },
   { id: 'business-laptop-rental', name: 'Business Laptop Rental', description: 'Office & corporate laptops with 16GB+ RAM', priceRange: '₹1,200 - ₹2,800/mo', wikidata: 'https://www.wikidata.org/wiki/Q3962' },
-  { id: 'student-laptop-rental', name: 'Student Laptop Rental', description: 'Affordable laptops for students & academics', priceRange: '₹849 - ₹1,500/mo', wikidata: 'https://www.wikidata.org/wiki/Q3962' },
+  { id: 'student-laptop-rental', name: 'Student Laptop Rental', description: 'Affordable laptops for students & academics from ₹16/day', priceRange: '₹499 - ₹1,200/mo', wikidata: 'https://www.wikidata.org/wiki/Q3962' },
   { id: 'macbook-air-rental', name: 'MacBook Air Rental', description: 'M1, M2, M3 MacBook Air models', priceRange: '₹2,999 - ₹6,500/mo', wikidata: 'https://www.wikidata.org/wiki/Q488192' },
   { id: 'macbook-pro-rental', name: 'MacBook Pro Rental', description: 'M1/M2/M3 Pro & Max chip models', priceRange: '₹4,500 - ₹15,000/mo', wikidata: 'https://www.wikidata.org/wiki/Q483881' },
   { id: 'dell-laptop-rental', name: 'Dell Laptop Rental', description: 'XPS, Inspiron, Latitude, Vostro, Precision', priceRange: '₹999 - ₹4,500/mo', wikidata: 'https://www.wikidata.org/wiki/Q30873' },
@@ -63,7 +63,7 @@ export const LAPTOP_CATEGORIES = [
   { id: 'acer-laptop-rental', name: 'Acer Laptop Rental', description: 'Swift, Aspire, Predator, Nitro Gaming', priceRange: '₹999 - ₹4,500/mo', wikidata: 'https://www.wikidata.org/wiki/Q485172' },
   { id: 'microsoft-surface-rental', name: 'Surface Laptop Rental', description: 'Surface Laptop, Pro, Book, Go', priceRange: '₹1,499 - ₹4,500/mo', wikidata: 'https://www.wikidata.org/wiki/Q423233' },
   { id: 'workstation-rental', name: 'Mobile Workstation Rental', description: 'RTX A-series, Xeon, 32GB+ RAM for AI/ML', priceRange: '₹5,000 - ₹15,000/mo', wikidata: 'https://www.wikidata.org/wiki/Q192534' },
-  { id: 'budget-laptop-rental', name: 'Budget Laptop Rental', description: 'Under ₹1,500/month laptops for basic use', priceRange: '₹849 - ₹1,500/mo', wikidata: 'https://www.wikidata.org/wiki/Q3962' },
+  { id: 'budget-laptop-rental', name: 'Budget Laptop Rental', description: 'Under ₹1,500/month laptops for basic use from ₹16/day', priceRange: '₹499 - ₹1,200/mo', wikidata: 'https://www.wikidata.org/wiki/Q3962' },
 ];
 
 export const FAQ_QUESTIONS = [
@@ -134,49 +134,49 @@ export const CITY_META = {
     name: 'Bangalore', 
     description: 'India\'s Silicon Valley - laptop rentals for startups, IT companies, students & events. Same-day delivery in Whitefield, Koramangala, HSR, Indiranagar, Electronic City.',
     keywords: ['laptop rental bangalore', 'macbook rental bangalore', 'laptop on rent bangalore', 'computer rental bangalore'],
-    priceStart: '₹849/mo',
+    priceStart: '₹49/day (₹499/mo)',
     areas: ['Whitefield', 'Koramangala', 'HSR Layout', 'Indiranagar', 'Electronic City', 'Marathahalli', 'Jayanagar', 'Malleshwaram'],
   },
   mumbai: { 
     name: 'Mumbai', 
     description: 'Financial capital - laptop rentals for corporate offices, events, production houses. Same-day delivery in Andheri, Bandra, Powai, Lower Parel, Thane, Borivali.',
     keywords: ['laptop rental mumbai', 'macbook rental mumbai', 'laptop on rent mumbai', 'computer rental mumbai'],
-    priceStart: '₹999/mo',
+    priceStart: '₹49/day (₹499/mo)',
     areas: ['Andheri', 'Bandra', 'Powai', 'Lower Parel', 'Thane', 'Borivali', 'Navi Mumbai', 'Goregaon'],
   },
   delhi: { 
     name: 'Delhi', 
     description: 'Capital region - laptop rentals for government, corporate, students, events. Same-day delivery in Gurgaon, Noida, Connaught Place, Nehru Place, Nehru Palace.',
     keywords: ['laptop rental delhi', 'macbook rental delhi', 'laptop on rent delhi', 'computer rental delhi'],
-    priceStart: '₹899/mo',
+    priceStart: '₹49/day (₹499/mo)',
     areas: ['Connaught Place', 'Nehru Place', 'Gurgaon', 'Noida', 'Nehru Palace', 'Karol Bagh', 'Dwarka', 'Rohini'],
   },
   hyderabad: { 
     name: 'Hyderabad', 
     description: 'Cyberabad hub - laptop rentals for IT parks, pharma, events. Same-day delivery in Hitech City, Gachibowli, Banjara Hills, Jubilee Hills, Secunderabad.',
     keywords: ['laptop rental hyderabad', 'macbook rental hyderabad', 'laptop on rent hyderabad', 'computer rental hyderabad'],
-    priceStart: '₹899/mo',
+    priceStart: '₹49/day (₹499/mo)',
     areas: ['Hitech City', 'Gachibowli', 'Banjara Hills', 'Jubilee Hills', 'Secunderabad', 'Madhapur', 'Kukatpally'],
   },
   chennai: { 
     name: 'Chennai', 
     description: 'Detroit of India - laptop rentals for auto, IT, manufacturing, events. Same-day delivery in OMR, Tidel Park, Guindy, Anna Nagar, T. Nagar.',
     keywords: ['laptop rental chennai', 'macbook rental chennai', 'laptop on rent chennai', 'computer rental chennai'],
-    priceStart: '₹899/mo',
+    priceStart: '₹49/day (₹499/mo)',
     areas: ['OMR', 'Tidel Park', 'Guindy', 'Anna Nagar', 'T. Nagar', 'Velachery', 'Porur', 'Ambattur'],
   },
   pune: { 
     name: 'Pune', 
     description: 'Oxford of the East - laptop rentals for IT, education, manufacturing. Same-day delivery in Hinjewadi, Magarpatta, Koregaon Park, Viman Nagar, Baner.',
     keywords: ['laptop rental pune', 'macbook rental pune', 'laptop on rent pune', 'computer rental pune'],
-    priceStart: '₹849/mo',
+    priceStart: '₹49/day (₹499/mo)',
     areas: ['Hinjewadi', 'Magarpatta', 'Koregaon Park', 'Viman Nagar', 'Baner', 'Kharadi', 'Wakad', 'Aundh'],
   },
   kolkata: { 
     name: 'Kolkata', 
     description: 'City of Joy - laptop rentals for corporate, education, events. Same-day delivery in Salt Lake, New Town, Park Street, Howrah, Rajarhat.',
     keywords: ['laptop rental kolkata', 'macbook rental kolkata', 'laptop on rent kolkata', 'computer rental kolkata'],
-    priceStart: '₹899/mo',
+    priceStart: '₹49/day (₹499/mo)',
     areas: ['Salt Lake', 'New Town', 'Park Street', 'Howrah', 'Rajarhat', 'Gariahat', 'Jadavpur', 'Behala'],
   },
 };
