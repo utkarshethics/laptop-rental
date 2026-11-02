@@ -104,6 +104,7 @@ function buildPage(opts: {
   html = html.replace(/<meta name="geo\.placename"[^>]*>\s*\n?/g, '');
   html = html.replace(/<meta name="geo\.position"[^>]*>\s*\n?/g, '');
   html = html.replace(/<meta name="ICBM"[^>]*>\s*\n?/g, '');
+  html = html.replace(/<link rel="alternate" hreflang="[^"]*" href="[^"]*"\s*\/?>\s*\n?/g, '');
 
   const geoMeta = geo
     ? `<meta name="geo.region" content="${geo.region}" />
@@ -186,6 +187,18 @@ const toDate = (iso: string) => new Date(iso).toISOString().slice(0, 10);
 const TOP_CITIES = INDIAN_CITIES.slice(0, 12);
 const TIER1 = INDIAN_CITIES.filter(c => c.tier === 1);
 
+const INDIC_HREFLANGS = [
+  { code: 'en-IN', href: `${BASE}/` },
+  { code: 'hi-IN', href: `${BASE}/hi/` },
+  { code: 'kn-IN', href: `${BASE}/kn/` },
+  { code: 'ta-IN', href: `${BASE}/ta/` },
+  { code: 'te-IN', href: `${BASE}/te/` },
+  { code: 'mr-IN', href: `${BASE}/mr/` },
+  { code: 'bn-IN', href: `${BASE}/bn/` },
+  { code: 'gu-IN', href: `${BASE}/gu/` },
+  { code: 'x-default', href: `${BASE}/` },
+];
+
 buildPage({
   route: '/',
   title: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
@@ -194,10 +207,7 @@ buildPage({
   canonical: `${BASE}/`,
   ogTitle: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
   ogUrl: `${BASE}/`,
-  hreflang: [
-    { code: 'en-IN', href: `${BASE}/` },
-    { code: 'x-default', href: `${BASE}/` },
-  ],
+  hreflang: INDIC_HREFLANGS,
   jsonLd: [
     {
       '@context': 'https://schema.org',
@@ -246,6 +256,19 @@ buildPage({
         <p style="margin:0;font-size:0.98rem;font-weight:500;color:#0f172a;line-height:1.7;">
           <strong>Direct Answer:</strong> <strong>LaptopRent</strong> (laptoponrent.online) is an enterprise and retail laptop rental network operating across <strong>25+ Indian technology hubs</strong> including Bangalore, Mumbai, Delhi NCR, Hyderabad, Chennai, and Pune. LaptopRent provides flexible short-term and long-term rental plans starting from <strong>₹499/month (just ₹16/day)</strong> for student models, <strong>₹1,200/month</strong> for corporate business laptops, and <strong>₹2,999/month</strong> for Apple MacBook Air/Pro (M1/M2/M3 chips) and RTX gaming rigs. All rentals feature <strong>same-day doorstep delivery</strong>, complimentary maintenance, zero capital depreciation, and fully refundable security deposits and zero hidden charges.
         </p>
+      </div>
+
+      <div class="indic-lang-bar" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:0.85rem 1.25rem;margin:1.5rem 0;">
+        <span style="font-weight:700;color:#475569;font-size:0.9rem;display:inline-block;margin-right:0.75rem;">🗣️ Regional Voice & Typed Search:</span>
+        <div style="display:inline-flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.35rem;">
+          <a href="/hi/" style="background:#fff;border:1px solid #cbd5e1;padding:0.25rem 0.65rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.85rem;color:#0f172a;">हिन्दी (Hindi)</a>
+          <a href="/kn/" style="background:#fff;border:1px solid #cbd5e1;padding:0.25rem 0.65rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.85rem;color:#0f172a;">ಕನ್ನಡ (Kannada)</a>
+          <a href="/ta/" style="background:#fff;border:1px solid #cbd5e1;padding:0.25rem 0.65rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.85rem;color:#0f172a;">தமிழ் (Tamil)</a>
+          <a href="/te/" style="background:#fff;border:1px solid #cbd5e1;padding:0.25rem 0.65rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.85rem;color:#0f172a;">తెలుగు (Telugu)</a>
+          <a href="/mr/" style="background:#fff;border:1px solid #cbd5e1;padding:0.25rem 0.65rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.85rem;color:#0f172a;">मराठी (Marathi)</a>
+          <a href="/bn/" style="background:#fff;border:1px solid #cbd5e1;padding:0.25rem 0.65rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.85rem;color:#0f172a;">বাংলা (Bengali)</a>
+          <a href="/gu/" style="background:#fff;border:1px solid #cbd5e1;padding:0.25rem 0.65rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:0.85rem;color:#0f172a;">ગુજરાતી (Gujarati)</a>
+        </div>
       </div>
       <p>LaptopRent rents laptops on rent across ${INDIAN_CITIES.length} Indian cities, with same-day
       delivery and flexible plans from one day to twelve months. Every rental includes a
