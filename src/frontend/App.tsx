@@ -32,6 +32,7 @@ const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.N
 const CitiesPage = lazy(() => import('./pages/CitiesPage').then(m => ({ default: m.CitiesPage })));
 const CityPage = lazy(() => import('./pages/cities/CityPage').then(m => ({ default: m.CityPage })));
 const CategoriesPage = lazy(() => import('./pages/CategoriesPage').then(m => ({ default: m.CategoriesPage })));
+const SecondHandLaptops = lazy(() => import('./pages/SecondHandLaptops').then(m => ({ default: m.SecondHandLaptops })));
 const CategoryPage = lazy(() => import('./pages/categories/CategoryPage').then(m => ({ default: m.CategoryPage })));
 const BlogListingPage = lazy(() => import('./pages/blog/BlogListingPage').then(m => ({ default: m.BlogListingPage })));
 const Pricing = lazy(() => import('./pages/Pricing').then(m => ({ default: m.Pricing })));
@@ -81,6 +82,8 @@ function App() {
                   <Route path="cities" element={<CitiesPage />} />
                   <Route path="rental/:citySlug" element={<CityPageRoute />} />
                   <Route path="categories" element={<CategoriesPage />} />
+                  <Route path="category/second-hand-laptops" element={<SecondHandLaptops />} />
+                  <Route path="second-hand-laptops" element={<Navigate to="/category/second-hand-laptops" replace />} />
                   <Route path="category/:categorySlug" element={<CategoryPageRoute />} />
                   <Route path="blog" element={<BlogListingPage />} />
                   <Route path="blog/category/:category" element={<BlogCategoryRoute />} />
