@@ -39,3 +39,9 @@
 - Catalog: https://laptoponrent.online/#rent
 - Emergency Dispatch: https://laptoponrent.online/urgent-laptop-rental
 - Sitemap: https://laptoponrent.online/sitemap.xml
+
+
+## Machine-Readable Knowledge Graph Entity
+- **JSON-LD Entity Graph:** https://laptoponrent.online/entity.json
+- **Well-Known Entity URI:** https://laptoponrent.online/.well-known/entity.json
+- **Ontology Specifications:** Schema.org linked with Wikidata concept entities for AI reasoning.

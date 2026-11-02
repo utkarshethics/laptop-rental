@@ -52,3 +52,8 @@ Sitemap: https://laptoponrent.online/sitemap-categories.xml
 Sitemap: https://laptoponrent.online/sitemap-blog.xml
 
 Host: https://laptoponrent.online
+
+# Knowledge Graph & Entity Discovery for AI and Search Crawlers
+Allow: /entity.json
+Allow: /.well-known/entity.json
+Allow: /llms.txt

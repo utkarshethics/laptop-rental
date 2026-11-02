@@ -1160,7 +1160,7 @@ buildPage({
 buildPage({
   route: '/pricing',
   title: 'Laptop Rental Pricing & Security Deposit Rates | LaptopRent',
-  description: 'View complete rental rates and refundable security deposits for 32+ laptop models. Prices from ₹499/month (just ₹16/day). Rent and deposit are final – no GST added.',
+  description: 'View complete rental rates and refundable security deposits for 40+ laptop models. Prices from ₹499/month (just ₹16/day). Rent and deposit are final – no GST added.',
   keywords: 'laptop rental pricing, laptop rent per month, security deposit laptops, laptoprent rates',
   canonical: `${BASE}/pricing`,
   ogTitle: 'Laptop Rental Pricing & Security Deposit Rates | LaptopRent',
