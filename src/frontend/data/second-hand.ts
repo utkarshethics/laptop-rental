@@ -1,4 +1,4 @@
-// Second-hand laptop sales. Shared by the React page and scripts/prerender-seo.ts.
+// Second-hand laptop sales. Shared by the React page and scripts/prerender-second-hand.ts.
 // Prices are indicative "from" prices for commonly sourced configurations.
 // Update this list as real stock and pricing change.
 
