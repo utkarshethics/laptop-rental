@@ -44,7 +44,7 @@ export function About() {
               <strong>LaptopRent</strong> (accessible via <code>laptoponrent.online</code>) is an on-demand technology rental brand owned and operated by <strong>STAGE-X</strong>, a registered sole proprietorship based in Bengaluru, Karnataka, India.
             </p>
             <div className="pt-2 text-sm text-secondary-700 space-y-1 border-t border-primary-200/60">
-              <p><strong>Registered Office:</strong> 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India</p>
+              <p><strong>Registered Office:</strong> Bengaluru, Karnataka, India</p>
               <p><strong>Official Contact:</strong> <a href="mailto:connect@laptoponrent.online" className="text-primary-700 underline font-medium">connect@laptoponrent.online</a> &middot; Telephone/WhatsApp: <strong>+91 78922 40243</strong></p>
               <p><strong>Operating Hours:</strong> Every day, 6:00 AM &ndash; 7:00 PM IST</p>
               <p><strong>Payment Processing:</strong> All payments on this platform are processed by STAGE-X via UPI.</p>

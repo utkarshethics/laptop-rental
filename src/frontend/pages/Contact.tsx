@@ -85,8 +85,7 @@ export function Contact() {
                   <div>
                     <h3 className="font-semibold text-secondary-900">Registered Office</h3>
                     <p className="text-secondary-600 leading-relaxed">
-                      2nd Floor, No. 235, 13th Cross Road, Binnamangala,<br />
-                      Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India
+                      Bengaluru, Karnataka, India
                     </p>
                   </div>
                 </div>

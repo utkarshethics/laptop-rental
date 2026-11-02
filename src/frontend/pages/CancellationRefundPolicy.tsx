@@ -36,7 +36,7 @@ export function CancellationRefundPolicy() {
           {/* Policy Owner Banner */}
           <div className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded-r-lg mb-8 text-secondary-900 text-sm leading-relaxed shadow-sm">
             <strong>
-              These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: <a href="mailto:connect@laptoponrent.online" className="underline text-primary-600">connect@laptoponrent.online</a>.
+              These policies apply to laptoponrent.online. <a href="mailto:connect@laptoponrent.online" className="underline text-primary-600">connect@laptoponrent.online</a>.
             </strong>
           </div>
 
@@ -114,7 +114,7 @@ export function CancellationRefundPolicy() {
               </p>
               <p className="text-sm">
                 <strong>STAGE-X (LaptopRent Refund Desk)</strong><br />
-                2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India<br />
+                Bengaluru, Karnataka, India<br />
                 Email: <a href="mailto:connect@laptoponrent.online" className="text-primary-600 underline">connect@laptoponrent.online</a><br />
                 Phone: +91 78922 40243 &middot; Hours: 6:00 AM &ndash; 7:00 PM IST
               </p>

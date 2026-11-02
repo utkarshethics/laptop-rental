@@ -36,7 +36,7 @@ export function PricingDisclaimer() {
           {/* Policy Owner Banner */}
           <div className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded-r-lg mb-8 text-secondary-900 text-sm leading-relaxed shadow-sm">
             <strong>
-              These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: <a href="mailto:connect@laptoponrent.online" className="underline text-primary-600">connect@laptoponrent.online</a>.
+              These policies apply to laptoponrent.online. <a href="mailto:connect@laptoponrent.online" className="underline text-primary-600">connect@laptoponrent.online</a>.
             </strong>
           </div>
 
@@ -167,7 +167,7 @@ export function PricingDisclaimer() {
               </p>
               <div className="bg-secondary-50 p-4 rounded-lg text-sm space-y-1">
                 <p><strong>Merchant Entity:</strong> STAGE-X</p>
-                <p><strong>Registered Office:</strong> 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India</p>
+                <p><strong>Registered Office:</strong> Bengaluru, Karnataka, India</p>
                 <p><strong>Billing Desk:</strong> <a href="mailto:connect@laptoponrent.online" className="text-primary-600 underline">connect@laptoponrent.online</a></p>
                 <p><strong>Phone / WhatsApp:</strong> +91 78922 40243 (Mon–Sun, 6:00 AM – 7:00 PM IST)</p>
               </div>

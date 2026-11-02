@@ -21,7 +21,7 @@ export const ORGANIZATION = {
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage',
+    streetAddress: "Indiranagar",
     addressLocality: 'Bengaluru',
     addressRegion: 'Karnataka',
     postalCode: '560038',

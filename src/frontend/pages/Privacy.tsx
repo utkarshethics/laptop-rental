@@ -36,7 +36,7 @@ export function Privacy() {
           {/* Policy Owner Banner */}
           <div className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded-r-lg mb-8 text-secondary-900 text-sm leading-relaxed shadow-sm">
             <strong>
-              These policies apply to laptoponrent.online, operated by STAGE-X (sole proprietorship), 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru 560038. Contact: <a href="mailto:connect@laptoponrent.online" className="underline text-primary-600">connect@laptoponrent.online</a>.
+              These policies apply to laptoponrent.online. <a href="mailto:connect@laptoponrent.online" className="underline text-primary-600">connect@laptoponrent.online</a>.
             </strong>
           </div>
 
@@ -112,7 +112,7 @@ export function Privacy() {
               </p>
               <p className="text-sm">
                 <strong>Data Grievance Officer: STAGE-X</strong><br />
-                2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India<br />
+                Bengaluru, Karnataka, India<br />
                 Email: <a href="mailto:connect@laptoponrent.online" className="text-primary-600 underline">connect@laptoponrent.online</a><br />
                 Response Time: Within 24&ndash;48 business hours
               </p>

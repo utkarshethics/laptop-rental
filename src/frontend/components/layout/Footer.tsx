@@ -241,7 +241,7 @@ export function Footer() {
             <p>
               laptoponrent.online is a brand of STAGE-X, a technology platform connecting customers with partner laptop rental providers. Laptops are owned and delivered by partner rental companies; bookings, payments, deposits, support and refunds are handled by STAGE-X.
               <br />
-              Operational Office: 2nd Floor, No. 235, 13th Cross Road, Binnamangala, Indiranagar 2nd Stage, Bengaluru, Karnataka 560038, India
+              Operating Region: Bengaluru, Karnataka, India
               <br />
               Customer Care: <a href="tel:+917892240243" className="text-secondary-300 hover:underline">+91 78922 40243</a> &middot; Email: <a href="mailto:connect@laptoponrent.online" className="underline text-secondary-300">connect@laptoponrent.online</a> &middot; Hours: Monday to Saturday, 10:00 AM &ndash; 7:00 PM
             </p>
