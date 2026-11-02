@@ -34,6 +34,8 @@ jobs:
           VITE_TOKEN_PAYMENT_LINK: ${{ secrets.TOKEN_PAYMENT_LINK }}
       - name: Prerender SEO static pages
         run: npx tsx scripts/prerender-seo.ts
+      - name: Prerender second-hand laptops page
+        run: npx tsx scripts/prerender-second-hand.ts
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

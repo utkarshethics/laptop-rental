@@ -9,6 +9,7 @@ import { useState } from 'react';
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/products', label: 'Laptops' },
+  { href: '/category/second-hand-laptops', label: 'Buy Second-Hand' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/booking', label: 'Book Now' },
   { href: '/about', label: 'About Us' },
