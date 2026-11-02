@@ -153,6 +153,181 @@
     },
     {
       "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Vadodara (https://www.wikidata.org/wiki/Q11749)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Ludhiana (https://www.wikidata.org/wiki/Q200123)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Agra (https://www.wikidata.org/wiki/Q42941)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Nashik (https://www.wikidata.org/wiki/Q185237)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Ranchi (https://www.wikidata.org/wiki/Q207340)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Meerut (https://www.wikidata.org/wiki/Q200237)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Rajkot (https://www.wikidata.org/wiki/Q11854)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Varanasi (https://www.wikidata.org/wiki/Q79980)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Srinagar (https://www.wikidata.org/wiki/Q170115)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Aurangabad (https://www.wikidata.org/wiki/Q170119)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Dhanbad (https://www.wikidata.org/wiki/Q207802)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Amritsar (https://www.wikidata.org/wiki/Q48362)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Navi Mumbai (https://www.wikidata.org/wiki/Q246231)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Prayagraj (https://www.wikidata.org/wiki/Q200085)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Gwalior (https://www.wikidata.org/wiki/Q158467)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Jabalpur (https://www.wikidata.org/wiki/Q200017)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Vijayawada (https://www.wikidata.org/wiki/Q200018)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Madurai (https://www.wikidata.org/wiki/Q25282)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Raipur (https://www.wikidata.org/wiki/Q160492)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Kota (https://www.wikidata.org/wiki/Q200020)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Solapur (https://www.wikidata.org/wiki/Q207797)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Hubli (https://www.wikidata.org/wiki/Q246235)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Bareilly (https://www.wikidata.org/wiki/Q200234)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Moradabad (https://www.wikidata.org/wiki/Q200235)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Aligarh (https://www.wikidata.org/wiki/Q200236)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Jalandhar (https://www.wikidata.org/wiki/Q200124)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Tiruchirappalli (https://www.wikidata.org/wiki/Q207754)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Salem (https://www.wikidata.org/wiki/Q207755)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Warangal (https://www.wikidata.org/wiki/Q200021)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Thiruvananthapuram (https://www.wikidata.org/wiki/Q167715)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Dehradun (https://www.wikidata.org/wiki/Q131480)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Mangalore (https://www.wikidata.org/wiki/Q127041)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Ghaziabad (https://www.wikidata.org/wiki/Q200238)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Faridabad (https://www.wikidata.org/wiki/Q200239)"
+    },
+    {
+      "subject": "LaptopRent",
+      "predicate": "operatesInCity",
+      "object": "Thane (https://www.wikidata.org/wiki/Q207756)"
+    },
+    {
+      "subject": "LaptopRent",
       "predicate": "basePriceStudent",
       "object": "₹849/month"
     },
@@ -616,6 +791,356 @@
       "lng": 73.0243,
       "tier": 3,
       "wikidata": "https://www.wikidata.org/wiki/Q200019"
+    },
+    {
+      "slug": "vadodara",
+      "name": "Vadodara",
+      "state": "Gujarat",
+      "shortName": "BDQ",
+      "lat": 22.3072,
+      "lng": 73.1812,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q11749"
+    },
+    {
+      "slug": "ludhiana",
+      "name": "Ludhiana",
+      "state": "Punjab",
+      "shortName": "LUH",
+      "lat": 30.901,
+      "lng": 75.8573,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200123"
+    },
+    {
+      "slug": "agra",
+      "name": "Agra",
+      "state": "Uttar Pradesh",
+      "shortName": "AGR",
+      "lat": 27.1767,
+      "lng": 78.0081,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q42941"
+    },
+    {
+      "slug": "nashik",
+      "name": "Nashik",
+      "state": "Maharashtra",
+      "shortName": "ISK",
+      "lat": 19.9975,
+      "lng": 73.7898,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q185237"
+    },
+    {
+      "slug": "ranchi",
+      "name": "Ranchi",
+      "state": "Jharkhand",
+      "shortName": "IXR",
+      "lat": 23.3441,
+      "lng": 85.3096,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q207340"
+    },
+    {
+      "slug": "meerut",
+      "name": "Meerut",
+      "state": "Uttar Pradesh",
+      "shortName": "MEE",
+      "lat": 28.9845,
+      "lng": 77.7064,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200237"
+    },
+    {
+      "slug": "rajkot",
+      "name": "Rajkot",
+      "state": "Gujarat",
+      "shortName": "RAJ",
+      "lat": 22.3039,
+      "lng": 70.8022,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q11854"
+    },
+    {
+      "slug": "varanasi",
+      "name": "Varanasi",
+      "state": "Uttar Pradesh",
+      "shortName": "VNS",
+      "lat": 25.3176,
+      "lng": 82.9739,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q79980"
+    },
+    {
+      "slug": "srinagar",
+      "name": "Srinagar",
+      "state": "Jammu and Kashmir",
+      "shortName": "SXR",
+      "lat": 34.0837,
+      "lng": 74.7973,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q170115"
+    },
+    {
+      "slug": "aurangabad",
+      "name": "Aurangabad",
+      "state": "Maharashtra",
+      "shortName": "IXU",
+      "lat": 19.8762,
+      "lng": 75.3433,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q170119"
+    },
+    {
+      "slug": "dhanbad",
+      "name": "Dhanbad",
+      "state": "Jharkhand",
+      "shortName": "DHN",
+      "lat": 23.7957,
+      "lng": 86.4304,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q207802"
+    },
+    {
+      "slug": "amritsar",
+      "name": "Amritsar",
+      "state": "Punjab",
+      "shortName": "ATQ",
+      "lat": 31.634,
+      "lng": 74.8723,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q48362"
+    },
+    {
+      "slug": "navi-mumbai",
+      "name": "Navi Mumbai",
+      "state": "Maharashtra",
+      "shortName": "NVI",
+      "lat": 19.033,
+      "lng": 73.0297,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q246231"
+    },
+    {
+      "slug": "allahabad",
+      "name": "Prayagraj",
+      "state": "Uttar Pradesh",
+      "shortName": "IXD",
+      "lat": 25.4358,
+      "lng": 81.8463,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200085"
+    },
+    {
+      "slug": "gwalior",
+      "name": "Gwalior",
+      "state": "Madhya Pradesh",
+      "shortName": "GWL",
+      "lat": 26.2183,
+      "lng": 78.1828,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q158467"
+    },
+    {
+      "slug": "jabalpur",
+      "name": "Jabalpur",
+      "state": "Madhya Pradesh",
+      "shortName": "JLR",
+      "lat": 23.1815,
+      "lng": 79.9864,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200017"
+    },
+    {
+      "slug": "vijayawada",
+      "name": "Vijayawada",
+      "state": "Andhra Pradesh",
+      "shortName": "VGA",
+      "lat": 16.5062,
+      "lng": 80.648,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200018"
+    },
+    {
+      "slug": "madurai",
+      "name": "Madurai",
+      "state": "Tamil Nadu",
+      "shortName": "IXM",
+      "lat": 9.9252,
+      "lng": 78.1198,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q25282"
+    },
+    {
+      "slug": "raipur",
+      "name": "Raipur",
+      "state": "Chhattisgarh",
+      "shortName": "RPR",
+      "lat": 21.2514,
+      "lng": 81.6296,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q160492"
+    },
+    {
+      "slug": "kota",
+      "name": "Kota",
+      "state": "Rajasthan",
+      "shortName": "KTU",
+      "lat": 25.2138,
+      "lng": 75.8648,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200020"
+    },
+    {
+      "slug": "solapur",
+      "name": "Solapur",
+      "state": "Maharashtra",
+      "shortName": "SSE",
+      "lat": 17.6599,
+      "lng": 75.9064,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q207797"
+    },
+    {
+      "slug": "hubli",
+      "name": "Hubli",
+      "state": "Karnataka",
+      "shortName": "HBX",
+      "lat": 15.3647,
+      "lng": 75.124,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q246235"
+    },
+    {
+      "slug": "bareilly",
+      "name": "Bareilly",
+      "state": "Uttar Pradesh",
+      "shortName": "BEK",
+      "lat": 28.367,
+      "lng": 79.4304,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200234"
+    },
+    {
+      "slug": "moradabad",
+      "name": "Moradabad",
+      "state": "Uttar Pradesh",
+      "shortName": "MBD",
+      "lat": 28.8351,
+      "lng": 78.7749,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200235"
+    },
+    {
+      "slug": "aligarh",
+      "name": "Aligarh",
+      "state": "Uttar Pradesh",
+      "shortName": "ALG",
+      "lat": 27.8974,
+      "lng": 78.088,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200236"
+    },
+    {
+      "slug": "jalandhar",
+      "name": "Jalandhar",
+      "state": "Punjab",
+      "shortName": "JUC",
+      "lat": 31.326,
+      "lng": 75.5762,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200124"
+    },
+    {
+      "slug": "tiruchirappalli",
+      "name": "Tiruchirappalli",
+      "state": "Tamil Nadu",
+      "shortName": "TRZ",
+      "lat": 10.7905,
+      "lng": 78.7047,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q207754"
+    },
+    {
+      "slug": "salem",
+      "name": "Salem",
+      "state": "Tamil Nadu",
+      "shortName": "SXV",
+      "lat": 11.6643,
+      "lng": 78.146,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q207755"
+    },
+    {
+      "slug": "warangal",
+      "name": "Warangal",
+      "state": "Telangana",
+      "shortName": "WGC",
+      "lat": 17.9689,
+      "lng": 79.5941,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200021"
+    },
+    {
+      "slug": "thiruvananthapuram",
+      "name": "Thiruvananthapuram",
+      "state": "Kerala",
+      "shortName": "TRV",
+      "lat": 8.5241,
+      "lng": 76.9366,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q167715"
+    },
+    {
+      "slug": "dehradun",
+      "name": "Dehradun",
+      "state": "Uttarakhand",
+      "shortName": "DED",
+      "lat": 30.3165,
+      "lng": 78.0322,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q131480"
+    },
+    {
+      "slug": "mangalore",
+      "name": "Mangalore",
+      "state": "Karnataka",
+      "shortName": "IXE",
+      "lat": 12.9141,
+      "lng": 74.856,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q127041"
+    },
+    {
+      "slug": "ghaziabad",
+      "name": "Ghaziabad",
+      "state": "Uttar Pradesh",
+      "shortName": "GZB",
+      "lat": 28.6692,
+      "lng": 77.4538,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200238"
+    },
+    {
+      "slug": "faridabad",
+      "name": "Faridabad",
+      "state": "Haryana",
+      "shortName": "FBD",
+      "lat": 28.4089,
+      "lng": 77.3178,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q200239"
+    },
+    {
+      "slug": "thane",
+      "name": "Thane",
+      "state": "Maharashtra",
+      "shortName": "TNA",
+      "lat": 19.2183,
+      "lng": 72.9781,
+      "tier": 2,
+      "wikidata": "https://www.wikidata.org/wiki/Q207756"
     }
   ]
 }

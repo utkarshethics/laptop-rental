@@ -505,7 +505,7 @@ for (const city of INDIAN_CITIES) {
   const meta = CITY_META[city.slug as keyof typeof CITY_META];
   const description = meta?.description || DEFAULT_CITY_DESC(city.name, city.state);
   const keywords = (meta?.keywords || [`laptop rental ${city.name.toLowerCase()}`]).join(', ');
-  const price = meta?.priceStart || '₹849/mo';
+  const price = meta?.priceStart || '₹49/day (₹499/mo)';
   const areas = meta?.areas || DEFAULT_AREAS;
 
   const schemas: unknown[] = [
