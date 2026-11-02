@@ -116,9 +116,18 @@ export function SecondHandLaptops() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {models.map(m => (
-            <article key={m.id} className="border border-secondary-200 rounded-xl overflow-hidden bg-white flex flex-col hover:shadow-lg transition-shadow">
-              <div className="bg-primary-50 h-36 flex items-center justify-center">
-                <Laptop className="w-16 h-16 text-primary-500" strokeWidth={1.25} />
+            <article key={m.id} className="border border-secondary-200 rounded-xl overflow-hidden bg-white flex flex-col hover:shadow-lg transition-shadow group">
+              <div className="relative aspect-[4/3] bg-secondary-50 p-4 flex items-center justify-center overflow-hidden">
+                {m.imageUrl ? (
+                  <img
+                    src={m.imageUrl}
+                    alt={`${m.brand} ${m.name} - certified second-hand refurbished laptop`}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Laptop className="w-16 h-16 text-primary-500" strokeWidth={1.25} />
+                )}
               </div>
               <div className="p-4 flex flex-col flex-1">
                 <span className="text-xs font-bold text-primary-600 uppercase tracking-wide">{m.brand}</span>

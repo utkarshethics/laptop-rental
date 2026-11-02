@@ -11,6 +11,7 @@ export interface SecondHandModel {
   segment: SecondHandSegment;
   specs: string[];
   priceFrom: number;
+  imageUrl: string;
 }
 
 export const SECOND_HAND_ROUTE = '/category/second-hand-laptops';
@@ -25,21 +26,29 @@ export const SECOND_HAND_SEGMENTS: Array<{ id: 'all' | SecondHandSegment; label:
 
 export const SECOND_HAND_MODELS: SecondHandModel[] = [
   { id: 'thinkpad-t480', brand: 'Lenovo', name: 'ThinkPad T480', segment: 'business',
-    specs: ['Intel Core i5 8th Gen', '8 GB RAM · 256 GB SSD', '14" Full HD', 'Windows 11 Pro'], priceFrom: 16499 },
+    specs: ['Intel Core i5 8th Gen', '8 GB RAM · 256 GB SSD', '14" Full HD', 'Windows 11 Pro'], priceFrom: 16499,
+    imageUrl: '/assets/products/lenovo/thinkpad-t14/hero.webp' },
   { id: 'latitude-7490', brand: 'Dell', name: 'Latitude 7490', segment: 'business',
-    specs: ['Intel Core i7 8th Gen', '16 GB RAM · 512 GB SSD', '14" Full HD', 'Windows 11 Pro'], priceFrom: 21999 },
+    specs: ['Intel Core i7 8th Gen', '16 GB RAM · 512 GB SSD', '14" Full HD', 'Windows 11 Pro'], priceFrom: 21999,
+    imageUrl: '/assets/products/dell/latitude-7450/hero.webp' },
   { id: 'elitebook-840-g5', brand: 'HP', name: 'EliteBook 840 G5', segment: 'business',
-    specs: ['Intel Core i5 8th Gen', '8 GB RAM · 256 GB SSD', '14" Full HD', 'Windows 11 Pro'], priceFrom: 15499 },
+    specs: ['Intel Core i5 8th Gen', '8 GB RAM · 256 GB SSD', '14" Full HD', 'Windows 11 Pro'], priceFrom: 15499,
+    imageUrl: '/assets/products/hp/elitebook-840-g9/hero.webp' },
   { id: 'latitude-5490', brand: 'Dell', name: 'Latitude 5490', segment: 'student',
-    specs: ['Intel Core i5 7th Gen', '8 GB RAM · 256 GB SSD', '14" HD', 'Windows 11'], priceFrom: 12999 },
+    specs: ['Intel Core i5 7th Gen', '8 GB RAM · 256 GB SSD', '14" HD', 'Windows 11'], priceFrom: 12999,
+    imageUrl: '/assets/products/dell/latitude-5430/hero.webp' },
   { id: 'probook-440-g6', brand: 'HP', name: 'ProBook 440 G6', segment: 'student',
-    specs: ['Intel Core i3 8th Gen', '8 GB RAM · 256 GB SSD', '14" HD', 'Windows 11'], priceFrom: 11499 },
+    specs: ['Intel Core i3 8th Gen', '8 GB RAM · 256 GB SSD', '14" HD', 'Windows 11'], priceFrom: 11499,
+    imageUrl: '/assets/products/hp/probook-450/hero.webp' },
   { id: 'macbook-air-m1', brand: 'Apple', name: 'MacBook Air M1 (2020)', segment: 'mac',
-    specs: ['Apple M1 chip', '8 GB RAM · 256 GB SSD', '13.3" Retina', 'Battery health 85%+'], priceFrom: 44999 },
+    specs: ['Apple M1 chip', '8 GB RAM · 256 GB SSD', '13.3" Retina', 'Battery health 85%+'], priceFrom: 44999,
+    imageUrl: '/assets/products/apple/macbook-air-m2/hero.webp' },
   { id: 'macbook-pro-m1', brand: 'Apple', name: 'MacBook Pro 13" M1', segment: 'mac',
-    specs: ['Apple M1 chip', '8 GB RAM · 512 GB SSD', '13.3" Retina', 'Battery health 85%+'], priceFrom: 54999 },
+    specs: ['Apple M1 chip', '8 GB RAM · 512 GB SSD', '13.3" Retina', 'Battery health 85%+'], priceFrom: 54999,
+    imageUrl: '/assets/products/apple/macbook-pro-14/hero.webp' },
   { id: 'asus-tuf-f15', brand: 'ASUS', name: 'TUF Gaming F15', segment: 'gaming',
-    specs: ['Intel Core i5 10th Gen', '16 GB RAM · 512 GB SSD', 'GTX 1650 · 15.6" 144Hz', 'Windows 11'], priceFrom: 34999 },
+    specs: ['Intel Core i5 10th Gen', '16 GB RAM · 512 GB SSD', 'GTX 1650 · 15.6" 144Hz', 'Windows 11'], priceFrom: 34999,
+    imageUrl: '/assets/products/asus/rog-strix-g16/hero.webp' },
 ];
 
 export const SECOND_HAND_MIN_PRICE = Math.min(...SECOND_HAND_MODELS.map(m => m.priceFrom));

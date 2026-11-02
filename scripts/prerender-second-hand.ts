@@ -62,7 +62,10 @@ const graph = {
       '@type': 'ItemList',
       name: 'Second-Hand Laptops',
       itemListElement: SECOND_HAND_MODELS.map((m, i) => ({
-        '@type': 'ListItem', position: i + 1, name: `${m.brand} ${m.name} (second-hand)`,
+        '@type': 'ListItem',
+        position: i + 1,
+        name: `${m.brand} ${m.name} (second-hand)`,
+        image: `${BASE}${m.imageUrl}`,
       })),
     },
     {
@@ -85,7 +88,7 @@ const body = `
     <h2>Popular second-hand models</h2>
     <p>Indicative starting prices. Availability, grade and final price of a specific unit are confirmed on WhatsApp before you pay.</p>
     <ul>
-      ${SECOND_HAND_MODELS.map(m => `<li><strong>${esc(m.brand)} ${esc(m.name)}</strong> - ${esc(m.specs.join(', '))} - from ${formatINR(m.priceFrom)}</li>`).join('\n      ')}
+      ${SECOND_HAND_MODELS.map(m => `<li><img src="${m.imageUrl}" alt="${esc(m.brand)} ${esc(m.name)} second-hand refurbished laptop" width="240" height="180" loading="lazy" /><strong>${esc(m.brand)} ${esc(m.name)}</strong> - ${esc(m.specs.join(', '))} - from ${formatINR(m.priceFrom)}</li>`).join('\n      ')}
     </ul>
     <h2>How we grade every laptop</h2>
     ${SECOND_HAND_GRADES.map(g => `<h3>${esc(g.name)}</h3><p>${esc(g.text)}</p>`).join('\n    ')}
