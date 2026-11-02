@@ -202,7 +202,7 @@ const INDIC_HREFLANGS = [
 buildPage({
   route: '/',
   title: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
-  description: 'Rent laptops in India from ₹849/month. MacBook, gaming, business and student laptops from HP, Dell, Lenovo, ASUS, Acer and Surface. Same-day delivery in 25+ cities with refundable security deposit.',
+  description: 'Rent laptops in India from ₹49/day (₹499/mo). MacBook, gaming & business laptops with same-day doorstep delivery across 60+ cities. Zero deposit option.',
   keywords: 'laptop rental, laptop on rent, macbook rental, gaming laptop rental, computer rental india, rent laptop india',
   canonical: `${BASE}/`,
   ogTitle: 'LaptopRent - Best Laptop Rentals in India | Doorstep Delivery',
@@ -215,7 +215,7 @@ buildPage({
       '@id': `${BASE}/#business`,
       name: 'LaptopRent',
       legalName: ORGANIZATION.legalName,
-      description: 'Laptop rental service in India offering MacBook, gaming, business and student laptops on flexible monthly plans with same-day delivery in 25+ cities.',
+      description: 'Rent laptops in India from ₹49/day (₹499/mo). MacBook, gaming & business laptops with same-day doorstep delivery across 60+ cities. Zero deposit option.',
       url: `${BASE}/`,
       telephone: ORGANIZATION.contactPoint.telephone,
       email: ORGANIZATION.email,
