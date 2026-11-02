@@ -1,8 +1,9 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const ORIGIN = 'https://laptoponrent.online';
-const ROOT = resolve(process.cwd());
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
 
 export const LAPTOP_LANGUAGES = [
   {
