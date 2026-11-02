@@ -198,6 +198,28 @@ export function Footer() {
           ))}
         </div>
 
+        {/* Indic Multi-lingual & Voice Search Language Bar */}
+        <div className="py-4 px-6 bg-secondary-900/80 rounded-xl border border-secondary-800 text-center mb-6">
+          <p className="text-sm font-medium text-white mb-2">
+            🇮🇳 भारत की प्रमुख भाषाओं में लैपटॉप रेंटल सेवा देखें (Indic Multi-Lingual &amp; Voice Search):
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
+            <a href="/hi/" className="text-primary-400 hover:text-white underline font-medium">हिन्दी (Hindi)</a>
+            <span className="text-secondary-600">·</span>
+            <a href="/kn/" className="text-primary-400 hover:text-white underline font-medium">ಕನ್ನಡ (Kannada)</a>
+            <span className="text-secondary-600">·</span>
+            <a href="/ta/" className="text-primary-400 hover:text-white underline font-medium">தமிழ் (Tamil)</a>
+            <span className="text-secondary-600">·</span>
+            <a href="/te/" className="text-primary-400 hover:text-white underline font-medium">తెలుగు (Telugu)</a>
+            <span className="text-secondary-600">·</span>
+            <a href="/mr/" className="text-primary-400 hover:text-white underline font-medium">मराठी (Marathi)</a>
+            <span className="text-secondary-600">·</span>
+            <a href="/bn/" className="text-primary-400 hover:text-white underline font-medium">বাংলা (Bengali)</a>
+            <span className="text-secondary-600">·</span>
+            <a href="/gu/" className="text-primary-400 hover:text-white underline font-medium">ગુજરાતી (Gujarati)</a>
+          </div>
+        </div>
+
         <div className="pt-8 border-t border-secondary-800 space-y-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-4 text-xs text-secondary-400">
