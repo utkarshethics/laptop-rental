@@ -86,7 +86,7 @@ export function Footer() {
             <div className="mb-6 space-y-1.5 text-sm text-secondary-300">
               <p>Email: <a href="mailto:connect@laptoponrent.online" className="text-white hover:underline font-medium">connect@laptoponrent.online</a></p>
               <p>Customer Care: <a href="tel:+917892240243" className="text-white hover:underline font-medium">+91 78922 40243</a></p>
-              <p>WhatsApp: <a href="https://wa.me/917892240243" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline font-medium">+91 78922 40243</a></p>
+              <p>WhatsApp: <a href="https://razorpay.com/payment-link/plink_TfrpceYFPIv3Ch" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:underline font-medium">+91 78922 40243</a></p>
               <p className="text-xs text-secondary-400">Hours: Monday to Saturday, 10:00 AM &ndash; 7:00 PM</p>
             </div>
             <div className="flex flex-wrap gap-4">

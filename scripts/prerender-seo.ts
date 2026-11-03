@@ -645,7 +645,7 @@ for (const cat of LAPTOP_CATEGORIES) {
           <a href="/booking/?category=daily-short-term-laptop-rental" style="display:inline-flex;align-items:center;background:#2563eb;color:#ffffff;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;font-size:0.95rem;">
             Book Daily Rental Now →
           </a>
-          <a href="https://wa.me/917892240243?text=Hi%2C%20I%20need%20a%20laptop%20on%20rent%20per%20day" style="display:inline-flex;align-items:center;background:#16a34a;color:#ffffff;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;font-size:0.95rem;">
+          <a href="https://razorpay.com/payment-link/plink_TfrpceYFPIv3Ch" style="display:inline-flex;align-items:center;background:#16a34a;color:#ffffff;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;font-size:0.95rem;">
             💬 WhatsApp for 2-Hour Express Delivery
           </a>
         </div>
@@ -1315,7 +1315,7 @@ buildPage({
         <strong>Direct Answer:</strong> LaptopRent provides rapid emergency laptop rentals across <strong>25+ Indian cities</strong> (Bangalore, Mumbai, Delhi NCR, Hyderabad, Pune, Chennai, Kolkata, Ahmedabad). If your machine stopped working or you have an emergency hackathon, exam, or audit, our logistics team dispatches ready-to-use, fully configured Core i5/i7 laptops or Apple MacBooks directly to your doorstep in <strong>2 to 4 hours</strong>.
       </p>
       <div class="emergency-hotline" style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;align-items:center;">
-        <a href="https://wa.me/917892240243?text=EMERGENCY%20LAPTOP%20RENTAL%3A%20I%20need%20a%20laptop%20urgently%20today" style="display:inline-flex;align-items:center;background:#16a34a;color:#ffffff;padding:12px 22px;border-radius:6px;font-weight:700;text-decoration:none;font-size:1rem;box-shadow:0 4px 12px rgba(22,163,74,0.3);">
+        <a href="https://razorpay.com/payment-link/plink_TfrpceYFPIv3Ch" style="display:inline-flex;align-items:center;background:#16a34a;color:#ffffff;padding:12px 22px;border-radius:6px;font-weight:700;text-decoration:none;font-size:1rem;box-shadow:0 4px 12px rgba(22,163,74,0.3);">
           💬 WhatsApp for 2-Hour Dispatch →
         </a>
         <a href="tel:+917892240243" style="display:inline-flex;align-items:center;background:#dc2626;color:#ffffff;padding:12px 22px;border-radius:6px;font-weight:700;text-decoration:none;font-size:1rem;">

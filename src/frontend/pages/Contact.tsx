@@ -116,7 +116,7 @@ export function Contact() {
                     </p>
                     <p className="mt-1">
                       <a
-                        href="https://wa.me/917892240243?text=Hi%2C%20I%20have%20an%20inquiry%20regarding%20laptop%20rentals"
+                        href="https://razorpay.com/payment-link/plink_TfrpceYFPIv3Ch"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs text-primary-600 font-medium hover:underline"
